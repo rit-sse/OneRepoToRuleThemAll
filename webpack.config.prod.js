@@ -21,9 +21,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production'),
-      },
+      'process.env.NODE_ENV': JSON.stringify('production'),
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
@@ -49,7 +47,7 @@ module.exports = {
       sourceMap: false,
     }),
     new ExtractTextPlugin({
-      filename: '[chunkhash].bundle.css', 
+      filename: '[chunkhash].bundle.css',
       allChunks: true,
       sourceMap: false,
     }),
