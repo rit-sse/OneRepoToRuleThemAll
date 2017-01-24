@@ -1,11 +1,8 @@
 import { combineReducers } from 'redux';
-
-function temp(state = {}) {
-  return state;
-}
+import status from './status';
 
 const rootReducer = combineReducers({
-  temp,
+  status,
 });
 
 export default rootReducer;

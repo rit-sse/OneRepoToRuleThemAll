@@ -1,5 +1,6 @@
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
   entry: {
@@ -20,13 +21,20 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    modules: [
+      path.resolve('./app'),
+      'node_modules',
+    ],
   },
   devtool: 'source-map',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('development'),
+      'process.env': {
+        NODE_ENV: JSON.stringify('development'),
+        API_ROOT: JSON.stringify(process.env.API_ROOT || 'http://localhost:3000/api/v1/'),
+      },
     }),
     new HtmlWebpackPlugin({
       title: 'webpack2 boilerplate',

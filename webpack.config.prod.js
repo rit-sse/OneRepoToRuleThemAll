@@ -18,10 +18,17 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    modules: [
+      path.resolve('./app'),
+      'node_modules',
+    ],
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production'),
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+        API_ROOT: JSON.stringify(process.env.API_ROOT || 'http://localhost:3000/api/v1/'),
+      },
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
