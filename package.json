@@ -1,5 +1,5 @@
 {
-  "name": "oneRepoToRullThemAll",
+  "name": "OneRepoToRuleThemAll",
   "version": "1.0.0",
   "description": "The SSE's new and improved frontend",
   "main": "server.js",
