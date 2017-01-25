@@ -35,7 +35,7 @@ module.exports = {
       minChunks: Infinity,
     }),
     new HtmlWebpackPlugin({
-      title: 'Webpack-React-Redux',
+      title: 'Society of Software Engineers',
       filename: '../index.html',
       template: './app/index.ejs',
     }),

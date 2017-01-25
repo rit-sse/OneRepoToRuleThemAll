@@ -37,7 +37,7 @@ module.exports = {
       },
     }),
     new HtmlWebpackPlugin({
-      title: 'webpack2 boilerplate',
+      title: 'Society of Software Engineers',
       template: './app/index.ejs',
     }),
   ],
