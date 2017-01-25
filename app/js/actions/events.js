@@ -1,70 +1,46 @@
+export const EVENTS = 'EVENTS';
 export const GET_EVENT = 'GET_EVENT';
 export const CREATE_EVENT = 'CREATE_EVENT';
 export const UPDATE_EVENT = 'UPDATE_EVENT';
 export const DESTROY_EVENT = 'DESTROY_EVENT';
 
-function getEventAction(payload, error = false) {
-  return {
-    type: GET_EVENT,
-    payload,
-    error,
-  };
-}
-
-function createEventAction(payload, error = false) {
-  return {
-    type: CREATE_EVENT,
-    payload,
-    error,
-  };
-}
-
-function updateEventAction(payload, error = false) {
-  return {
-    type: UPDATE_EVENT,
-    payload,
-    error,
-  };
-}
-
-function destoryEventAction(payload, error = false) {
-  return {
-    type: DESTROY_EVENT,
-    payload,
-    error,
-  };
-}
+const createAction = require('./utils').createAction(EVENTS);
+const loading = require('./utils').createLoading(EVENTS);
 
 export function getEvent() {
   return (dispatch, getState, api) => {
+    dispatch(loading(GET_EVENT));
     api.Events.all({
       after: new Date(),
       sort: 'ASC',
-    }).then(({ data }) => dispatch(getEventAction(data)))
-      .catch(err => dispatch(getEventAction(err, true)));
+    }).then(({ data }) => dispatch(createAction(GET_EVENT, data)))
+      .catch(err => dispatch(createAction(GET_EVENT, err)));
   };
 }
 
 export function createEvent(event) {
   return (dispatch, getState, api) => {
+    dispatch(loading(CREATE_EVENT));
     api.Events.create(event)
-      .then(data => dispatch(createEventAction(data)))
-      .catch(err => dispatch(createEventAction(err, true)));
+      .then(data => dispatch(createAction(CREATE_EVENT, data)))
+      .catch(err => dispatch(createAction(CREATE_EVENT, err)));
   };
 }
 
 export function updateEvent(id, event) {
   return (dispatch, getState, api) => {
+    dispatch(loading(UPDATE_EVENT));
     api.Events.update(id, event)
-      .then(data => dispatch(updateEventAction(data)))
-      .catch(err => dispatch(updateEventAction(err, true)));
+      .then(data => dispatch(createAction(UPDATE_EVENT, data)))
+      .catch(err => dispatch(createAction(UPDATE_EVENT, err)));
   };
 }
 
 export function destoryEvent(id) {
   return (dispatch, getState, api) => {
+    dispatch(loading(DESTROY_EVENT));
     api.Events.destroy(id)
-      .then(() => dispatch(destoryEventAction(id)))
-      .catch(err => dispatch(destoryEventAction(err, true)));
+      .then(() => dispatch(createAction(DESTROY_EVENT, id)))
+      .catch(err => dispatch(createAction(DESTROY_EVENT, err)));
   };
 }

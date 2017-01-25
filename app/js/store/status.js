@@ -13,7 +13,7 @@ export default store => next => action => { // eslint-disable-line
       type: ERROR_STATUS,
       error: true,
       payload: {
-        ...action.payload,
+        message: action.payload.message,
         type: action.type,
       },
     });

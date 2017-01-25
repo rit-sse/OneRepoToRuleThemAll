@@ -16,7 +16,6 @@ export function signIn(googleUser) {
         const [user, officers] = data;
         const officer = officers.find(o => o.userDce === user.dce);
         return dispatch(createAction(SIGN_IN, {
-          user,
           officer,
         }));
       })

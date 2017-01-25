@@ -1,15 +1,25 @@
 import React from 'react';
-import API from 'js/api';
+import API from '../api';
 
 class Login extends React.Component {
   static propTypes = {
-    user: React.PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+    user: React.PropTypes.object, // eslint-disable-line
     signIn: React.PropTypes.func.isRequired,
     signOut: React.PropTypes.func.isRequired,
     className: React.PropTypes.string.isRequired,
   }
 
   componentDidMount() {
+    this.attachClick();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.user !== null && this.props.user === null) {
+      this.attachClick();
+    }
+  }
+
+  attachClick() {
     API.Auth.clientId().then(({ token }) => {
       const auth2 = gapi.auth2.init({
         client_id: token, // eslint-disable-line camelcase
