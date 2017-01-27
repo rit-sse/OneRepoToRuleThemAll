@@ -1,0 +1,16 @@
+@import 'variables';
+
+.navbar-sse {
+  background-color: $BLUE;
+
+  .nav-item .nav-link {
+    color: $WHITE;
+    font-size: 1.25em;
+    &:hover {
+      color: darken($WHITE, 33%);
+    }
+    &.active {
+      color: darken($WHITE, 33%);
+    }
+  }
+}

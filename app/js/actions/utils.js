@@ -9,7 +9,7 @@ export const createAction = nameSpace => (type, payload) => {
   };
 };
 
-export const createLoading = nameSpace => type => {
+export const createLoading = nameSpace => (type) => {
   return {
     type,
     meta: {

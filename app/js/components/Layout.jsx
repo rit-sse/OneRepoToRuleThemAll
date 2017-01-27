@@ -1,11 +1,12 @@
 import React from 'react';
-import Login from '../containers/Login';
+import 'scss/footer.scss';
+import SSENav from '../containers/SSENav';
 
 const Layout = props => (
   <div>
-    <h2>Layout</h2>
-    <Login className="meme" />
+    <SSENav />
     {props.children}
+    <footer className="sse-footer">All content is Copyright © 2017 Society of Software Engineers.</footer>
   </div>
 );
 

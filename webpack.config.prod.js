@@ -34,6 +34,7 @@ module.exports = {
       name: 'vendor',
       minChunks: Infinity,
     }),
+    new webpack.optimize.MinChunkSizePlugin({ minChunkSize: 8192 }),
     new HtmlWebpackPlugin({
       title: 'Society of Software Engineers',
       filename: '../index.html',

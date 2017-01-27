@@ -35,17 +35,14 @@ class Login extends React.Component {
 
   render() {
     const content = this.props.user ? (
-      <div id="profile-dropdown" title={<span><i className="fa fa-user" />&nbsp;{this.props.user.firstName}</span>}>
-        <button onClick={this.props.signOut}>SignOut</button>
-      </div>
-    ) : <p key="loggedin" ref={c => { this.button = c; }}><i className="fa fa-user" /> Login</p>;
+      <button className={this.props.className} onClick={this.props.signOut}><i className="fa fa-user" /> SignOut</button>
+    ) : <button className={this.props.className} key="loggedin" ref={(c) => { this.button = c; }}><i className="fa fa-user" /> Login</button>;
     return (
-      <div className={this.props.className}>
+      <div>
         {content}
       </div>
     );
   }
 }
-
 
 export default Login;

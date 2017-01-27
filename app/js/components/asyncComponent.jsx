@@ -11,7 +11,7 @@ export default (getComponent) => {
       if (!this.state.component) {
         getComponent()
           .then(component => component.default) // unwrap the default
-          .then(component => {
+          .then((component) => {
             AsyncComponent.component = component; // perm sets component on prototype
             this.setState({ component });
           });

@@ -15,7 +15,7 @@ export default function (state = [], action) {
         ...state,
       ];
     case UPDATE_EVENT:
-      return state.map(event => {
+      return state.map((event) => {
         if (action.payload.id !== event.id) return event;
         return action.payload;
       });

@@ -12,7 +12,7 @@ export function signIn(googleUser) {
     };
     return api.Auth.getToken('google', info.id, info.token)
       .then(() => Promise.all([api.Users.one(info.id), api.Officers.all({ active: new Date() }, true)]))
-      .then(data => {
+      .then((data) => {
         const [user, officers] = data;
         const officer = officers.find(o => o.userDce === user.dce);
         return dispatch(createAction(SIGN_IN, {
@@ -25,8 +25,8 @@ export function signIn(googleUser) {
 
 export function checkLogin() {
   return (dispatch, getState, api) => {
-    return api.Auth.checkToken().then(user => {
-      return api.Officers.all({ primary: true, active: new Date() }, true).then(data => {
+    return api.Auth.checkToken().then((user) => {
+      return api.Officers.all({ primary: true, active: new Date() }, true).then((data) => {
         const oIndex = data.map(o => o.userDce).indexOf(user.dce);
         if (oIndex !== -1) {
           return data[oIndex];
