@@ -20,7 +20,13 @@ export default (getComponent) => {
 
     render() {
       if (this.state.component) return <this.state.component {...this.props} />;
-      return null;
+      return (
+        <div className="row">
+          <div className="col-12">
+            <i className="fa fa-spinner fa-3x fa-spin" style={{ margin: '0 auto', display: 'block', width: '45px' }} />
+          </div>
+        </div>
+      );
     }
   };
 };

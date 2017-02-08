@@ -7,6 +7,9 @@ module.exports = {
   entry: {
     main: './app/js/app.jsx',
     vendor: [
+      'redux',
+      'react-redux',
+      'react-router',
       'react',
       'react-dom',
     ],
@@ -57,7 +60,6 @@ module.exports = {
     new ExtractTextPlugin({
       filename: '[chunkhash].bundle.css',
       allChunks: true,
-      sourceMap: false,
     }),
   ],
   module: {

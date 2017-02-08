@@ -1,5 +1,5 @@
 {
-  "presets": [ [ "es2015", {"modules": false} ], "stage-0", "react" ],
+  "presets": [ [ "es2015", {"loose": true, "modules": false}], "stage-0", "react" ],
   "env": {
     "development": {
       "plugins": [["react-transform", {
@@ -9,6 +9,16 @@
           "locals": ["module"]
         }]
       }]]
+    },
+    "production": {
+      "plugins": [
+        ["transform-imports", {
+          "reactstrap": {
+            "transform": "reactstrap/lib/${member}",
+            "preventFullImport": true
+          }
+        }]
+      ]
     }
   }
 }

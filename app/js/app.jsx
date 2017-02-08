@@ -1,15 +1,17 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { render } from 'react-dom';
-import { BrowserRouter, Match, Miss } from 'react-router';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+import 'scss/app.scss';
 
 import store from './store';
 import Layout from './components/Layout';
+import Home from './pages/Home';
 import asyncComponent from './components/asyncComponent';
 
 if (module.hot) module.hot.accept();
 
-const Home = asyncComponent(() => System.import('./pages/Home'));
 const Go = asyncComponent(() => System.import('./pages/Go'));
 const QDB = asyncComponent(() => System.import('./pages/QDB'));
 const Events = asyncComponent(() => System.import('./pages/Events'));
@@ -21,12 +23,14 @@ window.onload = () => {
       <Provider store={store}>
         <BrowserRouter>
           <Layout>
-            <Match exactly pattern="/" component={Home} />
-            <Match pattern="/go" component={Go} />
-            <Match pattern="/qdb" component={QDB} />
-            <Match pattern="/events" component={Events} />
-            <Match pattern="/scoreboard" component={Scoreboard} />
-            <Miss component={Home} />
+            <Switch>
+              <Route path="/" exact component={Home} />
+              <Route path="/go" component={Go} />
+              <Route path="/qdb" component={QDB} />
+              <Route path="/events" component={Events} />
+              <Route path="/scoreboard" component={Scoreboard} />
+              <Route component={Home} />
+            </Switch>
           </Layout>
         </BrowserRouter>
       </Provider>,

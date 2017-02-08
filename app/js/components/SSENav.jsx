@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
 import 'scss/nav.scss';
@@ -14,16 +14,16 @@ const SSENav = props => (
     <Collapse isOpen={props.opened} navbar>
       <Nav className="ml-auto" navbar>
         <NavItem>
-          <NavLink tag={Link} to="/events" activeClassName="active">Events</NavLink>
+          <NavLink tag={Link} to="/events">Events</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink tag={Link} to="/projects" activeClassName="active">Projects</NavLink>
+          <NavLink tag={Link} to="/projects">Projects</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink tag={Link} to="/mentoring" activeClassName="active">Mentoring</NavLink>
+          <NavLink tag={Link} to="/mentoring">Mentoring</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink tag={Link} to="/about" activeClassName="active">About</NavLink>
+          <NavLink tag={Link} to="/about">About</NavLink>
         </NavItem>
       </Nav>
     </Collapse>

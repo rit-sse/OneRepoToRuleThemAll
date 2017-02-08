@@ -6,6 +6,7 @@ export default store => next => action => { // eslint-disable-line
       type: LOADING_STATUS,
       payload: {
         type: action.type,
+        nameSpace: action.meta.nameSpace,
       },
     });
   } else if (action.error) {
@@ -13,6 +14,7 @@ export default store => next => action => { // eslint-disable-line
       type: ERROR_STATUS,
       error: true,
       payload: {
+        nameSpace: action.meta.nameSpace,
         message: action.payload.message,
         type: action.type,
       },

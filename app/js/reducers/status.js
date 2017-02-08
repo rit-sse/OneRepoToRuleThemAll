@@ -1,20 +1,20 @@
 import { LOADING_STATUS, ERROR_STATUS, CLOSE_STATUS } from '../actions/status';
 
 const initState = {
-  loading: [], // If empty no loading
+  loading: {}, // If empty no loading
   error: null, // Error message if there is an error else null
 };
 
 export default (state = initState, action) => {
   switch (action.type) {
     case LOADING_STATUS:
-      if (state.loading.includes(action.payload.type)) return state;
+      if (state.loading[action.payload.type]) return state;
       return {
         ...state,
-        loading: [
+        loading: {
           ...state.loading,
-          action.payload.type,
-        ],
+          [action.payload.type]: action.payload.nameSpace,
+        },
       };
     case ERROR_STATUS:
       return {
@@ -26,13 +26,15 @@ export default (state = initState, action) => {
         ...initState,
       };
     default:
-      if (state.loading.includes(action.type)) {
+      if (state.loading[action.type]) {
         return {
           ...state,
-          loading: [
-            ...state.loading.slice(0, state.loading.indexOf(action.type)),
-            ...state.loading.slice(state.loading.indexOf(action.type) + 1),
-          ],
+          loading: Object.keys(state.loading).filter(a => a !== action.type).reduce((prev, curr) => {
+            return {
+              ...prev,
+              [curr]: state.loading[curr],
+            };
+          }, {}),
         };
       }
       return state;

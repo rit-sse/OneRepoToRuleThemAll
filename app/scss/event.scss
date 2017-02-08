@@ -1,0 +1,24 @@
+@import 'variables';
+
+.event {
+  background-color: $WHITE;
+  border-left: 7.5px solid $BLUE;
+  padding: 10px;
+  padding-left: 15px;
+  transition: background-color 1s linear;
+  cursor: pointer;
+
+  &:hover, &:focus {
+    background-color: darken($WHITE, 10%);
+  }
+
+  .event-name {
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .event-time, .event-location, .event-text {
+    margin-top: 0;
+    margin-bottom: 2.5px;
+  }
+}
