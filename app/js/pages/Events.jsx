@@ -1,8 +1,9 @@
 import React from 'react';
 import 'scss/buttons.scss';
+import { EVENTS } from '../actions/events';
 import Login from '../containers/Login';
 import EventList from '../containers/EventList';
-import Status from '../components/Status';
+import Status from '../containers/Status';
 
 const Event = () => (
   <div className="container">
@@ -14,8 +15,9 @@ const Event = () => (
     </div>
     <div className="row">
       <div className="col-12">
-        <EventList />
-        <Status />
+        <Status type={EVENTS}>
+          <EventList />
+        </Status>
       </div>
     </div>
   </div>
