@@ -14,16 +14,16 @@ const SSENav = props => (
     <Collapse isOpen={props.opened} navbar>
       <Nav className="ml-auto" navbar>
         <NavItem>
+          <NavLink tag={Link} to="/go">Go</NavLink>
+        </NavItem>
+        <NavItem>
           <NavLink tag={Link} to="/events">Events</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink tag={Link} to="/projects">Projects</NavLink>
+          <NavLink tag={Link} to="/qbd">QDB</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink tag={Link} to="/mentoring">Mentoring</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink tag={Link} to="/about">About</NavLink>
+          <NavLink tag={Link} to="/scoreboard">Scoreboard</NavLink>
         </NavItem>
       </Nav>
     </Collapse>
