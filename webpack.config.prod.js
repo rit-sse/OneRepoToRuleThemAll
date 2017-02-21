@@ -43,6 +43,7 @@ module.exports = {
       filename: '../index.html',
       template: './app/index.ejs',
     }),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         screw_ie8: true,
