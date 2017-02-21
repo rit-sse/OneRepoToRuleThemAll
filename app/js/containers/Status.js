@@ -4,7 +4,7 @@ import Status from '../components/Status';
 
 function mapStateToProps(store, props) {
   return {
-    error: store.status.error,
+    error: store.status.error[props.type] ? store.status.error[props.type] : '',
     loading: Object.values(store.status.loading).includes(props.type),
   };
 }

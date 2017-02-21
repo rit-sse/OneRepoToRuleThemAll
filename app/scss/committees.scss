@@ -1,0 +1,21 @@
+@import 'variables';
+
+.committee {
+  float: left;
+  margin-right: 5px;
+  a {
+    color: $BLACK;
+    &:hover, &:focus {
+      color: $BLUE;
+      cursor: pointer;
+    }
+  }
+  &.active a {
+    font-weight: 600;
+    &:hover, &:focus {
+      color: $BLACK;
+      cursor: default;
+      text-decoration: none;
+    }
+  }
+}

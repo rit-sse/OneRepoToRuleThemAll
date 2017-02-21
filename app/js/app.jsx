@@ -9,6 +9,7 @@ import store from './store';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import asyncComponent from './components/asyncComponent';
+import { checkLogin } from './actions/auth';
 
 if (module.hot) module.hot.accept();
 
@@ -16,6 +17,8 @@ const Go = asyncComponent(() => System.import('./pages/Go'));
 const QDB = asyncComponent(() => System.import('./pages/QDB'));
 const Events = asyncComponent(() => System.import('./pages/Events'));
 const Scoreboard = asyncComponent(() => System.import('./pages/Scoreboard'));
+
+store.dispatch(checkLogin());
 
 window.onload = () => {
   gapi.load('auth2', () => {

@@ -6,18 +6,13 @@ import 'scss/event.scss';
 class Event extends Component {
   static propTypes = {
     name: React.PropTypes.string.isRequired,
-    endTime: React.PropTypes.string.isRequired,
+    loggedIn: React.PropTypes.bool.isRequired,
+    endDate: React.PropTypes.string.isRequired,
     location: React.PropTypes.string.isRequired,
-    startTime: React.PropTypes.string.isRequired,
+    startDate: React.PropTypes.string.isRequired,
     description: React.PropTypes.string.isRequired,
-  };
-
-  static defaultProps = {
-    name: 'Dank Memes',
-    endTime: '2017-02-01T21:00:00.000Z',
-    location: 'SSE Lab',
-    startTime: '2017-02-01T20:00:00.000Z',
-    description: 'Danker Memes',
+    editItem: React.PropTypes.func.isRequired,
+    deleteItem: React.PropTypes.func.isRequired,
   };
 
   constructor() {
@@ -29,8 +24,8 @@ class Event extends Component {
   getTime() {
     const date = 'dddd M/DD';
     const time = 'h:mm a';
-    const start = moment(this.props.startTime);
-    const end = moment(this.props.endTime);
+    const start = moment(this.props.startDate);
+    const end = moment(this.props.endDate);
 
     let dateString = start.format(`${date}, ${time}`);
 
@@ -45,9 +40,17 @@ class Event extends Component {
   render() {
     return (
       <div className="event">
-        <h4 className="event-name">{this.props.name}</h4>
+        <div className="heading">
+          <h4 className="event-name">{this.props.name}</h4>
+          { this.props.loggedIn ? (
+            <div className="actions">
+              <button className="btn btn-small btn-info" onClick={this.props.editItem}><i className="fa fa-pencil" aria-hidden="true" /> Edit</button>
+              <button className="btn btn-small btn-danger" onClick={this.props.deleteItem}><i className="fa fa-trash-o" aria-hidden="true" /> Delete</button>
+            </div>
+            ) : null }
+        </div>
         <p className="event-time">{this.getTime()}</p>
-        <p className="event-location">location: {this.props.location}</p>
+        <p className="event-location">Location: {this.props.location}</p>
         <p className="event-text">{this.props.description}</p>
       </div>
     );

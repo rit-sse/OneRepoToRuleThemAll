@@ -34,14 +34,9 @@ class Login extends React.Component {
   }
 
   render() {
-    const content = this.props.user ? (
+    return this.props.user ? (
       <button className={this.props.className} onClick={this.props.signOut}><i className="fa fa-user" /> SignOut</button>
     ) : <button className={this.props.className} key="loggedin" ref={(c) => { this.button = c; }}><i className="fa fa-user" /> Login</button>;
-    return (
-      <div>
-        {content}
-      </div>
-    );
   }
 }
 

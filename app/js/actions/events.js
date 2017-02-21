@@ -4,8 +4,24 @@ export const CREATE_EVENT = 'CREATE_EVENT';
 export const UPDATE_EVENT = 'UPDATE_EVENT';
 export const DESTROY_EVENT = 'DESTROY_EVENT';
 
+export const CLEAR_EVENT = 'CLEAR_EVENT';
+export const SELECT_EVENT = 'SELECT_EVENT';
+
 const createAction = require('./utils').createAction(EVENTS);
 const loading = require('./utils').createLoading(EVENTS);
+
+export function clearEvent() {
+  return {
+    type: CLEAR_EVENT,
+  };
+}
+
+export function selectEvent(event) {
+  return {
+    type: SELECT_EVENT,
+    payload: event,
+  };
+}
 
 export function getEvent() {
   return (dispatch, getState, api) => {
