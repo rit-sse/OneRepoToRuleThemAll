@@ -34,7 +34,7 @@ export function checkLogin() {
         return Promise.reject({ message: 'Need to be an primary officer to log in' });
       });
     })
-      .then(p => dispatch(createAction(SIGN_IN, p)))
+      .then(officer => dispatch(createAction(SIGN_IN, { officer })))
       .catch(() => dispatch(createAction(SIGN_OUT)));
   };
 }
