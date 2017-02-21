@@ -1,0 +1,8 @@
+version: '3.1'
+
+services:
+  web:
+    build: .
+    environment:
+      - 'SITE_ROOT=0.0.0.0:80'
+      - 'API_UPSTREAM=https://sse.rit.edu/api/'
