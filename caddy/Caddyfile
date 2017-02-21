@@ -1,0 +1,21 @@
+https://ssedev.site:8443 {
+    # For the GTV
+    tls tech@sse.rit.edu {
+        protocols tls1.0 tls1.2
+    }
+    
+    # Nice stuff
+    gzip
+    # API upstream
+    proxy /api {
+        upstream api:3000
+    }
+    
+    # Host the static
+    root ./dist
+    rewrite {
+        if {path} not_match \/api/.*
+        if {file} not_match (.*\.js|.*\.html|.*\.css)
+        to /index.html
+    }
+}
