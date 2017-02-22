@@ -1,4 +1,7 @@
 {%SITE_ROOT%} {
+    # logging
+    log stdout
+
     # For the GTV
     tls tech@sse.rit.edu {
         protocols tls1.0 tls1.2
@@ -6,6 +9,7 @@
 
     # Nice stuff
     gzip
+
     # API upstream
     proxy /api {
         upstream {%API_UPSTREAM%}

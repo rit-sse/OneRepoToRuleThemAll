@@ -5,4 +5,4 @@ services:
     build: .
     environment:
       - 'SITE_ROOT=0.0.0.0:80'
-      - 'API_UPSTREAM=https://sse.rit.edu/api/'
+      - 'API_UPSTREAM=https://sse.rit.edu/'
