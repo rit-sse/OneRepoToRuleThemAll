@@ -1,5 +1,6 @@
 import {
   GET_EVENTS,
+  GET_THREE_WEEK_EVENTS,
   CREATE_EVENT,
   UPDATE_EVENT,
   DESTROY_EVENT,
@@ -9,6 +10,7 @@ import { SHOW_EVENT_MODAL } from '../actions/modal';
 const initState = {
   all: [],
   selected: null,
+  threeWeek: [],
 };
 
 function all(state, action) {
@@ -32,6 +34,15 @@ function all(state, action) {
   }
 }
 
+function threeWeek(state, action) {
+  switch (action.type) {
+    case GET_THREE_WEEK_EVENTS:
+      return action.payload;
+    default:
+      return state;
+  }
+}
+
 function selected(state, action) {
   switch (action.type) {
     case SHOW_EVENT_MODAL:
@@ -45,5 +56,6 @@ export default function (state = initState, action) {
   return {
     all: all(state.all, action),
     selected: selected(state.selected, action),
+    threeWeek: threeWeek(state.threeWeek, action),
   };
 }
