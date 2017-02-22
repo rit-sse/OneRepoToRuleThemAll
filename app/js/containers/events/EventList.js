@@ -11,6 +11,8 @@ function filterEvents(events, filter) {
 
 function mapStateToProps(store, props) {
   return {
+    scroll: true,
+    scrollDone: store.events.pagination.totalPages === store.events.pagination.currentPage,
     item: Event,
     loggedIn: !!store.auth.user,
     items: filterEvents(store.events, props.match.params),
@@ -19,7 +21,7 @@ function mapStateToProps(store, props) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    getItems: () => dispatch(getEvents()),
+    getItems: getNext => dispatch(getEvents(getNext)),
     deleteItem: id => dispatch(destoryEvent(id)),
     editItem: id => dispatch(showEventModal(id)),
   };
