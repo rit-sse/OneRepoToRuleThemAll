@@ -2,9 +2,9 @@
 
 .btn-sse {
   color: $WHITE;
-  background-color: lighten($BLUE, 10%);
+  background-color: lighten($PRIMARY, 10%);
   &:hover, &:focus {
     cursor: pointer;
-    background-color: $BLUE;
+    background-color: $PRIMARY;
   }
 }

@@ -2,7 +2,7 @@
 
 .event {
   background-color: $WHITE;
-  border-left: 7.5px solid $BLUE;
+  border-left: 7.5px solid $PRIMARY;
   padding: 10px;
   padding-left: 15px;
   transition: background-color .25s ease-out;
@@ -47,7 +47,7 @@
   .event-time, .event-location, .event-text {
     float: left;
     width: 100%;
-    color: $GREY;
+    color: $DARK_GREY;
     font-size: 12px;
     margin-top: 0;
     margin-bottom: 2.5px;

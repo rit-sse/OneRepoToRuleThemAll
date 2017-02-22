@@ -1,8 +1,8 @@
 @import 'variables';
 
 .navbar-sse {
-  background-color: $BLUE;
-  border-bottom: 2.5px solid darken($BLUE, 15%);
+  background-color: $PRIMARY;
+  border-bottom: 2.5px solid darken($PRIMARY, 15%);
   margin-bottom: 15px;
 
   .nav-item .nav-link {
