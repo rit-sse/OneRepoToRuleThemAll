@@ -10,7 +10,7 @@ class List extends Component {
     deleteItem: React.PropTypes.func,
     scroll: React.PropTypes.bool,
     scrollDone: React.PropTypes.bool,
-    wrapper: React.PropTypes.string,
+    wrapper: React.PropTypes.string.isRequired,
   }
 
   static defaultProps = {
