@@ -5,6 +5,7 @@ import modal from './modal';
 import events from './events';
 import status from './status';
 import committees from './committees';
+import go from './go';
 
 const rootReducer = combineReducers({
   nav,
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
   events,
   status,
   committees,
+  go,
 });
 
 export default rootReducer;
