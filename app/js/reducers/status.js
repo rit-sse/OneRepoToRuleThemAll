@@ -1,13 +1,8 @@
 import { LOADING_STATUS, ERROR_STATUS, CLOSE_STATUS } from '../actions/status';
 
-/*
- * Note: the error system only allows for one error at a time
- * idk if that will ever be a problem
-*/
-
 const initState = {
   loading: {}, // If empty no loading
-  error: {}, // Error message if there is an error else null
+  error: null,
 };
 
 export default (state = initState, action) => {
@@ -24,9 +19,7 @@ export default (state = initState, action) => {
     case ERROR_STATUS:
       return {
         ...state,
-        error: {
-          [action.payload.nameSpace]: action.payload.message,
-        },
+        error: action.payload.message,
       };
     case CLOSE_STATUS:
       return {

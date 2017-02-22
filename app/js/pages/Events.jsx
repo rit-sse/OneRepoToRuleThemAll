@@ -23,16 +23,17 @@ const Event = () => (
     </div>
     <div className="row">
       <div className="col-12">
-        <Status type={COMMITTEES}>
-          Filter By: <CommitteesList />
-        </Status>
+        <Status type={[COMMITTEES, EVENTS]} />
       </div>
     </div>
     <div className="row">
       <div className="col-12">
-        <Status type={EVENTS}>
-          <Route path="/events/:committee?" component={EventList} />
-        </Status>
+        Filter By: <CommitteesList />
+      </div>
+    </div>
+    <div className="row">
+      <div className="col-12">
+        <Route path="/events/:committee?" component={EventList} />
       </div>
     </div>
     <EventModal />
