@@ -1,8 +1,10 @@
+import * as utils from 'utils';
+
 export const AUTH = 'AUTH';
 export const SIGN_IN = 'SIGN_IN';
 export const SIGN_OUT = 'SIGN_OUT';
 
-const createAction = require('./utils').createAction(AUTH);
+const createAction = utils.createAction(AUTH);
 
 export function signIn(googleUser) {
   return (dispatch, getState, api) => {

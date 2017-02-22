@@ -1,5 +1,7 @@
+import * as utils from './utils';
+
 export const EVENTS = 'EVENTS';
-export const GET_EVENT = 'GET_EVENT';
+export const GET_EVENTS = 'GET_EVENTS';
 export const CREATE_EVENT = 'CREATE_EVENT';
 export const UPDATE_EVENT = 'UPDATE_EVENT';
 export const DESTROY_EVENT = 'DESTROY_EVENT';
@@ -7,8 +9,8 @@ export const DESTROY_EVENT = 'DESTROY_EVENT';
 export const CLEAR_EVENT = 'CLEAR_EVENT';
 export const SELECT_EVENT = 'SELECT_EVENT';
 
-const createAction = require('./utils').createAction(EVENTS);
-const loading = require('./utils').createLoading(EVENTS);
+const createAction = utils.createAction(EVENTS);
+const loading = utils.createLoading(EVENTS);
 
 export function clearEvent() {
   return {
@@ -23,14 +25,14 @@ export function selectEvent(event) {
   };
 }
 
-export function getEvent() {
+export function getEvents() {
   return (dispatch, getState, api) => {
-    dispatch(loading(GET_EVENT));
+    dispatch(loading(GET_EVENTS));
     api.Events.all({
       after: new Date(),
       sort: 'ASC',
-    }).then(({ data }) => dispatch(createAction(GET_EVENT, data)))
-      .catch(err => dispatch(createAction(GET_EVENT, err)));
+    }).then(({ data }) => dispatch(createAction(GET_EVENTS, data)))
+      .catch(err => dispatch(createAction(GET_EVENTS, err)));
   };
 }
 

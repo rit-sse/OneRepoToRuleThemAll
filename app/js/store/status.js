@@ -1,12 +1,12 @@
 import { LOADING_STATUS, ERROR_STATUS } from '../actions/status';
 
-export default store => next => action => { // eslint-disable-line
+export default () => next => (action) => {
   if (action.meta && action.meta.loading) {
     return next({
       type: LOADING_STATUS,
       payload: {
         type: action.type,
-        nameSpace: action.meta.nameSpace,
+        namespace: action.meta.namespace,
       },
     });
   } else if (action.error) {
@@ -14,7 +14,7 @@ export default store => next => action => { // eslint-disable-line
       type: ERROR_STATUS,
       error: true,
       payload: {
-        nameSpace: action.meta.nameSpace,
+        namespace: action.meta.namespace,
         message: action.payload.message,
         type: action.type,
       },

@@ -1,3 +1,5 @@
+import * as utils from './utils';
+
 export const COMMITTEES = 'COMMITTEES';
 export const GET_COMMITTEES = 'GET_COMMITTEES';
 export const CREATE_COMMITTEE = 'CREATE_COMMITTEE';
@@ -5,8 +7,8 @@ export const UPDATE_COMMITTEE = 'UPDATE_COMMITTEE';
 export const DESTROY_COMMITTEE = 'DESTROY_COMMITTEE';
 
 
-const createAction = require('./utils').createAction(COMMITTEES);
-const loading = require('./utils').createLoading(COMMITTEES);
+const createAction = utils.createAction(COMMITTEES);
+const loading = utils.createLoading(COMMITTEES);
 
 export function getCommittees() {
   return (dispatch, getState, api) => {

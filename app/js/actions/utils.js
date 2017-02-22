@@ -1,19 +1,19 @@
-export const createAction = nameSpace => (type, payload) => {
+export const createAction = namespace => (type, payload) => {
   return {
     type,
     payload,
     error: (payload instanceof Error),
     meta: {
-      nameSpace,
+      namespace,
     },
   };
 };
 
-export const createLoading = nameSpace => (type) => {
+export const createLoading = namespace => (type) => {
   return {
     type,
     meta: {
-      nameSpace,
+      namespace,
       loading: true,
     },
   };

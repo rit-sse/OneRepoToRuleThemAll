@@ -13,6 +13,10 @@
     "validate",
     "lint"
   ],
+  "contributors": [{
+    "name": "Kristen Mills",
+    "email": "kristen@kristen-mills.com"
+  }],
   "author": "Dylan Vuz",
   "license": "MIT",
   "dependencies": {
