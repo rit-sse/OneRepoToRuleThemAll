@@ -10,6 +10,7 @@ class List extends Component {
     deleteItem: React.PropTypes.func,
     scroll: React.PropTypes.bool,
     scrollDone: React.PropTypes.bool,
+    wrapper: React.PropTypes.string,
   }
 
   static defaultProps = {
@@ -18,6 +19,7 @@ class List extends Component {
     loggedIn: false,
     editItem: function editItem() {},
     deleteItem: function deleteItem() {},
+    wrapper: 'div'
   }
 
   constructor() {
@@ -60,11 +62,7 @@ class List extends Component {
   }
 
   render() {
-    return (
-      <div>
-        {this.renderItems()}
-      </div>
-    );
+    return React.createElement(this.props.wrapper, {}, this.renderItems());
   }
 
 }

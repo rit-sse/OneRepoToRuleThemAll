@@ -11,6 +11,11 @@ services:
       - 'API_UPSTREAM=https://sse.rit.edu/'
     volumes:
       - caddycache:/root/.caddy
+    deploy:
+     replicas: 2
+     update_config:
+       parallelism: 1
+       delay: 10s
 
 volumes:
   caddycache:
