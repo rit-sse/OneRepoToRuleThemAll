@@ -1,5 +1,5 @@
 export const COMMITTEES = 'COMMITTEES';
-export const GET_COMMITTEES = 'COMMITTEES';
+export const GET_COMMITTEES = 'GET_COMMITTEES';
 export const CREATE_COMMITTEE = 'CREATE_COMMITTEE';
 export const UPDATE_COMMITTEE = 'UPDATE_COMMITTEE';
 export const DESTROY_COMMITTEE = 'DESTROY_COMMITTEE';
@@ -11,7 +11,7 @@ const loading = require('./utils').createLoading(COMMITTEES);
 export function getCommittees() {
   return (dispatch, getState, api) => {
     dispatch(loading(GET_COMMITTEES));
-    api.Committees.all()
+    api.Committees.all({ active: new Date() }, true)
       .then(({ data }) => dispatch(createAction(GET_COMMITTEES, data)))
       .catch(err => dispatch(createAction(GET_COMMITTEES, err)));
   };
