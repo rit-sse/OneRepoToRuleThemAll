@@ -16,7 +16,7 @@ export function signIn(googleUser) {
       .then(() => Promise.all([api.Users.one(info.id), api.Officers.all({ active: new Date() }, true)]))
       .then((data) => {
         const [user, officers] = data;
-        const officer = officers.find(o => o.userDce === user.dce);
+        const officer = officers.data.find(o => o.userDce === user.dce);
         return dispatch(createAction(SIGN_IN, {
           officer,
         }));
@@ -28,7 +28,7 @@ export function signIn(googleUser) {
 export function checkLogin() {
   return (dispatch, getState, api) => {
     return api.Auth.checkToken().then((user) => {
-      return api.Officers.all({ primary: true, active: new Date() }, true).then((data) => {
+      return api.Officers.all({ primary: true, active: new Date() }, true).then(({ data }) => {
         const oIndex = data.map(o => o.userDce).indexOf(user.dce);
         if (oIndex !== -1) {
           return data[oIndex];

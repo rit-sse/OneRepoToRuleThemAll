@@ -3,6 +3,7 @@ import * as utils from './utils';
 
 export const EVENTS = 'EVENTS';
 export const GET_EVENTS = 'GET_EVENTS';
+export const GET_EVENT_PAGE = 'GET_EVENT_PAGE';
 export const CREATE_EVENT = 'CREATE_EVENT';
 export const UPDATE_EVENT = 'UPDATE_EVENT';
 export const DESTROY_EVENT = 'DESTROY_EVENT';
@@ -28,14 +29,24 @@ export function selectEvent(event) {
   };
 }
 
-export function getEvents() {
+export function getEvents(getNext) {
   return (dispatch, getState, api) => {
-    dispatch(loading(GET_EVENTS));
-    api.Events.all({
-      after: new Date(),
-      sort: 'ASC',
-    }).then(({ data }) => dispatch(createAction(GET_EVENTS, data)))
-      .catch(err => dispatch(createAction(GET_EVENTS, err)));
+    if (getNext) {
+      const page = getState().events.pagination.currentPage + 1;
+      api.Events.all({
+        after: new Date(),
+        sort: 'ASC',
+        page,
+      }).then(data => dispatch(createAction(GET_EVENT_PAGE, data)))
+        .catch(err => dispatch(createAction(GET_EVENT_PAGE, err)));
+    } else {
+      dispatch(loading(GET_EVENTS));
+      api.Events.all({
+        after: new Date(),
+        sort: 'ASC',
+      }).then(data => dispatch(createAction(GET_EVENTS, data)))
+        .catch(err => dispatch(createAction(GET_EVENTS, err)));
+    }
   };
 }
 

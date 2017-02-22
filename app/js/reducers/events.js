@@ -1,5 +1,6 @@
 import {
   GET_EVENTS,
+  GET_EVENT_PAGE,
   GET_THREE_WEEK_EVENTS,
   CREATE_EVENT,
   UPDATE_EVENT,
@@ -9,6 +10,10 @@ import { SHOW_EVENT_MODAL } from '../actions/modal';
 
 const initState = {
   all: [],
+  pagination: {
+    currentPage: 0,
+    totalPages: 1,
+  },
   selected: null,
   threeWeek: [],
 };
@@ -16,7 +21,12 @@ const initState = {
 function all(state, action) {
   switch (action.type) {
     case GET_EVENTS:
-      return action.payload;
+      return action.payload.data;
+    case GET_EVENT_PAGE:
+      return [
+        ...state,
+        ...action.payload.data,
+      ];
     case CREATE_EVENT:
       return [
         action.payload,
@@ -43,6 +53,25 @@ function threeWeek(state, action) {
   }
 }
 
+function pagination(state, action) {
+  switch (action.type) {
+    case GET_EVENTS:
+      return {
+        ...state,
+        currentPage: action.payload.currentPage,
+        totalPages: Math.ceil(action.payload.total / action.payload.perPage),
+      };
+    case GET_EVENT_PAGE:
+      return {
+        ...state,
+        currentPage: action.payload.currentPage,
+        totalPages: Math.ceil(action.payload.total / action.payload.perPage),
+      };
+    default:
+      return state;
+  }
+}
+
 function selected(state, action) {
   switch (action.type) {
     case SHOW_EVENT_MODAL:
@@ -57,5 +86,6 @@ export default function (state = initState, action) {
     all: all(state.all, action),
     selected: selected(state.selected, action),
     threeWeek: threeWeek(state.threeWeek, action),
+    pagination: pagination(state.pagination, action),
   };
 }
