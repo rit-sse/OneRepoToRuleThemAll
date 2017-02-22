@@ -1,5 +1,7 @@
 import React from 'react';
 import GoLinksList from 'containers/go/GoLinksList';
+import Status from 'containers/general/Status';
+import { GO } from 'actions/go';
 import 'scss/go.scss';
 
 const style = {
@@ -23,12 +25,13 @@ const Go = () => (
         <table className="go-table go-table-striped">
           <thead>
             <tr>
-              <th style={style.name}>Shortname</th>
+              <th style={style.name}>ShortName</th>
               <th style={style.link}>Link</th>
             </tr>
           </thead>
           <GoLinksList />
         </table>
+        <Status type={[GO]} />
       </div>
     </div>
   </div>

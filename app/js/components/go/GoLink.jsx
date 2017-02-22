@@ -17,7 +17,9 @@ class GoLink extends Component {
     return (<tr key={this.props.shortLink}>
       <td>{this.props.shortLink}</td>
       <td>
-        <a href={this.props.longLink} target='_blank'>{this.props.longLink}</a></td>
+        <a href={this.props.longLink} target='_blank'>{this.props.longLink}</a>
+      </td>
+      <td>Test Extra</td>
     </tr>);
   }
 }
