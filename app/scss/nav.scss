@@ -20,3 +20,10 @@
     margin-top: 11.5px;
   }
 }
+
+@media (min-width: 767px) {
+  .navbar-sse {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+}
