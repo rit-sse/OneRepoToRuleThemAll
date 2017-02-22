@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import Button from '../components/Button';
-import { showEventModal } from '../actions/modal';
+import Button from 'components/general/Button';
+import { showEventModal } from 'actions/modal';
 
 function mapStateToProps(store) {
   return {

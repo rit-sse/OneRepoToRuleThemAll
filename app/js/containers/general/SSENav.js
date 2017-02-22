@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { toggleNav } from '../actions/nav';
-import SSENav from '../components/SSENav';
+import { toggleNav } from 'actions/nav';
+import SSENav from 'components/general/SSENav';
 
 function mapStateToProps(store) {
   return {

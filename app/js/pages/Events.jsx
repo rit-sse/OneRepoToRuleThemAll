@@ -1,14 +1,14 @@
 import React from 'react';
 import 'scss/buttons.scss';
 import { Route } from 'react-router-dom';
-import { EVENTS } from '../actions/events';
-import { COMMITTEES } from '../actions/committees';
-import Login from '../containers/Login';
-import EventList from '../containers/EventList';
-import CommitteesList from '../containers/CommitteesList';
-import Status from '../containers/Status';
-import EventModal from '../containers/EventModal';
-import CreateEventButton from '../containers/CreateEventButton';
+import { EVENTS } from 'actions/events';
+import Login from 'containers/general/Login';
+import Status from 'containers/general/Status';
+import { COMMITTEES } from 'actions/committees';
+import EventList from 'containers/events/EventList';
+import EventModal from 'containers/events/EventModal';
+import CommitteesList from 'containers/events/CommitteesList';
+import CreateEventButton from 'containers/events/CreateEventButton';
 
 const Event = () => (
   <div className="container">

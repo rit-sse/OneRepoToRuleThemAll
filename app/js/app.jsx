@@ -3,20 +3,21 @@ import { Provider } from 'react-redux';
 import { render } from 'react-dom';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
+import store from 'store';
+import Home from 'pages/Home';
+import { checkLogin } from 'actions/auth';
+import Layout from 'components/general/Layout';
+import asyncComponent from 'components/general/AsyncComponent';
+
 import 'scss/app.scss';
 
-import store from './store';
-import Layout from './components/Layout';
-import Home from './pages/Home';
-import asyncComponent from './components/asyncComponent';
-import { checkLogin } from './actions/auth';
 
 if (module.hot) module.hot.accept();
 
-const Go = asyncComponent(() => System.import('./pages/Go'));
-const QDB = asyncComponent(() => System.import('./pages/QDB'));
-const Events = asyncComponent(() => System.import('./pages/Events'));
-const Scoreboard = asyncComponent(() => System.import('./pages/Scoreboard'));
+const Go = asyncComponent(() => System.import('pages/Go'));
+const QDB = asyncComponent(() => System.import('pages/QDB'));
+const Events = asyncComponent(() => System.import('pages/Events'));
+const Scoreboard = asyncComponent(() => System.import('pages/Scoreboard'));
 
 store.dispatch(checkLogin());
 

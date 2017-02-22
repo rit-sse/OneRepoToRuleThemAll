@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
-
-import List from '../components/List';
-import Committee from '../components/Committee';
-import { getCommittees } from '../actions/committees';
+import List from 'components/general/List';
+import Committee from 'components/events/Committee';
+import { getCommittees } from 'actions/committees';
 
 function mapStateToProps(store) {
   return {

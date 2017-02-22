@@ -1,6 +1,7 @@
 import React from 'react';
+import SSENav from 'containers/general/SSENav';
+
 import 'scss/footer.scss';
-import SSENav from '../containers/SSENav';
 
 const Layout = props => (
   <div>
