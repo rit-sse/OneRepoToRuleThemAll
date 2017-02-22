@@ -1,16 +1,16 @@
-https://ssedev.site:8443 {
+{%SITE_ROOT%} {
     # For the GTV
     tls tech@sse.rit.edu {
         protocols tls1.0 tls1.2
     }
-    
+
     # Nice stuff
     gzip
     # API upstream
     proxy /api {
-        upstream api:3000
+        upstream {%API_UPSTREAM%}
     }
-    
+
     # Host the static
     root ./dist
     rewrite {

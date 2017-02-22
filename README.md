@@ -15,3 +15,9 @@
 * build dist `npm run build`
 * run lint `npm run lint`
 
+## Dockering
+Docker compose will run locally with the overrides file to make things happy, the compose file by it's self *will* eventually run the prod swarm deploy.
+
+```
+docker-compose up
+```

@@ -1,0 +1,11 @@
+version: '3.1'
+
+services:
+  web:
+    image: ritsse/onerepo
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      - 'SITE_ROOT=https://ssedev.se.rit.edu'
+      - 'API_UPSTREAM=api:3000'
