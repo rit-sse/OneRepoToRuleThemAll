@@ -1,4 +1,4 @@
-import * as utils from 'utils';
+import * as utils from './utils';
 
 export const AUTH = 'AUTH';
 export const SIGN_IN = 'SIGN_IN';
