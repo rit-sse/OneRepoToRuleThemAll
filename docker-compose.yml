@@ -8,4 +8,9 @@ services:
       - 443:443
     environment:
       - 'SITE_ROOT=https://ssedev.se.rit.edu'
-      - 'API_UPSTREAM=api:3000'
+      - 'API_UPSTREAM=https://sse.rit.edu/'
+    volumes:
+      - caddycache:/root/.caddy
+
+volumes:
+  caddycache:
