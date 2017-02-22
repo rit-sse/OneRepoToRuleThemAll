@@ -50,15 +50,18 @@ class List extends Component {
   }
 
   renderItems() {
-    return this.props.items.map(item => (
-      <this.props.item
-        {...item}
-        key={item.id ? item.id : item.name}
-        loggedIn={this.props.loggedIn}
-        editItem={this.props.editItem.bind(null, item.id)}
-        deleteItem={this.props.deleteItem.bind(null, item.id)}
-      />
-    ));
+    return this.props.items.map(item => {
+      const key = [item.id, item.name, item.shortLink].filter(i => i);
+      return (
+        <this.props.item
+          key={key[0]}
+          {...item}
+          loggedIn={this.props.loggedIn}
+          editItem={this.props.editItem.bind(null, item.id)}
+          deleteItem={this.props.deleteItem.bind(null, item.id)}
+        />
+      );
+    })
   }
 
   render() {
