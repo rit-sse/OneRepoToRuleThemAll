@@ -1,7 +1,7 @@
-import React from 'react';
-import API from '../api';
+import React, { Component } from 'react';
+import API from 'api';
 
-class Login extends React.Component {
+class Login extends Component {
   static propTypes = {
     user: React.PropTypes.object, // eslint-disable-line
     signIn: React.PropTypes.func.isRequired,

@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
-
-import List from '../components/List';
-import Event from '../components/Event';
-import { showEventModal } from '../actions/modal';
-import { getEvent, destoryEvent } from '../actions/events';
+import List from 'components/general/List';
+import Event from 'components/events/Event';
+import { showEventModal } from 'actions/modal';
+import { getEvent, destoryEvent } from 'actions/events';
 
 function filterEvents(events, filter) {
   if (filter.committee) return events.all.filter(event => event.committeeName === filter.committee.replace(/%20/g, ' '));

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import EventModal from '../components/EventModal';
-import { hideModal, EVENT_MODAL } from '../actions/modal';
-import { createEvent, updateEvent } from '../actions/events';
+import EventModal from 'components/events/EventModal';
+import { hideModal, EVENT_MODAL } from 'actions/modal';
+import { createEvent, updateEvent } from 'actions/events';
 
 function mapStateToProps(store) {
   return {

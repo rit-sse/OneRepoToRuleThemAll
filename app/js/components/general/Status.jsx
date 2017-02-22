@@ -17,14 +17,12 @@ const Status = props => (
         <i className="fa fa-spinner fa-3x fa-spin" style={{ margin: '0 auto', display: 'block', width: '45px' }} />;
       }
     }}
-    {props.children}
   </div>
 );
 
 Status.propTypes = {
-  error: React.PropTypes.string.isRequired,
-  children: React.PropTypes.node.isRequired,
   close: React.PropTypes.func.isRequired,
+  error: React.PropTypes.string.isRequired,
   loading: React.PropTypes.bool.isRequired,
 };
 
