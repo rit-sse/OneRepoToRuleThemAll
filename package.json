@@ -30,6 +30,7 @@
   "author": "Society of Software Engineers",
   "license": "MIT",
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "classnames": "^2.2.5",
     "express": "^4.14.0",
     "moment": "^2.17.1",

@@ -10,6 +10,7 @@ import ThreeWeek from 'containers/gtv/ThreeWeek';
 import { getEvents, getThreeWeekEvents } from 'actions/events';
 
 import 'scss/gtv.scss';
+import 'babel-polyfill';
 
 function mapStateToProps() {
   return {};
