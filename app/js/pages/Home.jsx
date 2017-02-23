@@ -1,8 +1,7 @@
 import React from 'react';
-import Layout from 'components/general/Layout';
 
-const PageHome = () => {
-  return <Layout><div>Hello World</div></Layout>;
-};
+const PageHome = () => (
+  <div>Hello World</div>
+);
 
 export default PageHome;

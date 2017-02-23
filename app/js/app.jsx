@@ -7,6 +7,7 @@ import store from 'store';
 import Home from 'pages/Home';
 import { checkLogin } from 'actions/auth';
 import asyncComponent from 'components/general/AsyncComponent';
+import Layout from 'components/general/Layout';
 
 import 'scss/app.scss';
 
@@ -27,13 +28,17 @@ window.onload = () => {
       <Provider store={store}>
         <BrowserRouter>
           <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/go" component={Go} />
-            <Route path="/qdb" component={QDB} />
-            <Route path="/events" component={Events} />
-            <Route path="/scoreboard" component={Scoreboard} />
             <Route path="/trash" component={GTV} />
-            <Route component={Home} />
+            <Layout>
+              <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/go" component={Go} />
+                <Route path="/qdb" component={QDB} />
+                <Route path="/events" component={Events} />
+                <Route path="/scoreboard" component={Scoreboard} />
+                <Route component={Home} />
+              </Switch>
+            </Layout>
           </Switch>
         </BrowserRouter>
       </Provider>,
