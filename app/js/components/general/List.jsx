@@ -11,6 +11,7 @@ class List extends Component {
     scroll: React.PropTypes.bool,
     scrollDone: React.PropTypes.bool,
     wrapper: React.PropTypes.string.isRequired,
+    keyPriority: React.PropTypes.arrayOf(React.PropTypes.string),
   }
 
   static defaultProps = {
@@ -20,6 +21,7 @@ class List extends Component {
     editItem: function editItem() {},
     deleteItem: function deleteItem() {},
     wrapper: 'div',
+    keyPriority: ['id', 'name'],
   }
 
   constructor() {
@@ -51,10 +53,10 @@ class List extends Component {
 
   renderItems() {
     return this.props.items.map((item) => {
-      const key = [item.id, item.name, item.shortLink].filter(i => i);
+      const key = this.props.keyPriority.filter(i => !!item[i]);
       return (
         <this.props.item
-          key={key[0]}
+          key={item[key[0]]}
           {...item}
           loggedIn={this.props.loggedIn}
           editItem={this.props.editItem.bind(null, item.id)}

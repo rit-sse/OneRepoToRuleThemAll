@@ -10,6 +10,7 @@ function mapStateToProps(store) {
     item: GoLink,
     wrapper: 'tbody',
     items: store.go.links,
+    keyPriority: ['shortLink'],
   };
 }
 
