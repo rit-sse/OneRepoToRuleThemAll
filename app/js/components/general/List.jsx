@@ -46,7 +46,7 @@ class List extends Component {
   }
 
   checkScroll() {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    if (((window.innerHeight + window.scrollY) + 25) >= document.body.offsetHeight) {
       this.props.getItems(true); // Make this get the next pagination
     }
   }
