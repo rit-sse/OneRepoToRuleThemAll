@@ -29,16 +29,21 @@ class List extends Component {
 
     this.checkScroll = this.checkScroll.bind(this);
     this.renderItems = this.renderItems.bind(this);
+    this.checkHeight = this.checkHeight.bind(this);
   }
 
   componentDidMount() {
     this.props.getItems();
-    if (this.props.scroll && !this.props.scrollDone) window.addEventListener('scroll', this.checkScroll);
+    if (this.props.scroll && !this.props.scrollDone) {
+      window.addEventListener('scroll', this.checkScroll);
+      this.checkHeight();
+    }
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.scrollDone) window.removeEventListener('scroll', this.checkScroll);
     if (prevProps.scrollDone && !this.props.scrollDone) window.addEventListener('scroll', this.checkScroll);
+    if (!this.props.scrollDone) this.checkHeight();
   }
 
   componentWillUnMount() {
@@ -49,6 +54,14 @@ class List extends Component {
     if (((window.innerHeight + window.scrollY) + 25) >= document.body.offsetHeight) {
       this.props.getItems(true); // Make this get the next pagination
     }
+  }
+
+  checkHeight() {
+    setTimeout(() => {
+      if ((document.body.clientHeight < document.body.scrollHeight) && !this.props.scrollDone) {
+        this.props.getItems(true);
+      }
+    }, 100);
   }
 
   renderItems() {
