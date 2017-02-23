@@ -1,16 +1,13 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { TorqueSlides, TorqueSlide } from 'torque-react';
-
 import ColorView from 'components/gtv/ColorView';
 import EventPanels from 'containers/gtv/EventPanels';
 import EventHighlight from 'containers/gtv/EventHighlight';
 import ThreeWeek from 'containers/gtv/ThreeWeek';
-
 import { getEvents, getThreeWeekEvents } from 'actions/events';
 
 import 'scss/gtv.scss';
-import 'babel-polyfill';
 
 function mapStateToProps() {
   return {};
