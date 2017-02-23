@@ -1,10 +1,16 @@
 @import 'variables';
 
+/* Consider removing this next declaration block, as it causes problems when
+there's a rowspan on the first cell. Case added to the tests. issue#432 */
+.go-table td:first-child,
+.go-table th:first-child {
+    border-left-width: 0;
+}
+
 .go-table {
     border-collapse: collapse;
     border-spacing: 0;
     empty-cells: show;
-    border: 1px solid #cbcbcb;
     table-layout: fixed;
     width: 100%;
 }
@@ -18,7 +24,7 @@
 
 .go-table td,
 .go-table th {
-    border-left: 1px solid #cbcbcb;
+    border-right: 1px solid #cbcbcb;
     border-width: 0 0 0 1px;
     font-size: inherit;
     margin: 0;
@@ -26,6 +32,11 @@
     padding: 0.5em 1em;
     white-space: nowrap;
     text-overflow: ellipsis;
+    box-sizing: border-box;
+}
+
+.go-table td {
+    line-height: 1;
 }
 
 .go-table thead {
@@ -33,6 +44,7 @@
     color: #000;
     text-align: left;
     vertical-align: bottom;
+    border-right: 1px solid #cbcbcb;
 }
 
 .go-table-striped tr:nth-child(2n-1) td {

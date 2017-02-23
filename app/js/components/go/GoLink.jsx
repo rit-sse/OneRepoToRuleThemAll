@@ -11,7 +11,9 @@ class GoLink extends Component {
 
   render() {
     return (<tr key={this.props.shortLink}>
-      <td>{this.props.shortLink}</td>
+      <td>
+        <a href={'/go/' + this.props.shortLink}>{this.props.shortLink}</a>
+      </td>
       <td>
         <a href={this.props.longLink} target="_blank" rel="noopener noreferrer">{this.props.longLink}</a>
       </td>
