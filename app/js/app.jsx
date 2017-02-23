@@ -1,24 +1,22 @@
 import React from 'react';
-import { Provider } from 'react-redux';
+import store from 'store';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { checkLogin } from 'actions/auth';
+import Layout from 'components/general/Layout';
+import asyncComponent from 'components/general/AsyncComponent';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import store from 'store';
-import Home from 'pages/Home';
-import { checkLogin } from 'actions/auth';
-import asyncComponent from 'components/general/AsyncComponent';
-import Layout from 'components/general/Layout';
-
 import 'scss/app.scss';
-
 
 if (module.hot) module.hot.accept();
 
 const Go = asyncComponent(() => System.import('pages/Go'));
 const QDB = asyncComponent(() => System.import('pages/QDB'));
+const GTV = asyncComponent(() => System.import('pages/GTV'));
+const Home = asyncComponent(() => System.import('pages/Home'));
 const Events = asyncComponent(() => System.import('pages/Events'));
 const Scoreboard = asyncComponent(() => System.import('pages/Scoreboard'));
-const GTV = asyncComponent(() => System.import('pages/GTV'));
 
 store.dispatch(checkLogin());
 
