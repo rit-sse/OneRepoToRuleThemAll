@@ -23,9 +23,9 @@ export function getLinks(getNext = true) { // eslint-disable-line no-unused-vars
       sort: 'DESC',
       page: getState().go.page,
     })
-    .then(links => {
-      dispatch(createAction(SET_PAGE_COUNT, Math.ceil(links.total / links.perPage)))
-      dispatch(createAction(GET_LINKS_PAGES, links.data))
+    .then((links) => {
+      dispatch(createAction(SET_PAGE_COUNT, Math.ceil(links.total / links.perPage)));
+      dispatch(createAction(GET_LINKS_PAGES, links.data));
     })
     .catch(err => dispatch(createAction(GET_LINKS, err)));
   };

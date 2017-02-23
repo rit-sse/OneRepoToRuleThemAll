@@ -1,6 +1,6 @@
-import { 
-  GET_LINKS, 
-  GET_LINKS_PAGES, 
+import {
+  GET_LINKS,
+  GET_LINKS_PAGES,
   SET_PAGE_COUNT,
   SET_PAGE,
 } from '../actions/go';
@@ -32,8 +32,8 @@ export default function go(state = initState, action) {
     case GET_LINKS:
       return {
         ...initState,
-        links: action.payload
-      }
+        links: action.payload,
+      };
     default:
       return state;
   }
