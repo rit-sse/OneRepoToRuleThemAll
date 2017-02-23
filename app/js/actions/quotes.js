@@ -9,7 +9,7 @@ export const UPDATE_QUOTE = 'UPDATE_QUOTE';
 export const DESTROY_QUOTE = 'DESTROY_QUOTE';
 
 const createAction = utils.createAction(QUOTES);
-const loading = utils.createLoading(QUOTES);
+// const loading = utils.createLoading(QUOTES);
 
 export function getQuotes(getNext, tag, search, approved = true) {
   return (dispatch, getState, api) => {
