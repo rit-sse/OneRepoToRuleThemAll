@@ -5,15 +5,18 @@ import { getLinks } from 'actions/go';
 
 function mapStateToProps(store) {
   return {
+    scroll: true,
+    scrollDone: store.go.totalPages === store.go.page,
     item: GoLink,
     wrapper: 'tbody',
     items: store.go.links,
+    keyPriority: ['shortLink'],
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    getItems: () => dispatch(getLinks()),
+    getItems: getNext => dispatch(getLinks(getNext)),
     deleteItem: () => {},
     editItem: () => {},
   };
