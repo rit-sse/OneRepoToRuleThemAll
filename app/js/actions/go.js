@@ -14,7 +14,7 @@ export function getLinks(getNext = true) {
     return (dispatch, getState, api) => {
         dispatch(loading(GET_LINKS));
         if (!getNext) {
-            
+
         }
         const data = [];
         api.Links.all({

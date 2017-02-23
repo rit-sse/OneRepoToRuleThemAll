@@ -10,6 +10,7 @@ export const DESTROY_EVENT = 'DESTROY_EVENT';
 
 export const CLEAR_EVENT = 'CLEAR_EVENT';
 export const SELECT_EVENT = 'SELECT_EVENT';
+export const NEXT_EVENT = 'NEXT_EVENT';
 
 export const GET_THREE_WEEK_EVENTS = 'GET_THREE_WEEK_EVENTS';
 
@@ -26,6 +27,12 @@ export function selectEvent(event) {
   return {
     type: SELECT_EVENT,
     payload: event,
+  };
+}
+
+export function nextEvent() {
+  return {
+    type: NEXT_EVENT,
   };
 }
 
@@ -84,7 +91,7 @@ export function getThreeWeekEvents() {
   return (dispatch, getState, api) => {
     dispatch(loading(GET_THREE_WEEK_EVENTS));
     api.Events.all(query, true)
-      .then(({ data }) => dispatch(createAction(GET_THREE_WEEK_EVENTS, data)))
+      .then(data => dispatch(createAction(GET_THREE_WEEK_EVENTS, data)))
       .catch(err => dispatch(createAction(GET_THREE_WEEK_EVENTS, err)));
   };
 }

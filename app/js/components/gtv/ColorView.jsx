@@ -1,14 +1,16 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
-const ColorView = (props) => {
-  const style = {
-    backgroundColor: props.color,
+class ColorView extends Component { // eslint-disable-line react/prefer-stateless-function
+  static propTypes = {
+    color: PropTypes.string.isRequired,
   };
-  return <section className="container" style={style} />;
-};
 
-ColorView.propTypes = {
-  color: PropTypes.string.isRequired,
-};
+  render() {
+    const style = {
+      backgroundColor: this.props.color,
+    };
+    return <section className="gtv-container" style={style} />;
+  }
+}
 
 export default ColorView;

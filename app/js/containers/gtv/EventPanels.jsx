@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 
 import EventPanels from 'components/gtv/EventPanels';
-import { getEvents } from 'actions/events';
 
 function sliceEvents(events) {
   return [
@@ -17,10 +16,4 @@ function mapStateToProps(store) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    getEvents: () => dispatch(getEvents()),
-  };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(EventPanels);
+export default connect(mapStateToProps)(EventPanels);

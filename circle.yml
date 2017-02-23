@@ -1,0 +1,18 @@
+machine:
+  services:
+    - docker
+
+test:
+  pre:
+    - docker login -u $DOCKER_USER -p $DOCKER_PASS -e tech@sse.rit.edu
+    - docker build -t ritsse/onerepo:$CIRCLE_BRANCH .
+  override:
+    - docker run -it ritsse/onerepo:$CIRCLE_BRANCH npm run lint
+
+deployment:
+  master:
+    branch: master
+    owner: rit-sse
+    commands:
+      - docker tag ritsse/onerepo:$CIRCLE_BRANCH ritsse/onerepo
+      - docker push ritsse/onerepo

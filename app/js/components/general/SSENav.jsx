@@ -20,10 +20,13 @@ const SSENav = props => (
           <NavLink tag={Link} to="/events">Events</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink tag={Link} to="/qbd">QDB</NavLink>
+          <NavLink tag={Link} to="/qdb">QDB</NavLink>
         </NavItem>
         <NavItem>
           <NavLink tag={Link} to="/scoreboard">Scoreboard</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink tag={Link} to="/trash">GarbageTV</NavLink>
         </NavItem>
       </Nav>
     </Collapse>

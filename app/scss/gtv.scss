@@ -1,0 +1,392 @@
+$white: #f1f1f1;
+$darkblue: #146b9d;
+$darkblueoff: #237aac;
+$mediumblue: #c9dae5;
+$lightblue: #dae6ee;
+$faded: #9ab7c7;
+$darkgray: #808080;
+$lightgray: #cccccc;
+$lightlightblue: #ebf2f6;
+
+$header_height: 126px;
+
+*
+{
+  margin: 0px;
+  padding: 0px;
+  border-style: none;
+}
+
+.gtv
+{
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  overflow: hidden;
+
+  h1, h2, h3, th
+  {
+    color: $white;
+  }
+
+  h3
+  {
+    font-size: 40pt;
+    text-align: center;
+  }
+}
+
+.gtv-container
+{
+  width: 1920px;
+  height: 1080px;
+  background-color: $white;
+  overflow:hidden;
+}
+
+.faded
+{
+  color: $darkgray;
+}
+
+.inline
+{
+  display: inline-block;
+}
+
+//
+// Specific to 15 event view
+//
+
+$three_panel_w: 606px;
+$four_panel_w: 430px;
+
+$five_event_h: 184px;
+$four_event_h: 228px;
+$five_event_title_h: 70px;
+$four_event_title_h: 66px;
+$five_event_part_h: 46px;
+$four_event_part_h: 54px;
+
+$panel_w: $three_panel_w;
+$event_h: $four_event_h;
+$event_title_h: $four_event_title_h;
+$event_part_h: $four_event_part_h;
+
+.gtv-panel-wrapper {
+  float: left;
+  overflow: hidden;
+
+  background-color: $white;
+
+  border-right: 5px solid $darkblueoff;
+}
+
+#wrapper0 .gtv-event-panel
+{
+  background-color: $lightlightblue;
+}
+
+#wrapper1 .gtv-event-panel
+{
+}
+
+#wrapper2 .gtv-event-panel
+{
+  background-color: $lightlightblue;
+}
+
+#wrapper2
+{
+  border: none;
+}
+
+.gtv-event-panel {
+  overflow: hidden;
+
+  width: $panel_w;
+  max-width: $panel_w;
+  height: 954px;
+  max-height: 954px;
+
+  padding-left: 15px;
+  padding-right: 15px;
+
+  background-color: $white;
+}
+
+.gtv-event-header {
+  overflow: hidden;
+
+  height: $header_height;
+  max-height: $header_height;
+  line-height: $header_height;
+
+  background-color: $darkblueoff;
+}
+
+.gtv-event {
+  overflow: hidden;
+
+  height: $event_h;
+  max-height: $event_h;
+
+  padding-left: 20px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+
+  border-bottom: 2px solid $lightgray;
+}
+
+// Kill borders on bottom of page
+#event-0-3 {
+  border: none;
+}
+#event-1-3 {
+  border: none;
+}
+#event-2-3 {
+  border: none;
+}
+
+.gtv-event-title {
+  overflow: hidden;
+
+  margin-left: -10px;
+
+  height: $event_title_h;
+  max-height: $event_title_h;
+  line-height: $event_title_h;
+
+  font-weight: bold;
+
+  font-size: 46px;
+}
+
+.event-desc {
+  min-width: 140px;
+  width: 140px;
+  max-width: 140px;
+}
+
+.gtv-event-data {
+  overflow: hidden;
+
+  height: $event_part_h;
+  max-height: $event_part_h;
+  line-height: $event_part_h;
+
+  font-size: 42px;
+}
+
+//
+// End 15 event view
+//
+
+//
+// Specific to three week view
+//
+
+$cal_width: 250px;
+$cal_width_s: 182px;
+$cal_height: 311px;
+$cal_height_s: $header_height;
+
+thead
+{
+  background-color: $darkblue;
+}
+
+table
+{
+  border-spacing: 0;
+  width: 100%;
+  height: 100%;
+}
+
+th
+{
+  width: $cal_width;
+  max-width: $cal_width;
+  height: $cal_height_s;
+  max-height: $cal_height_s;
+
+  border-bottom: 3px solid $white;
+}
+
+td
+{
+  width: $cal_width;
+  max-width: $cal_width;
+  height: $cal_height;
+  max-height: $cal_height;
+  overflow: hidden;
+  background-color: $lightblue;
+  border: 3px solid $white;
+}
+
+ul.gtv-calendar-eventlist
+{
+  overflow: hidden;
+
+  height: $cal_height;
+  max-height: $cal_height;
+}
+
+.gtv-calendar-eventlist li
+{
+  font-size: 34px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.gtv-calendar-weekcol
+{
+  width: $cal_width_s;
+  max-width: $cal_width_s;
+}
+
+thead .gtv-calendar-weekcol h3
+{
+  color: $white;
+}
+
+.gtv-calendar-weekcol h3
+{
+  color: $faded;
+}
+
+.gtv-calendar-eventlist
+{
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.today
+{
+  background-color: $mediumblue;
+}
+
+//
+// End three week view
+//
+
+//
+// Event Highlight View
+//
+
+.gtv-event-highlight {
+  position: absolute;
+  max-width: 1920px;
+  max-height: 1080px-$header_height;
+  display: block;
+  width: 100%;
+  margin: auto;
+  top: 0;
+  bottom: $header_height;
+  left: 0;
+  right: 0;
+}
+
+.gtv_img_container {
+  width: 1920px;
+  height: 1080px-$header_height;
+}
+
+.gtv-highlight-footer {
+  overflow: hidden;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  height: $header_height;
+  max-height: $header_height;
+  line-height: $header_height/2;
+  width: 1920px;
+
+  background-color: $darkblueoff;
+}
+
+//
+// End Event Highlight View
+//
+
+///
+/// Info Panel Views
+///
+.info-content{
+  height:1080px-$header_height;
+  width:1920px;
+  position:absolute;
+  top:$header_height;
+}
+
+.info-content-with-footer{
+  height:1080px - $header_height - $header_height;
+  width:1920px;
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  top:$header_height;
+}
+
+.info-footer{
+  position: absolute;
+  width:1920px;
+  height:$header_height;
+  background-color: $darkblueoff;;
+  top: 1080px - $header_height;
+  max-height: $header_height;
+  line-height: $header_height;
+}
+
+#sse-logo{
+  background: $white url(/assets/images/big-logo.png) center center no-repeat;
+}
+
+#meeting-img{
+  background: $white url(/assets/images/meeting-img.png) center center no-repeat;
+}
+
+.tv-right{
+  width:960px;
+  height:1080px;
+
+  position:absolute;
+  display:table;
+  left:960px;
+  overflow:hidden;
+}
+
+.tv-left{
+  width:960px;
+  height:1080px;
+
+  position:absolute;
+  display:table-cell;
+  left:0;
+  overflow:hidden;
+}
+
+.tv-inner{
+  display:inline-block;
+  position:relative;
+  display:table-cell;
+  vertical-align: middle;
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+.huge{
+  font-size:57pt;
+}
+
+.tv-left img, .tv-right img{
+  height:1080px;
+}
+
+.center {
+  text-align: center;
+}
