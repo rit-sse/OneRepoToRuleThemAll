@@ -193,65 +193,67 @@ $cal_width_s: 182px;
 $cal_height: 311px;
 $cal_height_s: $header_height;
 
-thead
-{
-  background-color: $darkblue;
+.gtv {
+  thead
+  {
+    background-color: $darkblue;
+  }
+
+  table
+  {
+    border-spacing: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  th
+  {
+    width: $cal_width;
+    max-width: $cal_width;
+    height: $cal_height_s;
+    max-height: $cal_height_s;
+
+    border-bottom: 3px solid $white;
+  }
+
+  td
+  {
+    width: $cal_width;
+    max-width: $cal_width;
+    height: $cal_height;
+    max-height: $cal_height;
+    overflow: hidden;
+    background-color: $lightblue;
+    border: 3px solid $white;
+  }
+
+  ul.gtv-calendar-eventlist
+  {
+    overflow: hidden;
+
+    height: $cal_height;
+    max-height: $cal_height;
+  }
+
+  .gtv-calendar-eventlist li
+  {
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .gtv-calendar-weekcol
+  {
+    width: $cal_width_s;
+    max-width: $cal_width_s;
+  }
+
+  thead .gtv-calendar-weekcol h3
+  {
+    color: $white;
+  }
+
 }
-
-table
-{
-  border-spacing: 0;
-  width: 100%;
-  height: 100%;
-}
-
-th
-{
-  width: $cal_width;
-  max-width: $cal_width;
-  height: $cal_height_s;
-  max-height: $cal_height_s;
-
-  border-bottom: 3px solid $white;
-}
-
-td
-{
-  width: $cal_width;
-  max-width: $cal_width;
-  height: $cal_height;
-  max-height: $cal_height;
-  overflow: hidden;
-  background-color: $lightblue;
-  border: 3px solid $white;
-}
-
-ul.gtv-calendar-eventlist
-{
-  overflow: hidden;
-
-  height: $cal_height;
-  max-height: $cal_height;
-}
-
-.gtv-calendar-eventlist li
-{
-  font-size: 34px;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.gtv-calendar-weekcol
-{
-  width: $cal_width_s;
-  max-width: $cal_width_s;
-}
-
-thead .gtv-calendar-weekcol h3
-{
-  color: $white;
-}
-
 .gtv-calendar-weekcol h3
 {
   color: $faded;
