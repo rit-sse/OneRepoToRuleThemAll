@@ -12,10 +12,10 @@ services:
     volumes:
       - caddycache:/root/.caddy
     deploy:
-     replicas: 2
+     replicas: 16
      update_config:
-       parallelism: 1
-       delay: 10s
+       parallelism: 6
+       delay: 5s
 
 volumes:
   caddycache:
