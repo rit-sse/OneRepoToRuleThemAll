@@ -10,6 +10,7 @@ COPY ./package.json /app/package.json
 RUN npm install
 
 COPY ./  /app
+RUN npm run lint
 RUN npm run build
 
 # Clean extra stuff away
