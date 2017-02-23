@@ -19,7 +19,7 @@ class List extends Component {
     loggedIn: false,
     editItem: function editItem() {},
     deleteItem: function deleteItem() {},
-    wrapper: 'div'
+    wrapper: 'div',
   }
 
   constructor() {
@@ -50,7 +50,7 @@ class List extends Component {
   }
 
   renderItems() {
-    return this.props.items.map(item => {
+    return this.props.items.map((item) => {
       const key = [item.id, item.name, item.shortLink].filter(i => i);
       return (
         <this.props.item
@@ -61,7 +61,7 @@ class List extends Component {
           deleteItem={this.props.deleteItem.bind(null, item.id)}
         />
       );
-    })
+    });
   }
 
   render() {

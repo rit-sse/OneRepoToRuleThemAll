@@ -1,6 +1,6 @@
 import {
-    createAction as createCreateAction,
-    createLoading
+  createAction as createCreateAction,
+  createLoading,
 } from './utils';
 
 export const GO = 'GO';
@@ -10,17 +10,17 @@ export const GET_LINKS = 'GET_LINKS';
 const createAction = createCreateAction(GO);
 const loading = createLoading(GO);
 
-export function getLinks(getNext = true) {
-    return (dispatch, getState, api) => {
-        dispatch(loading(GET_LINKS));
-        if (!getNext) {
+export function getLinks(getNext = true) { // eslint-disable-line no-unused-vars
+  return (dispatch, getState, api) => {
+    dispatch(loading(GET_LINKS));
+    // if (!getNext) {
 
-        }
-        const data = [];
-        api.Links.all({
-            sort: 'DESC'
-        })
-        .then(links => dispatch(createAction(GET_LINKS, links.data)))
-        .catch(err => dispatch(createAction(GET_LINKS, err)));
-    }
+    // }
+    // const data = [];
+    api.Links.all({
+      sort: 'DESC',
+    })
+      .then(links => dispatch(createAction(GET_LINKS, links.data)))
+      .catch(err => dispatch(createAction(GET_LINKS, err)));
+  };
 }
