@@ -6,7 +6,7 @@ import { getCommittees } from 'actions/committees';
 function mapStateToProps(store) {
   return {
     item: Committee,
-    items: [{ name: '', description: 'all' }, ...store.committees],
+    items: [{ id: 1, name: '', description: 'all' }, ...store.committees],
   };
 }
 
