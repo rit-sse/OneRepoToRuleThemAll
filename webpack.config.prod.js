@@ -10,6 +10,7 @@ module.exports = {
       'redux',
       'react-redux',
       'react-router',
+      'react-router-dom',
       'react',
       'react-dom',
     ],
@@ -34,15 +35,8 @@ module.exports = {
         API_ROOT: JSON.stringify(process.env.API_ROOT || '/api/v1/'),
       },
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: Infinity,
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      async: true,
-      minSize: 8192,
-      name: 'common',
-    }),
+    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', minChunks: Infinity }),
+    new webpack.optimize.CommonsChunkPlugin({ name: 'entry-chunk', chunks: ['main', 'vendor'] }), // Causes the webpack runtime to be put into a sperate chunk
     new webpack.optimize.MinChunkSizePlugin({ minChunkSize: 8192 }),
     new HtmlWebpackPlugin({
       title: 'Society of Software Engineers',
