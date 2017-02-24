@@ -4,6 +4,7 @@ import Status from 'containers/general/Status';
 import { GO } from 'actions/go';
 import Login from 'containers/general/Login';
 import 'scss/go.scss';
+import 'scss/buttons.scss';
 
 const style = {
   name: {
