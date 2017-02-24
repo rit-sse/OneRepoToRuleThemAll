@@ -26,7 +26,7 @@ window.onload = () => {
       <Provider store={store}>
         <BrowserRouter>
           <Switch>
-            <Route path="/trash" component={GTV} />
+            <Route path="/gtv" component={GTV} />
             <Layout>
               <Switch>
                 <Route path="/" exact component={Home} />
