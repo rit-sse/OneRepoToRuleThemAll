@@ -6,8 +6,8 @@ import {
   UPDATE_EVENT,
   DESTROY_EVENT,
   NEXT_EVENT,
-} from '../actions/events';
-import { SHOW_EVENT_MODAL } from '../actions/modal';
+} from 'actions/events';
+import { SHOW_EVENT_MODAL } from 'actions/modal';
 
 const initState = {
   all: [],
@@ -106,7 +106,7 @@ function selected(state, action) {
   }
 }
 
-export default function (state = initState, action) {
+export default function events(state = initState, action) {
   return {
     all: all(state.all, action),
     selected: selected(state.selected, action),

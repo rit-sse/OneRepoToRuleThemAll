@@ -1,4 +1,4 @@
-import { LOADING_STATUS, ERROR_STATUS, CLOSE_STATUS } from '../actions/status';
+import { LOADING_STATUS, ERROR_STATUS, CLOSE_STATUS } from 'actions/status';
 
 const initState = {
   loading: {}, // If empty no loading

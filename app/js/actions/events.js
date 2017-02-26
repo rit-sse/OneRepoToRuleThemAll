@@ -1,4 +1,5 @@
-import moment from 'moment';
+import Moment from 'moment';
+import { extendMoment } from 'moment-range';
 import * as utils from './utils';
 
 export const EVENTS = 'EVENTS';
@@ -16,6 +17,8 @@ export const GET_THREE_WEEK_EVENTS = 'GET_THREE_WEEK_EVENTS';
 
 const createAction = utils.createAction(EVENTS);
 const loading = utils.createLoading(EVENTS);
+
+const moment = extendMoment(Moment);
 
 export function clearEvent() {
   return {
@@ -87,10 +90,11 @@ export function destoryEvent(id) {
 }
 
 export function getThreeWeekEvents() {
-  const sunday = moment().day('Sunday');
-  const monthFromSunday = moment().day('Sunday').add(1, 'Month');
-  const query = { before: monthFromSunday.toDate(), after: sunday.toDate(), sort: 'ASC' };
   return (dispatch, getState, api) => {
+    const sunday = moment().day('Sunday');
+    const threeWeeksFromSunday = moment().day('Sunday').add(3, 'weeks');
+    const range = moment.range(sunday, threeWeeksFromSunday).toString();
+    const query = { between: range, sort: 'ASC' };
     dispatch(loading(GET_THREE_WEEK_EVENTS));
     api.Events.all(query, true)
       .then(data => dispatch(createAction(GET_THREE_WEEK_EVENTS, data)))

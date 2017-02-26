@@ -4,7 +4,7 @@ export const SPECIALTIES = 'SPECIALTIES';
 export const GET_SPECIALTIES = 'GET_SPECIALTIES';
 
 const createAction = utils.createAction(SPECIALTIES);
-const loading = utils.createLoding(SPECIALTIES);
+const loading = utils.createLoading(SPECIALTIES);
 
 export function getSpecialties() {
   return (dispatch, getState, api) => {

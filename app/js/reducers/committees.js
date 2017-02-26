@@ -3,7 +3,7 @@ import {
   CREATE_COMMITTEE,
   UPDATE_COMMITTEE,
   DESTROY_COMMITTEE,
-} from '../actions/committees';
+} from 'actions/committees';
 
 export default function committees(state = [], action) {
   switch (action.type) {

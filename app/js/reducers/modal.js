@@ -1,4 +1,4 @@
-import { SHOW_EVENT_MODAL, HIDE_MODAL } from '../actions/modal';
+import { SHOW_EVENT_MODAL, HIDE_MODAL } from 'actions/modal';
 
 export default function modal(state = null, action) {
   switch (action.type) {

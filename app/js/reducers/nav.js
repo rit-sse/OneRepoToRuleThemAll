@@ -1,4 +1,4 @@
-import { OPEN_NAV, CLOSE_NAV } from '../actions/nav';
+import { OPEN_NAV, CLOSE_NAV } from 'actions/nav';
 
 export default function nav(state = false, action) {
   switch (action.type) {

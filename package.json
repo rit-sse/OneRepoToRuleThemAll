@@ -34,6 +34,7 @@
     "classnames": "^2.2.5",
     "express": "^4.14.0",
     "moment": "^2.17.1",
+    "moment-range": "^3.0.2",
     "react": "^15.4.2",
     "react-addons-css-transition-group": "^15.4.2",
     "react-addons-transition-group": "^15.4.2",

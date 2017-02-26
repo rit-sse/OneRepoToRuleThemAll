@@ -3,7 +3,7 @@ import {
   GET_LINKS_PAGES,
   SET_PAGE_COUNT,
   SET_PAGE,
-} from '../actions/go';
+} from 'actions/go';
 
 const initState = {
   page: 1,

@@ -40,7 +40,7 @@ export function destroyShift(id) {
   return (dispatch, getState, api) => {
     dispatch(loading(DESTROY_SHIFT));
     api.Shifts.create(id)
-      .then(data => dispatch(createAction(DESTROY_SHIFT, data)))
+      .then(() => dispatch(createAction(DESTROY_SHIFT, id)))
       .catch(err => dispatch(createAction(DESTROY_SHIFT, err)));
   };
 }
