@@ -1,5 +1,5 @@
 import Moment from 'moment';
-import { extendMoment } from 'moment-range';
+import { extendMoment } from 'moment-range/dist/moment-range';
 import * as utils from './utils';
 
 export const EVENTS = 'EVENTS';
