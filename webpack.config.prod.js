@@ -35,8 +35,7 @@ module.exports = {
         API_ROOT: JSON.stringify(process.env.API_ROOT || '/api/v1/'),
       },
     }),
-    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', minChunks: Infinity }),
-    new webpack.optimize.CommonsChunkPlugin({ name: 'entry-chunk', chunks: ['main', 'vendor'] }), // Causes the webpack runtime to be put into a sperate chunk
+    new webpack.optimize.CommonsChunkPlugin({ name: ['vendor', 'entry-chunk'], minChunks: Infinity }),
     new webpack.optimize.MinChunkSizePlugin({ minChunkSize: 8192 }),
     new HtmlWebpackPlugin({
       title: 'Society of Software Engineers',

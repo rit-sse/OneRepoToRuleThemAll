@@ -10,6 +10,10 @@ module.exports = {
       'webpack-dev-server/client?http://localhost:5000',
     ],
     vendor: [
+      'redux',
+      'react-redux',
+      'react-router',
+      'react-router-dom',
       'react',
       'react-dom',
     ],
@@ -29,6 +33,7 @@ module.exports = {
   },
   devtool: 'source-map',
   plugins: [
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
