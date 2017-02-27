@@ -1,3 +1,4 @@
+const InlineChunkWebpackPlugin = require('html-webpack-inline-chunk-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
@@ -35,12 +36,15 @@ module.exports = {
         API_ROOT: JSON.stringify(process.env.API_ROOT || '/api/v1/'),
       },
     }),
-    new webpack.optimize.CommonsChunkPlugin({ name: ['vendor', 'entry-chunk'], minChunks: Infinity }),
+    new webpack.optimize.CommonsChunkPlugin({ name: ['vendor', 'manifest'], minChunks: Infinity }),
     new webpack.optimize.MinChunkSizePlugin({ minChunkSize: 8192 }),
     new HtmlWebpackPlugin({
       title: 'Society of Software Engineers',
       filename: '../index.html',
       template: './app/index.ejs',
+    }),
+    new InlineChunkWebpackPlugin({
+      inlineChunks: ['manifest'],
     }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.optimize.UglifyJsPlugin({
