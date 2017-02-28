@@ -18,7 +18,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'dist', 'assets'),
-    filename: '[chunkhash].bundle.js',
+    filename: '[name].[chunkhash].js',
     publicPath: '/assets/',
   },
   resolve: {
@@ -62,7 +62,7 @@ module.exports = {
       sourceMap: false,
     }),
     new ExtractTextPlugin({
-      filename: '[chunkhash].bundle.css',
+      filename: '[name].[chunkhash].css',
       allChunks: true,
     }),
   ],
