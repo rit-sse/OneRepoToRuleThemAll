@@ -1,21 +1,73 @@
 version: '3.1'
 
 services:
+  # Web is the "EDGE" node atm, eventually will go behind a HA proxy that
+  # sits on the node with the domain we want for web. It will load balance
+  # on the internal vip, that way other nodes don't have publiclly exposed
+  # ports that they don't need.
   web:
     image: ritsse/onerepo
     ports:
       - 80:80
       - 443:443
     environment:
+      # NOCOMMIT: move back to site root
       - 'SITE_ROOT=https://ssedev.se.rit.edu'
-      - 'API_UPSTREAM=https://sse.rit.edu/'
+      - 'API_UPSTREAM=api:3000'
     volumes:
       - caddycache:/root/.caddy
     deploy:
-     replicas: 16
+     replicas: 8
      update_config:
        parallelism: 6
        delay: 5s
 
+  # API, running on devlop for now
+  api:
+    image: ritsse/node-api:devlop
+    environment:
+      - GOOGLE_CLIENT_ID_FILE=/run/secrets/GOOGLE_CLIENT_ID
+      - GOOGLE_CLIENT_SECRET_FILE=/run/secrets/GOOGLE_SECRET
+      - NODE_ENV=production
+      - SLACK_SECRET_FILE=/run/secrets/SLACK_SECRET
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres_password
+    secrets:
+      - GOOGLE_CLIENT_ID
+      - GOOGLE_SECRET
+      - SLACK_SECRET
+      - postgres_password
+
+  # Postgres is deployed "Globally" but with a contraint on db==true
+  # this this label only exists on a single node in the cluster, so there
+  # can only ever be 1 instance of postgres. Which is what we want at this
+  # scale
+  postgres:
+    image: 'postgres:9.6.2'
+    environment:
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgres_password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    deploy:
+      mode: global
+      placement:
+        constraints:
+          - node.labels.db == true
+    secrets:
+      - postgres_password
+
+# All secrets are external until secrets matures a bit more and services can
+# provide them
+secrets:
+  postgres_password:
+    external: true
+  GOOGLE_CLIENT_ID:
+    external: true
+  GOOGLE_SECRET:
+    external: true
+  SLACK_SECRET:
+    external: true
+
 volumes:
+  # Caddy cache makes it so we don't refetch certs on redeploy
   caddycache:
+  pgdata:
