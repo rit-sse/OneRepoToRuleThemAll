@@ -26,6 +26,11 @@ const Go = () => (
       </div>
       <div className="row">
         <div className="col-12">
+          <Status type={[GO]} />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-12">
           <table className="go-table go-table-striped">
             <thead>
               <tr>
@@ -35,7 +40,11 @@ const Go = () => (
             </thead>
             <GoLinksList />
           </table>
-          <Status type={[GO]} />
+        </div>
+        <div className="row">
+          <div className="col-12">
+            <Status type={[GO]} />
+          </div>
         </div>
       </div>
     </div>

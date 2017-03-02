@@ -16,7 +16,7 @@ const QDB = () => (
     </div>
     <div className="row">
       <div className="col-12">
-        <Status type={[]} />
+        <Status type={[]} message />
       </div>
     </div>
     <div className="row">
@@ -27,6 +27,11 @@ const QDB = () => (
           <Route path="/qdb/:filter?" component={} />
         </Switch>
         */}
+      </div>
+    </div>
+    <div className="row">
+      <div className="col-12">
+        <Status type={[]} spinner />
       </div>
     </div>
   </div>

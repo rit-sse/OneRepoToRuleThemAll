@@ -2,8 +2,7 @@
 
 .navbar-sse {
   background-color: $PRIMARY;
-  border-bottom: 2.5px solid darken($PRIMARY, 15%);
-  margin-bottom: 15px;
+  border-bottom: 5px solid $SECONDARY;
 
   .nav-item .nav-link {
     color: $WHITE;

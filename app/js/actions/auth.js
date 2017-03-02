@@ -17,9 +17,8 @@ export function signIn(googleUser) {
       .then((data) => {
         const [user, officers] = data;
         const officer = officers.data.find(o => o.userDce === user.dce);
-        return dispatch(createAction(SIGN_IN, {
-          officer,
-        }));
+        if (officer) return dispatch(createAction(SIGN_IN, { officer }));
+        return dispatch(createAction(SIGN_IN, new Error('You must be an officers to sign in')));
       })
       .catch(error => dispatch(createAction(SIGN_IN, error)));
   };

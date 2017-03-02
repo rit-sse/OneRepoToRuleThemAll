@@ -4,3 +4,7 @@ body {
   font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
   background-color: $BACKGROUND;
 }
+
+.left-border {
+  border-left: 1px solid $LIGHT_GREY;
+}

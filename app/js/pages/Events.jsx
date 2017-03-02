@@ -23,6 +23,11 @@ const Event = () => (
     </div>
     <div className="row">
       <div className="col-12">
+        <Status type={[COMMITTEES, EVENTS]} message />
+      </div>
+    </div>
+    <div className="row">
+      <div className="col-12">
         Filter By: <CommitteesList />
       </div>
     </div>
@@ -33,7 +38,7 @@ const Event = () => (
     </div>
     <div className="row">
       <div className="col-12">
-        <Status type={[COMMITTEES, EVENTS]} />
+        <Status type={[COMMITTEES, EVENTS]} spinner />
       </div>
     </div>
     <EventModal />
