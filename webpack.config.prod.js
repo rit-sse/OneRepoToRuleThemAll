@@ -1,3 +1,4 @@
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const InlineChunkWebpackPlugin = require('html-webpack-inline-chunk-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -37,6 +38,7 @@ module.exports = {
       },
     }),
     new webpack.optimize.CommonsChunkPlugin({ name: ['vendor', 'manifest'], minChunks: Infinity }),
+    new webpack.optimize.CommonsChunkPlugin({ async: true, minChunks: 2 }),
     new webpack.optimize.MinChunkSizePlugin({ minChunkSize: 8192 }),
     new HtmlWebpackPlugin({
       title: 'Society of Software Engineers',
@@ -65,6 +67,9 @@ module.exports = {
       filename: '[name].[chunkhash].css',
       allChunks: true,
     }),
+    ...process.env.DEBUG ? [new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+    })] : [],
   ],
   module: {
     rules: [
