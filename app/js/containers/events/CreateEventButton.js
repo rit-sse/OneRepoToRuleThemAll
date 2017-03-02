@@ -4,7 +4,7 @@ import { showEventModal } from 'actions/modal';
 
 function mapStateToProps(store) {
   return {
-    shown: !!store.auth.user,
+    shown: !!store.auth.officer,
   };
 }
 

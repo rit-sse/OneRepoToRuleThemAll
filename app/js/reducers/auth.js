@@ -2,14 +2,15 @@ import { SIGN_IN, SIGN_OUT } from 'actions/auth';
 
 const initState = {
   user: null,
+  officer: null,
 };
 
 export default function auth(state = initState, action) {
   switch (action.type) {
     case SIGN_IN:
-      return { user: action.payload.officer };
+      return action.payload;
     case SIGN_OUT:
-      return { user: null };
+      return { ...initState };
     default:
       return state;
   }
