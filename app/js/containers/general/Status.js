@@ -4,6 +4,7 @@ import Status from 'components/general/Status';
 
 function mapStateToProps(store, props) {
   return {
+    info: store.status.info || '',
     error: store.status.error || '',
     loading: !!props.type.find(type => Object.values(store.status.loading).includes(type)),
   };

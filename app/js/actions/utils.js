@@ -1,9 +1,10 @@
-export const createAction = namespace => (type, payload) => {
+export const createAction = namespace => (type, payload, message) => {
   return {
     type,
     payload,
     error: (payload instanceof Error),
     meta: {
+      message,
       namespace,
     },
   };

@@ -1,7 +1,8 @@
-import { LOADING_STATUS, ERROR_STATUS, CLOSE_STATUS } from 'actions/status';
+import { LOADING_STATUS, ERROR_STATUS, CLOSE_STATUS, INFO_STATUS } from 'actions/status';
 
 const initState = {
   loading: {}, // If empty no loading
+  info: null,
   error: null,
 };
 
@@ -20,6 +21,11 @@ export default (state = initState, action) => {
       return {
         ...state,
         error: action.payload.message,
+      };
+    case INFO_STATUS:
+      return {
+        ...state,
+        info: action.payload.message,
       };
     case CLOSE_STATUS:
       return {
