@@ -11,7 +11,7 @@ services:
       - 80:80
       - 443:443
     environment:
-      - 'SITE_ROOT=https://ssedev.se.rit.edu'
+      - 'SITE_ROOT=https://*.se.rit.edu'
       - 'API_UPSTREAM=api:3000'
     volumes:
       - caddycache:/root/.caddy
@@ -52,7 +52,11 @@ services:
         constraints:
           - node.labels.db == true
     secrets:
-      - postgres_password
+      - source: postgres_password
+        target: postgres_password
+        uid: '999'
+        gid: '999'
+        mode: 0440
 
 # All secrets are external until secrets matures a bit more and services can
 # provide them
