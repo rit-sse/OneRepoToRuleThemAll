@@ -16,9 +16,9 @@ export function signIn(googleUser) {
       .then(() => Promise.all([api.Users.one(info.id), api.Officers.all({ active: new Date() }, true)]))
       .then((data) => {
         const [user, officers] = data;
-        const officer = officers.data.find(o => o.userDce === user.dce) || {};
-        if (officer) return dispatch(createAction(SIGN_IN, { user, officer }, 'Logged is as officer'));
-        else if (user) return dispatch(createAction(SIGN_IN, { user, officer }, 'Logged is as member'));
+        const officer = officers.data.find(o => o.userDce === user.dce);
+        if (officer) return dispatch(createAction(SIGN_IN, { user, officer }, 'Logged in as officer'));
+        else if (user) return dispatch(createAction(SIGN_IN, { user }, 'Logged in as member'));
         return dispatch(createAction(SIGN_IN, new Error('Must be a member to login')));
       })
       .catch(error => dispatch(createAction(SIGN_IN, error)));
@@ -29,7 +29,7 @@ export function checkLogin() {
   return (dispatch, getState, api) => {
     return api.Auth.checkToken().then((user) => {
       return api.Officers.all({ active: new Date() }, true).then(({ data }) => {
-        const officer = data.find(o => o.userDce === user.dce) || {};
+        const officer = data.find(o => o.userDce === user.dce);
         return {
           user,
           officer,
