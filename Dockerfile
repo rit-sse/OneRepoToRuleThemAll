@@ -15,10 +15,6 @@ RUN npm run build
 # Clean extra stuff away
 RUN find . -maxdepth 1 \! \( -name dist \) -exec rm -rf '{}' \;
 
-# Deploy related lables, just used by us
-LABEL edu.rit.sse.docker.deployment.stack="sse"
-LABEL edu.rit.sse.docker.deployment.service="sse_web"
-
 # Caddy
 EXPOSE 80
 EXPOSE 443
