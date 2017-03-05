@@ -10,7 +10,7 @@ class Event extends Component {
     endDate: React.PropTypes.string.isRequired,
     location: React.PropTypes.string.isRequired,
     startDate: React.PropTypes.string.isRequired,
-    description: React.PropTypes.string.isRequired,
+    description: React.PropTypes.string, // eslint-disable-line react/require-default-props
     editItem: React.PropTypes.func.isRequired,
     deleteItem: React.PropTypes.func.isRequired,
   };

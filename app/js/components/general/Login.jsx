@@ -1,17 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import API from 'api';
+import Button from './Button';
 
 class Login extends Component {
   static propTypes = {
-    user: React.PropTypes.object, // eslint-disable-line
-    signIn: React.PropTypes.func.isRequired,
-    signOut: React.PropTypes.func.isRequired,
-    className: React.PropTypes.string.isRequired,
+    user: PropTypes.object, // eslint-disable-line
+    signIn: PropTypes.func.isRequired,
+    signOut: PropTypes.func.isRequired,
+    className: PropTypes.string.isRequired,
+    checkLogin: PropTypes.func.isRequired,
   }
 
   componentDidMount() {
     this.attachClick();
-    this.checkLogin();
+    this.props.checkLogin();
   }
 
   componentDidUpdate(prevProps) {
@@ -36,7 +38,7 @@ class Login extends Component {
 
   render() {
     return this.props.user ? (
-      <button className={this.props.className} onClick={this.props.signOut}><i className="fa fa-user" /> SignOut</button>
+      <Button className={this.props.className} onClick={this.props.signOut}><i className="fa fa-user" /> SignOut</Button>
     ) : <button className={this.props.className} key="loggedin" ref={(c) => { this.button = c; }}><i className="fa fa-user" /> Login</button>;
   }
 }

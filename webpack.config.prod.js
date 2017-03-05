@@ -68,7 +68,7 @@ module.exports = {
       allChunks: true,
     }),
     ...process.env.DEBUG ? [new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
+      analyzerMode: 'server',
     })] : [],
   ],
   module: {

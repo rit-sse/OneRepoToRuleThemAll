@@ -1,5 +1,4 @@
 import React from 'react';
-import 'scss/buttons.scss';
 import { Route } from 'react-router-dom';
 import { EVENTS } from 'actions/events';
 import Login from 'containers/general/Login';
@@ -16,7 +15,9 @@ const Event = () => (
       <div className="col-12">
         <h1 className="pull-left">Events</h1>
         <div className="btn-group pull-right" style={{ marginTop: '5px' }} role="group" aria-label="Basic example">
-          <CreateEventButton className="btn btn-secondary" label="Create Event" />
+          <CreateEventButton className="btn btn-secondary" >
+            Create Event
+          </CreateEventButton>
           <Login className="btn btn-sse" />
         </div>
       </div>

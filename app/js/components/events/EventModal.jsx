@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import 'scss/buttons.scss';
+import Button from 'comoponents/general/Button';
 import moment from 'moment';
 
 class EventModal extends Component {
@@ -155,8 +155,8 @@ class EventModal extends Component {
           </form>
         </ModalBody>
         <ModalFooter>
-          <button className="btn btn-sse" onClick={this.submit}>{this.props.event ? 'Update' : 'Create'}</button>
-          <button className="btn btn-secondary" onClick={this.props.close}>Cancel</button>
+          <Button className="btn btn-sse" onClick={this.submit}>{this.props.event ? 'Update' : 'Create'}</Button>
+          <Button className="btn btn-secondary" onClick={this.props.close}>Cancel</Button>
         </ModalFooter>
       </Modal>
     );
