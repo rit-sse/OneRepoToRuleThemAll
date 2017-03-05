@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import Button from 'comoponents/general/Button';
+import Button from 'components/general/Button';
 import moment from 'moment';
 
 class EventModal extends Component {
