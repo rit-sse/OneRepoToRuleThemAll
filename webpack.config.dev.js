@@ -5,6 +5,7 @@ const path = require('path');
 module.exports = {
   entry: {
     main: [
+      'react-hot-loader/patch',
       './app/js/app.jsx',
       'webpack/hot/dev-server',
       'webpack-dev-server/client?http://localhost:5000',
@@ -36,6 +37,7 @@ module.exports = {
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.NamedModulesPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
