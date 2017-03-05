@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { signIn, signOut } from 'actions/auth';
+import { signIn, signOut, checkLogin } from 'actions/auth';
 import Login from 'components/general/Login';
 
 function mapStateToProps(store) {
@@ -12,6 +12,7 @@ function mapDispatchToProps(dispatch) {
   return {
     signIn: user => dispatch(signIn(user)),
     signOut: () => dispatch(signOut()),
+    checkLogin: () => dispatch(checkLogin()),
   };
 }
 

@@ -11,6 +11,7 @@ class Login extends Component {
 
   componentDidMount() {
     this.attachClick();
+    this.checkLogin();
   }
 
   componentDidUpdate(prevProps) {

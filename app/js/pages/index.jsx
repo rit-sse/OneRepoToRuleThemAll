@@ -7,14 +7,13 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import 'scss/app.scss';
 
-if (module.hot) module.hot.accept();
-
-const Go = asyncComponent(() => System.import('pages/Go'));
-const QDB = asyncComponent(() => System.import('pages/QDB'));
-const GTV = asyncComponent(() => System.import('pages/GTV'));
-const Home = asyncComponent(() => System.import('pages/Home'));
-const Events = asyncComponent(() => System.import('pages/Events'));
-const Scoreboard = asyncComponent(() => System.import('pages/Scoreboard'));
+const Go = asyncComponent(() => import('pages/Go'));
+const QDB = asyncComponent(() => import('pages/QDB'));
+const GTV = asyncComponent(() => import('pages/GTV'));
+const Home = asyncComponent(() => import('pages/Home'));
+const Events = asyncComponent(() => import('pages/Events'));
+const Scoreboard = asyncComponent(() => import('pages/Scoreboard'));
+const Mentoring = asyncComponent(() => import('pages/Mentoring'));
 
 const Root = () => (
   <Provider store={store}>
@@ -28,6 +27,7 @@ const Root = () => (
             <Route path="/qdb" component={QDB} />
             <Route path="/events" component={Events} />
             <Route path="/scoreboard" component={Scoreboard} />
+            <Route path="/mentoring" component={Mentoring} />
             <Route component={Home} />
           </Switch>
         </Layout>

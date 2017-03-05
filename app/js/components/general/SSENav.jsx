@@ -26,6 +26,9 @@ const SSENav = props => (
           <NavLink tag={Link} to="/scoreboard">Scoreboard</NavLink>
         </NavItem>
         <NavItem>
+          <NavLink tag={Link} to="/mentoring">Mentoring</NavLink>
+        </NavItem>
+        <NavItem>
           <NavLink tag={Link} to="/gtv">GarbageTV</NavLink>
         </NavItem>
       </Nav>
