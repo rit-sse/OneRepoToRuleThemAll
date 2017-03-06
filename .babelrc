@@ -1,9 +1,6 @@
 {
   "presets": [ [ "es2015", {"loose": true, "modules": false}], "stage-0", "react" ],
   "env": {
-    "development": {
-      "plugins": ["react-hot-loader/babel"]
-    },
     "production": {
       "plugins": [
         ["transform-imports", {
