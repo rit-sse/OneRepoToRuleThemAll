@@ -9,8 +9,6 @@ export const CREATE_EVENT = 'CREATE_EVENT';
 export const UPDATE_EVENT = 'UPDATE_EVENT';
 export const DESTROY_EVENT = 'DESTROY_EVENT';
 
-export const CLEAR_EVENT = 'CLEAR_EVENT';
-export const SELECT_EVENT = 'SELECT_EVENT';
 export const NEXT_EVENT = 'NEXT_EVENT';
 
 export const GET_THREE_WEEK_EVENTS = 'GET_THREE_WEEK_EVENTS';
@@ -19,19 +17,6 @@ const createAction = utils.createAction(EVENTS);
 const loading = utils.createLoading(EVENTS);
 
 const moment = extendMoment(Moment);
-
-export function clearEvent() {
-  return {
-    type: CLEAR_EVENT,
-  };
-}
-
-export function selectEvent(event) {
-  return {
-    type: SELECT_EVENT,
-    payload: event,
-  };
-}
 
 export function nextEvent() {
   return {

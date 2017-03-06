@@ -1,17 +1,25 @@
-export const SHOW_EVENT_MODAL = 'SHOW_EVENT_MODAL';
+export const SHOW_MODAL = 'SHOW_MODAL';
+
 export const HIDE_MODAL = 'HIDE_MODAL';
 
 export const EVENT_MODAL = 'EVENT_MODAL';
+export const MENTOR_MODAL = 'MENTOR_MODAL';
 
-export function showEventModal(id = null) {
-  return {
-    type: SHOW_EVENT_MODAL,
-    payload: {
-      id,
-      modal: EVENT_MODAL,
-    },
+function showModal(modalType) {
+  return (id = null) => {
+    return {
+      type: SHOW_MODAL,
+      payload: {
+        id,
+        modalType,
+      },
+    };
   };
 }
+
+export const showEventModal = showModal(EVENT_MODAL);
+
+export const showMentorModal = showModal(MENTOR_MODAL);
 
 export function hideModal() {
   return {

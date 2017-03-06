@@ -6,6 +6,12 @@ export const CREATE_SHIFT = 'CREATE_SHIFT';
 export const UPDATE_SHIFT = 'UPDATE_SHIFT';
 export const DESTROY_SHIFT = 'DESTROY_SHIFT';
 
+export const SET_MODE = 'SET_MODE';
+
+export const EDIT_MODE = 'EDIT';
+export const VIEW_MODE = 'VIEW';
+
+
 const createAction = utils.createAction(SHIFTS);
 const loading = utils.createLoading(SHIFTS);
 
@@ -42,5 +48,14 @@ export function destroyShift(id) {
     api.Shifts.create(id)
       .then(() => dispatch(createAction(DESTROY_SHIFT, id)))
       .catch(err => dispatch(createAction(DESTROY_SHIFT, err)));
+  };
+}
+
+export function setMode(mode) {
+  return {
+    type: SET_MODE,
+    payload: {
+      mode,
+    },
   };
 }

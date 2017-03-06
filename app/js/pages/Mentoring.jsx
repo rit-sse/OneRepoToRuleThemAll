@@ -4,6 +4,7 @@ import Login from 'containers/general/Login';
 
 import { MENTORS } from 'actions/mentors';
 import { SHIFTS } from 'actions/shifts';
+import { SPECIALTIES } from 'actions/specialties';
 
 const Mentoring = () => (
   <div className="container">
@@ -17,12 +18,12 @@ const Mentoring = () => (
     </div>
     <div className="row">
       <div className="col">
-        <Status type={[MENTORS, SHIFTS]} message />
+        <Status type={[MENTORS, SHIFTS, SPECIALTIES]} message />
       </div>
     </div>
     <div className="row">
       <div className="col">
-        <Status type={[MENTORS, SHIFTS]} spinner />
+        <Status type={[MENTORS, SHIFTS, SPECIALTIES]} spinner />
       </div>
     </div>
   </div>

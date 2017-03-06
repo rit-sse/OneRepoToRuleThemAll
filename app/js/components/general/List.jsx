@@ -4,6 +4,7 @@ class List extends Component {
   static propTypes = {
     item: React.PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
     items: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+    itemProps: React.PropTypes.object, // eslint-disable-line
     loggedIn: React.PropTypes.bool,
     getItems: React.PropTypes.func.isRequired,
     editItem: React.PropTypes.func,
@@ -71,6 +72,7 @@ class List extends Component {
         <this.props.item
           key={item[key[0]]}
           {...item}
+          {...this.props.itemProps}
           loggedIn={this.props.loggedIn}
           editItem={this.props.editItem.bind(null, item.id)}
           deleteItem={this.props.deleteItem.bind(null, item.id)}

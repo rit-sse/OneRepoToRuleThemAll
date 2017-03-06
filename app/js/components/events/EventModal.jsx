@@ -24,7 +24,7 @@ class EventModal extends Component {
 
   static defaultProps = {
     event: {
-      id: 0,
+      id: null,
       name: '',
       committeeName: '',
       startDate: '',

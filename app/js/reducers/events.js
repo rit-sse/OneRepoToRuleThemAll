@@ -7,7 +7,6 @@ import {
   DESTROY_EVENT,
   NEXT_EVENT,
 } from 'actions/events';
-import { SHOW_EVENT_MODAL } from 'actions/modal';
 
 const initState = {
   all: [],
@@ -15,7 +14,6 @@ const initState = {
     currentPage: 0,
     totalPages: 1,
   },
-  selected: null,
   threeWeek: [],
   image: [],
 };
@@ -97,19 +95,9 @@ function pagination(state, action) {
   }
 }
 
-function selected(state, action) {
-  switch (action.type) {
-    case SHOW_EVENT_MODAL:
-      return action.payload.id;
-    default:
-      return state;
-  }
-}
-
 export default function events(state = initState, action) {
   return {
     all: all(state.all, action),
-    selected: selected(state.selected, action),
     threeWeek: threeWeek(state.threeWeek, action),
     pagination: pagination(state.pagination, action),
     image: image(state.image, action),

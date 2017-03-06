@@ -5,10 +5,10 @@ import { createEvent, updateEvent } from 'actions/events';
 
 function mapStateToProps(store) {
   return {
-    event: store.events.selected ? store.events.all.find((e) => {
-      return e.id === store.events.selected;
-    }) : null,
-    isOpen: store.modal === EVENT_MODAL,
+    event: store.modal.modalType === EVENT_MODAL ? store.events.all.find((e) => {
+      return e.id === store.modal.id;
+    }) || null : null,
+    isOpen: store.modal.modalType === EVENT_MODAL,
     committees: store.committees,
   };
 }

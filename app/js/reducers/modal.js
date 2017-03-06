@@ -1,11 +1,11 @@
-import { SHOW_EVENT_MODAL, HIDE_MODAL } from 'actions/modal';
+import { SHOW_MODAL, HIDE_MODAL } from 'actions/modal';
 
-export default function modal(state = null, action) {
+export default function modal(state = {}, action) {
   switch (action.type) {
-    case SHOW_EVENT_MODAL:
-      return action.payload.modal;
+    case SHOW_MODAL:
+      return action.payload;
     case HIDE_MODAL:
-      return null;
+      return {};
     default:
       return state;
   }
