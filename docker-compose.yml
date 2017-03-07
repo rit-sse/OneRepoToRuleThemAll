@@ -11,7 +11,7 @@ services:
       - 80:80
       - 443:443
     environment:
-      - 'SITE_ROOT=https://*.se.rit.edu'
+      - 'SITE_ROOT=https://ssedev.se.rit.edu'
       - 'API_UPSTREAM=api:3000'
     volumes:
       - caddycache:/root/.caddy
