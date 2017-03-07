@@ -1,27 +1,29 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 class List extends Component {
   static propTypes = {
-    item: React.PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
-    items: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
-    itemProps: React.PropTypes.object, // eslint-disable-line
-    loggedIn: React.PropTypes.bool,
-    getItems: React.PropTypes.func.isRequired,
-    editItem: React.PropTypes.func,
-    deleteItem: React.PropTypes.func,
-    scroll: React.PropTypes.bool,
-    scrollDone: React.PropTypes.bool,
-    wrapper: React.PropTypes.string.isRequired,
-    keyPriority: React.PropTypes.arrayOf(React.PropTypes.string),
+    item: PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
+    items: PropTypes.arrayOf(PropTypes.object).isRequired,
+    itemProps: PropTypes.object, // eslint-disable-line
+    loggedIn: PropTypes.bool,
+    getItems: PropTypes.func.isRequired,
+    editItem: PropTypes.func,
+    deleteItem: PropTypes.func,
+    scroll: PropTypes.bool,
+    scrollDone: PropTypes.bool,
+    wrapper: PropTypes.string.isRequired,
+    wrapperProps: PropTypes.object, // eslint-disable-line
+    keyPriority: PropTypes.arrayOf(PropTypes.string),
   }
 
   static defaultProps = {
     scroll: false,
     scrollDone: true,
     loggedIn: false,
-    editItem: function editItem() {},
-    deleteItem: function deleteItem() {},
+    editItem() {},
+    deleteItem() {},
     wrapper: 'div',
+    wrapperProps: {},
     keyPriority: ['id', 'name'],
   }
 
@@ -66,23 +68,38 @@ class List extends Component {
   }
 
   renderItems() {
-    return this.props.items.map((item) => {
-      const key = this.props.keyPriority.filter(i => !!item[i]);
+    const {
+      items,
+      keyPriority,
+      itemProps,
+      loggedIn,
+      editItem,
+      deleteItem,
+      item: Item,
+    } = this.props;
+
+    return items.map((item) => {
+      const key = keyPriority.filter(i => !!item[i]);
       return (
-        <this.props.item
+        <Item
           key={item[key[0]]}
           {...item}
-          {...this.props.itemProps}
-          loggedIn={this.props.loggedIn}
-          editItem={this.props.editItem.bind(null, item.id)}
-          deleteItem={this.props.deleteItem.bind(null, item.id)}
+          {...itemProps}
+          loggedIn={loggedIn}
+          editItem={editItem.bind(null, item.id)}
+          deleteItem={deleteItem.bind(null, item.id)}
         />
       );
     });
   }
 
   render() {
-    return React.createElement(this.props.wrapper, {}, this.renderItems());
+    const {
+      wrapper,
+      wrapperProps,
+    } = this.props;
+
+    return React.createElement(wrapper, wrapperProps, this.renderItems());
   }
 
 }

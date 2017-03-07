@@ -8,17 +8,14 @@ import {
   NEXT_EVENT,
 } from 'actions/events';
 
-const initState = {
-  all: [],
-  pagination: {
-    currentPage: 0,
-    totalPages: 1,
-  },
-  threeWeek: [],
-  image: [],
+import { combineReducers } from 'redux';
+
+const initPagination = {
+  currentPage: 0,
+  totalPages: 1,
 };
 
-function all(state, action) {
+function all(state = [], action) {
   switch (action.type) {
     case GET_EVENTS:
       return action.payload.data;
@@ -44,7 +41,7 @@ function all(state, action) {
   }
 }
 
-function threeWeek(state, action) {
+function threeWeek(state = [], action) {
   switch (action.type) {
     case GET_THREE_WEEK_EVENTS:
       return action.payload.data;
@@ -53,7 +50,7 @@ function threeWeek(state, action) {
   }
 }
 
-function image(state, action) {
+function image(state = [], action) {
   switch (action.type) {
     case GET_EVENTS: {
       // I want to come up with a better way to do this. I'm too tired right now.
@@ -76,7 +73,7 @@ function image(state, action) {
   }
 }
 
-function pagination(state, action) {
+function pagination(state = initPagination, action) {
   switch (action.type) {
     case GET_EVENTS:
       return {
@@ -95,11 +92,9 @@ function pagination(state, action) {
   }
 }
 
-export default function events(state = initState, action) {
-  return {
-    all: all(state.all, action),
-    threeWeek: threeWeek(state.threeWeek, action),
-    pagination: pagination(state.pagination, action),
-    image: image(state.image, action),
-  };
-}
+export default combineReducers({
+  all,
+  pagination,
+  threeWeek,
+  image,
+});
