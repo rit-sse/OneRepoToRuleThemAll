@@ -2,7 +2,7 @@ import moment from 'moment';
 import * as utils from './utils';
 
 export const MENTORS = 'MENTORS';
-export const GET_MENTORS = 'MENTORS';
+export const GET_MENTORS = 'GET_MENTORS';
 export const CREATE_MENTOR = 'CREATE_MENTOR';
 export const UPDATE_MENTOR = 'UPDATE_MENTOR';
 export const DESTROY_MENTOR = 'DESTROY_MENTOR';

@@ -1,6 +1,7 @@
 import React from 'react';
 import Status from 'containers/general/Status';
 import Login from 'containers/general/Login';
+import MentorList from 'containers/mentoring/MentorList';
 
 import { MENTORS } from 'actions/mentors';
 import { SHIFTS } from 'actions/shifts';
@@ -19,6 +20,11 @@ const Mentoring = () => (
     <div className="row">
       <div className="col">
         <Status type={[MENTORS, SHIFTS, SPECIALTIES]} message />
+      </div>
+    </div>
+    <div className="row">
+      <div className="col">
+        <MentorList />
       </div>
     </div>
     <div className="row">
