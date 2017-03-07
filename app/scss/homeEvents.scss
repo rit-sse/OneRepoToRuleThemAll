@@ -1,0 +1,20 @@
+@import 'variables';
+
+.home-events {
+  .link {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+  .home-event {
+    * {
+      margin: 0;
+      font-size: 1em;
+      line-height: 1.1em;
+    }
+    .event-heading {
+      color: $PRIMARY;
+      font-weight: bold;
+    }
+  }
+}

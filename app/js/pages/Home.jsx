@@ -1,8 +1,9 @@
 import React from 'react';
+import HomeEvents from 'containers/events/HomeEvents';
 
 const PageHome = () => (
   <div>
-    <div className="row">
+    <div className="row bot-1">
       <div className="col-12">
         <div style={{ width: '100%', height: '250px', backgroundColor: '#CECECE' }} />
       </div>
@@ -12,7 +13,9 @@ const PageHome = () => (
         <p>Mentoring</p>
         <p>Projects</p>
       </div>
-      <div className="col-md-5 left-border">Events</div>
+      <div className="col-md-5 left-border">
+        <HomeEvents />
+      </div>
     </div>
   </div>
 );

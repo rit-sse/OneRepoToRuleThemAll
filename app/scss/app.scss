@@ -8,3 +8,9 @@ body {
 .left-border {
   border-left: 1px solid $LIGHT_GREY;
 }
+
+@for $i from 1 through 5 {
+  .bot-#{$i} {
+    margin-bottom: 1em * $i;
+  }
+}
