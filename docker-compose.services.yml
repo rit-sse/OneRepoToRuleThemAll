@@ -1,10 +1,23 @@
 version: '3.1'
 
 services:
-  visualizer:
-    image: manomarks/visualizer
+
+  lb:
+    image: 'dockercloud/haproxy'
     ports:
-      - 8080:8080
+      - 8080:80
+    networks:
+      - external
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  visualizer:
+    image: 'manomarks/visualizer'
+    environment:
+      - SERVICE_PORTS=8080
+      - VIRTUAL_HOST=*
+    networks:
+      - external
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     deploy:
@@ -14,11 +27,17 @@ services:
           - node.role == manager
 
   updater:
-    image: 7imbrook/auto-service-updater
+    image: '7imbrook/auto-service-updater'
     ports:
       - 30000:3000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
     deploy:
       mode: global
       placement:
         constraints:
           - node.role == manager
+
+networks:
+  external:
+    external: true
