@@ -3,6 +3,7 @@
   "env": {
     "production": {
       "plugins": [
+        "transform-react-remove-prop-types",
         ["transform-imports", {
           "reactstrap": {
             "transform": "reactstrap/lib/${member}",

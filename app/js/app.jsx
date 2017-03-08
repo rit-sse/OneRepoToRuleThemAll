@@ -8,3 +8,9 @@ window.onload = () => {
   });
 };
 
+if (module.hot) {
+  module.hot.accept('./pages', () => {
+    const NewRoot = require('./pages').default; // eslint-disable-line global-require
+    ReactDOM.render(<NewRoot />, document.getElementById('react'));
+  });
+}
