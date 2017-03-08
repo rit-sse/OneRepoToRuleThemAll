@@ -2,10 +2,19 @@ import React, { PropTypes } from 'react';
 
 import 'scss/mentoring/mentor.scss';
 
-const Mentor = props => (
+const Mentor = ({
+  user: {
+    firstName,
+    lastName,
+    image,
+  },
+}) => (
   <div>
-    <div className="mentor-box">
-      <img className="mentor-img" src={props.user.image} alt="Mentor" />
+    <div className="mentor-box p-10">
+      <img className="mentor-img" src={image} alt="Mentor" />
+      <p className="text-center">
+        {firstName} {lastName}
+      </p>
     </div>
   </div>
 );

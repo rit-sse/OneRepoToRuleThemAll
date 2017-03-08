@@ -1,14 +1,24 @@
+@import '../variables';
+
 $mentorWidth: 100px;
 
 .mentor-box {
-  height: $mentorWidth;
   width: $mentorWidth;
+  margin-right: 10px;
 }
 
 .mentor-add {
   width: $mentorWidth;
+  height: $mentorWidth;
+  color: lighten($PRIMARY, 10%);
+  background: none;
+
+  &:hover, &:focus {
+    cursor: pointer;
+    color: $PRIMARY
+  }
 }
 
 img.mentor-img {
-  height: 100%;
+  width: $mentorWidth;
 }

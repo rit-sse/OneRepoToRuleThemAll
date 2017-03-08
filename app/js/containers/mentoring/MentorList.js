@@ -12,13 +12,13 @@ function mentorAuth(state) {
 function mapStateToProps(state) {
   return {
     item: MentorListItem,
-    items: [...(mentorAuth(state) ? [{ add: true }] : []), ...state.mentors.all],
+    items: [...(mentorAuth(state) ? [{ name: 'add', add: true }] : []), ...state.mentors.all],
     loggedIn: mentorAuth(state),
     itemProps: {
       editMode: state.shifts.mode === EDIT_MODE,
     },
     wrapperProps: {
-      className: 'd-flex flex-row align-items-center',
+      className: 'd-flex flex-row align-items-start',
     },
   };
 }

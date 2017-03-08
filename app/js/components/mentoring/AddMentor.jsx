@@ -2,11 +2,9 @@ import React, { PropTypes } from 'react';
 
 import 'scss/mentoring/mentor.scss';
 
-const AddMentor = props => (
-  <button onClick={props.addItem} className="btn btn-link p-0">
-    <div className="mentor-add">
-      <i className="fa fa-plus fa-5x" />
-    </div>
+const AddMentor = ({ addItem }) => (
+  <button onClick={addItem} className="btn mentor-add d-flex align-items-center justify-content-center">
+    <i className="fa fa-plus fa-5x" />
   </button>
 );
 
