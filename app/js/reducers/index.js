@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+import { reducer as form } from 'redux-form';
 import nav from './nav';
 import auth from './auth';
 import modal from './modal';
@@ -10,7 +11,7 @@ import specialties from './specialties';
 import mentors from './mentors';
 import shifts from './shifts';
 
-const rootReducer = combineReducers({
+export default combineReducers({
   nav,
   auth,
   modal,
@@ -21,6 +22,5 @@ const rootReducer = combineReducers({
   specialties,
   mentors,
   shifts,
+  form,
 });
-
-export default rootReducer;

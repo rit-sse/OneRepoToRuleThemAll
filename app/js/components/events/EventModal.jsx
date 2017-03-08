@@ -24,7 +24,7 @@ class EventModal extends Component {
 
   static defaultProps = {
     event: {
-      id: null,
+      id: 0,
       name: '',
       committeeName: '',
       startDate: '',
@@ -39,10 +39,9 @@ class EventModal extends Component {
     super();
 
     this.offset = new Date().getTimezoneOffset() / 60;
-    this.submit = this.submit.bind(this);
   }
 
-  submit() {
+  submit = () => {
     const event = {
       name: this.eventName.value,
       committeeName: this.committee.value,

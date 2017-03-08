@@ -2,6 +2,7 @@ import React from 'react';
 import Status from 'containers/general/Status';
 import Login from 'containers/general/Login';
 import MentorList from 'containers/mentoring/MentorList';
+import MentorModal from 'containers/mentoring/AddMentorForm';
 
 import { MENTORS } from 'actions/mentors';
 import { SHIFTS } from 'actions/shifts';
@@ -32,6 +33,7 @@ const Mentoring = () => (
         <Status type={[MENTORS, SHIFTS, SPECIALTIES]} spinner />
       </div>
     </div>
+    <MentorModal />
   </div>
 );
 

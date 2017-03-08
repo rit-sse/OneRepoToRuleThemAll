@@ -11,7 +11,7 @@ class List extends Component {
     deleteItem: PropTypes.func,
     scroll: PropTypes.bool,
     scrollDone: PropTypes.bool,
-    wrapper: PropTypes.string.isRequired,
+    wrapper: PropTypes.string,
     wrapperProps: PropTypes.object, // eslint-disable-line
     keyPriority: PropTypes.arrayOf(PropTypes.string),
   }
