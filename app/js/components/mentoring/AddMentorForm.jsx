@@ -55,10 +55,14 @@ class AddMentorForm extends Component {
       update,
     } = this.props;
 
+    const newMentor = {
+      ...values,
+      specialties: values.specialties.map(specialty => specialty.value),
+    };
     if (mentor) {
-      return update(mentor.id, values);
+      return update(mentor.id, newMentor);
     }
-    return create(values);
+    return create(newMentor);
   };
 
   render() {
@@ -74,9 +78,9 @@ class AddMentorForm extends Component {
 
     return (
       <Modal isOpen={isOpen} toggle={close}>
-        <ModalHeader toggle={close}>{updateOrCreate} Mentor</ModalHeader>
-        <ModalBody>
-          <Form onSubmit={handleSubmit(this.submit)}>
+        <Form onSubmit={handleSubmit(this.submit)}>
+          <ModalHeader toggle={close}>{updateOrCreate} Mentor</ModalHeader>
+          <ModalBody>
             <FormSection name="user">
               <UserForm autofill={autofill} />
             </FormSection>
@@ -100,12 +104,12 @@ class AddMentorForm extends Component {
                 </div>
               </div>
             </fieldset>
-          </Form>
-        </ModalBody>
-        <ModalFooter>
-          <Button className="btn btn-sse" onClick={this.sumbit}>{updateOrCreate}</Button>
-          <Button className="btn btn-secondary" onClick={close}>Cancel</Button>
-        </ModalFooter>
+          </ModalBody>
+          <ModalFooter>
+            <Button className="btn btn-sse" type="submit">{updateOrCreate}</Button>
+            <Button className="btn btn-secondary" onClick={close}>Cancel</Button>
+          </ModalFooter>
+        </Form>
       </Modal>
     );
   }

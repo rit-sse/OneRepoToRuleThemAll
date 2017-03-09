@@ -1,8 +1,8 @@
 import React, { PropTypes } from 'react';
 import 'scss/buttons.scss';
 
-const Button = props => (
-  props.shown ? <button className={props.className} onClick={props.onClick}>{props.children}</button> : null
+const Button = ({ shown, children, ...props }) => (
+  shown ? <button {...props}>{children}</button> : null
 );
 
 Button.propTypes = {
