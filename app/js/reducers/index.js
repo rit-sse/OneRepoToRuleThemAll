@@ -10,6 +10,7 @@ import go from './go';
 import specialties from './specialties';
 import mentors from './mentors';
 import shifts from './shifts';
+import user from './user';
 
 export default combineReducers({
   nav,
@@ -23,4 +24,5 @@ export default combineReducers({
   mentors,
   shifts,
   form,
+  user,
 });

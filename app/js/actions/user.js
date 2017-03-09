@@ -1,0 +1,16 @@
+import * as utils from './utils';
+
+export const USER = 'USER';
+export const GET_USER = 'GER_USER';
+
+const createAction = utils.createAction(USER);
+const loading = utils.createLoading(USER);
+
+export function getUser(dce) {
+  return (dispatch, getState, api) => {
+    dispatch(loading(GET_USER));
+    api.Users.one(dce)
+      .then(data => dispatch(createAction(GET_USER, data)))
+      .catch(err => dispatch(createAction(GET_USER, err)));
+  };
+}
