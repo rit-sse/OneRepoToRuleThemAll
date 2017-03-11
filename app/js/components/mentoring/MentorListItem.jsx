@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import AddMentor from 'components/mentoring/AddMentor';
 import DraggableMentor from 'components/mentoring/DraggableMentor';
-import Mentor from 'components/mentoring/Mentor';
+import Mentor from 'containers/mentoring/Mentor';
 
 const MentorListItem = (props) => {
   if (props.add) {

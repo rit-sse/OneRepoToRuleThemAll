@@ -2,6 +2,7 @@ import React from 'react';
 import Status from 'containers/general/Status';
 import Login from 'containers/general/Login';
 import MentorList from 'containers/mentoring/MentorList';
+import SpecialtyList from 'containers/mentoring/SpecialtyList';
 import MentorModal from 'containers/mentoring/AddMentorForm';
 
 import { MENTORS } from 'actions/mentors';
@@ -26,6 +27,11 @@ const Mentoring = () => (
     <div className="row">
       <div className="col">
         <MentorList />
+      </div>
+    </div>
+    <div className="row">
+      <div className="col">
+        <SpecialtyList />
       </div>
     </div>
     <div className="row">

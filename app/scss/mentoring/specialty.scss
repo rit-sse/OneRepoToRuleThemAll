@@ -1,0 +1,11 @@
+@import '../variables';
+
+.badge-specialty {
+  background-color: #999;
+  transition: .5s ease;
+  margin-right: 5px;
+
+  &.lighten {
+    opacity: 0.3;
+  }
+}

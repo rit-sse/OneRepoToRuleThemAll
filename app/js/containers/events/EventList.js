@@ -14,7 +14,9 @@ function mapStateToProps(store, props) {
     scroll: true,
     scrollDone: store.events.pagination.totalPages <= store.events.pagination.currentPage,
     item: Event,
-    loggedIn: !!store.auth.officer,
+    itemProps: {
+      loggedIn: !!store.auth.officer,
+    },
     items: filterEvents(store.events, props.match.params),
   };
 }

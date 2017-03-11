@@ -72,6 +72,7 @@ class AddMentorForm extends Component {
       create,
       update,
       close,
+      getSpecialties,
     } = this.props;
 
     const specialties = values.specialties || [];
@@ -84,10 +85,14 @@ class AddMentorForm extends Component {
     newMentor.userDce = newMentor.user.dce;
 
     close();
-    if (mentor) {
-      return update(mentor.id, newMentor);
-    }
-    return create(newMentor);
+
+    return do {
+      if (mentor) {
+        update(mentor.id, newMentor);
+      } else {
+        create(newMentor);
+      }
+    }.then(() => getSpecialties());
   };
 
   render() {

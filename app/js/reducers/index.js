@@ -11,6 +11,7 @@ import specialties from './specialties';
 import mentors from './mentors';
 import shifts from './shifts';
 import user from './user';
+import hover from './hover';
 
 export default combineReducers({
   nav,
@@ -25,4 +26,5 @@ export default combineReducers({
   shifts,
   form,
   user,
+  hover,
 });

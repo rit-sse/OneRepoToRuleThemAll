@@ -9,7 +9,7 @@ const loading = utils.createLoading(SPECIALTIES);
 export function getSpecialties() {
   return (dispatch, getState, api) => {
     dispatch(loading(GET_SPECIALTIES));
-    api.Specialties.all({}, true)
+    return api.Specialties.all({}, true)
       .then(data => dispatch(createAction(GET_SPECIALTIES, data)))
       .catch(err => dispatch(createAction(GET_SPECIALTIES, err)));
   };

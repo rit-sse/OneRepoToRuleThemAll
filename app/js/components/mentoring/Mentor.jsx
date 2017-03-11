@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import classnames from 'classnames';
 
 import 'scss/mentoring/mentor.scss';
 
@@ -10,9 +11,16 @@ const Mentor = ({
   },
   editItem,
   deleteItem,
+  lighten,
+  handleHover,
+  handleUnhover,
 }) => (
   <div>
-    <div className="mentor-box p-10">
+    <div
+      className={classnames('mentor-box', 'p-10', { lighten })}
+      onMouseOver={handleHover}
+      onMouseOut={handleUnhover}
+    >
       <img className="mentor-img" src={image} alt="Mentor" />
       <p className="text-center">
         {firstName} {lastName}
@@ -37,6 +45,9 @@ Mentor.propTypes = {
   }).isRequired,
   editItem: PropTypes.func.isRequired,
   deleteItem: PropTypes.func.isRequired,
+  lighten: PropTypes.bool.isRequired,
+  handleHover: PropTypes.func.isRequired,
+  handleUnhover: PropTypes.func.isRequired,
 };
 
 export default Mentor;

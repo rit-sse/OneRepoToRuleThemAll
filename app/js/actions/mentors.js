@@ -15,7 +15,7 @@ const loading = utils.createLoading(MENTORS);
 export function getMentors() {
   return (dispatch, getState, api) => {
     dispatch(loading(GET_MENTORS));
-    api.Mentors.all({ active: new Date() }, true)
+    return api.Mentors.all({ active: new Date() }, true)
       .then(data => dispatch(createAction(GET_MENTORS, data)))
       .catch(err => dispatch(createAction(GET_MENTORS, err)));
   };
@@ -24,7 +24,7 @@ export function getMentors() {
 export function createMentor({ user, ...mentor }) {
   return (dispatch, getState, api) => {
     dispatch(loading(CREATE_MENTOR));
-    api.Users.update(user.dce, user)
+    return api.Users.update(user.dce, user)
       .then(() => api.Mentors.create(mentor))
       .then(data => dispatch(createAction(CREATE_MENTOR, data)))
       .catch(err => dispatch(createAction(CREATE_MENTOR, err)));
@@ -44,7 +44,7 @@ export function updateMentor(id, { user, ...mentor }) {
 export function destroyMentor(id) {
   return (dispatch, getState, api) => {
     dispatch(loading(DESTROY_MENTOR));
-    api.Mentors.destroy(id)
+    return api.Mentors.destroy(id)
       .then(() => dispatch(createAction(DESTROY_MENTOR, id)))
       .catch(err => dispatch(createAction(DESTROY_MENTOR, err)));
   };
@@ -56,7 +56,7 @@ export function getMentorOnDuty() {
     const time = moment().format('HH:mm');
     const active = new Date();
     dispatch(loading(GET_MENTOR_ON_DUTY));
-    api.Mentors.all({ active, day, time }, true)
+    return api.Mentors.all({ active, day, time }, true)
       .then(data => dispatch(createAction(GET_MENTOR_ON_DUTY, data)))
       .catch(err => dispatch(createAction(GET_MENTOR_ON_DUTY, err)));
   };

@@ -6,15 +6,15 @@ $mentorWidth: 100px;
   width: $mentorWidth;
   margin-right: 10px;
   position: relative;
+  transition: .5s ease;
 
   .mentor-img {
     width: $mentorWidth;
-    transition: .25s ease;
   }
 
   .actions {
     opacity: 0;
-    transition: .25s ease;
+    transition: .5s ease;
     position: absolute;
     top: 0px;
     right: 0px;
@@ -25,14 +25,15 @@ $mentorWidth: 100px;
     }
   }
 
+
   &:hover, &:focus {
     .actions {
       opacity: 1;
     }
+  }
 
-    .mentor-img {
-      opacity: 0.3;
-    }
+  &.lighten {
+    opacity: 0.3;
   }
 }
 

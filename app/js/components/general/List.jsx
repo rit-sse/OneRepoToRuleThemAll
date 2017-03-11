@@ -5,7 +5,6 @@ class List extends Component {
     item: PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
     items: PropTypes.arrayOf(PropTypes.object).isRequired,
     itemProps: PropTypes.object, // eslint-disable-line
-    loggedIn: PropTypes.bool,
     getItems: PropTypes.func.isRequired,
     editItem: PropTypes.func,
     deleteItem: PropTypes.func,
@@ -19,7 +18,7 @@ class List extends Component {
   static defaultProps = {
     scroll: false,
     scrollDone: true,
-    loggedIn: false,
+    itemProps: {},
     editItem() {},
     deleteItem() {},
     wrapper: 'div',
@@ -72,7 +71,6 @@ class List extends Component {
       items,
       keyPriority,
       itemProps,
-      loggedIn,
       editItem,
       deleteItem,
       item: Item,
@@ -85,7 +83,6 @@ class List extends Component {
           key={item[key[0]]}
           {...item}
           {...itemProps}
-          loggedIn={loggedIn}
           editItem={editItem.bind(null, item.id)}
           deleteItem={deleteItem.bind(null, item.id)}
         />
