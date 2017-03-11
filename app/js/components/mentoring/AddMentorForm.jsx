@@ -4,6 +4,7 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Button from 'components/general/Button';
 import UserForm from 'containers/general/UserForm';
 import SelectInput from 'components/general/SelectInput';
+import moment from 'moment';
 
 class AddMentorForm extends Component {
   static propTypes = {
@@ -31,6 +32,8 @@ class AddMentorForm extends Component {
     update: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     autofill: PropTypes.func.isRequired,
+    getSpecialties: PropTypes.func.isRequired,
+    initialize: PropTypes.func.isRequired,
   }
 
   static defaultProps = {
@@ -48,17 +51,39 @@ class AddMentorForm extends Component {
     },
   };
 
+  componentDidMount() {
+    this.props.getSpecialties();
+  }
+
+  componentDidUpdate(prevProps) {
+    const {
+      isOpen,
+      initialize,
+      mentor,
+    } = this.props;
+    if (isOpen && !prevProps.isOpen) {
+      initialize(mentor);
+    }
+  }
+
   submit = (values) => {
     const {
       mentor,
       create,
       update,
+      close,
     } = this.props;
 
+    const specialties = values.specialties || [];
     const newMentor = {
       ...values,
-      specialties: values.specialties.map(specialty => specialty.value),
+      startDate: moment(values.startDate).utc(),
+      endDate: moment(values.endDate).utc(),
+      specialties: specialties.map(specialty => specialty.value),
     };
+    newMentor.userDce = newMentor.user.dce;
+
+    close();
     if (mentor) {
       return update(mentor.id, newMentor);
     }
@@ -88,13 +113,13 @@ class AddMentorForm extends Component {
               <div className="form-group row">
                 <label htmlFor="startDate" className="col-sm-2 col-form-label">Start Date</label>
                 <div className="col-sm-10">
-                  <Field className="form-control" id="startDate" name="startDate" component="input" type="datetime-local" />
+                  <Field className="form-control" id="startDate" name="startDate" component="input" type="date" />
                 </div>
               </div>
               <div className="form-group row">
                 <label htmlFor="endDate" className="col-sm-2 col-form-label">End Date</label>
                 <div className="col-sm-10">
-                  <Field className="form-control" id="endDate" name="endDate" component="input" type="datetime-local" />
+                  <Field className="form-control" id="endDate" name="endDate" component="input" type="date" />
                 </div>
               </div>
               <div className="form-group row">
@@ -107,7 +132,7 @@ class AddMentorForm extends Component {
           </ModalBody>
           <ModalFooter>
             <Button className="btn btn-sse" type="submit">{updateOrCreate}</Button>
-            <Button className="btn btn-secondary" onClick={close}>Cancel</Button>
+            <Button className="btn btn-secondary" type="button" onClick={close}>Cancel</Button>
           </ModalFooter>
         </Form>
       </Modal>

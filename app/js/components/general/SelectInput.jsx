@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Creatable } from 'react-select';
 import 'react-select/dist/react-select.css';
+import SelectedValue from './SelectedValue';
 
 const SelectInput = props => (
   <Creatable
@@ -9,6 +10,7 @@ const SelectInput = props => (
     onChange={value => props.input.onChange(value)}
     onBlur={() => props.input.onBlur(props.input.value)}
     options={props.options}
+    valueComponent={SelectedValue}
   />
 );
 

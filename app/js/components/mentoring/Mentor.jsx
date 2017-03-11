@@ -8,6 +8,8 @@ const Mentor = ({
     lastName,
     image,
   },
+  editItem,
+  deleteItem,
 }) => (
   <div>
     <div className="mentor-box p-10">
@@ -15,6 +17,14 @@ const Mentor = ({
       <p className="text-center">
         {firstName} {lastName}
       </p>
+      <div className="actions">
+        <button className="btn btn-small btn-info" onClick={editItem}>
+          <i className="fa fa-pencil" aria-hidden="true" />
+        </button>
+        <button className="btn btn-small btn-danger" onClick={deleteItem}>
+          <i className="fa fa-trash-o" aria-hidden="true" />
+        </button>
+      </div>
     </div>
   </div>
 );
@@ -25,6 +35,8 @@ Mentor.propTypes = {
     lastName: PropTypes.string,
     image: PropTypes.string,
   }).isRequired,
+  editItem: PropTypes.func.isRequired,
+  deleteItem: PropTypes.func.isRequired,
 };
 
 export default Mentor;

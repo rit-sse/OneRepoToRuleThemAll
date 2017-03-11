@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Button from 'components/general/Button';
 import moment from 'moment';
+import { adjustTimezone } from 'utils/dates';
 
 class EventModal extends Component {
   static propTypes = {
@@ -33,12 +34,6 @@ class EventModal extends Component {
       location: '',
       image: '',
     },
-  }
-
-  constructor() {
-    super();
-
-    this.offset = new Date().getTimezoneOffset() / 60;
   }
 
   submit = () => {
@@ -81,7 +76,7 @@ class EventModal extends Component {
                   type="datetime-local"
                   className="form-control"
                   ref={(c) => { this.startDate = c; }}
-                  defaultValue={event.startDate ? moment(event.startDate).subtract(this.offset, 'hour').toISOString().split('.')[0] : ''}
+                  defaultValue={event.startDate ? adjustTimezone(event.startDate).toISOString().split('.')[0] : ''}
                 />
               </div>
             </div>
@@ -94,7 +89,7 @@ class EventModal extends Component {
                   type="datetime-local"
                   className="form-control"
                   ref={(c) => { this.endDate = c; }}
-                  defaultValue={event.endDate ? moment(event.endDate).subtract(this.offset, 'hour').toISOString().split('.')[0] : ''}
+                  defaultValue={event.endDate ? adjustTimezone(event.endDate).toISOString().split('.')[0] : ''}
                 />
               </div>
             </div>

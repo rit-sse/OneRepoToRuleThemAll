@@ -2,14 +2,31 @@ import { connect } from 'react-redux';
 import AddMentorForm from 'components/mentoring/AddMentorForm';
 import { hideModal, MENTOR_MODAL } from 'actions/modal';
 import { createMentor, updateMentor } from 'actions/mentors';
+import { getSpecialties } from 'actions/specialties';
+import moment from 'moment';
 
 function mapStateToProps(state) {
+  const mentor = do {
+    if (state.modal.modalType === MENTOR_MODAL) {
+      var mentorObj = state.mentors.all.find(m => m.id === state.modal.id); // eslint-disable-line vars-on-top, no-var
+      if (mentorObj) {
+        Object.assign({}, mentorObj, {
+          startDate: moment(mentorObj.startDate).toISOString().split('T')[0],
+          endDate: moment(mentorObj.endDate).toISOString().split('T')[0],
+          specialties: mentorObj.specialties.map(specialty => ({ label: specialty.name, value: specialty.name })),
+        });
+      } else {
+        null; // eslint-disable-line no-unused-expressions
+      }
+    } else {
+      null; // eslint-disable-line no-unused-expressions
+    }
+  };
+
   return {
-    mentor: state.modal.modalType === MENTOR_MODAL ? state.mentors.all.find((m) => {
-      return m.id === state.modal.id;
-    }) || null : null,
+    mentor,
     isOpen: state.modal.modalType === MENTOR_MODAL,
-    specialties: state.specialties,
+    specialties: state.specialties.map(specialty => ({ label: specialty.name, value: specialty.name })),
   };
 }
 
@@ -18,6 +35,7 @@ function mapDispatchToProps(dispatch) {
     create: mentor => dispatch(createMentor(mentor)),
     update: (id, mentor) => dispatch(updateMentor(id, mentor)),
     close: () => dispatch(hideModal()),
+    getSpecialties: () => dispatch(getSpecialties()),
   };
 }
 

@@ -21,19 +21,21 @@ export function getMentors() {
   };
 }
 
-export function createMentor(mentor) {
+export function createMentor({ user, ...mentor }) {
   return (dispatch, getState, api) => {
     dispatch(loading(CREATE_MENTOR));
-    api.Mentors.create(mentor)
+    api.Users.update(user.dce, user)
+      .then(() => api.Mentors.create(mentor))
       .then(data => dispatch(createAction(CREATE_MENTOR, data)))
       .catch(err => dispatch(createAction(CREATE_MENTOR, err)));
   };
 }
 
-export function updateMentor(id, mentor) {
+export function updateMentor(id, { user, ...mentor }) {
   return (dispatch, getState, api) => {
     dispatch(loading(UPDATE_MENTOR));
-    api.Mentors.create(id, mentor)
+    return api.Users.update(user.dce, user)
+      .then(() => api.Mentors.update(id, mentor))
       .then(data => dispatch(createAction(UPDATE_MENTOR, data)))
       .catch(err => dispatch(createAction(UPDATE_MENTOR, err)));
   };
@@ -42,7 +44,7 @@ export function updateMentor(id, mentor) {
 export function destroyMentor(id) {
   return (dispatch, getState, api) => {
     dispatch(loading(DESTROY_MENTOR));
-    api.Mentors.create(id)
+    api.Mentors.destroy(id)
       .then(() => dispatch(createAction(DESTROY_MENTOR, id)))
       .catch(err => dispatch(createAction(DESTROY_MENTOR, err)));
   };
