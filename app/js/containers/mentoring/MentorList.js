@@ -13,9 +13,9 @@ function mapStateToProps(state) {
   return {
     item: MentorListItem,
     items: [...(mentorAuth(state) ? [{ name: 'add', add: true }] : []), ...state.mentors.all],
-    loggedIn: mentorAuth(state),
     itemProps: {
       editMode: state.shifts.mode === EDIT_MODE,
+      loggedIn: mentorAuth(state),
     },
     wrapperProps: {
       className: 'd-flex flex-row align-items-start',
