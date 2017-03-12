@@ -5,7 +5,7 @@ class List extends Component {
     item: PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
     items: PropTypes.arrayOf(PropTypes.object).isRequired,
     itemProps: PropTypes.object, // eslint-disable-line
-    getItems: PropTypes.func.isRequired,
+    getItems: PropTypes.func,
     editItem: PropTypes.func,
     deleteItem: PropTypes.func,
     scroll: PropTypes.bool,
@@ -21,17 +21,10 @@ class List extends Component {
     itemProps: {},
     editItem() {},
     deleteItem() {},
+    getItems() {},
     wrapper: 'div',
     wrapperProps: {},
     keyPriority: ['id', 'name'],
-  }
-
-  constructor() {
-    super();
-
-    this.checkScroll = this.checkScroll.bind(this);
-    this.renderItems = this.renderItems.bind(this);
-    this.checkHeight = this.checkHeight.bind(this);
   }
 
   componentDidMount() {
@@ -52,21 +45,21 @@ class List extends Component {
     if (this.props.scroll) window.removeEventListener('scroll', this.checkScroll);
   }
 
-  checkScroll() {
+  checkScroll = () => {
     if (((window.innerHeight + window.scrollY) + 25) >= document.body.offsetHeight) {
       this.props.getItems(true); // Make this get the next pagination
     }
-  }
+  };
 
-  checkHeight() {
+  checkHeight = () => {
     setTimeout(() => {
       if ((document.body.clientHeight < document.body.scrollHeight) && !this.props.scrollDone) {
         this.props.getItems(true);
       }
     }, 100);
-  }
+  };
 
-  renderItems() {
+  renderItems = () => {
     const {
       items,
       keyPriority,
@@ -88,7 +81,7 @@ class List extends Component {
         />
       );
     });
-  }
+  };
 
   render() {
     const {

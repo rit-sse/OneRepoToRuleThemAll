@@ -3,19 +3,17 @@ import List from 'components/general/List';
 import { getMentors, destroyMentor } from 'actions/mentors';
 import { showMentorModal } from 'actions/modal';
 import MentorListItem from 'components/mentoring/MentorListItem';
-import { EDIT_MODE } from 'actions/shifts';
 
-function mentorAuth(state) {
-  return state.auth.officer && (state.auth.officer.title === 'Mentoring Head' || state.auth.officer.primaryOfficer);
+function mentorAuth({ officer }) {
+  return !!officer && (officer.title === 'Mentoring Head' || officer.primaryOfficer);
 }
 
-function mapStateToProps(state) {
+function mapStateToProps({ auth, mentors }) {
   return {
     item: MentorListItem,
-    items: [...(mentorAuth(state) ? [{ name: 'add', add: true }] : []), ...state.mentors.all],
+    items: [...(mentorAuth(auth) ? [{ name: 'add', add: true }] : []), ...Object.values(mentors.all)],
     itemProps: {
-      editMode: state.shifts.mode === EDIT_MODE,
-      loggedIn: mentorAuth(state),
+      loggedIn: mentorAuth(auth),
     },
     wrapperProps: {
       className: 'd-flex flex-row align-items-start',

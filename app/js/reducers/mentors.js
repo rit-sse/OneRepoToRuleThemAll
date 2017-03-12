@@ -5,34 +5,31 @@ import {
   DESTROY_MENTOR,
   GET_MENTOR_ON_DUTY,
 } from 'actions/mentors';
+import { combineReducers } from 'redux';
 
-const initState = {
-  all: [],
-  mentorOnDuty: [],
-};
-
-function all(state, action) {
+function all(state = {}, action) {
   switch (action.type) {
     case GET_MENTORS:
-      return action.payload.data;
+      return action.payload.data.reduce((obj, mentor) => ({
+        ...obj,
+        [mentor.id]: mentor,
+      }), {});
     case CREATE_MENTOR:
-      return [
-        ...state,
-        action.payload,
-      ];
     case UPDATE_MENTOR:
-      return state.map((mentor) => {
-        if (action.payload.id !== mentor.id) return mentor;
-        return action.payload;
-      });
-    case DESTROY_MENTOR:
-      return state.filter(mentor => mentor.id !== action.payload);
+      return {
+        ...state,
+        [action.payload.id]: action.payload,
+      };
+    case DESTROY_MENTOR: {
+      const { [action.payload.id]: omit, ...rest } = state; // eslint-disable-line no-unused-vars
+      return rest;
+    }
     default:
       return state;
   }
 }
 
-function mentorOnDuty(state, action) {
+function mentorOnDuty(state = [], action) {
   switch (action.type) {
     case GET_MENTOR_ON_DUTY:
       return action.payload.data;
@@ -41,9 +38,7 @@ function mentorOnDuty(state, action) {
   }
 }
 
-export default function mentors(state = initState, action) {
-  return {
-    all: all(state.all, action),
-    mentorOnDuty: mentorOnDuty(state.mentorOnDuty, action),
-  };
-}
+export default combineReducers({
+  all,
+  mentorOnDuty,
+});

@@ -8,12 +8,12 @@ const MentorListItem = (props) => {
     return <AddMentor addItem={props.editItem} />;
   }
 
-  return props.editMode ? <DraggableMentor {...props} /> : <Mentor {...props} />;
+  return props.loggedIn ? <DraggableMentor {...props} /> : <Mentor {...props} />;
 };
 
 MentorListItem.propTypes = {
   add: PropTypes.bool,
-  editMode: PropTypes.bool.isRequired,
+  loggedIn: PropTypes.bool.isRequired,
   editItem: PropTypes.func.isRequired,
 };
 

@@ -14,6 +14,7 @@ const Mentor = ({
   lighten,
   handleHover,
   handleUnhover,
+  showActions,
 }) => (
   <div>
     <div
@@ -22,17 +23,18 @@ const Mentor = ({
       onMouseOut={handleUnhover}
     >
       <img className="mentor-img" src={image} alt="Mentor" />
-      <p className="text-center">
+      <p className="text-center m-0">
         {firstName} {lastName}
       </p>
-      <div className="actions">
-        <button className="btn btn-small btn-info" onClick={editItem}>
-          <i className="fa fa-pencil" aria-hidden="true" />
-        </button>
-        <button className="btn btn-small btn-danger" onClick={deleteItem}>
-          <i className="fa fa-trash-o" aria-hidden="true" />
-        </button>
-      </div>
+      { showActions ?
+        (<div className="actions">
+          <button className="btn btn-small btn-info" onClick={editItem}>
+            <i className="fa fa-pencil" aria-hidden="true" />
+          </button>
+          <button className="btn btn-small btn-danger" onClick={deleteItem}>
+            <i className="fa fa-trash-o" aria-hidden="true" />
+          </button>
+        </div>) : null }
     </div>
   </div>
 );
@@ -43,11 +45,18 @@ Mentor.propTypes = {
     lastName: PropTypes.string,
     image: PropTypes.string,
   }).isRequired,
-  editItem: PropTypes.func.isRequired,
-  deleteItem: PropTypes.func.isRequired,
+  editItem: PropTypes.func,
+  deleteItem: PropTypes.func,
   lighten: PropTypes.bool.isRequired,
   handleHover: PropTypes.func.isRequired,
   handleUnhover: PropTypes.func.isRequired,
+  showActions: PropTypes.bool,
+};
+
+Mentor.defaultProps = {
+  showActions: false,
+  editItem() {},
+  deleteItem() {},
 };
 
 export default Mentor;
