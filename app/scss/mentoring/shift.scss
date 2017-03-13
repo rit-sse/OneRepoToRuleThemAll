@@ -1,0 +1,7 @@
+@import '../variables';
+
+.shift {
+  &.darken {
+    background-color: darken($WHITE, 10%);
+  }
+}

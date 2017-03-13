@@ -1,9 +1,11 @@
 import {
   GET_SHIFTS,
   CREATE_SHIFT,
+  UPDATE_SHIFT,
   DESTROY_SHIFT,
 } from 'actions/shifts';
 import moment from 'moment';
+import { combineReducers } from 'redux';
 
 function initialShifts() {
   const weekdays = moment.weekdays().slice(1, -1);
@@ -25,7 +27,7 @@ function buildShifts(shiftList) {
   return shiftObj;
 }
 
-export default function shifts(state = initialShifts(), { type, payload }) {
+function byDay(state = initialShifts(), { type, payload }) {
   switch (type) {
     case GET_SHIFTS:
       return buildShifts(payload.data);
@@ -52,3 +54,30 @@ export default function shifts(state = initialShifts(), { type, payload }) {
       return state;
   }
 }
+
+function byId(state = {}, action) {
+  switch (action.type) {
+    case GET_SHIFTS:
+      return action.payload.data.reduce((obj, shift) => ({
+        ...obj,
+        [shift.id]: shift,
+      }), {});
+    case CREATE_SHIFT:
+    case UPDATE_SHIFT:
+      return {
+        ...state,
+        [action.payload.id]: action.payload,
+      };
+    case DESTROY_SHIFT: {
+      const { [action.payload.id]: omit, ...rest } = state; // eslint-disable-line no-unused-vars
+      return rest;
+    }
+    default:
+      return state;
+  }
+}
+
+export default combineReducers({
+  byId,
+  byDay,
+});

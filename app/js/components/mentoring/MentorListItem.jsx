@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import AddMentor from 'components/mentoring/AddMentor';
-import DraggableMentor from 'components/mentoring/DraggableMentor';
 import Mentor from 'containers/mentoring/Mentor';
 
 const MentorListItem = (props) => {
@@ -8,12 +7,11 @@ const MentorListItem = (props) => {
     return <AddMentor addItem={props.editItem} />;
   }
 
-  return props.loggedIn ? <DraggableMentor {...props} /> : <Mentor {...props} />;
+  return <Mentor {...props} />;
 };
 
 MentorListItem.propTypes = {
   add: PropTypes.bool,
-  loggedIn: PropTypes.bool.isRequired,
   editItem: PropTypes.func.isRequired,
 };
 

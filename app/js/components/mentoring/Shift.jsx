@@ -1,14 +1,38 @@
 import React, { PropTypes } from 'react';
+import { DropTarget } from 'react-dnd';
 import Mentor from 'containers/mentoring/Mentor';
-import DraggableMentor from 'components/mentoring/DraggableMentor';
+import { MENTOR_TYPE } from 'components/mentoring/Mentor';
+import classnames from 'classnames';
+
+import 'scss/mentoring/shift.scss';
+
+const shiftTarget = {
+  drop({ startTime, endTime, day }) {
+    return { startTime, endTime, day };
+  },
+  canDrop(props, monitor) {
+    return !props.mentors.find(mentor => mentor.id === monitor.getItem().id);
+  },
+};
+
+function collect(connect, monitor) {
+  return {
+    connectDropTarget: connect.dropTarget(),
+    isOver: monitor.isOver(),
+    canDrop: monitor.canDrop(),
+  };
+}
 
 const Shift = ({
   mentors,
-  loggedIn,
-}) => (
-  <div className="card">
+  connectDropTarget,
+  isOver,
+  canDrop,
+  ...rest
+}) => connectDropTarget(
+  <div className={classnames('card', 'shift', { darken: isOver && canDrop })}>
     <div className="card-block d-flex flex-row align-items-start">
-      { mentors.map(mentor => (loggedIn ? <Mentor key={mentor.id} {...mentor} /> : <DraggableMentor key={mentor.id} {...mentor} />)) }
+      { mentors.map(mentor => <Mentor key={mentor.id} {...mentor} {...rest} />)}
     </div>
   </div>
 );
@@ -18,4 +42,4 @@ Shift.propTypes = {
   loggedIn: PropTypes.bool.isRequired,
 };
 
-export default Shift;
+export default DropTarget(MENTOR_TYPE, shiftTarget, collect)(Shift);

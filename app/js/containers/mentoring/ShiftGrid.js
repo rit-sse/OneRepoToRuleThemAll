@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import moment from 'moment';
 import Grid from 'components/general/Grid';
-import { getShifts, createShift, destroyShift } from 'actions/shifts';
+import { getShifts } from 'actions/shifts';
 import ShiftGridItem from 'components/mentoring/ShiftGridItem';
 
 function mentorAuth({ officer }) {
@@ -26,7 +26,7 @@ function buildShifts(shifts, mentors) {
     };
     const array = [{ header: `${moment(timeObj.startTime, 'HH:mm:ss').format('h:mm A')} - ${moment(timeObj.endTime, 'HH:mm:ss').format('h:mm A')}` }];
     for (let j = 0; j < 5; j++) { // eslint-disable-line no-plusplus
-      const shiftMentors = shifts[weekdays[j]][timeObj.startTime].map(shift => mentors[shift.mentorId]);
+      const shiftMentors = shifts[weekdays[j]][timeObj.startTime].map(shift => ({ shiftId: shift.id, ...mentors[shift.mentorId] }));
       array.push({ day: weekdays[j], mentors: shiftMentors, ...timeObj });
     }
     shiftArray.push(array);
@@ -38,7 +38,7 @@ function buildShifts(shifts, mentors) {
 function mapStateToProps({ auth, shifts, mentors }) {
   return {
     item: ShiftGridItem,
-    items: buildShifts(shifts, mentors),
+    items: buildShifts(shifts.byDay, mentors.all),
     itemProps: {
       loggedIn: mentorAuth(auth),
     },
@@ -55,8 +55,6 @@ function mapStateToProps({ auth, shifts, mentors }) {
 function mapDispatchToProps(dispatch) {
   return {
     getItems: () => dispatch(getShifts()),
-    deleteItem: id => dispatch(destroyShift(id)),
-    editItem: shift => dispatch(createShift(shift)),
   };
 }
 

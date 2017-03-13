@@ -14,6 +14,7 @@ function mapStateToProps({ auth, mentors }) {
     items: [...(mentorAuth(auth) ? [{ name: 'add', add: true }] : []), ...Object.values(mentors.all)],
     itemProps: {
       loggedIn: mentorAuth(auth),
+      showActions: mentorAuth(auth),
     },
     wrapperProps: {
       className: 'd-flex flex-row align-items-start',

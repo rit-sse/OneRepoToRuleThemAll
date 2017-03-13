@@ -8,9 +8,10 @@ import moment from 'moment';
 function mapStateToProps(state) {
   const mentor = do {
     if (state.modal.modalType === MENTOR_MODAL) {
-      var mentorObj = state.mentors.all.find(m => m.id === state.modal.id); // eslint-disable-line vars-on-top, no-var
+      var mentorObj = state.mentors.all[state.modal.id]; // eslint-disable-line vars-on-top, no-var
       if (mentorObj) {
-        Object.assign({}, mentorObj, {
+        ({ // eslint-disable-line no-unused-expressions
+          ...mentorObj,
           startDate: moment(mentorObj.startDate).toISOString().split('T')[0],
           endDate: moment(mentorObj.endDate).toISOString().split('T')[0],
           specialties: mentorObj.specialties.map(specialty => ({ label: specialty.name, value: specialty.name })),
