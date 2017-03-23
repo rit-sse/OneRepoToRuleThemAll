@@ -9,7 +9,7 @@ export const UPDATE_QUOTE = 'UPDATE_QUOTE';
 export const DESTROY_QUOTE = 'DESTROY_QUOTE';
 
 const createAction = utils.createAction(QUOTES);
-// const loading = utils.createLoading(QUOTES);
+const loading = utils.createLoading(QUOTES);
 
 export function getQuotes(getNext, tag, search, approved = true) {
   return (dispatch, getState, api) => {
@@ -18,6 +18,41 @@ export function getQuotes(getNext, tag, search, approved = true) {
       api.Quotes.all({ page, tag, approved, search })
         .then(({ data }) => dispatch(createAction(GET_QUOTE_PAGE, data)))
         .catch(err => dispatch(createAction(GET_QUOTE_PAGE, err)));
+    } else {
+      dispatch(loading(GET_QUOTES));
+      api.Quotes.all({
+        tag,
+        approved,
+        search,
+      }).then(data => dispatch(createAction(GET_QUOTES, data)))
+        .catch(err => dispatch(createAction(GET_QUOTES, err)));
     }
+  };
+}
+
+export function approveQuote(id) {
+  return (dispatch, getState, api) => {
+    dispatch(loading(APPROVE_QUOTE));
+    api.Quotes.update(id, { approved: true })
+      .then(() => dispatch(createAction(APPROVE_QUOTE, id)))
+      .catch(err => dispatch(createAction(APPROVE_QUOTE, err)));
+  };
+}
+
+export function createQuote(quote) {
+  return (dispatch, getState, api) => {
+    dispatch(loading(CREATE_QUOTE));
+    api.Quotes.create(quote)
+      .then(data => dispatch(createAction(CREATE_QUOTE, data)))
+      .catch(err => dispatch(createAction(CREATE_QUOTE, err)));
+  };
+}
+
+export function destoryQuote(id) {
+  return (dispatch, getState, api) => {
+    dispatch(loading(DESTROY_QUOTE));
+    api.Quotes.destroy(id)
+      .then(() => dispatch(createAction(DESTROY_QUOTE, id)))
+      .catch(err => dispatch(createAction(DESTROY_QUOTE, err)));
   };
 }

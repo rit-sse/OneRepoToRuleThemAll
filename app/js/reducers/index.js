@@ -12,19 +12,21 @@ import mentors from './mentors';
 import shifts from './shifts';
 import user from './user';
 import hover from './hover';
+import quotes from './quotes';
 
 export default combineReducers({
+  go,
   nav,
   auth,
-  modal,
-  events,
-  status,
-  committees,
-  go,
-  specialties,
-  mentors,
-  shifts,
   form,
   user,
   hover,
+  modal,
+  quotes,
+  shifts,
+  events,
+  status,
+  mentors,
+  committees,
+  specialties,
 });

@@ -1,49 +1,6 @@
 @import 'variables';
 
 .event {
-  background-color: $WHITE;
-  border-left: 7.5px solid $PRIMARY;
-  padding: 10px;
-  padding-left: 15px;
-  transition: background-color .25s ease-out;
-  cursor: pointer;
-  margin-bottom: 15px;
-
-  &:after {
-    clear: both;
-    content: ' ';
-    display: block;
-  }
-
-  &:hover, &:focus {
-    background-color: darken($WHITE, 10%);
-    .heading .actions {
-      display: block;
-    }
-  }
-
-  .heading {
-    margin-bottom: 10px;
-    .event-name {
-      float: left;
-      font-weight: 600;
-    }
-    .actions {
-      display: none;
-      float: right;
-      .btn-small {
-        border-radius: 0;
-        font-size: 12px;
-        padding: .25rem .5rem;
-      }
-    }
-    &:after {
-      clear: both;
-      content: ' ';
-      display: block;
-    }
-  }
-
   .event-time, .event-location, .event-text {
     float: left;
     width: 100%;

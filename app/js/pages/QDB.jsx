@@ -1,8 +1,9 @@
 import React from 'react';
 import 'scss/buttons.scss';
-// import { Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Login from 'containers/general/Login';
 import Status from 'containers/general/Status';
+import QuoteList from 'containers/qdb/QuoteList';
 
 const QDB = () => (
   <div className="container">
@@ -21,12 +22,10 @@ const QDB = () => (
     </div>
     <div className="row">
       <div className="col-12">
-        {/*
         <Switch>
-          <Route path="/qdb/approval" component={} />
-          <Route path="/qdb/:filter?" component={} />
+          {/* <Route path="/qdb/approval" component={} /> */}
+          <Route path="/qdb/:filter?" component={QuoteList} />
         </Switch>
-        */}
       </div>
     </div>
     <div className="row">

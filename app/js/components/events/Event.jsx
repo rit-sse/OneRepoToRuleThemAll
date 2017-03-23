@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 
+import 'scss/pane.scss';
 import 'scss/event.scss';
 
 class Event extends Component {
@@ -39,9 +40,9 @@ class Event extends Component {
 
   render() {
     return (
-      <div className="event">
+      <div className="pane event">
         <div className="heading">
-          <h4 className="event-name">{this.props.name}</h4>
+          <h4 className="title">{this.props.name}</h4>
           { this.props.loggedIn ? (
             <div className="actions">
               <button className="btn btn-small btn-info" onClick={this.props.editItem}><i className="fa fa-pencil" aria-hidden="true" /> Edit</button>
