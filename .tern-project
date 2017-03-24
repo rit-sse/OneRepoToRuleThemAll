@@ -1,0 +1,14 @@
+{
+  "libs": [
+    "browser",
+    "react"
+  ],
+  "loadEagerly": [
+    "./app/js/app.jsx"
+  ],
+   "plugins": {
+    "webpack": {
+      "configPath": "./webpack.config.prod.js"
+    }
+  }
+}

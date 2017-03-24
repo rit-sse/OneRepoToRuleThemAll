@@ -23,8 +23,8 @@ const QDB = () => (
     <div className="row">
       <div className="col-12">
         <Switch>
+          <Route path="/qdb" component={QuoteList} />
           {/* <Route path="/qdb/approval" component={} /> */}
-          <Route path="/qdb/:filter?" component={QuoteList} />
         </Switch>
       </div>
     </div>

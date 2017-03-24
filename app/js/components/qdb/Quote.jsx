@@ -28,7 +28,7 @@ const Quote = ({
 );
 
 Quote.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   body: PropTypes.string.isRequired,
   description: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
