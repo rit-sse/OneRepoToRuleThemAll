@@ -6,7 +6,7 @@ import Login from 'containers/general/Login';
 import MentorList from 'containers/mentoring/MentorList';
 import SpecialtyList from 'containers/mentoring/SpecialtyList';
 import MentorModal from 'containers/mentoring/AddMentorForm';
-import ShiftGrid from 'containers/mentoring/ShiftGrid';
+import MentoringSchedule from 'containers/mentoring/MentoringSchedule';
 
 import { MENTORS } from 'actions/mentors';
 import { SHIFTS } from 'actions/shifts';
@@ -44,7 +44,7 @@ const Mentoring = () => (
     </div>
     <div className="row">
       <div className="col">
-        <ShiftGrid />
+        <MentoringSchedule />
       </div>
     </div>
     <MentorModal />

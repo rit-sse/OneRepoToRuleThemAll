@@ -10,7 +10,6 @@
     "validate": "npm ls"
   },
   "pre-commit": [
-    "validate",
     "lint"
   ],
   "contributors": [
@@ -38,6 +37,7 @@
     "react": "^15.4.2",
     "react-addons-css-transition-group": "^15.4.2",
     "react-addons-transition-group": "^15.4.2",
+    "react-big-calendar": "^0.13.0",
     "react-dnd": "^2.2.4",
     "react-dnd-html5-backend": "^2.2.4",
     "react-dom": "^15.4.2",

@@ -11,7 +11,7 @@ function mentorAuth({ officer }) {
 function mapStateToProps({ auth, mentors }) {
   return {
     item: MentorListItem,
-    items: [...(mentorAuth(auth) ? [{ name: 'add', add: true }] : []), ...Object.values(mentors.all)],
+    items: [...(mentorAuth(auth) ? [{ name: 'add', add: true }] : []), ...Object.values(mentors.byId)],
     itemProps: {
       loggedIn: mentorAuth(auth),
       showActions: mentorAuth(auth),

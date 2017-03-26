@@ -7,7 +7,7 @@ import {
 } from 'actions/mentors';
 import { combineReducers } from 'redux';
 
-function all(state = {}, action) {
+function byId(state = {}, action) {
   switch (action.type) {
     case GET_MENTORS:
       return action.payload.data.reduce((obj, mentor) => ({
@@ -29,6 +29,28 @@ function all(state = {}, action) {
   }
 }
 
+function byName(state = {}, action) {
+  switch (action.type) {
+    case GET_MENTORS:
+      return action.payload.data.reduce((obj, mentor) => ({
+        ...obj,
+        [`${mentor.user.firstName} ${mentor.user.lastName}`]: mentor,
+      }), {});
+    case CREATE_MENTOR:
+    case UPDATE_MENTOR:
+      return {
+        ...state,
+        [`${action.payload.user.firstName} ${action.payload.user.lastName}`]: action.payload,
+      };
+    case DESTROY_MENTOR: {
+      const { [`${action.payload.user.firstName} ${action.payload.user.lastName}`]: omit, ...rest } = state; // eslint-disable-line no-unused-vars
+      return rest;
+    }
+    default:
+      return state;
+  }
+}
+
 function mentorOnDuty(state = [], action) {
   switch (action.type) {
     case GET_MENTOR_ON_DUTY:
@@ -39,6 +61,7 @@ function mentorOnDuty(state = [], action) {
 }
 
 export default combineReducers({
-  all,
+  byId,
+  byName,
   mentorOnDuty,
 });

@@ -6,7 +6,7 @@ import { hoverSpecialty, unhover } from 'actions/hover';
 
 function mapStateToProps(state, ownProps) {
   const { hover, mentors } = state;
-  const mentor = mentors.all[hover.id];
+  const mentor = mentors.byId[hover.id];
   return {
     lighten:
       (hover.hoverType === SPECIALTIES && hover.name !== ownProps.name) ||
