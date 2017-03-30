@@ -2,7 +2,6 @@ import {
   GET_QUOTES,
   GET_QUOTE_PAGE,
   APPROVE_QUOTE,
-  CREATE_QUOTE,
   UPDATE_QUOTE,
   DESTROY_QUOTE,
 } from 'actions/quotes';
@@ -19,11 +18,6 @@ function all(state = [], action) {
     case GET_QUOTES:
       return action.payload.data;
     case GET_QUOTE_PAGE:
-      return [
-        ...state,
-        ...action.payload.data,
-      ];
-    case CREATE_QUOTE:
       return [
         ...state,
         ...action.payload.data,

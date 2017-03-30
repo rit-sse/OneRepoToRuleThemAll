@@ -43,8 +43,17 @@ export function createQuote(quote) {
   return (dispatch, getState, api) => {
     dispatch(loading(CREATE_QUOTE));
     api.Quotes.create(quote)
-      .then(data => dispatch(createAction(CREATE_QUOTE, data)))
+      .then(data => dispatch(createAction(CREATE_QUOTE, data, 'Quote created waiting for approval')))
       .catch(err => dispatch(createAction(CREATE_QUOTE, err)));
+  };
+}
+
+export function updateQuote(id, quote) {
+  return (dispatch, getState, api) => {
+    dispatch(loading(UPDATE_QUOTE));
+    api.Quotes.update(id, quote)
+      .then(data => dispatch(createAction(UPDATE_QUOTE, data)))
+      .catch(err => dispatch(createAction(UPDATE_QUOTE, err)));
   };
 }
 
