@@ -19,7 +19,7 @@
     root ./dist
     rewrite {
         if {path} not_match \/api/.*
-        if {file} not_match (.*\.js|.*\.html|.*\.css)
+        if {file} not_match (.*\.js|.*\.html|.*\.css|.*\.png|.*\.jpg)
         to /index.html
     }
 }
