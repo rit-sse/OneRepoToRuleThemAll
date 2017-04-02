@@ -1,6 +1,4 @@
 import React from 'react';
-import HTML5Backend from 'react-dnd-html5-backend';
-import { DragDropContext } from 'react-dnd';
 import Status from 'containers/general/Status';
 import Login from 'containers/general/Login';
 import MentorList from 'containers/mentoring/MentorList';
@@ -51,4 +49,4 @@ const Mentoring = () => (
   </div>
 );
 
-export default DragDropContext(HTML5Backend)(Mentoring);
+export default Mentoring;

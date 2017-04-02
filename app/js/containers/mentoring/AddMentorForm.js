@@ -8,7 +8,7 @@ import moment from 'moment';
 function mapStateToProps(state) {
   const mentor = do {
     if (state.modal.modalType === MENTOR_MODAL) {
-      var mentorObj = state.mentors.all[state.modal.id]; // eslint-disable-line vars-on-top, no-var
+      var mentorObj = state.mentors.byId[state.modal.id]; // eslint-disable-line vars-on-top, no-var
       if (mentorObj) {
         ({ // eslint-disable-line no-unused-expressions
           ...mentorObj,
