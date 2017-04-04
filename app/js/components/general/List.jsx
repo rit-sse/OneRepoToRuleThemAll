@@ -5,6 +5,7 @@ class List extends Component {
     item: PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
     items: PropTypes.arrayOf(PropTypes.object).isRequired,
     itemProps: PropTypes.object, // eslint-disable-line
+    itemDispatch: PropTypes.object, // eslint-disable-line
     getItems: PropTypes.func,
     editItem: PropTypes.func,
     deleteItem: PropTypes.func,
@@ -19,6 +20,7 @@ class List extends Component {
     scroll: false,
     scrollDone: true,
     itemProps: {},
+    itemDispatch: {},
     editItem() {},
     deleteItem() {},
     getItems() {},
@@ -64,6 +66,7 @@ class List extends Component {
       items,
       keyPriority,
       itemProps,
+      itemDispatch,
       editItem,
       deleteItem,
       item: Item,
@@ -76,6 +79,7 @@ class List extends Component {
           key={item[key[0]]}
           {...item}
           {...itemProps}
+          {...itemDispatch}
           editItem={editItem.bind(null, item.id)}
           deleteItem={deleteItem.bind(null, item.id)}
         />

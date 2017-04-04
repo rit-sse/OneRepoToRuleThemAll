@@ -20,8 +20,10 @@ function mapDispatchToProps(dispatch) {
   return {
     editItem: id => dispatch(showQuoteModal(id)),
     deleteItem: id => dispatch(destoryQuote(id)),
-    approveQuote: id => dispatch(approveQuote(id)),
     getItems: getNext => dispatch(getQuotes(getNext, undefined, undefined, 'null')),
+    itemDispatch: {
+      approveQuote: id => dispatch(approveQuote(id)),
+    },
   };
 }
 

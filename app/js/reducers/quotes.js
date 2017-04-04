@@ -23,13 +23,7 @@ function all(state = [], action) {
         ...action.payload.data,
       ];
     case APPROVE_QUOTE:
-      return state.map((quote) => {
-        if (action.payload !== quote.id) return quote;
-        return {
-          ...quote,
-          approved: true,
-        };
-      });
+      return state.filter(quote => quote.id !== action.payload);
     case UPDATE_QUOTE:
       return state.map((quote) => {
         if (action.payload.id !== quote.id) return quote;
