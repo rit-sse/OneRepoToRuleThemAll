@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import 'react-select/dist/react-select.css';
 
 const SelectedValue = (props) => {
   return (

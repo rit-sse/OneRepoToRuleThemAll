@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Button from 'components/general/Button';
 import { Field, Form, reduxForm } from 'redux-form';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import SelectInput from 'components/general/SelectInput';
 
 class QDBModal extends Component {
   static propTypes = {
@@ -9,13 +10,21 @@ class QDBModal extends Component {
     update: PropTypes.func.isRequired,
     isOpen: PropTypes.bool.isRequired,
     initialize: PropTypes.func.isRequired,
+    loadTags: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
     close: PropTypes.func.isRequired,
+    tags: PropTypes.arrayOf(PropTypes.shape({
+      label: PropTypes.string,
+      value: PropTypes.string,
+    })),
     quote: PropTypes.shape({
       id: PropTypes.number,
       body: PropTypes.string,
       description: PropTypes.string,
-      tags: PropTypes.arrayOf(PropTypes.string),
+      tags: PropTypes.arrayOf(PropTypes.shape({
+        label: PropTypes.string,
+        value: PropTypes.string,
+      })),
     }),
   };
 
@@ -26,7 +35,12 @@ class QDBModal extends Component {
       description: '',
       tags: [],
     },
+    tags: [],
   };
+
+  componentDidMount() {
+    this.props.loadTags();
+  }
 
   componentDidUpdate(prevProps) {
     const {
@@ -48,12 +62,17 @@ class QDBModal extends Component {
       close,
     } = this.props;
 
+    const newQuote = {
+      ...values,
+      tags: values.tags.map(tag => tag.value),
+    };
+
     close();
 
     if (quote) {
-      update(quote.id, values);
+      update(quote.id, newQuote);
     } else {
-      create(values);
+      create(newQuote);
     }
   };
 
@@ -63,6 +82,7 @@ class QDBModal extends Component {
       handleSubmit,
       close,
       quote,
+      tags,
     } = this.props;
 
     const updateOrCreate = quote ? 'Update' : 'Create';
@@ -76,19 +96,19 @@ class QDBModal extends Component {
               <div className="form-group row">
                 <label className="col-sm-2 col-form-label" htmlFor="body">Body</label>
                 <div className="col-sm-10">
-                  <Field ref={(c) => { this.body = c; }} className="form-control" id="body" name="body" component="input" type="text" />
+                  <Field className="form-control" id="body" name="body" component="input" type="text" />
                 </div>
               </div>
               <div className="form-group row">
                 <label className="col-sm-2 col-form-label" htmlFor="description">Description</label>
                 <div className="col-sm-10">
-                  <Field ref={(c) => { this.description = c; }} className="form-control" id="description" name="description" component="input" type="text" />
+                  <Field className="form-control" id="description" name="description" component="input" type="text" />
                 </div>
               </div>
               <div className="form-group row">
                 <label className="col-sm-2 col-form-label" htmlFor="tags">Tags</label>
                 <div className="col-sm-10">
-                  <Field ref={(c) => { this.tags = c; }} className="form-control" id="tags" name="tags" component="input" type="text" />
+                  <Field id="tags" name="tags" multi options={tags} component={SelectInput} />
                 </div>
               </div>
             </fieldset>

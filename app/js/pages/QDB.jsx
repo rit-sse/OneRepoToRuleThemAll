@@ -4,7 +4,9 @@ import { Route, Switch } from 'react-router-dom';
 import Login from 'containers/general/Login';
 import Status from 'containers/general/Status';
 import QuoteList from 'containers/qdb/QuoteList';
+import PendingQuoteList from 'containers/qdb/PendingQuoteList';
 import CreateQuoteButton from 'containers/qdb/CreateQuoteButton';
+import ApproveQuoteButton from 'containers/qdb/ApproveQuoteButton';
 import QDBModal from 'containers/qdb/QDBModal';
 
 const QDB = () => (
@@ -16,6 +18,9 @@ const QDB = () => (
           <CreateQuoteButton className="btn btn-secondary">
             Create Quote
           </CreateQuoteButton>
+          <ApproveQuoteButton className="btn btn-secondary" to="/qdb/approval">
+            Approve Quotes
+          </ApproveQuoteButton>
           <Login className="btn btn-sse" />
         </div>
       </div>
@@ -28,8 +33,8 @@ const QDB = () => (
     <div className="row">
       <div className="col-12">
         <Switch>
+          <Route path="/qdb/approval" component={PendingQuoteList} />
           <Route path="/qdb" component={QuoteList} />
-          {/* <Route path="/qdb/approval" component={} /> */}
         </Switch>
       </div>
     </div>

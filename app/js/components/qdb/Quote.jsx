@@ -3,7 +3,6 @@ import React, { PropTypes } from 'react';
 import 'scss/pane.scss';
 
 const Quote = ({
-  id,
   body,
   description,
   tags,
@@ -13,7 +12,7 @@ const Quote = ({
 }) => (
   <div className="pane quote">
     <div className="heading">
-      <h4 className="title">{id}</h4>
+      <h4 className="title">{body}</h4>
       { loggedIn ? (
         <div className="actions">
           <button className="btn btn-small btn-info" onClick={editItem}><i className="fa fa-pencil" aria-hidden="true" /> Edit</button>
@@ -21,17 +20,17 @@ const Quote = ({
         </div>
       ) : null }
     </div>
-    <p>{body}</p>
     <p>{description}</p>
-    <div>{tags}</div>
+    <div>{tags.map(t => t.name).join(',')}</div>
   </div>
 );
 
 Quote.propTypes = {
-  id: PropTypes.number.isRequired,
   body: PropTypes.string.isRequired,
   description: PropTypes.string,
-  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+  tags: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+  })).isRequired,
   loggedIn: PropTypes.bool.isRequired,
   editItem: React.PropTypes.func.isRequired,
   deleteItem: React.PropTypes.func.isRequired,
