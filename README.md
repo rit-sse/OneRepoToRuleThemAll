@@ -9,10 +9,11 @@
 > One Ring to bring them all and in the darkness bind them
 > In the Land of Mordor where the Shadows lie.
 
-## setup
+## Setup
 * `npm install`
 * `npm start`
 * build dist `npm run build`
+* check bundles `npm run debug`
 * run lint `npm run lint`
 
 ## Dockering
