@@ -8,9 +8,10 @@ import EventList from 'containers/events/EventList';
 import EventModal from 'containers/events/EventModal';
 import CommitteesList from 'containers/events/CommitteesList';
 import CreateEventButton from 'containers/events/CreateEventButton';
+import 'scss/page.scss';
 
 const Event = () => (
-  <div className="container">
+  <div className="container page">
     <div className="row">
       <div className="col-12">
         <h1 className="pull-left">Events</h1>

@@ -1,6 +1,6 @@
 import React from 'react';
 import 'scss/buttons.scss';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import Login from 'containers/general/Login';
 import Status from 'containers/general/Status';
 import QuoteList from 'containers/qdb/QuoteList';
@@ -8,12 +8,15 @@ import PendingQuoteList from 'containers/qdb/PendingQuoteList';
 import CreateQuoteButton from 'containers/qdb/CreateQuoteButton';
 import ApproveQuoteButton from 'containers/qdb/ApproveQuoteButton';
 import QDBModal from 'containers/qdb/QDBModal';
+import 'scss/page.scss';
 
 const QDB = () => (
-  <div className="container">
+  <div className="container page">
     <div className="row">
       <div className="col-12">
-        <h1 className="pull-left">QDB</h1>
+        <Link to="/qdb" className="title-link">
+          <h1 className="pull-left">QDB</h1>
+        </Link>
         <div className="btn-group pull-right" style={{ marginTop: '5px' }} role="group" aria-label="Basic example">
           <CreateQuoteButton className="btn btn-secondary">
             Create Quote

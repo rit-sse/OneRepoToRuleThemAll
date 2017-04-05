@@ -3,6 +3,7 @@ import List from 'components/general/List';
 import PendingQuote from 'components/qdb/PendingQuote';
 import { approveQuote, getQuotes, destoryQuote } from 'actions/quotes';
 import { showQuoteModal } from 'actions/modal';
+import qs from 'qs';
 
 function mapStateToProps(store) {
   return {
@@ -16,13 +17,17 @@ function mapStateToProps(store) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch, props) {
   return {
     editItem: id => dispatch(showQuoteModal(id)),
     deleteItem: id => dispatch(destoryQuote(id)),
-    getItems: getNext => dispatch(getQuotes(getNext, undefined, undefined, 'null')),
+    getItems: (getNext) => {
+      const tag = qs.parse(props.location.search.slice(1)).tag || undefined;
+      dispatch(getQuotes(getNext, tag, undefined, 'null'));
+    },
     itemDispatch: {
       approveQuote: id => dispatch(approveQuote(id)),
+      filterTag: (tag, appoved) => dispatch(getQuotes(false, tag, undefined, appoved)),
     },
   };
 }

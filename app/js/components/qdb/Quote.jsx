@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import Tags from 'components/qdb/Tags';
 
 import 'scss/pane.scss';
 
@@ -9,6 +10,7 @@ const Quote = ({
   loggedIn,
   editItem,
   deleteItem,
+  filterTag,
 }) => (
   <div className="pane quote">
     <div className="heading">
@@ -21,7 +23,7 @@ const Quote = ({
       ) : null }
     </div>
     <p>{description}</p>
-    <div>{tags.map(t => t.name).join(',')}</div>
+    <Tags approved tags={tags} link="quotes" filterTag={filterTag} />
   </div>
 );
 
@@ -32,8 +34,9 @@ Quote.propTypes = {
     name: PropTypes.string,
   })).isRequired,
   loggedIn: PropTypes.bool.isRequired,
-  editItem: React.PropTypes.func.isRequired,
-  deleteItem: React.PropTypes.func.isRequired,
+  editItem: PropTypes.func.isRequired,
+  deleteItem: PropTypes.func.isRequired,
+  filterTag: PropTypes.func.isRequired,
 };
 
 Quote.defaultProps = {

@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import Tags from 'components/qdb/Tags';
 
 import 'scss/pane.scss';
 
@@ -11,6 +12,7 @@ const PendingQuote = ({
   editItem,
   deleteItem,
   approveQuote,
+  filterTag,
 }) => (
   <div className="pane quote">
     <div className="heading">
@@ -24,7 +26,7 @@ const PendingQuote = ({
       ) : null }
     </div>
     <p>{description}</p>
-    <div>{tags.map(t => t.name).join(',')}</div>
+    <Tags tags={tags} link="approval" filterTag={filterTag} />
   </div>
 );
 
@@ -39,6 +41,7 @@ PendingQuote.propTypes = {
   editItem: PropTypes.func.isRequired,
   deleteItem: PropTypes.func.isRequired,
   approveQuote: PropTypes.func.isRequired,
+  filterTag: PropTypes.func.isRequired,
 };
 
 PendingQuote.defaultProps = {

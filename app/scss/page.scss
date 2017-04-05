@@ -1,0 +1,12 @@
+@import 'variables';
+
+.page {
+  padding: 10px;
+}
+
+.title-link {
+  color: $BLACK;
+  &:hover {
+    color: $BLACK;
+  }
+}
