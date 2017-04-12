@@ -69,11 +69,8 @@ class QDBModal extends Component {
 
     close();
 
-    if (quote) {
-      update(quote.id, newQuote);
-    } else {
-      create(newQuote);
-    }
+    if (quote) update(quote.id, newQuote);
+    else create(newQuote);
   };
 
   render() {

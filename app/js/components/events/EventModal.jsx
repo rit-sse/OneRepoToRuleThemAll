@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { Field, Form, reduxForm } from 'redux-form';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Button from 'components/general/Button';
 import moment from 'moment';
@@ -6,21 +7,23 @@ import { adjustTimezone } from 'utils/dates';
 
 class EventModal extends Component {
   static propTypes = {
-    event: React.PropTypes.shape({
-      id: React.PropTypes.number,
-      name: React.PropTypes.string,
-      committeeName: React.PropTypes.string,
-      startDate: React.PropTypes.string,
-      endDate: React.PropTypes.string,
-      description: React.PropTypes.string,
-      location: React.PropTypes.string,
-      image: React.PropTypes.string,
+    event: PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+      committeeName: PropTypes.string,
+      startDate: PropTypes.string,
+      endDate: PropTypes.string,
+      description: PropTypes.string,
+      location: PropTypes.string,
+      image: PropTypes.string,
     }),
-    isOpen: React.PropTypes.bool.isRequired,
-    close: React.PropTypes.func.isRequired,
-    create: React.PropTypes.func.isRequired,
-    update: React.PropTypes.func.isRequired,
-    committees: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+    handleSubmit: PropTypes.func.isRequired,
+    initialize: PropTypes.func.isRequired,
+    isOpen: PropTypes.bool.isRequired,
+    close: PropTypes.func.isRequired,
+    create: PropTypes.func.isRequired,
+    update: PropTypes.func.isRequired,
+    committees: PropTypes.arrayOf(React.PropTypes.object).isRequired,
   }
 
   static defaultProps = {
@@ -36,125 +39,149 @@ class EventModal extends Component {
     },
   }
 
-  submit = () => {
-    const event = {
-      name: this.eventName.value,
-      committeeName: this.committee.value,
-      startDate: moment(this.startDate.value).toISOString(),
-      endDate: moment(this.endDate.value).toISOString(),
-      description: this.description.value,
-      location: this.location.value,
-      image: this.image.value || null,
+  componentDidUpdate(prevProps) {
+    const {
+      isOpen,
+      initialize,
+      event,
+    } = this.props;
+    if (isOpen && !prevProps.isOpen) {
+      initialize({
+        ...event,
+        startDate: event && event.startDate ? adjustTimezone(event.startDate).toISOString().split('.')[0] : '',
+        endDate: event && event.endDate ? adjustTimezone(event.endDate).toISOString().split('.')[0] : '',
+      });
+    }
+  }
+
+  submit = (values) => {
+    const {
+      event,
+      create,
+      update,
+      close,
+    } = this.props;
+
+    const newEvent = {
+      ...values,
+      startDate: moment(values.startDate).toISOString(),
+      endDate: moment(values.endDate).toISOString(),
     };
 
-    if (this.props.event) this.props.update(this.props.event.id, event);
-    else this.props.create(event);
-    this.props.close();
+    close();
+
+    if (event) update(event.id, newEvent);
+    else create(newEvent);
   }
 
   render() {
-    const options = this.props.committees.map(committee => <option key={committee.name} value={committee.name}>{committee.name}</option>);
-    const event = this.props.event || {};
+    const {
+      isOpen,
+      handleSubmit,
+      close,
+      event,
+      committees,
+    } = this.props;
+
+    const options = committees.map(committee => <option key={committee.name} value={committee.name}>{committee.name}</option>);
+    const updateOrCreate = event ? 'Update' : 'Create';
+
 
     return (
-      <Modal isOpen={this.props.isOpen} toggle={this.props.close}>
-        <ModalHeader toggle={this.props.close}>{this.props.event ? 'Update Event' : 'Create Event'}</ModalHeader>
-        <ModalBody>
-          <form>
+      <Modal isOpen={isOpen} toggle={close}>
+        <ModalHeader toggle={close}>{updateOrCreate}</ModalHeader>
+        <Form onSubmit={handleSubmit(this.submit)}>
+          <ModalBody>
             <div className="form-group row">
               <label htmlFor="name" className="col-3 col-form-label">Event Name</label>
               <div className="col-9">
-                <input defaultValue={event.name} id="name" name="name" className="form-control" placeholder="Event Name" ref={(c) => { this.eventName = c; }} />
+                <Field className="form-control" id="name" name="name" component="input" />
               </div>
             </div>
             <div className="form-group row">
               <label htmlFor="startDate" className="col-3 col-form-label">Start Date</label>
               <div className="col-9">
-                <input
+                <Field
                   id="startDate"
                   name="startDate"
                   type="datetime-local"
                   className="form-control"
-                  ref={(c) => { this.startDate = c; }}
-                  defaultValue={event.startDate ? adjustTimezone(event.startDate).toISOString().split('.')[0] : ''}
+                  component="input"
                 />
               </div>
             </div>
             <div className="form-group row">
               <label htmlFor="endDate" className="col-3 col-form-label">End Date</label>
               <div className="col-9">
-                <input
+                <Field
                   id="endDate"
                   name="endDate"
                   type="datetime-local"
                   className="form-control"
-                  ref={(c) => { this.endDate = c; }}
-                  defaultValue={event.endDate ? adjustTimezone(event.endDate).toISOString().split('.')[0] : ''}
+                  component="input"
                 />
               </div>
             </div>
             <div className="form-group row">
               <label htmlFor="description" className="col-3 col-form-label">Description</label>
               <div className="col-9">
-                <textarea
+                <Field
                   rows="5"
                   id="description"
                   name="description"
                   className="form-control"
-                  defaultValue={event.description}
-                  ref={(c) => { this.description = c; }}
+                  component="textarea"
                 />
               </div>
             </div>
             <div className="form-group row">
               <label htmlFor="location" className="col-3 col-form-label">Location</label>
               <div className="col-9">
-                <input
+                <Field
                   id="location"
                   name="location"
                   className="form-control"
                   placeholder="location"
-                  defaultValue={event.location}
-                  ref={(c) => { this.location = c; }}
+                  component="input"
                 />
               </div>
             </div>
             <div className="form-group row">
               <label htmlFor="image" className="col-3 col-form-label">Image URL</label>
               <div className="col-9">
-                <input
+                <Field
                   id="image"
                   name="image"
                   className="form-control"
                   placeholder="Image URL"
-                  defaultValue={event.image}
-                  ref={(c) => { this.image = c; }}
+                  component="input"
                 />
               </div>
             </div>
             <div className="form-group row">
-              <label htmlFor="committee" className="col-3 col-form-label">Comittee</label>
+              <label htmlFor="committeeName" className="col-3 col-form-label">Comittee</label>
               <div className="col-9">
-                <select
-                  id="committee"
-                  name="comittee"
+                <Field
+                  id="committeeName"
+                  name="committeeName"
                   className="form-control"
-                  defaultValue={event.committeeName}
-                  ref={(c) => { this.committee = c; }}
+                  component="select"
                 >
                   {options}
-                </select>
+                </Field>
               </div>
             </div>
-          </form>
-        </ModalBody>
-        <ModalFooter>
-          <Button className="btn btn-sse" onClick={this.submit}>{this.props.event ? 'Update' : 'Create'}</Button>
-          <Button className="btn btn-secondary" onClick={this.props.close}>Cancel</Button>
-        </ModalFooter>
+          </ModalBody>
+          <ModalFooter>
+            <Button className="btn btn-sse" type="submit">{updateOrCreate}</Button>
+            <Button className="btn btn-secondary" onClick={close}>Cancel</Button>
+          </ModalFooter>
+        </Form>
       </Modal>
     );
   }
 }
 
-export default EventModal;
+export default reduxForm({
+  form: 'event',
+})(EventModal);
