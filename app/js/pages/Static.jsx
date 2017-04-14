@@ -2,15 +2,25 @@
 import React, { PropTypes } from 'react';
 
 function getPage(page) {
-  return require('markdown/' + page + '.md'); // eslint-disable-line
+  try {
+    return require('markdown/' + page + '.md'); // eslint-disable-line
+  } catch (e) {
+    return null;
+  }
 }
 
 const Static = ({ location }) => {
   const page = getPage(location.pathname.replace('/static/', ''));
-
+  if (page) {
+    return (
+      <div className="container page">
+        <div dangerouslySetInnerHTML={{ __html: page }} />
+      </div>
+    );
+  }
   return (
     <div className="container page">
-      <div dangerouslySetInnerHTML={{ __html: page }} />
+      <h4>Page Not Found</h4>
     </div>
   );
 };
