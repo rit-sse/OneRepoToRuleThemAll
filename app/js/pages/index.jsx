@@ -11,6 +11,7 @@ const Go = asyncComponent(() => import('pages/Go'));
 const QDB = asyncComponent(() => import('pages/QDB'));
 const GTV = asyncComponent(() => import('pages/GTV'));
 const Home = asyncComponent(() => import('pages/Home'));
+const Static = asyncComponent(() => import('pages/Static'));
 const Events = asyncComponent(() => import('pages/Events'));
 const Scoreboard = asyncComponent(() => import('pages/Scoreboard'));
 const Mentoring = asyncComponent(() => import('pages/Mentoring'));
@@ -26,6 +27,7 @@ const Root = () => (
             <Route path="/go" component={Go} />
             <Route path="/qdb" component={QDB} />
             <Route path="/events" component={Events} />
+            <Route path="/static" component={Static} />
             <Route path="/scoreboard" component={Scoreboard} />
             <Route path="/mentoring" component={Mentoring} />
             <Route component={Home} />

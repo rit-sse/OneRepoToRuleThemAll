@@ -80,7 +80,7 @@ module.exports = {
       },
       {
         test: /\.md$/,
-        loaders: ['raw-loader'],
+        loaders: ['html-loader', 'markdown-loader'],
       },
       {
         test: /\.s?css$/,

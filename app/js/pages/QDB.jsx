@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import 'scss/buttons.scss';
 import { Route, Switch, Link } from 'react-router-dom';
 import Login from 'containers/general/Login';
@@ -8,9 +8,10 @@ import PendingQuoteList from 'containers/qdb/PendingQuoteList';
 import CreateQuoteButton from 'containers/qdb/CreateQuoteButton';
 import ApproveQuoteButton from 'containers/qdb/ApproveQuoteButton';
 import QDBModal from 'containers/qdb/QDBModal';
+import { QUOTES } from 'actions/quotes';
 import 'scss/page.scss';
 
-const QDB = () => (
+const QDB = ({ location }) => (
   <div className="container page">
     <div className="row">
       <div className="col-12">
@@ -21,7 +22,7 @@ const QDB = () => (
           <CreateQuoteButton className="btn btn-secondary">
             Create Quote
           </CreateQuoteButton>
-          <ApproveQuoteButton className="btn btn-secondary" to="/qdb/approval">
+          <ApproveQuoteButton path={location.pathname} className="btn btn-secondary" to="/qdb/approval">
             Approve Quotes
           </ApproveQuoteButton>
           <Login className="btn btn-sse" />
@@ -30,7 +31,7 @@ const QDB = () => (
     </div>
     <div className="row">
       <div className="col-12">
-        <Status type={[]} message />
+        <Status type={[QUOTES]} message />
       </div>
     </div>
     <div className="row">
@@ -49,5 +50,11 @@ const QDB = () => (
     <QDBModal />
   </div>
 );
+
+QDB.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+  }).isRequired,
+};
 
 export default QDB;

@@ -1,8 +1,29 @@
-import React from 'react';
+import React/* , { PropTypes }*/ from 'react';
+import Login from 'containers/general/Login';
+import Status from 'containers/general/Status';
 import MemberList from 'containers/scoreboard/MembersList';
+import AddMembershipButton from 'containers/scoreboard/AddMembershipButton';
+import { MEMBERS } from 'actions/members';
+import 'scss/page.scss';
 
-const Scoreboard = () => (
-  <div>
+const Scoreboard = (/* { location } */) => (
+  <div className="container page">
+    <div className="row">
+      <div className="col-12">
+        <h1 className="pull-left">Scoreboard</h1>
+        <div className="btn-group pull-right" style={{ marginTop: '5px' }} role="group" aria-label="Basic example">
+          <AddMembershipButton className="btn btn-secondary">
+            Add Membership
+          </AddMembershipButton>
+          <Login className="btn btn-sse" />
+        </div>
+      </div>
+    </div>
+    <div className="row">
+      <div className="col-12">
+        <Status type={[MEMBERS]} message />
+      </div>
+    </div>
     <div className="row">
       <div className="col-12 text-center">
         <h4>High Score</h4>
@@ -24,5 +45,13 @@ const Scoreboard = () => (
     </div>
   </div>
 );
+
+/*
+Scoreboard.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+  }).isRequired,
+};
+*/
 
 export default Scoreboard;
