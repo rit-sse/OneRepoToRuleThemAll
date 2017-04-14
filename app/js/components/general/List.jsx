@@ -7,6 +7,7 @@ class List extends Component {
     itemProps: PropTypes.object, // eslint-disable-line
     itemDispatch: PropTypes.object, // eslint-disable-line
     getItems: PropTypes.func,
+    viewItem: PropTypes.func,
     editItem: PropTypes.func,
     deleteItem: PropTypes.func,
     scroll: PropTypes.bool,
@@ -22,6 +23,7 @@ class List extends Component {
     scrollDone: true,
     itemProps: {},
     itemDispatch: {},
+    viewItem() {},
     editItem() {},
     deleteItem() {},
     getItems() {},
@@ -69,6 +71,7 @@ class List extends Component {
       keyPriority,
       itemProps,
       itemDispatch,
+      viewItem,
       editItem,
       deleteItem,
       item: Item,
@@ -82,6 +85,7 @@ class List extends Component {
           {...item}
           {...itemProps}
           {...itemDispatch}
+          viewItem={viewItem.bind(null, item.id)}
           editItem={editItem.bind(null, item.id)}
           deleteItem={deleteItem.bind(null, item.id)}
         />

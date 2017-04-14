@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { getMembers } from 'actions/members';
 import Member from 'components/scoreboard/Member';
 import List from 'components/general/List';
+import { viewMembershipModal } from 'actions/modal';
 
 function mapStateToProps(store) {
   return {
@@ -21,6 +22,7 @@ function mapStateToProps(store) {
 function mapDispatchToProps(dispatch) {
   return {
     getItems: () => dispatch(getMembers()),
+    viewItem: id => dispatch(viewMembershipModal(id)),
   };
 }
 

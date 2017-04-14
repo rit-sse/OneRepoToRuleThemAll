@@ -22,10 +22,16 @@ export function getMembers(active = moment().toISOString()) {
             ...(members[membership.userDce] || {
               name: `${membership.user.firstName} ${membership.user.lastName}`,
             }),
+            id: membership.userDce,
             count: ((members[membership.userDce] || {}).count + 1 || 1),
             memberships: [
               ...((members[membership.userDce] || {}).memberships || []),
-              { reason: membership.reason, committeeName: membership.committeeName },
+              {
+                reason: membership.reason,
+                committeeName: membership.committeeName,
+                startDate: membership.startDate,
+                endDate: membership.endDate,
+              },
             ],
           },
         };

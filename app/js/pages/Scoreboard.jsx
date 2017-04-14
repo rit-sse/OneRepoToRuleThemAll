@@ -4,6 +4,7 @@ import Status from 'containers/general/Status';
 import MemberList from 'containers/scoreboard/MembersList';
 import AddMembershipButton from 'containers/scoreboard/AddMembershipButton';
 import { MEMBERS } from 'actions/members';
+import ViewMembershipsModal from 'containers/scoreboard/ViewMembershipModal';
 import 'scss/page.scss';
 
 const Scoreboard = (/* { location } */) => (
@@ -43,6 +44,7 @@ const Scoreboard = (/* { location } */) => (
         </table>
       </div>
     </div>
+    <ViewMembershipsModal />
   </div>
 );
 
