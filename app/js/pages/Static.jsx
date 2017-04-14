@@ -1,5 +1,6 @@
 /* eslint-disable react/no-danger */
 import React, { PropTypes } from 'react';
+import 'scss/page.scss';
 
 function getPage(page) {
   try {
