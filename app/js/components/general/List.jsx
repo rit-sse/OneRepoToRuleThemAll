@@ -14,6 +14,7 @@ class List extends Component {
     wrapper: PropTypes.string,
     wrapperProps: PropTypes.object, // eslint-disable-line
     keyPriority: PropTypes.arrayOf(PropTypes.string),
+    children: PropTypes.node,
   }
 
   static defaultProps = {
@@ -27,6 +28,7 @@ class List extends Component {
     wrapper: 'div',
     wrapperProps: {},
     keyPriority: ['id', 'name'],
+    children: null,
   }
 
   componentDidMount() {
@@ -90,12 +92,12 @@ class List extends Component {
   render() {
     const {
       wrapper,
+      children,
       wrapperProps,
     } = this.props;
 
-    return React.createElement(wrapper, wrapperProps, this.renderItems());
+    return React.createElement(wrapper, wrapperProps, [children, this.renderItems()]);
   }
-
 }
 
 export default List;

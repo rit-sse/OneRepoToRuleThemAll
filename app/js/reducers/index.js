@@ -12,6 +12,7 @@ import events from './events';
 import status from './status';
 import shifts from './shifts';
 import mentors from './mentors';
+import members from './members';
 import committees from './committees';
 import specialties from './specialties';
 
@@ -29,6 +30,7 @@ export default combineReducers({
   events,
   status,
   mentors,
+  members,
   committees,
   specialties,
 });
