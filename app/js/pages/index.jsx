@@ -15,6 +15,7 @@ const Static = asyncComponent(() => import('pages/Static'));
 const Events = asyncComponent(() => import('pages/Events'));
 const Scoreboard = asyncComponent(() => import('pages/Scoreboard'));
 const Mentoring = asyncComponent(() => import('pages/Mentoring'));
+const Officers = asyncComponent(() => import('pages/Officers'));
 
 const Root = () => (
   <Provider store={store}>
@@ -30,6 +31,7 @@ const Root = () => (
             <Route path="/static" component={Static} />
             <Route path="/scoreboard" component={Scoreboard} />
             <Route path="/mentoring" component={Mentoring} />
+            <Route path="/officers" component={Officers} />
             <Route component={Home} />
           </Switch>
         </Layout>
