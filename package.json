@@ -47,7 +47,7 @@
     "reactstrap": "^4.2.0",
     "redux": "^3.6.0",
     "redux-devtools": "^3.3.2",
-    "redux-form": "^6.5.0",
+    "redux-form": "^6.6.3",
     "redux-thunk": "^2.1.0",
     "sse-api-client": "git+https://github.com/rit-sse/api-client.git#es6",
     "torque-react": "^2.0.0"

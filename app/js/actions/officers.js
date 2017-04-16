@@ -19,19 +19,21 @@ export function getOfficers() {
   };
 }
 
-export function createOfficer(officer) {
-  return (dispatch, getState, { Officers }) => {
+export function createOfficer({ user, ...officer }) {
+  return (dispatch, getState, { Officers, Users }) => {
     dispatch(loading(CREATE_OFFICER));
-    Officers.create(officer)
+    return Users.update(user.dce, user)
+      .then(() => Officers.create(officer))
       .then(data => dispatch(createAction(CREATE_OFFICER, data)))
       .catch(err => dispatch(createAction(CREATE_OFFICER, err)));
   };
 }
 
-export function updateOfficer(id, officer) {
-  return (dispatch, getState, { Officers }) => {
+export function updateOfficer(id, { user, ...officer }) {
+  return (dispatch, getState, { Officers, Users }) => {
     dispatch(loading(UPDATE_OFFICER));
-    Officers.update(id, officer)
+    return Users.update(user.dce, user)
+      .then(() => Officers.update(id, officer))
       .then(data => dispatch(createAction(UPDATE_OFFICER, data)))
       .catch(err => dispatch(createAction(UPDATE_OFFICER, err)));
   };

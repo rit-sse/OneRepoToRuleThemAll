@@ -4,6 +4,8 @@ import { COMMITTEES } from 'actions/committees';
 import Login from 'containers/general/Login';
 import Status from 'containers/general/Status';
 import OfficersList from 'containers/officers/OfficersList';
+import OfficerForm from 'containers/officers/OfficerForm';
+import CreateOfficerButton from 'containers/officers/CreateOfficerButton';
 import 'scss/page.scss';
 
 const Officers = () => (
@@ -12,6 +14,10 @@ const Officers = () => (
       <div className="col">
         <h1 className="pull-left">Officers</h1>
         <div className="btn-group pull-right" style={{ marginTop: '5px' }} role="group" aria-label="Basic example">
+          <CreateOfficerButton className="btn btn-secondary" >
+            Create Officer
+          </CreateOfficerButton>
+
           <Login className="btn btn-sse" />
         </div>
       </div>
@@ -41,7 +47,7 @@ const Officers = () => (
         <OfficersList />
       </div>
     </div>
-
+    <OfficerForm />
   </div>
 );
 

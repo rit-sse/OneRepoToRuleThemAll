@@ -7,7 +7,7 @@ import Officer from 'components/officers/Officer';
 function mapStateToProps({ auth, officers }, { primary = false }) {
   return {
     item: Officer,
-    items: officers.filter(({ primaryOfficer }) => primaryOfficer === primary),
+    items: Object.values(officers).filter(({ primaryOfficer }) => primaryOfficer === primary),
     itemProps: {
       showActions: auth.officer && auth.officer.primaryOfficer,
     },

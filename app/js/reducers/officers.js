@@ -5,22 +5,23 @@ import {
   DESTROY_OFFICER,
 } from 'actions/officers';
 
-export default function all(state = [], action) {
+export default function officers(state = {}, action) {
   switch (action.type) {
     case GET_OFFICERS:
-      return action.payload.data;
+      return action.payload.data.reduce((obj, officer) => ({
+        ...obj,
+        [officer.id]: officer,
+      }), {});
     case CREATE_OFFICER:
-      return [
-        ...state,
-        action.payload,
-      ];
     case UPDATE_OFFICER:
-      return state.map((officer) => {
-        if (action.payload.id !== officer.id) return officer;
-        return action.payload;
-      });
-    case DESTROY_OFFICER:
-      return state.filter(officer => officer.id !== action.payload);
+      return {
+        ...state,
+        [action.payload.id]: action.payload,
+      };
+    case DESTROY_OFFICER: {
+      const { [action.payload.id]: omit, ...rest } = state; // eslint-disable-line no-unused-vars
+      return rest;
+    }
     default:
       return state;
   }

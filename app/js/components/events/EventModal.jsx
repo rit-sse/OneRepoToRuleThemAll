@@ -174,7 +174,7 @@ class EventModal extends Component {
           </ModalBody>
           <ModalFooter>
             <Button className="btn btn-sse" type="submit">{updateOrCreate}</Button>
-            <Button className="btn btn-secondary" onClick={close}>Cancel</Button>
+            <Button className="btn btn-secondary" type="button" onClick={close}>Cancel</Button>
           </ModalFooter>
         </Form>
       </Modal>
