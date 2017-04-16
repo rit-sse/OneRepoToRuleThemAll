@@ -3,6 +3,7 @@ import { OFFICERS } from 'actions/officers';
 import { COMMITTEES } from 'actions/committees';
 import Login from 'containers/general/Login';
 import Status from 'containers/general/Status';
+import OfficersList from 'containers/officers/OfficersList';
 import 'scss/page.scss';
 
 const Officers = () => (
@@ -20,6 +21,27 @@ const Officers = () => (
         <Status type={[COMMITTEES, OFFICERS]} message />
       </div>
     </div>
+    <div className="row">
+      <div className="col">
+        <h2>Primary Officers</h2>
+      </div>
+    </div>
+    <div className="row">
+      <div className="col">
+        <OfficersList primary />
+      </div>
+    </div>
+    <div className="row">
+      <div className="col">
+        <h2>Committee Heads</h2>
+      </div>
+    </div>
+    <div className="row">
+      <div className="col">
+        <OfficersList />
+      </div>
+    </div>
+
   </div>
 );
 

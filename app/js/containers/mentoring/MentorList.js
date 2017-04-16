@@ -13,7 +13,6 @@ function mapStateToProps({ auth, mentors }) {
     item: MentorListItem,
     items: [...(mentorAuth(auth) ? [{ name: 'add', add: true }] : []), ...Object.values(mentors.byId)],
     itemProps: {
-      loggedIn: mentorAuth(auth),
       showActions: mentorAuth(auth),
     },
     wrapperProps: {
