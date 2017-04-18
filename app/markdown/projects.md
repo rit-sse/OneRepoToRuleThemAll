@@ -11,7 +11,7 @@ Contact projects at <projects@sse.rit.edu>, or join the `#sse-projects` slack ch
 Current SSE Projects
 --------------------
 
-### Jukebox
+### [Jukebox](https://github.com/rit-sse/Jukebox)
 
 Raspberry Pi music jukebox, with remote controlled song queueing and speakers.
 
@@ -19,7 +19,7 @@ Slack: `#proj-jukebox`
 
 Meetings: Thursday, 5:00pm (Check slack for changes!)
 
-### Sandbox
+### [Sandbox](https://github.com/rit-sse/libfreenect2)
 
 Interactive sandbox powered by a projector and Kinect.
 
@@ -27,7 +27,7 @@ Slack: `#proj-sandbox`
 
 Meetings: Saturday, 2:00pm (Check slack for changes!)
 
-### Rate-My-Coop
+### [Rate-My-Coop](https://github.com/rit-sse/RateMyCoop)
 
 Like Glassdoor, but for Co-Ops.
 
@@ -43,7 +43,7 @@ Slack: `#proj-hdr`
 
 Meetings: Wednesday, 5:00pm (Check slack for changes!)
 
-### Course Planner
+### [Course Planner](https://github.com/rit-sse/CoursePlanner)
 
 Online, interactive SE curriculum flowchart for planning your courses.
 
@@ -58,6 +58,17 @@ Past Projects
 For past projects, see our Github at https://github.com/rit-sse. The following is
 a selection of our most recent projects.
 
+### [LED Marquee](https://github.com/rit-sse/led-marquee)
+
+Large, high-powered LED matrix with games and colors
+
+### Live Cards
+
+Augmented reality trading cards.
+
+### [Holodesk](https://github.com/rit-sse/holo-desk)
+
+A touch-interactive table using a projector, Kinect, and tap-detecting accelerometers.
 
 ### [Voxel Display](https://github.com/rit-sse/Voxel-Display)
 
