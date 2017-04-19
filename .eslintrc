@@ -16,15 +16,19 @@
     "es6": true,
     "classes": true
   },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.config.prod.js"
+      }
+    }
+  },
   "rules": {
      "comma-dangle": [1, "always-multiline"],
      "no-underscore-dangle" : 0,
      "max-len": [1, 180, 4],
      "arrow-body-style": [0],
      "react/jsx-no-bind": [0],
-     "import/no-unresolved": [0], // Until import plugin supports webpack 2 resolveModules
-     "import/no-extraneous-dependencies": [0],
-     "import/extensions": [0],
      "react/no-array-index-key": [0],
   }
 }
