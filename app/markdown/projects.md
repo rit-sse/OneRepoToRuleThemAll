@@ -11,40 +11,46 @@ Contact projects at <projects@sse.rit.edu>, or join the `#sse-projects` slack ch
 Current SSE Projects
 --------------------
 
-### Holodesk
-
-A touch-interactive table using a projector, Kinect, and tap-detecting accelerometers.
-Includes cool games!
-
-Slack: `#proj-holo-desk`
-
-Meetings: Sundays, 1:30pm (Check slack for changes!)
-
-### Live Cards
-
-Augmented reality trading cards with awesome animations! Uses Android phones and
-a Hololens.
-
-Slack: `#proj-live-cards`
-
-Meetings: Monday, 4:00pm (Check slack for changes!)
-
-### Jukebox
+### [Jukebox](https://github.com/rit-sse/Jukebox)
 
 Raspberry Pi music jukebox, with remote controlled song queueing and speakers.
 
 Slack: `#proj-jukebox`
 
-Meetings: Tuesday, 6:30pm (Check slack for changes!)
+Meetings: Thursday, 5:00pm (Check slack for changes!)
 
-### LED Marquee
+### [Sandbox](https://github.com/rit-sse/libfreenect2)
 
-Large, high-powered LED matrix with games and colors! Multi-year project,
-looking for both hardware and software help.
+Interactive sandbox powered by a projector and Kinect.
 
-Slack: `#proj-led-marquee`
+Slack: `#proj-sandbox`
 
-Ask on Slack for interest!
+Meetings: Saturday, 2:00pm (Check slack for changes!)
+
+### [Rate-My-Coop](https://github.com/rit-sse/RateMyCoop)
+
+Like Glassdoor, but for Co-Ops.
+
+Slack: `#proj-rate-my-coop`
+
+Meetings: Sunday, 2:00pm (Check slack for changes!)
+
+### HDR Display
+
+High Dynamic Range (HDR) display operated by a projector and disassembled LCD.
+
+Slack: `#proj-hdr`
+
+Meetings: Wednesday, 5:00pm (Check slack for changes!)
+
+### [Course Planner](https://github.com/rit-sse/CoursePlanner)
+
+Online, interactive SE curriculum flowchart for planning your courses.
+
+Slack: `#proj-course-planner`
+
+Meetings: Monday, 11:00am (Check slack for changes!)
+
 
 Past Projects
 -------------
@@ -52,6 +58,17 @@ Past Projects
 For past projects, see our Github at https://github.com/rit-sse. The following is
 a selection of our most recent projects.
 
+### [LED Marquee](https://github.com/rit-sse/led-marquee)
+
+Large, high-powered LED matrix with games and colors
+
+### Live Cards
+
+Augmented reality trading cards.
+
+### [Holodesk](https://github.com/rit-sse/holo-desk)
+
+A touch-interactive table using a projector, Kinect, and tap-detecting accelerometers.
 
 ### [Voxel Display](https://github.com/rit-sse/Voxel-Display)
 
@@ -64,3 +81,4 @@ Multiplayer Starfox-style asteroid dodger.
 ### [Oculus Paint](https://github.com/rit-sse/OculusPaint)
 
 Virtual Reality three dimensional image painting program.
+
