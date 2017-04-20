@@ -6,7 +6,7 @@ import Status from 'containers/general/Status';
 import QuoteList from 'containers/qdb/QuoteList';
 import PendingQuoteList from 'containers/qdb/PendingQuoteList';
 import CreateQuoteButton from 'containers/qdb/CreateQuoteButton';
-import ApproveQuoteButton from 'containers/qdb/ApproveQuoteButton';
+import ControlledLinkButton from 'containers/general/ControlledLinkButton';
 import QDBModal from 'containers/qdb/QDBModal';
 import { QUOTES } from 'actions/quotes';
 import 'scss/page.scss';
@@ -22,9 +22,9 @@ const QDB = ({ location }) => (
           <CreateQuoteButton className="btn btn-secondary">
             Create Quote
           </CreateQuoteButton>
-          <ApproveQuoteButton path={location.pathname} className="btn btn-secondary" to="/qdb/approval">
+          <ControlledLinkButton path={location.pathname} className="btn btn-secondary" to="/qdb/approval">
             Approve Quotes
-          </ApproveQuoteButton>
+          </ControlledLinkButton>
           <Login className="btn btn-sse" />
         </div>
       </div>

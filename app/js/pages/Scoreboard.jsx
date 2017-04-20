@@ -1,18 +1,24 @@
-import React/* , { PropTypes }*/ from 'react';
+import React, { PropTypes } from 'react';
+import { Route } from 'react-router-dom';
+import { MEMBERS } from 'actions/members';
 import Login from 'containers/general/Login';
 import Status from 'containers/general/Status';
-import MemberList from 'containers/scoreboard/MembersList';
+import MembershipList from 'pages/MembershipList';
+import ControlledLinkButton from 'containers/general/ControlledLinkButton';
 import AddMembershipButton from 'containers/scoreboard/AddMembershipButton';
-import { MEMBERS } from 'actions/members';
+import AddMembershipModal from 'containers/scoreboard/AddMembershipModal';
 import ViewMembershipsModal from 'containers/scoreboard/ViewMembershipModal';
 import 'scss/page.scss';
 
-const Scoreboard = (/* { location } */) => (
+const Scoreboard = ({ location }) => (
   <div className="container page">
     <div className="row">
       <div className="col-12">
         <h1 className="pull-left">Scoreboard</h1>
         <div className="btn-group pull-right" style={{ marginTop: '5px' }} role="group" aria-label="Basic example">
+          <ControlledLinkButton primary path={location.pathname} className="btn btn-secondary" to="/scoreboard/approval">
+            Approve Membership
+          </ControlledLinkButton>
           <AddMembershipButton className="btn btn-secondary">
             Add Membership
           </AddMembershipButton>
@@ -31,29 +37,17 @@ const Scoreboard = (/* { location } */) => (
       </div>
     </div>
     <div className="row">
-      <div className="offset-1 col-10 offset-md-2 col-md-8">
-        <table className="table table-striped table-bordered">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Member</th>
-              <th>Score</th>
-            </tr>
-          </thead>
-          <MemberList wrapper="tbody" />
-        </table>
-      </div>
+      <Route path="/scoreboard" exact component={MembershipList} />
     </div>
+    <AddMembershipModal />
     <ViewMembershipsModal />
   </div>
 );
 
-/*
 Scoreboard.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string,
   }).isRequired,
 };
-*/
 
 export default Scoreboard;

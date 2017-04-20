@@ -41,13 +41,13 @@ export function getMembers(active = moment().toISOString()) {
   };
 }
 
-export function addMembership(user, ...membership) {
+export function addMembership(user, membership) {
   return (dispatch, getState, api) => {
     dispatch(loading(ADD_MEMBERSHIP));
     return api.Users.update(user.dce, user)
       .then(api.Memberships.create(membership))
-      .then(member => dispatch(ADD_MEMBERSHIP, member))
-      .catch(err => dispatch(ADD_MEMBERSHIP, err));
+      .then(member => dispatch(createAction(ADD_MEMBERSHIP, member, `Membership added for ${user.dce}`)))
+      .catch(err => dispatch(createAction(ADD_MEMBERSHIP, err)));
   };
 }
 

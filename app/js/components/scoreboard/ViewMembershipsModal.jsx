@@ -56,7 +56,14 @@ ViewMembershipsModal.propTypes = {
       startDate: PropTypes.string,
       committeeName: PropTypes.string,
     })),
-  }).isRequired,
+  }),
+};
+
+ViewMembershipsModal.defaultProps = {
+  member: {
+    name: '',
+    memberships: [],
+  },
 };
 
 export default ViewMembershipsModal;
