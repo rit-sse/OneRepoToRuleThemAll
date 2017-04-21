@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Field, Form, reduxForm } from 'redux-form';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Button from 'components/general/Button';
@@ -23,7 +24,7 @@ class EventModal extends Component {
     close: PropTypes.func.isRequired,
     create: PropTypes.func.isRequired,
     update: PropTypes.func.isRequired,
-    committees: PropTypes.arrayOf(React.PropTypes.object).isRequired,
+    committees: PropTypes.arrayOf(PropTypes.object).isRequired,
   }
 
   static defaultProps = {

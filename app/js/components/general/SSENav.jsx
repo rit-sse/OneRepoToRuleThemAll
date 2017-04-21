@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { NavDropdown, DropdownToggle, DropdownMenu, DropdownItem, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
@@ -6,6 +7,11 @@ import 'scss/nav.scss';
 import Logo from 'img/sse-logo.png';
 
 class SSENav extends Component {
+  static propTypes = {
+    opened: PropTypes.bool.isRequired,
+    toggle: PropTypes.func.isRequired,
+  };
+
   state = {
     opened: false,
   };
@@ -56,10 +62,5 @@ class SSENav extends Component {
     );
   }
 }
-
-SSENav.propTypes = {
-  opened: PropTypes.bool.isRequired,
-  toggle: PropTypes.func.isRequired,
-};
 
 export default SSENav;

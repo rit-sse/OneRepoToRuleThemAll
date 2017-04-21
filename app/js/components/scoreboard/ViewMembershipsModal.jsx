@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Modal, ModalHeader, ModalFooter } from 'reactstrap';
 import moment from 'moment';
 import Button from 'components/general/Button';

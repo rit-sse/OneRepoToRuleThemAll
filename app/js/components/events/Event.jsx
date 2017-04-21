@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
 import 'scss/pane.scss';
@@ -6,14 +7,14 @@ import 'scss/event.scss';
 
 class Event extends Component {
   static propTypes = {
-    name: React.PropTypes.string.isRequired,
-    loggedIn: React.PropTypes.bool.isRequired,
-    endDate: React.PropTypes.string.isRequired,
-    location: React.PropTypes.string.isRequired,
-    startDate: React.PropTypes.string.isRequired,
-    description: React.PropTypes.string, // eslint-disable-line react/require-default-props
-    editItem: React.PropTypes.func.isRequired,
-    deleteItem: React.PropTypes.func.isRequired,
+    name: PropTypes.string.isRequired,
+    loggedIn: PropTypes.bool.isRequired,
+    endDate: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    startDate: PropTypes.string.isRequired,
+    description: PropTypes.string, // eslint-disable-line react/require-default-props
+    editItem: PropTypes.func.isRequired,
+    deleteItem: PropTypes.func.isRequired,
   };
 
   constructor() {

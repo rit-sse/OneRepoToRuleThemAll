@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SSENav from 'containers/general/SSENav';
 
 import 'scss/footer.scss';
@@ -12,7 +13,7 @@ const Layout = props => (
 );
 
 Layout.propTypes = {
-  children: React.PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Layout;

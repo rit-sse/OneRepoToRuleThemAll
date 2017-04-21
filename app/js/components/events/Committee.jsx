@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link, Route } from 'react-router-dom';
 import 'scss/committees.scss';
 
@@ -15,7 +16,7 @@ const Committee = props => (
 );
 
 Committee.propTypes = {
-  name: React.PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
 };
 
 export default Committee;

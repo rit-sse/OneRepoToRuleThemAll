@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import 'scss/buttons.scss';
 import { Route, Switch, Link } from 'react-router-dom';
 import Login from 'containers/general/Login';

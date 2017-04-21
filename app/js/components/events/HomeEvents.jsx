@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import HomeEvent from 'components/events/HomeEvent';
 import 'scss/homeEvents.scss';
 
 class HomeEvents extends Component {
   static propTypes = {
-    getEvents: React.PropTypes.func.isRequired,
-    events: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+    getEvents: PropTypes.func.isRequired,
+    events: PropTypes.arrayOf(PropTypes.object).isRequired,
   };
 
   componentDidMount() {

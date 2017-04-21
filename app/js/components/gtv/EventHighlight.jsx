@@ -1,8 +1,8 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 
 class EventHighlight extends Component {
-
   static propTypes = {
     event: PropTypes.object, // eslint-disable-line
     nextEvent: PropTypes.func.isRequired,

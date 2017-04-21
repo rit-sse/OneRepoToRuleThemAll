@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { Route, Link, Switch } from 'react-router-dom';
 import { MEMBERS } from 'actions/members';
 import Login from 'containers/general/Login';

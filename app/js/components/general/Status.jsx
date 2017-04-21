@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-expressions */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 // TODO: Add fancy animations
 
@@ -28,12 +29,12 @@ const Status = props => (
 );
 
 Status.propTypes = {
-  error: React.PropTypes.string.isRequired,
-  info: React.PropTypes.string.isRequired,
-  close: React.PropTypes.func.isRequired,
-  loading: React.PropTypes.bool.isRequired,
-  message: React.PropTypes.bool,
-  spinner: React.PropTypes.bool,
+  error: PropTypes.string.isRequired,
+  info: PropTypes.string.isRequired,
+  close: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
+  message: PropTypes.bool,
+  spinner: PropTypes.bool,
 };
 
 Status.defaultProps = {

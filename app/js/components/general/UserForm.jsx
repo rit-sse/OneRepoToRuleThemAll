@@ -1,7 +1,25 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Field } from 'redux-form';
 
 class UserForm extends Component {
+  static propTypes = {
+    getUser: PropTypes.func.isRequired,
+    user: PropTypes.shape({
+      firstName: PropTypes.string,
+      lastName: PropTypes.string,
+      dce: PropTypes.string,
+      image: PropTypes.string,
+    }),
+    autofill: PropTypes.func.isRequired,
+    name: PropTypes.string,
+  };
+
+  static defaultProps = {
+    name: 'user',
+    user: {},
+  };
+
   componentDidUpdate(prevProps) {
     const {
       name,
@@ -47,22 +65,5 @@ class UserForm extends Component {
     );
   }
 }
-
-UserForm.propTypes = {
-  getUser: PropTypes.func.isRequired,
-  user: PropTypes.shape({
-    firstName: PropTypes.string,
-    lastName: PropTypes.string,
-    dce: PropTypes.string,
-    image: PropTypes.string,
-  }),
-  autofill: PropTypes.func.isRequired,
-  name: PropTypes.string,
-};
-
-UserForm.defaultProps = {
-  name: 'user',
-  user: {},
-};
 
 export default UserForm;

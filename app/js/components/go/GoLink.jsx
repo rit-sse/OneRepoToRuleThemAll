@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const GoLink = ({
   shortLink,
@@ -15,8 +16,8 @@ const GoLink = ({
 );
 
 GoLink.propTypes = {
-  shortLink: React.PropTypes.string.isRequired,
-  longLink: React.PropTypes.string.isRequired,
+  shortLink: PropTypes.string.isRequired,
+  longLink: PropTypes.string.isRequired,
 };
 
 export default GoLink;

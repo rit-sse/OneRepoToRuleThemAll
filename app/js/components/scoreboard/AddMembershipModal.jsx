@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Field, Form, FormSection, reduxForm } from 'redux-form';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Button from 'components/general/Button';
@@ -6,7 +7,7 @@ import UserForm from 'containers/general/UserForm';
 
 class AddMembershipModal extends Component {
   static propTypes = {
-    committees: PropTypes.arrayOf(React.PropTypes.object).isRequired,
+    committees: PropTypes.arrayOf(PropTypes.object).isRequired,
     getCommittees: PropTypes.func.isRequired,
     autofill: PropTypes.func.isRequired,
     handleSubmit: PropTypes.func.isRequired,
