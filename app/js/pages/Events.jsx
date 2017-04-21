@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import { EVENTS } from 'actions/events';
 import Login from 'containers/general/Login';
 import Status from 'containers/general/Status';
@@ -14,7 +14,9 @@ const Event = () => (
   <div className="container page">
     <div className="row">
       <div className="col-12">
-        <h1 className="pull-left">Events</h1>
+        <Link to="/events" className="title-link">
+          <h1 className="pull-left">Events</h1>
+        </Link>
         <div className="btn-group pull-right" style={{ marginTop: '5px' }} role="group" aria-label="Basic example">
           <CreateEventButton className="btn btn-secondary" >
             Create Event

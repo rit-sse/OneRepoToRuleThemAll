@@ -27,7 +27,7 @@ export function nextEvent() {
 export function getEvents(getNext) {
   return (dispatch, getState, api) => {
     if (getNext) {
-      if (getState().status.loading[GET_EVENT_PAGE]) return;
+      if (getState().status.loading[GET_EVENTS] || getState().status.loading[GET_EVENT_PAGE]) return;
       dispatch(loading(GET_EVENT_PAGE));
       const page = getState().events.pagination.currentPage + 1;
       api.Events.all({

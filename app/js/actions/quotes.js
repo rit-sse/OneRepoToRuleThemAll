@@ -14,6 +14,8 @@ const loading = utils.createLoading(QUOTES);
 export function getQuotes(getNext, tag, search, approved = true) {
   return (dispatch, getState, api) => {
     if (getNext) {
+      if (getState().status.loading[GET_QUOTES] || getState().status.loading[GET_QUOTE_PAGE]) return;
+      dispatch(loading(GET_QUOTE_PAGE));
       const page = getState().quotes.pagination.currentPage + 1;
       api.Quotes.all({ page, tag, approved, search })
         .then(({ data }) => dispatch(createAction(GET_QUOTE_PAGE, data)))

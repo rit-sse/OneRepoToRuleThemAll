@@ -1,52 +1,12 @@
 @import 'variables';
 
-/* Consider removing this next declaration block, as it causes problems when
-there's a rowspan on the first cell. Case added to the tests. issue#432 */
-.go-table td:first-child,
-.go-table th:first-child {
-    border-left-width: 0;
-}
-
-.go-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    empty-cells: show;
-    table-layout: fixed;
-    width: 100%;
-}
-
-.go-table caption {
-    color: #000;
-    font: italic 85%/1 arial, sans-serif;
-    padding: 1em 0;
-    text-align: center;
-}
-
-.go-table td,
-.go-table th {
-    border-right: 1px solid #cbcbcb;
-    border-width: 0 0 0 1px;
-    font-size: inherit;
-    margin: 0;
-    overflow: hidden;
-    padding: 0.5em 1em;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    box-sizing: border-box;
-}
-
-.go-table td {
-    line-height: 1;
-}
-
-.go-table thead {
-    background-color: #e0e0e0;
-    color: #000;
-    text-align: left;
-    vertical-align: bottom;
-    border-right: 1px solid #cbcbcb;
-}
-
-.go-table-striped tr:nth-child(2n-1) td {
-    background-color: #f2f2f2;
+.table-go {
+  thead tr {
+    th {
+      width: 20%;
+    }
+    th + th {
+      width: 80%;
+    }
+  }
 }
