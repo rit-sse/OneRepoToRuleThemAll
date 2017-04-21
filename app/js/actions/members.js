@@ -3,6 +3,7 @@ import * as utils from './utils';
 
 export const MEMBERS = 'MEMBERS';
 export const GET_MEMBERS = 'GET_MEMBERS';
+export const GET_MEMBERSHIPS = 'GET_MEMBERSHIPS';
 export const ADD_MEMBERSHIP = 'ADD_MEMBERSHIP';
 export const APPROVE_MEMBERSHIP = 'APPROVE_MEMBERSHIP';
 export const DENY_MEMBERSHIP = 'DENY_MEMBERSHIP';
@@ -38,6 +39,15 @@ export function getMembers(active = moment().toISOString()) {
       }, {}))
       .then(memberships => dispatch(createAction(GET_MEMBERS, memberships)))
       .catch(err => dispatch(createAction(GET_MEMBERS, err)));
+  };
+}
+
+export function getMemberships() {
+  return (dispatch, getState, api) => {
+    dispatch(loading(GET_MEMBERSHIPS));
+    api.Memberships.all({ approved: 'null' }, true)
+      .then(({ data }) => dispatch(createAction(GET_MEMBERSHIPS, data)))
+      .catch(err => dispatch(createAction(GET_MEMBERSHIPS, err)));
   };
 }
 

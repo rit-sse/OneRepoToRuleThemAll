@@ -1,38 +1,40 @@
 import { combineReducers } from 'redux';
 import { reducer as form } from 'redux-form';
-import auth from './auth';
-import committees from './committees';
-import events from './events';
+
 import go from './go';
-import hover from './hover';
-import members from './members';
-import mentors from './mentors';
-import modal from './modal';
 import nav from './nav';
-import officers from './officers';
-import quotes from './quotes';
-import shifts from './shifts';
-import specialties from './specialties';
-import status from './status';
+import auth from './auth';
 import tags from './tags';
 import user from './user';
+import hover from './hover';
+import modal from './modal';
+import events from './events';
+import quotes from './quotes';
+import shifts from './shifts';
+import status from './status';
+import mentors from './mentors';
+import officers from './officers';
+import committees from './committees';
+import specialties from './specialties';
+import { members, memberships } from './members';
 
 export default combineReducers({
-  auth,
-  committees,
-  events,
-  form,
   go,
-  hover,
-  members,
-  mentors,
-  modal,
   nav,
-  officers,
-  quotes,
-  shifts,
-  specialties,
-  status,
+  auth,
+  form,
   tags,
   user,
+  hover,
+  modal,
+  events,
+  quotes,
+  shifts,
+  status,
+  members,
+  mentors,
+  officers,
+  committees,
+  memberships,
+  specialties,
 });
