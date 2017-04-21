@@ -37,17 +37,17 @@ class SSENav extends Component {
               <NavLink tag={Link} to="/mentoring">Mentoring</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={Link} to="/static/projects">Projects</NavLink>
+              <NavLink tag={Link} to="/projects">Projects</NavLink>
             </NavItem>
             <NavDropdown isOpen={this.state.opened} toggle={this.toggle}>
               <DropdownToggle nav caret>
                 About
               </DropdownToggle>
               <DropdownMenu>
-                <DropdownItem tag={Link} to="/static/about">About the SSE</DropdownItem>
+                <DropdownItem tag={Link} to="/about">About the SSE</DropdownItem>
                 <DropdownItem divider />
-                <DropdownItem tag={Link} to="/static/governing-docs/constitution">SSE Constitution</DropdownItem>
-                <DropdownItem tag={Link} to="/static/governing-docs/primary-officers-policy">SSE Primary Officers&apos; Policy</DropdownItem>
+                <DropdownItem tag={Link} to="/governing-docs/constitution">SSE Constitution</DropdownItem>
+                <DropdownItem tag={Link} to="/governing-docs/primary-officers-policy">SSE Primary Officers&apos; Policy</DropdownItem>
               </DropdownMenu>
             </NavDropdown>
           </Nav>

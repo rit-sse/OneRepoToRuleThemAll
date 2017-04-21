@@ -28,11 +28,10 @@ const Root = () => (
             <Route path="/go" component={Go} />
             <Route path="/qdb" component={QDB} />
             <Route path="/events" component={Events} />
-            <Route path="/static" component={Static} />
             <Route path="/scoreboard" component={Scoreboard} />
             <Route path="/mentoring" component={Mentoring} />
             <Route path="/officers" component={Officers} />
-            <Route component={Home} />
+            <Route component={Static} />
           </Switch>
         </Layout>
       </Switch>

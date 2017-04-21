@@ -11,7 +11,7 @@ function getPage(page) {
 }
 
 const Static = ({ location }) => {
-  const page = getPage(location.pathname.replace('/static/', ''));
+  const page = getPage(location.pathname.replace(/^\//, ''));
   if (page) {
     return (
       <div className="container page">
