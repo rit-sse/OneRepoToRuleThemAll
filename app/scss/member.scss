@@ -1,0 +1,11 @@
+@import 'variables';
+
+.member {
+  .gravatar {
+    height: 30px;
+  }
+  .name {
+    display: inline-block;
+    margin-left: 10px;
+  }
+}
