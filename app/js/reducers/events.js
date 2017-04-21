@@ -7,6 +7,7 @@ import {
   DESTROY_EVENT,
   NEXT_EVENT,
 } from 'actions/events';
+import moment from 'moment';
 
 import { combineReducers } from 'redux';
 
@@ -28,7 +29,7 @@ function all(state = [], action) {
       return [
         action.payload,
         ...state,
-      ];
+      ].sort((a, b) => moment(a.startDate).unix() - moment(b.startDate).unix());
     case UPDATE_EVENT:
       return state.map((event) => {
         if (action.payload.id !== event.id) return event;
