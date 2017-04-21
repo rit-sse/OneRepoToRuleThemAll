@@ -11,6 +11,6 @@ export function getUser(dce) {
     dispatch(loading(GET_USER));
     api.Users.one(dce)
       .then(data => dispatch(createAction(GET_USER, data)))
-      .catch(err => dispatch(createAction(GET_USER, err)));
+      .catch(err => dispatch(createAction(GET_USER, err, undefined, true)));
   };
 }
