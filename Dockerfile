@@ -1,8 +1,7 @@
 FROM node:7.4
 
 # Caddy Server
-ADD https://caddyserver.com/download/build?os=linux&arch=amd64&features=cors /tmp
-RUN tar -xvf /tmp/build -C /usr/bin/
+RUN curl https://getcaddy.com | bash
 
 # Node deps
 WORKDIR /app
