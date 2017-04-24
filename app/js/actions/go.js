@@ -32,10 +32,19 @@ export function getLinks(getNext = true) {
 
 export function createLink(link) {
   return (dispatch, getState, { Links }) => {
-    dispatch(loading(CREATE_LINK));
-    Links.create(link)
-      .then(data => dispatch(createAction(CREATE_LINK, data)))
-      .catch(err => dispatch(createAction(CREATE_LINK, err)));
+    Links.one(link.shortLink)
+      .then(() => {
+        dispatch(loading(UPDATE_LINK));
+        Links.update(link.shortLink, link)
+          .then(data => dispatch(createAction(UPDATE_LINK, data)))
+          .catch(err => dispatch(createAction(UPDATE_LINK, err)));
+      })
+      .catch(() => {
+        dispatch(loading(CREATE_LINK));
+        Links.create(link)
+          .then(data => dispatch(createAction(CREATE_LINK, data)))
+          .catch(err => dispatch(createAction(CREATE_LINK, err)));
+      });
   };
 }
 
