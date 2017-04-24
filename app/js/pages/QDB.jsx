@@ -6,7 +6,8 @@ import Login from 'containers/general/Login';
 import Status from 'containers/general/Status';
 import QuoteList from 'containers/qdb/QuoteList';
 import PendingQuoteList from 'containers/qdb/PendingQuoteList';
-import CreateQuoteButton from 'containers/qdb/CreateQuoteButton';
+import CreateButton from 'containers/general/CreateButton';
+import { showQuoteModal } from 'actions/modal';
 import ControlledLinkButton from 'containers/general/ControlledLinkButton';
 import QDBModal from 'containers/qdb/QDBModal';
 import { QUOTES } from 'actions/quotes';
@@ -20,9 +21,9 @@ const QDB = ({ location }) => (
           <h1 className="pull-left">QDB</h1>
         </Link>
         <div className="btn-group pull-right" style={{ marginTop: '5px' }} role="group" aria-label="Basic example">
-          <CreateQuoteButton className="btn btn-secondary">
+          <CreateButton action={showQuoteModal} className="btn btn-secondary">
             Create Quote
-          </CreateQuoteButton>
+          </CreateButton>
           <ControlledLinkButton path={location.pathname} className="btn btn-secondary" to="/qdb/approval">
             Approve Quotes
           </ControlledLinkButton>

@@ -6,7 +6,8 @@ import Login from 'containers/general/Login';
 import Status from 'containers/general/Status';
 import MembershipList from 'pages/MembershipList';
 import ControlledLinkButton from 'containers/general/ControlledLinkButton';
-import AddMembershipButton from 'containers/scoreboard/AddMembershipButton';
+import CreateButton from 'containers/general/CreateButton';
+import { addMembershipModal } from 'actions/modal';
 import AddMembershipModal from 'containers/scoreboard/AddMembershipModal';
 import ViewMembershipsModal from 'containers/scoreboard/ViewMembershipModal';
 import ApproveMemberships from 'components/scoreboard/ApproveMemberships';
@@ -23,9 +24,9 @@ const Scoreboard = ({ location }) => (
           <ControlledLinkButton primary path={location.pathname} className="btn btn-secondary" to="/scoreboard/approval">
             Approve Membership
           </ControlledLinkButton>
-          <AddMembershipButton className="btn btn-secondary">
+          <CreateButton action={addMembershipModal} className="btn btn-secondary">
             Add Membership
-          </AddMembershipButton>
+          </CreateButton>
           <Login className="btn btn-sse" />
         </div>
       </div>

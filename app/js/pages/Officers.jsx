@@ -5,7 +5,8 @@ import Login from 'containers/general/Login';
 import Status from 'containers/general/Status';
 import OfficersList from 'containers/officers/OfficersList';
 import OfficerForm from 'containers/officers/OfficerForm';
-import CreateOfficerButton from 'containers/officers/CreateOfficerButton';
+import CreateButton from 'containers/general/CreateButton';
+import { showOfficerModal } from 'actions/modal';
 import 'scss/page.scss';
 
 const Officers = () => (
@@ -14,9 +15,9 @@ const Officers = () => (
       <div className="col">
         <h1 className="pull-left">Officers</h1>
         <div className="btn-group pull-right" style={{ marginTop: '5px' }} role="group" aria-label="Basic example">
-          <CreateOfficerButton className="btn btn-secondary" >
+          <CreateButton primary action={showOfficerModal} className="btn btn-secondary" >
             Create Officer
-          </CreateOfficerButton>
+          </CreateButton>
 
           <Login className="btn btn-sse" />
         </div>

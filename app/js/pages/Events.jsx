@@ -7,7 +7,8 @@ import { COMMITTEES } from 'actions/committees';
 import EventList from 'containers/events/EventList';
 import EventModal from 'containers/events/EventModal';
 import CommitteesList from 'containers/events/CommitteesList';
-import CreateEventButton from 'containers/events/CreateEventButton';
+import CreateButton from 'containers/general/CreateButton';
+import { showEventModal } from 'actions/modal';
 import 'scss/page.scss';
 
 const Event = () => (
@@ -18,9 +19,9 @@ const Event = () => (
           <h1 className="pull-left">Events</h1>
         </Link>
         <div className="btn-group pull-right" style={{ marginTop: '5px' }} role="group" aria-label="Basic example">
-          <CreateEventButton className="btn btn-secondary" >
+          <CreateButton action={showEventModal} className="btn btn-secondary" >
             Create Event
-          </CreateEventButton>
+          </CreateButton>
           <Login className="btn btn-sse" />
         </div>
       </div>

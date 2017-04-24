@@ -4,6 +4,8 @@ import Status from 'containers/general/Status';
 import { GO } from 'actions/go';
 import { Link } from 'react-router-dom';
 import Login from 'containers/general/Login';
+import CreateButton from 'containers/general/CreateButton';
+import { showGoModal } from 'actions/modal';
 import 'scss/page.scss';
 import 'scss/go.scss';
 
@@ -15,6 +17,9 @@ const Go = () => (
           <h1 className="pull-left">Go Links</h1>
         </Link>
         <div className="btn-group pull-right" role="group">
+          <CreateButton action={showGoModal} className="btn btn-secondary">
+            Add Link
+          </CreateButton>
           <Login className="btn btn-sse" />
         </div>
       </div>
