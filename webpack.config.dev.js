@@ -11,6 +11,7 @@ module.exports = {
     ],
     vendor: [
       'redux',
+      'redux-form',
       'react-redux',
       'react-router',
       'react-router-dom',

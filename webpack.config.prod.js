@@ -10,6 +10,7 @@ module.exports = {
     main: './app/js/app.jsx',
     vendor: [
       'redux',
+      'redux-form',
       'react-redux',
       'react-router',
       'react-router-dom',
