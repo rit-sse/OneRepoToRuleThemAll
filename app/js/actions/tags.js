@@ -7,9 +7,9 @@ const createAction = utils.createAction(TAGS);
 const loading = utils.createLoading(TAGS);
 
 export function getTags() {
-  return (dispatch, getState, api) => {
+  return (dispatch, getState, { Tags }) => {
     dispatch(loading(GET_TAGS));
-    api.Tags.all()
+    Tags.all()
       .then(tags => tags.data.map(tag => tag.name))
       .then(tags => dispatch(createAction(GET_TAGS, tags)))
       .catch(err => dispatch(createAction(GET_TAGS, err)));

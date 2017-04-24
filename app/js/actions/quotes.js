@@ -12,17 +12,17 @@ const createAction = utils.createAction(QUOTES);
 const loading = utils.createLoading(QUOTES);
 
 export function getQuotes(getNext, tag, search, approved = true) {
-  return (dispatch, getState, api) => {
+  return (dispatch, getState, { Quotes }) => {
     if (getNext) {
       if (getState().status.loading[GET_QUOTES] || getState().status.loading[GET_QUOTE_PAGE]) return;
       dispatch(loading(GET_QUOTE_PAGE));
       const page = getState().quotes.pagination.currentPage + 1;
-      api.Quotes.all({ page, tag, approved, search })
+      Quotes.all({ page, tag, approved, search })
         .then(({ data }) => dispatch(createAction(GET_QUOTE_PAGE, data)))
         .catch(err => dispatch(createAction(GET_QUOTE_PAGE, err)));
     } else {
       dispatch(loading(GET_QUOTES));
-      api.Quotes.all({
+      Quotes.all({
         tag,
         approved,
         search,
@@ -33,36 +33,36 @@ export function getQuotes(getNext, tag, search, approved = true) {
 }
 
 export function approveQuote(id) {
-  return (dispatch, getState, api) => {
+  return (dispatch, getState, { Quotes }) => {
     dispatch(loading(APPROVE_QUOTE));
-    api.Quotes.update(id, { approved: true })
+    Quotes.update(id, { approved: true })
       .then(() => dispatch(createAction(APPROVE_QUOTE, id)))
       .catch(err => dispatch(createAction(APPROVE_QUOTE, err)));
   };
 }
 
 export function createQuote(quote) {
-  return (dispatch, getState, api) => {
+  return (dispatch, getState, { Quotes }) => {
     dispatch(loading(CREATE_QUOTE));
-    api.Quotes.create(quote)
+    Quotes.create(quote)
       .then(data => dispatch(createAction(CREATE_QUOTE, data, 'Quote created waiting for approval')))
       .catch(err => dispatch(createAction(CREATE_QUOTE, err)));
   };
 }
 
 export function updateQuote(id, quote) {
-  return (dispatch, getState, api) => {
+  return (dispatch, getState, { Quotes }) => {
     dispatch(loading(UPDATE_QUOTE));
-    api.Quotes.update(id, quote)
+    Quotes.update(id, quote)
       .then(data => dispatch(createAction(UPDATE_QUOTE, data)))
       .catch(err => dispatch(createAction(UPDATE_QUOTE, err)));
   };
 }
 
 export function destoryQuote(id) {
-  return (dispatch, getState, api) => {
+  return (dispatch, getState, { Quotes }) => {
     dispatch(loading(DESTROY_QUOTE));
-    api.Quotes.destroy(id)
+    Quotes.destroy(id)
       .then(() => dispatch(createAction(DESTROY_QUOTE, id)))
       .catch(err => dispatch(createAction(DESTROY_QUOTE, err)));
   };

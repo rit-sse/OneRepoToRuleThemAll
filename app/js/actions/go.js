@@ -14,12 +14,12 @@ const createAction = createCreateAction(GO);
 const loading = createLoading(GO);
 
 export function getLinks(getNext = true) { // eslint-disable-line no-unused-vars
-  return (dispatch, getState, api) => {
+  return (dispatch, getState, { Links }) => {
     dispatch(loading(GET_LINKS_PAGES));
     if (!getNext) {
       dispatch(createAction(SET_PAGE, 1));
     }
-    api.Links.all({
+    Links.all({
       sort: 'DESC',
       page: getState().go.page,
     })

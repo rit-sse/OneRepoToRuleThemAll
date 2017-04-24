@@ -7,9 +7,9 @@ const createAction = utils.createAction(SHIFTS);
 const loading = utils.createLoading(SHIFTS);
 
 export function getShifts(startTime, endTime) {
-  return (dispatch, getState, api) => {
+  return (dispatch, getState, { Shifts }) => {
     dispatch(loading(GET_SHIFTS));
-    return api.Shifts.all({ startTime, endTime })
+    return Shifts.all({ startTime, endTime })
       .then(data => dispatch(createAction(GET_SHIFTS, data)))
       .catch(err => dispatch(createAction(GET_SHIFTS, err)));
   };
