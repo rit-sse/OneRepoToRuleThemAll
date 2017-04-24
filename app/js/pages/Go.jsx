@@ -36,6 +36,7 @@ const Go = () => (
             <tr>
               <th>ShortName</th>
               <th>Link</th>
+              <th>actions</th>
             </tr>
           </thead>
           <GoLinksList />

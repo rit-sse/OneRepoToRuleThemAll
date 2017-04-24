@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
 import List from 'components/general/List';
 import GoLink from 'components/go/GoLink';
-import { getLinks } from 'actions/go';
+import { showGoModal } from 'actions/modal';
+import { getLinks, destoryLink } from 'actions/go';
 
-function mapStateToProps({ go }) {
+function mapStateToProps({ go, auth }) {
   return {
     scroll: true,
     scrollDone: go.pagination.totalPages <= go.pagination.currentPage,
     item: GoLink,
     wrapper: 'tbody',
-    items: go.links,
+    items: auth.officer ? go.all : [],
     keyPriority: ['shortLink'],
   };
 }
@@ -17,8 +18,8 @@ function mapStateToProps({ go }) {
 function mapDispatchToProps(dispatch) {
   return {
     getItems: getNext => dispatch(getLinks(getNext)),
-    deleteItem: () => {},
-    editItem: () => {},
+    deleteItem: id => dispatch(destoryLink(id)),
+    editItem: id => dispatch(showGoModal(id)),
   };
 }
 

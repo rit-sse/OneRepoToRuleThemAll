@@ -3,6 +3,9 @@ import * as utils from './utils';
 export const GO = 'GO';
 export const GET_LINKS = 'GET_LINKS';
 export const GET_LINKS_PAGE = 'GET_LINKS_PAGE';
+export const CREATE_LINK = 'CREATE_LINK';
+export const UPDATE_LINK = 'UPDATE_LINK';
+export const DESTORY_LINK = 'DESTORY_LINK';
 
 const createAction = utils.createAction(GO);
 const loading = utils.createLoading(GO);
@@ -18,10 +21,38 @@ export function getLinks(getNext = true) {
       }).then(data => dispatch(createAction(GET_LINKS_PAGE, data)))
         .catch(err => dispatch(createAction(GET_LINKS_PAGE, err)));
     } else {
+      dispatch(loading(GET_LINKS));
       Links.all({
         sort: 'DESC',
       }).then(data => dispatch(createAction(GET_LINKS, data)))
         .catch(err => dispatch(createAction(GET_LINKS, err)));
     }
+  };
+}
+
+export function createLink(link) {
+  return (dispatch, getState, { Links }) => {
+    dispatch(loading(CREATE_LINK));
+    Links.create(link)
+      .then(data => dispatch(createAction(CREATE_LINK, data)))
+      .catch(err => dispatch(createAction(CREATE_LINK, err)));
+  };
+}
+
+export function updateLink(id, link) {
+  return (dispatch, getState, { Links }) => {
+    dispatch(loading(UPDATE_LINK));
+    Links.update(id, link)
+      .then(data => dispatch(createAction(UPDATE_LINK, data)))
+      .catch(err => dispatch(createAction(UPDATE_LINK, err)));
+  };
+}
+
+export function destoryLink(id) {
+  return (dispatch, getState, { Links }) => {
+    dispatch(loading(DESTORY_LINK));
+    Links.destroy(id)
+      .then(data => dispatch(createAction(DESTORY_LINK, data)))
+      .catch(err => dispatch(createAction(DESTORY_LINK, err)));
   };
 }
