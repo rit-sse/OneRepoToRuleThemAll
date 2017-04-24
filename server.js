@@ -7,6 +7,7 @@ const server = new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true,
   historyApiFallback: true,
+  disableHostCheck: true,
   proxy: {
       "/api/**": {
           target: "https://sse.rit.edu/api/",
