@@ -3,13 +3,13 @@ import List from 'components/general/List';
 import GoLink from 'components/go/GoLink';
 import { getLinks } from 'actions/go';
 
-function mapStateToProps(store) {
+function mapStateToProps({ go }) {
   return {
     scroll: true,
-    scrollDone: store.go.totalPages <= store.go.page,
+    scrollDone: go.pagination.totalPages <= go.pagination.currentPage,
     item: GoLink,
     wrapper: 'tbody',
-    items: store.go.links,
+    items: go.links,
     keyPriority: ['shortLink'],
   };
 }

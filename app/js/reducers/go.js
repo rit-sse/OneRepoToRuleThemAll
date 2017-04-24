@@ -1,40 +1,48 @@
 import {
   GET_LINKS,
-  GET_LINKS_PAGES,
-  SET_PAGE_COUNT,
-  SET_PAGE,
+  GET_LINKS_PAGE,
 } from 'actions/go';
+import { combineReducers } from 'redux';
 
-const initState = {
-  page: 1,
-  totalPages: 0,
-  links: [],
+const initPagination = {
+  currentPage: 0,
+  totalPages: 1,
 };
 
-export default function go(state = initState, action) {
+function all(state = [], action) {
   switch (action.type) {
-    case SET_PAGE:
-      return {
+    case GET_LINKS:
+      return action.payload.data;
+    case GET_LINKS_PAGE:
+      return [
         ...state,
-        page: action.payload,
-      };
-    case SET_PAGE_COUNT:
-      return {
-        ...state,
-        totalPages: action.payload,
-      };
-    case GET_LINKS_PAGES:
-      return {
-        ...state,
-        page: state.page + 1,
-        links: state.links.concat(action.payload),
-      };
+        ...action.payload.data,
+      ];
+    default:
+      return state;
+  }
+}
+
+function pagination(state = initPagination, action) {
+  switch (action.type) {
     case GET_LINKS:
       return {
-        ...initState,
-        links: action.payload,
+        ...state,
+        currentPage: action.payload.currentPage,
+        totalPages: Math.ceil(action.payload.total / action.payload.perPage),
+      };
+    case GET_LINKS_PAGE:
+      return {
+        ...state,
+        currentPage: action.payload.currentPage,
+        totalPages: Math.ceil(action.payload.total / action.payload.perPage),
       };
     default:
       return state;
   }
 }
+
+export default combineReducers({
+  all,
+  pagination,
+});

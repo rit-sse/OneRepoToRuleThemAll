@@ -1,32 +1,27 @@
-import {
-  createAction as createCreateAction,
-  createLoading,
-} from './utils';
+import * as utils from './utils';
 
 export const GO = 'GO';
 export const GET_LINKS = 'GET_LINKS';
-export const GET_LINKS_PAGES = 'GET_LINKS_PAGES';
-export const SET_PAGE_COUNT = 'SET_PAGE_COUNT';
-export const SET_PAGE = 'SET_PAGE';
+export const GET_LINKS_PAGE = 'GET_LINKS_PAGE';
 
-// Creates a wrapper for the loading indications
-const createAction = createCreateAction(GO);
-const loading = createLoading(GO);
+const createAction = utils.createAction(GO);
+const loading = utils.createLoading(GO);
 
-export function getLinks(getNext = true) { // eslint-disable-line no-unused-vars
+export function getLinks(getNext = true) {
   return (dispatch, getState, { Links }) => {
-    dispatch(loading(GET_LINKS_PAGES));
-    if (!getNext) {
-      dispatch(createAction(SET_PAGE, 1));
+    if (getNext) {
+      dispatch(loading(GET_LINKS_PAGE));
+      const page = getState().go.pagination.currentPage + 1;
+      Links.all({
+        sort: 'DESC',
+        page,
+      }).then(data => dispatch(createAction(GET_LINKS_PAGE, data)))
+        .catch(err => dispatch(createAction(GET_LINKS_PAGE, err)));
+    } else {
+      Links.all({
+        sort: 'DESC',
+      }).then(data => dispatch(createAction(GET_LINKS, data)))
+        .catch(err => dispatch(createAction(GET_LINKS, err)));
     }
-    Links.all({
-      sort: 'DESC',
-      page: getState().go.page,
-    })
-    .then((links) => {
-      dispatch(createAction(SET_PAGE_COUNT, Math.ceil(links.total / links.perPage)));
-      dispatch(createAction(GET_LINKS_PAGES, links.data));
-    })
-    .catch(err => dispatch(createAction(GET_LINKS, err)));
   };
 }
