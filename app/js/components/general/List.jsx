@@ -79,16 +79,16 @@ class List extends Component {
     } = this.props;
 
     return items.map((item) => {
-      const key = keyPriority.filter(i => !!item[i]);
+      const key = item[keyPriority.filter(i => !!item[i])[0]];
       return (
         <Item
-          key={item[key[0]]}
+          key={key}
           {...item}
           {...itemProps}
           {...itemDispatch}
-          viewItem={viewItem.bind(null, item.id)}
-          editItem={editItem.bind(null, item.id)}
-          deleteItem={deleteItem.bind(null, item.id)}
+          viewItem={viewItem.bind(null, key)}
+          editItem={editItem.bind(null, key)}
+          deleteItem={deleteItem.bind(null, key)}
         />
       );
     });

@@ -5,6 +5,7 @@ import { GO } from 'actions/go';
 import { Link } from 'react-router-dom';
 import Login from 'containers/general/Login';
 import CreateButton from 'containers/general/CreateButton';
+import GoModal from 'containers/go/GoModal';
 import { showGoModal } from 'actions/modal';
 import 'scss/page.scss';
 import 'scss/go.scss';
@@ -26,7 +27,7 @@ const Go = () => (
     </div>
     <div className="row">
       <div className="col-12">
-        <Status type={[GO]} />
+        <Status type={[GO]} spinner message />
       </div>
     </div>
     <div className="row">
@@ -43,6 +44,7 @@ const Go = () => (
         </table>
       </div>
     </div>
+    <GoModal />
   </div>
 );
 

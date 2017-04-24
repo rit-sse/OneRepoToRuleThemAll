@@ -1,8 +1,11 @@
+import { combineReducers } from 'redux';
 import {
   GET_LINKS,
   GET_LINKS_PAGE,
+  CREATE_LINK,
+  UPDATE_LINK,
+  DESTORY_LINK,
 } from 'actions/go';
-import { combineReducers } from 'redux';
 
 const initPagination = {
   currentPage: 0,
@@ -18,6 +21,18 @@ function all(state = [], action) {
         ...state,
         ...action.payload.data,
       ];
+    case CREATE_LINK:
+      return [
+        action.payload,
+        ...state,
+      ];
+    case UPDATE_LINK:
+      return state.map((link) => {
+        if (link.shortLink === action.payload.shortLink) return action.payload;
+        return link;
+      });
+    case DESTORY_LINK:
+      return state.filter(link => link.shortLink !== action.payload);
     default:
       return state;
   }

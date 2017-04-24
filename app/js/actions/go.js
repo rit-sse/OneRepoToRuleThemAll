@@ -52,7 +52,7 @@ export function destoryLink(id) {
   return (dispatch, getState, { Links }) => {
     dispatch(loading(DESTORY_LINK));
     Links.destroy(id)
-      .then(data => dispatch(createAction(DESTORY_LINK, data)))
+      .then(() => dispatch(createAction(DESTORY_LINK, id)))
       .catch(err => dispatch(createAction(DESTORY_LINK, err)));
   };
 }
