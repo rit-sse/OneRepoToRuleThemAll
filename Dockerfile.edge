@@ -1,0 +1,23 @@
+FROM node:7.4 as build
+
+# Node deps
+WORKDIR /app
+COPY ./package.json /app/package.json
+RUN npm install
+COPY ./  /app
+RUN npm run lint
+RUN npm run build
+
+FROM debian
+RUN apt-get update && apt-get upgrade && apt-get install -y curl
+# Caddy Server
+RUN curl https://getcaddy.com | bash
+WORKDIR /app
+COPY --from=build /app/dist /app/dist
+
+# Caddy
+EXPOSE 80
+EXPOSE 443
+COPY ./caddy /app
+
+CMD caddy
