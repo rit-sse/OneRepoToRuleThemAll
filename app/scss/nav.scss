@@ -7,6 +7,7 @@
   .nav-item .nav-link {
     color: $WHITE;
     font-size: 1.25em;
+    font-family: 'Quicksand', sans-serif;
     &:hover {
       color: darken($WHITE, 33%);
     }
