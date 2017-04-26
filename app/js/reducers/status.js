@@ -1,4 +1,5 @@
 import { LOADING_STATUS, ERROR_STATUS, CLOSE_STATUS, INFO_STATUS } from 'actions/status';
+import { LOCATION_CHANGE } from 'connected-react-router';
 
 const initState = {
   loading: {}, // If empty no loading
@@ -28,6 +29,7 @@ export default (state = initState, action) => {
         info: action.payload.message,
       };
     case CLOSE_STATUS:
+    case LOCATION_CHANGE:
       return {
         ...initState,
       };

@@ -1,9 +1,11 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { persistState } from 'redux-devtools'; // eslint-disable-line import/no-extraneous-dependencies
 import thunk from 'redux-thunk';
+import history from 'history';
+import API from 'api';
+import { connectRouter, routerMiddleware } from 'connected-react-router';
 import rootReducer from '../reducers';
 import status from './status';
-import API from '../api';
 
 function getDebugSessionKey() {
   const matches = window.location.href.match(/[?&]debug_session=([^&]+)\b/);
@@ -11,12 +13,16 @@ function getDebugSessionKey() {
 }
 
 const store = createStore(
-    rootReducer,
-    compose(
-      applyMiddleware(thunk.withExtraArgument(API), status),
-      persistState(getDebugSessionKey()),
-      window.devToolsExtension ? window.devToolsExtension() : f => f
+  connectRouter(history)(rootReducer),
+  compose(
+    applyMiddleware(
+      thunk.withExtraArgument(API),
+      status,
+      routerMiddleware(history)
     ),
+    persistState(getDebugSessionKey()),
+    window.devToolsExtension ? window.devToolsExtension() : f => f,
+  ),
 );
 
 if (module.hot) {

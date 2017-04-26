@@ -3,7 +3,9 @@ import store from 'store';
 import { Provider } from 'react-redux';
 import Layout from 'components/general/Layout';
 import asyncComponent from 'components/general/AsyncComponent';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
+import history from 'history';
 
 import 'scss/app.scss';
 
@@ -19,7 +21,7 @@ const Officers = asyncComponent(() => import('pages/Officers'));
 
 const Root = () => (
   <Provider store={store}>
-    <BrowserRouter>
+    <ConnectedRouter history={history}>
       <Switch>
         <Route path="/gtv" component={GTV} />
         <Layout>
@@ -35,7 +37,7 @@ const Root = () => (
           </Switch>
         </Layout>
       </Switch>
-    </BrowserRouter>
+    </ConnectedRouter>
   </Provider>
 );
 
