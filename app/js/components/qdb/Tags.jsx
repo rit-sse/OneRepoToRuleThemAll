@@ -27,7 +27,7 @@ Tags.propTypes = {
   })).isRequired,
   link: PropTypes.string.isRequired,
   filterTag: PropTypes.func.isRequired,
-  approved: PropTypes.oneOf([PropTypes.bool, PropTypes.string]),
+  approved: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };
 
 Tags.defaultProps = {
