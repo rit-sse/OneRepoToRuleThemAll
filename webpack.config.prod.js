@@ -35,7 +35,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production'),
-        API_ROOT: JSON.stringify(process.env.API_ROOT || '/api/v1/'),
+        API_ROOT: JSON.stringify(process.env.API_ROOT || '/api/v2/'),
       },
     }),
     new webpack.optimize.CommonsChunkPlugin({ name: ['vendor', 'manifest'], minChunks: Infinity }),
