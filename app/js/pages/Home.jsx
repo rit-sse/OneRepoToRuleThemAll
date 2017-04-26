@@ -6,8 +6,14 @@ import 'scss/home.scss';
 const PageHome = () => (
   <div>
     <div className="row bot-1">
-      <div className="col-12 image-container">
-        <img className="hero" src={frontPage} alt="of lab" />
+      <div className="col-12 hero">
+        <img className="image" src={frontPage} alt="of lab" />
+        <div className="pillars">
+          <p className="pillar">Mentoring</p>
+          <p className="pillar">Networking</p>
+          <p className="pillar">Projects</p>
+          <p className="pillar">Events</p>
+        </div>
       </div>
     </div>
     <div className="row">

@@ -1,9 +1,55 @@
-.image-container {
+@import 'variables';
+
+$BASE_PADDING: 5%;
+
+.hero {
+  width: 100%;
   background-color: #CECECE;
-  .hero {
-    width: 100%;
-    max-width: 1000px;
-    display: block;
-    margin: 0 auto;
+
+  .image {
+    margin: 3.75%;
+    margin-right: 0;
+    width: 45%;
+    float: left;
+    min-width: 180px;
+  }
+
+  .pillars {
+    margin: 3.75%;
+    margin-left: 0;
+    width: 64px;
+    color: $WHITE;
+    float: right;
+    font-size: 10px;
+
+    .pillar {
+      margin: 0;
+    }
+
+    @for $i from 1 through 4 {
+      .pillar:nth-child(#{$i}) {
+        padding-left: $BASE_PADDING * $i;
+      }
+    }
+  }
+
+  @media (min-width: 320px) {
+    .pillars {
+      width: calc(57.5vw - 120px);
+      font-size: calc(2.1875vw + 3px);
+    }
+  }
+
+  @media (min-width: 960px) {
+    .pillars {
+      width: 45%;
+      font-size: calc(1.8182vw + 6.5452px);
+    }
+  }
+
+  @media (min-width: 1400px) {
+    .pillars {
+      font-size: 32px;
+    }
   }
 }
