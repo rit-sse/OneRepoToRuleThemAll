@@ -16,6 +16,8 @@ class GoModal extends Component {
     close: PropTypes.func.isRequired,
     create: PropTypes.func.isRequired,
     update: PropTypes.func.isRequired,
+    checkLink: PropTypes.func.isRequired,
+    shouldUpdate: PropTypes.bool.isRequired,
   }
 
   static defaultProps = {
@@ -42,12 +44,18 @@ class GoModal extends Component {
       create,
       update,
       close,
+      shouldUpdate,
     } = this.props;
 
     close();
 
     if (link.shortLink) update(link.shortLink, values);
+    if (shouldUpdate) update(values.shortLink, values);
     else create(values);
+
+    this.setState({
+      update: false,
+    });
   }
 
   render() {
@@ -55,20 +63,22 @@ class GoModal extends Component {
       link,
       close,
       isOpen,
+      checkLink,
       handleSubmit,
+      shouldUpdate,
     } = this.props;
 
     const updateOrCreate = link.shortLink ? 'Update' : 'Create';
 
     return (
       <Modal isOpen={isOpen} toggle={close}>
-        <ModalHeader toggle={close}>{updateOrCreate}</ModalHeader>
+        <ModalHeader toggle={close}>{shouldUpdate ? 'Override' : updateOrCreate} Link</ModalHeader>
         <Form onSubmit={handleSubmit(this.submit)}>
           <ModalBody>
             <div className="form-group row">
               <label className="col-3 col-form-label" htmlFor="shortLink">Short Link</label>
               <div className="col-9">
-                <Field className="form-control" disabled={!!link.shortLink} id="shortLink" name="shortLink" component="input" />
+                <Field className="form-control" onBlur={e => checkLink(e.target.value)} disabled={!!link.shortLink} id="shortLink" name="shortLink" component="input" />
               </div>
             </div>
             <div className="form-group row">
@@ -79,7 +89,7 @@ class GoModal extends Component {
             </div>
           </ModalBody>
           <ModalFooter>
-            <Button className="btn btn-sse" type="submit">{updateOrCreate}</Button>
+            <Button className="btn btn-sse" type="submit">{shouldUpdate ? 'Override' : updateOrCreate}</Button>
             <Button className="btn btn-secondary" type="button" onClick={close}>Cancel</Button>
           </ModalFooter>
         </Form>

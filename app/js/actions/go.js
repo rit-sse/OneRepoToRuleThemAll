@@ -6,6 +6,7 @@ export const GET_LINKS_PAGE = 'GET_LINKS_PAGE';
 export const CREATE_LINK = 'CREATE_LINK';
 export const UPDATE_LINK = 'UPDATE_LINK';
 export const DESTORY_LINK = 'DESTORY_LINK';
+export const CHECK_LINK = 'TOGGLE_LINK_MODAL';
 
 const createAction = utils.createAction(GO);
 const loading = utils.createLoading(GO);
@@ -30,21 +31,20 @@ export function getLinks(getNext = true) {
   };
 }
 
+export function checkLink(link) {
+  return (dispatch, getState, { Links }) => {
+    Links.one(link)
+      .then(() => dispatch(createAction(CHECK_LINK, true)))
+      .catch(() => dispatch(createAction(CHECK_LINK, false)));
+  };
+}
+
 export function createLink(link) {
   return (dispatch, getState, { Links }) => {
-    Links.one(link.shortLink)
-      .then(() => {
-        dispatch(loading(UPDATE_LINK));
-        Links.update(link.shortLink, link)
-          .then(data => dispatch(createAction(UPDATE_LINK, data)))
-          .catch(err => dispatch(createAction(UPDATE_LINK, err)));
-      })
-      .catch(() => {
-        dispatch(loading(CREATE_LINK));
-        Links.create(link)
-          .then(data => dispatch(createAction(CREATE_LINK, data)))
-          .catch(err => dispatch(createAction(CREATE_LINK, err)));
-      });
+    dispatch(loading(CREATE_LINK));
+    Links.create(link)
+      .then(data => dispatch(createAction(CREATE_LINK, data)))
+      .catch(err => dispatch(createAction(CREATE_LINK, err)));
   };
 }
 

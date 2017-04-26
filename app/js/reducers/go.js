@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
+import { HIDE_MODAL } from 'actions/modal';
 import {
   GET_LINKS,
   GET_LINKS_PAGE,
   CREATE_LINK,
   UPDATE_LINK,
   DESTORY_LINK,
+  CHECK_LINK,
 } from 'actions/go';
 
 const initPagination = {
@@ -38,6 +40,17 @@ function all(state = [], action) {
   }
 }
 
+function update(state = false, action) {
+  switch (action.type) {
+    case CHECK_LINK:
+      return action.payload;
+    case HIDE_MODAL:
+      return false;
+    default:
+      return state;
+  }
+}
+
 function pagination(state = initPagination, action) {
   switch (action.type) {
     case GET_LINKS:
@@ -59,5 +72,6 @@ function pagination(state = initPagination, action) {
 
 export default combineReducers({
   all,
+  update,
   pagination,
 });
