@@ -1,6 +1,6 @@
 import React from 'react';
 import HomeEvents from 'containers/events/HomeEvents';
-import frontPage from 'img/lab.png';
+import frontPage from 'img/betterLab.jpg';
 import 'scss/home.scss';
 
 const PageHome = () => (
