@@ -22,11 +22,10 @@ $BASE_PADDING: 7.5%;
 
     .pillars {
       margin: 3.75%;
-      margin-right: 0;
-      width: 30%;
+      margin-right: 3.75%;
       color: $WHITE;
-      float: left;
-      font-size: 10px;
+      float: right;
+      font-size: 13px;
       text-align: right;
 
       .pillar {
@@ -36,13 +35,19 @@ $BASE_PADDING: 7.5%;
 
     @media (min-width: 320px) {
       .pillars {
-        font-size: calc(2.273vw + 2.724px);
+        font-size: calc(1.786vw + 7.286px);
+      }
+    }
+
+    @media (min-width: 544px) {
+      .pillars {
+        font-size: calc(3.201vw - .415px);
       }
     }
 
     @media (min-width: 1200px) {
       .pillars {
-        font-size: 30px;
+        font-size: 38px;
       }
     }
   }
@@ -61,4 +66,3 @@ $BASE_PADDING: 7.5%;
     border-left: 1px solid $LIGHT_GREY;
   }
 }
-

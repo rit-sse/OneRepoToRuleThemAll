@@ -8,13 +8,13 @@ const PageHome = () => (
     <div className="row bot-1">
       <div className="col-12 hero">
         <div className="container">
+          <img className="image" src={frontPage} alt="of lab" />
           <div className="pillars">
             <p className="pillar">Mentoring</p>
             <p className="pillar">Networking</p>
             <p className="pillar">Projects</p>
             <p className="pillar">Events</p>
           </div>
-          <img className="image" src={frontPage} alt="of lab" />
         </div>
       </div>
     </div>
@@ -23,9 +23,9 @@ const PageHome = () => (
         <div className="col-12">
           <h4>Mentoring</h4>
           <p>
-            The SSE has a mentor on duty every day that can help with intro SE and CS classes.
+            Mentoring hours are 10am - 6pm Mon - Fri.
+            The SSE has a mentor on duty every day that can help with SE, CS and other technical classes.
             There is also a physics tutor who hold open mentoring hours in our lab.
-            Mentoring hours are 10am - 6pm Mon - Fri
           </p>
         </div>
         <div className="col-12">
