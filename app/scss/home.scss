@@ -1,55 +1,64 @@
 @import 'variables';
 
-$BASE_PADDING: 5%;
+$BASE_PADDING: 7.5%;
 
 .hero {
   width: 100%;
   background-color: #CECECE;
 
-  .image {
-    margin: 3.75%;
-    margin-right: 0;
-    width: 45%;
-    float: left;
-    min-width: 180px;
-  }
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 
-  .pillars {
-    margin: 3.75%;
-    margin-left: 0;
-    width: 64px;
-    color: $WHITE;
-    float: right;
-    font-size: 10px;
-
-    .pillar {
-      margin: 0;
+    .image {
+      margin: 3.75%;
+      margin-left: 0;
+      width: 45%;
+      float: right;
+      min-width: 180px;
+      max-width: 580px;
     }
 
-    @for $i from 1 through 4 {
-      .pillar:nth-child(#{$i}) {
-        padding-left: $BASE_PADDING * $i;
+    .pillars {
+      margin: 3.75%;
+      margin-right: 0;
+      width: 30%;
+      color: $WHITE;
+      float: left;
+      font-size: 10px;
+      text-align: right;
+
+      .pillar {
+        margin: 0;
+      }
+    }
+
+    @media (min-width: 320px) {
+      .pillars {
+        font-size: calc(2.273vw + 2.724px);
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .pillars {
+        font-size: 30px;
       }
     }
   }
+}
 
-  @media (min-width: 320px) {
-    .pillars {
-      width: calc(57.5vw - 120px);
-      font-size: calc(2.1875vw + 3px);
-    }
-  }
+.left-border {
+  border-top: 1px solid $LIGHT_GREY;
+  border-left: none;
+  padding-top: 15px;
+}
 
-  @media (min-width: 960px) {
-    .pillars {
-      width: 45%;
-      font-size: calc(1.8182vw + 6.5452px);
-    }
-  }
-
-  @media (min-width: 1400px) {
-    .pillars {
-      font-size: 32px;
-    }
+@media (min-width: 768px) {
+  .left-border {
+    padding-top: 0;
+    border-top: none;
+    border-left: 1px solid $LIGHT_GREY;
   }
 }
+
