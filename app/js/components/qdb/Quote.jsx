@@ -11,7 +11,6 @@ const Quote = ({
   loggedIn,
   editItem,
   deleteItem,
-  filterTag,
 }) => (
   <div className="pane quote">
     <div className="heading">
@@ -24,7 +23,7 @@ const Quote = ({
       ) : null }
     </div>
     <p>{description}</p>
-    <Tags approved tags={tags} link="quotes" filterTag={filterTag} />
+    <Tags tags={tags} link="quotes" />
   </div>
 );
 
@@ -37,7 +36,6 @@ Quote.propTypes = {
   loggedIn: PropTypes.bool.isRequired,
   editItem: PropTypes.func.isRequired,
   deleteItem: PropTypes.func.isRequired,
-  filterTag: PropTypes.func.isRequired,
 };
 
 Quote.defaultProps = {

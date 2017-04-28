@@ -6,6 +6,7 @@ import API from 'api';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import rootReducer from '../reducers';
 import status from './status';
+import qdb from './qdb';
 
 function getDebugSessionKey() {
   const matches = window.location.href.match(/[?&]debug_session=([^&]+)\b/);
@@ -18,6 +19,7 @@ const store = createStore(
     applyMiddleware(
       thunk.withExtraArgument(API),
       status,
+      qdb,
       routerMiddleware(history)
     ),
     persistState(getDebugSessionKey()),

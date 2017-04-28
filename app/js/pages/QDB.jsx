@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import 'scss/buttons.scss';
 import { Route, Switch, Link } from 'react-router-dom';
 import Login from 'containers/general/Login';
 import Status from 'containers/general/Status';
@@ -11,7 +10,26 @@ import { showQuoteModal } from 'actions/modal';
 import ControlledLinkButton from 'containers/general/ControlledLinkButton';
 import QDBModal from 'containers/qdb/QDBModal';
 import { QUOTES } from 'actions/quotes';
+import 'scss/buttons.scss';
 import 'scss/page.scss';
+import 'scss/qdb.scss';
+import qs from 'qs';
+
+const currentFilter = (location) => {
+  const tag = qs.parse(location.search.slice(1)).tag || undefined;
+  return tag ? (
+    <div className="row">
+      <div className="col-12">
+        <h4 className="currentFilter">
+          Current filter:
+          <Link to="/qdb/" className="badge badge-primary">
+            {tag}
+          </Link>
+        </h4>
+      </div>
+    </div>
+  ) : null;
+};
 
 const QDB = ({ location }) => (
   <div className="container page">
@@ -31,6 +49,7 @@ const QDB = ({ location }) => (
         </div>
       </div>
     </div>
+    {currentFilter(location)}
     <div className="row">
       <div className="col-12">
         <Status type={[QUOTES]} message />

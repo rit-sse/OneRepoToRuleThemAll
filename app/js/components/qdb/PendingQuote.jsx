@@ -13,7 +13,6 @@ const PendingQuote = ({
   editItem,
   deleteItem,
   approveQuote,
-  filterTag,
 }) => (
   <div className="pane quote">
     <div className="heading">
@@ -27,7 +26,7 @@ const PendingQuote = ({
       ) : null }
     </div>
     <p>{description}</p>
-    <Tags tags={tags} link="approval" filterTag={filterTag} />
+    <Tags tags={tags} link="approval" />
   </div>
 );
 
@@ -42,7 +41,6 @@ PendingQuote.propTypes = {
   editItem: PropTypes.func.isRequired,
   deleteItem: PropTypes.func.isRequired,
   approveQuote: PropTypes.func.isRequired,
-  filterTag: PropTypes.func.isRequired,
 };
 
 PendingQuote.defaultProps = {

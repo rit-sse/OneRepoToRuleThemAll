@@ -21,14 +21,15 @@ function mapDispatchToProps(dispatch, props) {
   return {
     editItem: id => dispatch(showQuoteModal(id)),
     deleteItem: id => dispatch(destoryQuote(id)),
-    getItems: (getNext) => {
-      const tag = qs.parse(props.location.search.slice(1)).tag || undefined;
-      dispatch(getQuotes(getNext, tag, undefined, 'null'));
-    },
     itemDispatch: {
       approveQuote: id => dispatch(approveQuote(id)),
-      filterTag: (tag, appoved) => dispatch(getQuotes(false, tag, undefined, appoved)),
     },
+    getItems: getNext => dispatch(getQuotes(
+      getNext,
+      qs.parse(props.location.search.slice(1)).tag || undefined,
+      undefined,
+      'null',
+    )),
   };
 }
 

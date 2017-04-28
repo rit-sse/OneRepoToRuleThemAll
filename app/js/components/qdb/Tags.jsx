@@ -7,11 +7,9 @@ import 'scss/pane.scss';
 const Tags = ({
   tags,
   link,
-  approved,
-  filterTag,
 }) => {
   const tagLinks = tags.map(tag => (
-    <Link key={tag.name} to={`/qdb/${link}?tag=${tag.name}`} onClick={() => filterTag(tag.name, approved)} className="tag">
+    <Link key={tag.name} to={`/qdb/${link}?tag=${tag.name}`} className="tag">
       <span className="badge badge-primary">{tag.name}</span>
     </Link>
   ));
@@ -26,8 +24,6 @@ Tags.propTypes = {
     name: PropTypes.string,
   })).isRequired,
   link: PropTypes.string.isRequired,
-  filterTag: PropTypes.func.isRequired,
-  approved: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
 };
 
 Tags.defaultProps = {

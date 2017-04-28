@@ -5,6 +5,7 @@ import thunk from 'redux-thunk';
 import reducer from '../reducers';
 import API from '../api';
 import status from './status';
+import qdb from './qdb';
 
 const store = createStore(
   connectRouter(history)(reducer),
@@ -12,6 +13,7 @@ const store = createStore(
     applyMiddleware(
       thunk.withExtraArgument(API),
       status,
+      qdb,
       routerMiddleware(history)
     ),
     window.devToolsExtension ? window.devToolsExtension() : f => f
