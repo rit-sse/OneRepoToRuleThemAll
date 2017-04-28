@@ -18,7 +18,7 @@ export function getQuotes(getNext, tag, search, approved = true) {
       dispatch(loading(GET_QUOTE_PAGE));
       const page = getState().quotes.pagination.currentPage + 1;
       Quotes.all({ page, tag, approved, search })
-        .then(({ data }) => dispatch(createAction(GET_QUOTE_PAGE, data)))
+        .then(data => dispatch(createAction(GET_QUOTE_PAGE, data)))
         .catch(err => dispatch(createAction(GET_QUOTE_PAGE, err)));
     } else {
       dispatch(loading(GET_QUOTES));
