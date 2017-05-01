@@ -7,7 +7,7 @@ const PageHome = () => (
   <div>
     <div className="row bot-1">
       <div className="col-12 hero">
-        <div className="container">
+        <div className="hero-body">
           <img className="image" src={frontPage} alt="of lab" />
           <div className="pillars">
             <p className="pillar">Mentoring</p>
