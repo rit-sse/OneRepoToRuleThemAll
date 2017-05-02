@@ -52,6 +52,7 @@ class SSENav extends Component {
               <DropdownMenu>
                 <DropdownItem tag={Link} to="/about">About the SSE</DropdownItem>
                 <DropdownItem divider />
+                <DropdownItem tag={Link} to="/officers">Officers</DropdownItem>
                 <DropdownItem tag={Link} to="/governing-docs/constitution">SSE Constitution</DropdownItem>
                 <DropdownItem tag={Link} to="/governing-docs/primary-officers-policy">SSE Primary Officers&apos; Policy</DropdownItem>
               </DropdownMenu>
