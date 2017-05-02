@@ -2,11 +2,15 @@
 
 .page {
   padding: 10px;
+  .actions {
+    margin-bottom: .5em;
+  }
 }
 
 .title-link {
   color: $BLACK;
-  &:hover {
+  &:hover, &:focus, &:active {
     color: $BLACK;
+    text-decoration: none;
   }
 }

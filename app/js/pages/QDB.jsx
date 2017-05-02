@@ -36,9 +36,9 @@ const QDB = ({ location }) => (
     <div className="row">
       <div className="col-12">
         <Link to="/qdb" className="title-link">
-          <h1 className="pull-left">QDB</h1>
+          <h1 className="float-md-left">QDB</h1>
         </Link>
-        <div className="btn-group pull-right" style={{ marginTop: '5px' }} role="group" aria-label="Basic example">
+        <div className="actions btn-group float-md-right" style={{ marginTop: '5px' }} role="group" aria-label="Basic example">
           <CreateButton action={showQuoteModal} className="btn btn-secondary">
             Create Quote
           </CreateButton>

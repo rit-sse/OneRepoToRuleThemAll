@@ -7,10 +7,7 @@
     color: $WHITE;
     font-size: 1.25em;
     font-family: 'Quicksand', sans-serif;
-    &:hover {
-      color: darken($WHITE, 33%);
-    }
-    &.active {
+    &:hover, &:focus, &:active {
       color: darken($WHITE, 33%);
     }
   }
