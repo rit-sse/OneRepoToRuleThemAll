@@ -1,7 +1,14 @@
 import React from 'react';
-import HomeEvents from 'containers/events/HomeEvents';
 import frontPage from 'img/betterLab.jpg';
+import asyncComponent from 'components/general/AsyncComponent';
 import 'scss/home.scss';
+
+// Load the events list async from the Events Chunck
+const HomeEvents = asyncComponent(
+  () => import(/* webpackChunkName: "Events" */ 'containers/events/HomeEvents'),
+  [() => import(/* webpackChunkName: "Events" */ 'reducers/events')],
+  ['events'],
+);
 
 const PageHome = () => (
   <div>

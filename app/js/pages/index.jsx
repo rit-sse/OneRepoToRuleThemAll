@@ -1,23 +1,58 @@
 import React from 'react';
 import store from 'store';
+import history from 'history';
+import Home from 'pages/Home';
 import { Provider } from 'react-redux';
 import Layout from 'components/general/Layout';
-import asyncComponent from 'components/general/AsyncComponent';
 import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'connected-react-router';
-import history from 'history';
+import asyncComponent from 'components/general/AsyncComponent';
 
 import 'scss/app.scss';
 
-const Go = asyncComponent(() => import('pages/Go'));
-const QDB = asyncComponent(() => import('pages/QDB'));
-const GTV = asyncComponent(() => import('pages/GTV'));
-const Home = asyncComponent(() => import('pages/Home'));
+// Let webpack pick what chunks these end up in
 const Static = asyncComponent(() => import('pages/Static'));
-const Events = asyncComponent(() => import('pages/Events'));
-const Scoreboard = asyncComponent(() => import('pages/Scoreboard'));
-const Mentoring = asyncComponent(() => import('pages/Mentoring'));
 const Officers = asyncComponent(() => import('pages/Officers'));
+const Scoreboard = asyncComponent(() => import('pages/Scoreboard'));
+
+// Split out the reducers and tag the reducer chunks to the pages that require that reducer
+// This forces webpack to chunk certain things together (like qdb + qdb reducer)
+const GTV = asyncComponent(
+  () => import(/* webpackChunkName: "Events" */ 'pages/GTV'),
+  [() => import(/* webpackChunkName: "Events" */ 'reducers/events')],
+  ['events'],
+);
+
+const Events = asyncComponent(
+  () => import(/* webpackChunkName: "Events" */ 'pages/Events'),
+  [() => import(/* webpackChunkName: "Events" */ 'reducers/events')],
+  ['events'],
+);
+
+const Go = asyncComponent(
+  () => import(/* webpackChunkName: "Go" */ 'pages/Go'),
+  [() => import(/* webpackChunkName: "Go" */ 'reducers/go')],
+  ['go'],
+);
+
+const QDB = asyncComponent(
+  () => import(/* webpackChunkName: "QDB" */ 'pages/QDB'),
+  [
+    () => import(/* webpackChunkName: "QDB" */ 'reducers/tags'),
+    () => import(/* webpackChunkName: "QDB" */ 'reducers/quotes'),
+  ],
+  ['tags', 'quotes'],
+);
+
+const Mentoring = asyncComponent(
+  () => import(/* webpackChunkName: "Mentoring" */ 'pages/Mentoring'),
+  [
+    () => import(/* webpackChunkName: "Mentoring" */ 'reducers/shifts'),
+    () => import(/* webpackChunkName: "Mentoring" */ 'reducers/mentors'),
+    () => import(/* webpackChunkName: "Mentoring" */ 'reducers/specialties'),
+  ],
+  ['shifts', 'mentors', 'specialties'],
+);
 
 const Root = () => (
   <Provider store={store}>

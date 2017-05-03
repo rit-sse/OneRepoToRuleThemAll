@@ -39,7 +39,7 @@ module.exports = {
       },
     }),
     new webpack.optimize.CommonsChunkPlugin({ name: ['vendor', 'manifest'], minChunks: Infinity }),
-    new webpack.optimize.CommonsChunkPlugin({ async: true, minChunks: 2 }),
+    new webpack.optimize.CommonsChunkPlugin({ async: 'Async', minChunks: 2 }),
     new webpack.optimize.MinChunkSizePlugin({ minChunkSize: 8192 }),
     new HtmlWebpackPlugin({
       title: 'Society of Software Engineers',
