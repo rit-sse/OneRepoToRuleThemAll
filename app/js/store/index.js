@@ -8,8 +8,10 @@ const store = do {
 store.asyncReducers = {};
 
 export function injectAsyncReducer(name, asyncReducer) {
-  store.asyncReducers[name] = asyncReducer; // eslint-disable-line no-param-reassign
-  store.replaceReducer(createReducer(store.asyncReducers));
+  if (!store.asyncReducers[name]) {
+    store.asyncReducers[name] = asyncReducer; // eslint-disable-line no-param-reassign
+    store.replaceReducer(createReducer(store.asyncReducers));
+  }
 }
 
 export default store;

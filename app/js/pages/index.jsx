@@ -1,26 +1,24 @@
 import React from 'react';
 import store from 'store';
+import history from 'history';
 import { Provider } from 'react-redux';
 import Layout from 'components/general/Layout';
-import asyncComponent from 'components/general/AsyncComponent';
 import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'connected-react-router';
-import history from 'history';
+import asyncComponent from 'components/general/AsyncComponent';
 
 import 'scss/app.scss';
 
-const Static = asyncComponent(() => import(/* webpackChunkName: "Static" */ 'pages/Static'));
-const Officers = asyncComponent(() => import(/* webpackChunkName: "Officers" */ 'pages/Officers'));
-const Scoreboard = asyncComponent(() => import(/* webpackChunkName: "Scoreboard" */ 'pages/Scoreboard'));
+// Let webpack pick what chunks these end up in
+const Home = asyncComponent(() => import('pages/Home'));
+const Static = asyncComponent(() => import('pages/Static'));
+const Officers = asyncComponent(() => import('pages/Officers'));
+const Scoreboard = asyncComponent(() => import('pages/Scoreboard'));
 
+// Split out the reducers and tag the reducer chunks to the pages that require that reducer
+// This forces webpack to chunk certain things together (like qdb + qdb reducer)
 const GTV = asyncComponent(
   () => import(/* webpackChunkName: "Events" */ 'pages/GTV'),
-  [() => import(/* webpackChunkName: "Events" */ 'reducers/events')],
-  ['events'],
-);
-
-const Home = asyncComponent(
-  () => import(/* webpackChunkName: "Events" */ 'pages/Home'),
   [() => import(/* webpackChunkName: "Events" */ 'reducers/events')],
   ['events'],
 );
