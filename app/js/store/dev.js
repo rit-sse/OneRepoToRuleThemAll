@@ -1,10 +1,10 @@
+import history from 'history';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { persistState } from 'redux-devtools'; // eslint-disable-line import/no-extraneous-dependencies
 import thunk from 'redux-thunk';
-import history from 'history';
 import API from 'api';
-import { connectRouter, routerMiddleware } from 'connected-react-router';
-import rootReducer from '../reducers';
+import { routerMiddleware } from 'connected-react-router';
+import createReducer from '../reducers';
 import status from './status';
 import qdb from './qdb';
 
@@ -14,7 +14,7 @@ function getDebugSessionKey() {
 }
 
 const store = createStore(
-  connectRouter(history)(rootReducer),
+  createReducer(),
   compose(
     applyMiddleware(
       thunk.withExtraArgument(API),

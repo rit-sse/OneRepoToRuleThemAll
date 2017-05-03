@@ -1,14 +1,14 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import { connectRouter, routerMiddleware } from 'connected-react-router';
 import history from 'history';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { routerMiddleware } from 'connected-react-router';
 import thunk from 'redux-thunk';
-import reducer from '../reducers';
+import createReducer from '../reducers';
 import API from '../api';
 import status from './status';
 import qdb from './qdb';
 
 const store = createStore(
-  connectRouter(history)(reducer),
+  createReducer(),
   compose(
     applyMiddleware(
       thunk.withExtraArgument(API),
