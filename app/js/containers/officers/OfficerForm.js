@@ -15,7 +15,7 @@ function mapStateToProps({ modal, committees, officers }) {
         ({ // eslint-disable-line no-unused-expressions
           ...officerObj,
           startDate: moment(officerObj.startDate).toISOString().split('T')[0],
-          endDate: moment(officerObj.endDate).toISOString().split('T')[0],
+          endDate: officerObj.endDate ? moment(officerObj.endDate).toISOString().split('T')[0] : '',
 
         });
       } else {

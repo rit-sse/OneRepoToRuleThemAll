@@ -9,7 +9,7 @@ export default store => next => (action) => {
         namespace: action.meta.namespace,
       },
     });
-  } else if (action.error && action.meta && !action.meta.ignore) {
+  } else if (action.error && action.meta && action.payload && !action.meta.ignore) {
     return next({
       type: ERROR_STATUS,
       error: true,
