@@ -39,9 +39,11 @@ class SSENav extends Component {
             <NavItem>
               <NavLink tag={Link} to="/events">Events</NavLink>
             </NavItem>
+            {/*
             <NavItem>
               <NavLink tag={Link} to="/mentoring">Mentoring</NavLink>
             </NavItem>
+            */}
             <NavItem>
               <NavLink tag={Link} to="/projects">Projects</NavLink>
             </NavItem>
