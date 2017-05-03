@@ -8,7 +8,6 @@ import auth from './auth';
 import user from './user';
 import hover from './hover';
 import modal from './modal';
-import events from './events';
 import status from './status';
 import officers from './officers';
 import committees from './committees';
@@ -23,7 +22,6 @@ export default function createReducer(asyncReducers = {}) {
       user,
       hover,
       modal,
-      events,
       status,
       members,
       officers,

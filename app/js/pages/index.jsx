@@ -9,12 +9,27 @@ import history from 'history';
 
 import 'scss/app.scss';
 
-const GTV = asyncComponent(() => import(/* webpackChunkName: "GTV" */ 'pages/GTV'));
-const Home = asyncComponent(() => import(/* webpackChunkName: "Home" */ 'pages/Home'));
 const Static = asyncComponent(() => import(/* webpackChunkName: "Static" */ 'pages/Static'));
-const Events = asyncComponent(() => import(/* webpackChunkName: "Events" */ 'pages/Events'));
 const Officers = asyncComponent(() => import(/* webpackChunkName: "Officers" */ 'pages/Officers'));
 const Scoreboard = asyncComponent(() => import(/* webpackChunkName: "Scoreboard" */ 'pages/Scoreboard'));
+
+const GTV = asyncComponent(
+  () => import(/* webpackChunkName: "Events" */ 'pages/GTV'),
+  [() => import(/* webpackChunkName: "Events" */ 'reducers/events')],
+  ['events'],
+);
+
+const Home = asyncComponent(
+  () => import(/* webpackChunkName: "Events" */ 'pages/Home'),
+  [() => import(/* webpackChunkName: "Events" */ 'reducers/events')],
+  ['events'],
+);
+
+const Events = asyncComponent(
+  () => import(/* webpackChunkName: "Events" */ 'pages/Events'),
+  [() => import(/* webpackChunkName: "Events" */ 'reducers/events')],
+  ['events'],
+);
 
 const Go = asyncComponent(
   () => import(/* webpackChunkName: "Go" */ 'pages/Go'),
