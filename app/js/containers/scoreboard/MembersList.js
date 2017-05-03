@@ -8,7 +8,7 @@ function mapStateToProps(store) {
   return {
     item: Member,
     items: Object.keys(store.members).sort((a, b) => {
-      return store.members[a].count - store.members[b].count;
+      return store.members[b].count - store.members[a].count;
     }).map((el, index) => {
       return {
         ...store.members[el],
