@@ -8,7 +8,7 @@ export default (getComponent, reducers = [], names = []) => {
     static component = null; // sets to prototype
     state = { component: AsyncComponent.component };
 
-    componentWillMount() {
+    componentDidMount() {
       if (!this.state.component) {
         Promise.all(reducers.map(r => r()))
           .then(asyncReducers => asyncReducers.map(a => a.default))

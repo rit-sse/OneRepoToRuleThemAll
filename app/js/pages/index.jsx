@@ -1,6 +1,7 @@
 import React from 'react';
 import store from 'store';
 import history from 'history';
+import Home from 'pages/Home';
 import { Provider } from 'react-redux';
 import Layout from 'components/general/Layout';
 import { Route, Switch } from 'react-router-dom';
@@ -10,7 +11,6 @@ import asyncComponent from 'components/general/AsyncComponent';
 import 'scss/app.scss';
 
 // Let webpack pick what chunks these end up in
-const Home = asyncComponent(() => import('pages/Home'));
 const Static = asyncComponent(() => import('pages/Static'));
 const Officers = asyncComponent(() => import('pages/Officers'));
 const Scoreboard = asyncComponent(() => import('pages/Scoreboard'));
