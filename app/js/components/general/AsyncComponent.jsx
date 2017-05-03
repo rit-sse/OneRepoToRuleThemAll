@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { injectAsyncReducer } from 'store';
 
 // Credit: https://gist.github.com/acdlite/a68433004f9d6b4cbc83b5cc3990c194
-export default (getComponent) => {
+export default (getComponent, reducers = [], names = []) => {
   return class AsyncComponent extends Component {
 
     static component = null; // sets to prototype
@@ -9,7 +10,10 @@ export default (getComponent) => {
 
     componentWillMount() {
       if (!this.state.component) {
-        getComponent()
+        Promise.all(reducers.map(r => r()))
+          .then(asyncReducers => asyncReducers.map(a => a.default))
+          .then(asyncReducers => asyncReducers.forEach((reducer, index) => injectAsyncReducer(names[index], reducer)))
+          .then(() => getComponent())
           .then(component => component.default) // unwrap the default
           .then((component) => {
             AsyncComponent.component = component; // perm sets component on prototype

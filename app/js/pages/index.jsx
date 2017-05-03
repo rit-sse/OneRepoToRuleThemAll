@@ -9,15 +9,37 @@ import history from 'history';
 
 import 'scss/app.scss';
 
-const Go = asyncComponent(() => import('pages/Go'));
-const QDB = asyncComponent(() => import('pages/QDB'));
-const GTV = asyncComponent(() => import('pages/GTV'));
-const Home = asyncComponent(() => import('pages/Home'));
-const Static = asyncComponent(() => import('pages/Static'));
-const Events = asyncComponent(() => import('pages/Events'));
-const Scoreboard = asyncComponent(() => import('pages/Scoreboard'));
-const Mentoring = asyncComponent(() => import('pages/Mentoring'));
-const Officers = asyncComponent(() => import('pages/Officers'));
+const GTV = asyncComponent(() => import(/* webpackChunkName: "GTV" */ 'pages/GTV'));
+const Home = asyncComponent(() => import(/* webpackChunkName: "Home" */ 'pages/Home'));
+const Static = asyncComponent(() => import(/* webpackChunkName: "Static" */ 'pages/Static'));
+const Events = asyncComponent(() => import(/* webpackChunkName: "Events" */ 'pages/Events'));
+const Officers = asyncComponent(() => import(/* webpackChunkName: "Officers" */ 'pages/Officers'));
+const Scoreboard = asyncComponent(() => import(/* webpackChunkName: "Scoreboard" */ 'pages/Scoreboard'));
+
+const Go = asyncComponent(
+  () => import(/* webpackChunkName: "Go" */ 'pages/Go'),
+  [() => import(/* webpackChunkName: "Go" */ 'reducers/go')],
+  ['go'],
+);
+
+const QDB = asyncComponent(
+  () => import(/* webpackChunkName: "QDB" */ 'pages/QDB'),
+  [
+    () => import(/* webpackChunkName: "QDB" */ 'reducers/tags'),
+    () => import(/* webpackChunkName: "QDB" */ 'reducers/quotes'),
+  ],
+  ['tags', 'quotes'],
+);
+
+const Mentoring = asyncComponent(
+  () => import(/* webpackChunkName: "Mentoring" */ 'pages/Mentoring'),
+  [
+    () => import(/* webpackChunkName: "Mentoring" */ 'reducers/shifts'),
+    () => import(/* webpackChunkName: "Mentoring" */ 'reducers/mentors'),
+    () => import(/* webpackChunkName: "Mentoring" */ 'reducers/specialties'),
+  ],
+  ['shifts', 'mentors', 'specialties'],
+);
 
 const Root = () => (
   <Provider store={store}>
