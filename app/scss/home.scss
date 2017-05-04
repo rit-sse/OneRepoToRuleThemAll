@@ -6,9 +6,9 @@ $BASE_PADDING: 25%;
   width: 100%;
   background-color: $SECONDARY;
   border-bottom: $PRIMARY solid 1px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url("../img/SSE-Banner-TriColor-bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../img/SSE-Banner-TriColor-bg.png");
 
   .hero-body {
     width: 100%;
@@ -16,32 +16,14 @@ $BASE_PADDING: 25%;
     max-width: 1200px;
     margin: 0 auto;
 
-    .image {
-      margin: 3.75%;
-      margin-left: 0;
-      width: 45%;
-      float: right;
-      min-width: 180px;
-      max-width: 580px;
-      box-shadow: 5px 5px 100px 0px rgba(0,0,0,0.75);
-    }
-
     .pillars {
-      margin: 3.75%;
-      margin-right: 3.75%;
-      color: $GREY;
       float: left;
+      color: $GREY;
+      margin: 3.75% 5%;
       font-size: 13px;
       text-align: left;
-
-      .pillar {
-        margin: 0;
-      }
-      @for $i from 1 through 4 {
-        .pillar:nth-child(#{$i}) {
-          margin-left: $BASE_PADDING * ($i - 1);
-        }
-      }
+      .pillar { margin: 0; }
+      font-family: 'Quicksand', sans-serif;
     }
 
     @media (min-width: 320px) {
@@ -64,10 +46,9 @@ $BASE_PADDING: 25%;
   }
 }
 
-.left-border {
-  border-top: 1px solid $LIGHT_GREY;
-  border-left: none;
-  padding-top: 15px;
+.front-heading {
+  font-family: 'Quicksand', sans-serif;
+  border-bottom: 1px solid $LIGHT_GREY;
 }
 
 @media (min-width: 768px) {

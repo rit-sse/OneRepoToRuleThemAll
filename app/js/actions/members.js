@@ -42,10 +42,10 @@ export function getMembers(active = moment().toISOString()) {
   };
 }
 
-export function getMemberships() {
+export function getMemberships(active = moment().toISOString()) {
   return (dispatch, getState, { Memberships }) => {
     dispatch(loading(GET_MEMBERSHIPS));
-    Memberships.all({ approved: 'null' }, true)
+    Memberships.all({ active, approved: 'null' }, true)
       .then(({ data }) => dispatch(createAction(GET_MEMBERSHIPS, data)))
       .catch(err => dispatch(createAction(GET_MEMBERSHIPS, err)));
   };
