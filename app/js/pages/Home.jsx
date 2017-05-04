@@ -1,5 +1,6 @@
 import React from 'react';
 import asyncComponent from 'components/general/AsyncComponent';
+import LabImg from 'img/betterLab.jpg';
 import 'scss/home.scss';
 
 // Load the events list async from the Events Chunck
@@ -15,11 +16,9 @@ const PageHome = () => (
       <div className="row bot-1">
         <div className="col-12 hero">
           <div className="hero-body">
-            <div className="pillars">
-              <p className="pillar">Mentoring</p>
-              <p className="pillar">Networking</p>
-              <p className="pillar">Projects</p>
-              <p className="pillar">Events</p>
+            <div className="content">
+              <h4 className="front-heading">Upcoming Events</h4>
+              <HomeEvents />
             </div>
           </div>
         </div>
@@ -46,8 +45,7 @@ const PageHome = () => (
         </div>
         <div className="col-12 col-md-5 left-border">
           <div className="col-12">
-            <h4 className="front-heading">Upcoming Events</h4>
-            <HomeEvents />
+            <img src={LabImg} alt="SSE Lab" style={{ width: '100%' }} />
           </div>
         </div>
       </div>
