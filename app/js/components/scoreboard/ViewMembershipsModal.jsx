@@ -28,12 +28,12 @@ const ViewMembershipsModal = ({
         </thead>
         <tbody>
           {
-            memberships.map(ship => (
-              <tr key={ship}>
-                <td>{moment(ship.startDate).format('MM/DD/YYYY')}</td>
-                <td>{moment(ship.endDate).format('MM/DD/YYYY')}</td>
-                <td>{ship.committeeName}</td>
-                <td>{ship.reason}</td>
+            memberships.map(({ startDate, endDate, committeeName, reason }, i) => (
+              <tr key={i}>
+                <td>{moment(startDate).format('MM/DD/YYYY')}</td>
+                <td>{moment(endDate).format('MM/DD/YYYY')}</td>
+                <td>{committeeName}</td>
+                <td>{reason}</td>
               </tr>
             ))
           }

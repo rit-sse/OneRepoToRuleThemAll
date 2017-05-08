@@ -33,7 +33,7 @@ const Scoreboard = ({ location }) => (
     </div>
     <div className="row">
       <div className="col-12">
-        <Status type={[MEMBERS]} message />
+        <Status type={[MEMBERS]} message spinner />
       </div>
     </div>
     <div className="row">

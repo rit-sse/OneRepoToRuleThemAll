@@ -5,7 +5,7 @@ import { hideModal, VIEW_MEMBERSHIP_MODAL } from 'actions/modal';
 function mapStateToProps(store) {
   return {
     isOpen: store.modal.modalType === VIEW_MEMBERSHIP_MODAL,
-    member: store.modal.modalType === VIEW_MEMBERSHIP_MODAL ? store.members[store.modal.id] : undefined,
+    member: store.members[store.modal.id],
   };
 }
 
