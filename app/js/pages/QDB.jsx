@@ -39,7 +39,7 @@ const QDB = ({ location }) => (
           <h1 className="float-md-left">QDB</h1>
         </Link>
         <div className="actions btn-group float-md-right" style={{ marginTop: '5px' }} role="group" aria-label="Basic example">
-          <CreateButton action={showQuoteModal} className="btn btn-secondary">
+          <CreateButton any action={showQuoteModal} className="btn btn-secondary">
             Create Quote
           </CreateButton>
           <ControlledLinkButton path={location.pathname} className="btn btn-secondary" to="/qdb/approval">

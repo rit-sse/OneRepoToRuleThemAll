@@ -1,8 +1,12 @@
 import { connect } from 'react-redux';
 import Button from 'components/general/Button';
 
-function mapStateToProps({ auth }, { primary }) {
-  if (primary) {
+function mapStateToProps({ auth }, { any, primary }) {
+  if (any) {
+    return {
+      shown: !!auth.user,
+    };
+  } if (primary) {
     return {
       shown: !!auth.officer && auth.officer.primaryOfficer,
     };
