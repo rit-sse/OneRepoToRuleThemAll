@@ -7,7 +7,7 @@ import { getLinks, destoryLink } from 'actions/go';
 function mapStateToProps({ go, auth }) {
   return {
     scroll: true,
-    scrollDone: go.pagination.totalPages <= go.pagination.currentPage,
+    scrollDone: go.pagination.totalPages <= go.pagination.currentPage || !auth.officer,
     item: GoLink,
     wrapper: 'tbody',
     items: auth.officer ? go.all : [],

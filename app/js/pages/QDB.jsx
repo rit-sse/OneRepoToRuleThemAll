@@ -65,7 +65,7 @@ const QDB = ({ location }) => (
     </div>
     <div className="row">
       <div className="col-12">
-        <Status type={[]} spinner />
+        <Status type={[QUOTES]} spinner />
       </div>
     </div>
     <QDBModal />

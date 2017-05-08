@@ -27,7 +27,7 @@ const Go = () => (
     </div>
     <div className="row">
       <div className="col-12">
-        <Status type={[GO]} spinner message />
+        <Status type={[GO]} message />
       </div>
     </div>
     <div className="row">
@@ -42,6 +42,11 @@ const Go = () => (
           </thead>
           <GoLinksList />
         </table>
+      </div>
+    </div>
+    <div className="row">
+      <div className="col-12">
+        <Status type={[GO]} spinner />
       </div>
     </div>
     <GoModal />
