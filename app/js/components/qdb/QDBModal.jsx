@@ -100,7 +100,7 @@ class QDBModal extends Component {
               <div className="form-group row">
                 <label className="col-sm-2 col-form-label" htmlFor="description">Description</label>
                 <div className="col-sm-10">
-                  <Field className="form-control" id="description" name="description" component="input" type="text" />
+                  <Field className="form-control" id="description" name="description" component="textarea" type="text" />
                 </div>
               </div>
               <div className="form-group row">
