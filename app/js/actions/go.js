@@ -11,9 +11,10 @@ export const CHECK_LINK = 'TOGGLE_LINK_MODAL';
 const createAction = utils.createAction(GO);
 const loading = utils.createLoading(GO);
 
-export function getLinks(getNext = true) {
+export function getLinks(getNext) {
   return (dispatch, getState, { Links }) => {
     if (getNext) {
+      if (getState().status.loading[GET_LINKS] || getState().status.loading[GET_LINKS_PAGE]) return;
       dispatch(loading(GET_LINKS_PAGE));
       const page = getState().go.pagination.currentPage + 1;
       Links.all({
