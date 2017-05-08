@@ -6,7 +6,7 @@ export default (getComponent, reducers = [], names = []) => {
   return class AsyncComponent extends Component {
 
     static component = null; // sets to prototype
-    state = { component: AsyncComponent.component };
+    state = { component: AsyncComponent.component, error: false };
 
     componentDidMount() {
       if (!this.state.component) {
@@ -18,12 +18,18 @@ export default (getComponent, reducers = [], names = []) => {
           .then((component) => {
             AsyncComponent.component = component; // perm sets component on prototype
             this.setState({ component });
+          })
+          .catch(() => {
+            this.setState({
+              error: 'Somthing went wrong!',
+            });
           });
       }
     }
 
     render() {
       if (this.state.component) return <this.state.component {...this.props} />;
+      if (this.state.error) return <div>{this.state.error}</div>;
       return (
         <div className="row">
           <div className="col-12">
