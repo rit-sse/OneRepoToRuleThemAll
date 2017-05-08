@@ -47,10 +47,17 @@ class Quote extends Component {
       deleteItem,
     } = this.props;
 
+    const bodyText = body.split(/\r\n|\r|\n/g).map((line, i) => (
+      <span key={i}>
+        {line}
+        <br />
+      </span>
+    ));
+
     return (
       <SwipeArea onLeft={this.showActions} onRight={this.hideActions} className="pane quote">
         <div className="heading">
-          <h4 className="title">{body}</h4>
+          <blockquote>{bodyText}</blockquote>
           { loggedIn ? (
             <div className={this.state.shown ? 'actions shown' : 'actions'}>
               <button className="btn btn-small btn-info" onClick={editItem}><i className="fa fa-pencil" aria-hidden="true" /> Edit</button>
@@ -58,7 +65,7 @@ class Quote extends Component {
             </div>
           ) : null }
         </div>
-        <p>{description}</p>
+        <small className="description">{description}</small>
         <Tags tags={tags} link="quotes" />
       </SwipeArea>
     );

@@ -6,60 +6,48 @@ $BASE_PADDING: 25%;
   width: 100%;
   background-color: $SECONDARY;
   border-bottom: $PRIMARY solid 1px;
-  z-index: -20;
-
-  &:before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -10;
-    opacity: 0.5;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url("../img/SSE-Banner-TriColor-bg.png");
-    background-position: right 0;
-  }
 
   .hero-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    align-items: center;
+
     width: 100%;
-    height: 100%;
     margin: 0 auto;
     max-width: 1200px;
 
-    .content {
-      padding: 1%;
-      min-height: 250px;
+    .hero-img {
+      order: 0;
+      width: 50%;
+      flex: 0 1 auto;
+      display: block;
+      align-self: auto;
     }
 
-    .pillars {
-      float: left;
-      color: $GREY;
-      margin: 3.75% 5%;
-      font-size: 13px;
+    .hero-text {
+      order: 0;
+      width: 40%;
+      flex: 0 1 auto;
+      align-self: center;
+      color: $WHITE;
+      font-size: 12px;
       text-align: left;
-      .pillar { margin: 0; }
       font-family: 'Quicksand', sans-serif;
+      p { margin: 0; };
     }
 
     @media (min-width: 320px) {
-      .pillars {
-        font-size: calc(1.786vw + 7.286px);
-      }
-    }
-
-    @media (min-width: 544px) {
-      .pillars {
-        font-size: calc(3.201vw - .415px);
+      .hero-text {
+        font-size: calc(2.727vw + 3.2736px);
       }
     }
 
     @media (min-width: 1200px) {
-      .pillars {
-        font-size: 38px;
+      .hero-text {
+        font-size: 36px;
       }
     }
   }

@@ -51,10 +51,17 @@ class PendingQuote extends Component {
       approveQuote,
     } = this.props;
 
+    const bodyText = body.split(/\r\n|\r|\n/g).map((line, i) => (
+      <span key={i}>
+        {line}
+        <br />
+      </span>
+    ));
+
     return (
       <SwipeArea onLeft={this.showActions} onRight={this.hideActions} className="pane quote">
         <div className="heading">
-          <h4 className="title">{ body }</h4>
+          <blockquote>{bodyText}</blockquote>
           { loggedIn ? (
             <div className={this.state.shown ? 'actions shown' : 'actions'}>
               <button className="btn btn-small btn-success" onClick={() => approveQuote(id)}><i className="fa fa-rocket" aria-hidden="true" /> Approve</button>
@@ -63,7 +70,7 @@ class PendingQuote extends Component {
             </div>
           ) : null }
         </div>
-        <p>{description}</p>
+        <small className="description">{description}</small>
         <Tags tags={tags} link="approval" />
       </SwipeArea>
     );

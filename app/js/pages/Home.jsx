@@ -11,15 +11,16 @@ const HomeEvents = asyncComponent(
 );
 
 const PageHome = () => (
-  <div>
-    <div className="container-fluid">
-      <div className="row bot-1">
-        <div className="col-12 hero">
-          <div className="hero-body">
-            <div className="content">
-              <h4 className="front-heading">Upcoming Events</h4>
-              <HomeEvents />
-            </div>
+  <div className="container-fluid">
+    <div className="row bot-1">
+      <div className="hero">
+        <div className="hero-body">
+          <img className="hero-img" src={LabImg} alt="SSE Lab" />
+          <div className="hero-text">
+            <p>Weekly Meetings</p>
+            <p>Wed @ 3:00pm</p>
+            <p>GOL-1670</p>
+            <p>All Welcome!</p>
           </div>
         </div>
       </div>
@@ -45,7 +46,8 @@ const PageHome = () => (
         </div>
         <div className="col-12 col-md-5 left-border">
           <div className="col-12">
-            <img src={LabImg} alt="SSE Lab" style={{ width: '100%' }} />
+            <h4 className="front-heading">Upcoming Events</h4>
+            <HomeEvents />
           </div>
         </div>
       </div>
