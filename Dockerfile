@@ -1,22 +1,26 @@
-FROM node:7.4
+FROM node
 
-# Caddy Server
-RUN curl https://getcaddy.com | bash
+# Install and config nginx
+RUN apt-get update && apt-get install -y nginx
+RUN rm /etc/nginx/sites-enabled/*
+COPY ./nginx/ /etc/nginx/sites-enabled/
 
-# Node deps
+# forward request and error logs to docker log collector
+RUN ln -sf /dev/stdout /var/log/nginx/access.log
+RUN ln -sf /dev/stderr /var/log/nginx/error.log
+
+# Install node deps
 WORKDIR /app
 COPY ./package.json /app/package.json
-RUN npm install
-COPY ./  /app
-RUN npm run lint
+RUN npm install --warn
+
+# Build the app
+COPY ./ /app
 RUN npm run build
 
-# Clean extra stuff away
-RUN find . -maxdepth 1 \! \( -name dist \) -exec rm -rf '{}' \;
+# Set perms for dist dir
+RUN chmod 755 -R /app/dist
 
-# Caddy
-EXPOSE 80
-EXPOSE 443
-COPY ./caddy /app
-
-CMD caddy
+# Run nginx
+EXPOSE 80 443
+CMD ["nginx", "-g", "daemon off;"]
