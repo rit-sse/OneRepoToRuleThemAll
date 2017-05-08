@@ -5,9 +5,7 @@ import { createEvent, updateEvent } from 'actions/events';
 
 function mapStateToProps(store) {
   return {
-    event: store.modal.modalType === EVENT_MODAL ? store.events.all.find((e) => {
-      return e.id === store.modal.id;
-    }) || null : null,
+    event: store.events.all.find(e => e.id === store.modal.id),
     isOpen: store.modal.modalType === EVENT_MODAL,
     committees: store.committees,
   };

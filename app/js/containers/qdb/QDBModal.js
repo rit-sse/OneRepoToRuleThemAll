@@ -12,12 +12,12 @@ function getQuote(quotes, id) {
   return quote ? {
     ...quote,
     tags: quote.tags.map(tag => ({ label: tag.name, value: tag.name })),
-  } : null;
+  } : quote;
 }
 
 function mapStateToProps(store) {
   return {
-    quote: store.modal.modalType === QUOTE_MODAL ? getQuote(store.quotes.all, store.modal.id) : null,
+    quote: getQuote(store.quotes.all, store.modal.id),
     isOpen: store.modal.modalType === QUOTE_MODAL,
     tags: store.tags.map(tag => ({ label: tag, value: tag })),
   };
