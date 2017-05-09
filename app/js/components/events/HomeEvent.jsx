@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import 'scss/homeEvents.scss';
@@ -36,7 +37,9 @@ class HomeEvent extends Component {
   render() {
     return (
       <div className="home-event bot-1">
-        <h4 className="event-heading">{this.props.name}</h4>
+        <Link to="/events">
+          <h4 className="event-heading">{this.props.name}</h4>
+        </Link>
         <p className="event-time">{this.getTime()}</p>
         <p className="event-location">{this.props.location}</p>
       </div>

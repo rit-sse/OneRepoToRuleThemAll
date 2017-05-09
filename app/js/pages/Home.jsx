@@ -12,7 +12,7 @@ const HomeEvents = asyncComponent(
 
 const PageHome = () => (
   <div>
-    <div className="hero bot-1">
+    <div className="hero bot-2">
       <div className="flex-container">
         <img className="flex-2 hero-img" src={LabImg} alt="SSE Lab" />
         <div className="flex-1 hero-text">
@@ -25,9 +25,8 @@ const PageHome = () => (
     </div>
     <div className="flex-container">
       <div className="flex-2 flex-content">
-        <h4 className="front-heading">Mentoring</h4>
+        <h4 className="front-heading">Mentoring <small>10am - 6pm, Mon - Fri</small></h4>
         <p>
-          Mentoring hours are 10am - 6pm Mon - Fri.
           The SSE has a mentor on duty every day that can help with SE, CS and other technical classes.
           There is also a physics tutor who hold open mentoring hours in our lab.
         </p>

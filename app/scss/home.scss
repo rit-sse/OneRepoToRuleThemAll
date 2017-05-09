@@ -19,7 +19,7 @@ $BASE_PADDING: 25%;
 }
 
 .hero {
-  background-color: $SECONDARY;
+  background: $SECONDARY;
   border-bottom: $PRIMARY solid 1px;
 
   .hero-img {
@@ -30,10 +30,12 @@ $BASE_PADDING: 25%;
     color: $WHITE;
     text-align: left;
     align-self: center;
-    font-family: $ACCENT_FONT;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   .hero-heading {
+    font-family: $ACCENT_FONT;
   }
 
   .hero-sub {
@@ -42,11 +44,8 @@ $BASE_PADDING: 25%;
 }
 
 .front-heading {
+  font-weight: bold;
   font-family: $ACCENT_FONT;
-}
-
-.flex-content {
-  margin-left: 0;
 }
 
 .flex-border {
@@ -64,13 +63,12 @@ $BASE_PADDING: 25%;
   .flex-2 {
     order: 1;
     width: 55%;
-    padding: 0 15px;
   }
 
   .flex-1 {
     order: 1;
     width: 40%;
-    padding: 0 15px;
+    padding-left: 20px;
   }
 
   .hero {
@@ -82,17 +80,21 @@ $BASE_PADDING: 25%;
   .flex-border {
     padding-top: 0;
     border-top: none;
-    border-left: 1px solid $LIGHT_GREY;
     border-bottom: none;
-  }
-
-  .flex-content {
-    padding-left: 20px;
   }
 }
 
 @media (min-width: $BREAK_XL) {
   .flex-container {
     max-width: $BREAK_LG;
+  }
+  .hero {
+    .hero-heading {
+      font-size: 2em;
+    }
+
+    .hero-sub {
+      font-size: 1.25em;
+    }
   }
 }
