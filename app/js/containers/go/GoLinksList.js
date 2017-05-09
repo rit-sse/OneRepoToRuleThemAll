@@ -9,7 +9,8 @@ function mapStateToProps({ go, auth }) {
     scroll: true,
     scrollDone: go.pagination.totalPages <= go.pagination.currentPage || !auth.officer,
     item: GoLink,
-    wrapper: 'tbody',
+    wrapper: 'ul',
+    wrapperProps: { className: 'list-group' },
     items: auth.officer ? go.all : [],
     keyPriority: ['shortLink'],
   };

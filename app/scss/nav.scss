@@ -2,14 +2,13 @@
 
 .navbar-sse {
   background-color: $PRIMARY;
-  border-bottom: 1px solid #8BA9C3;
 
   .nav-item .nav-link {
     color: $WHITE;
     font-size: 1.25em;
-    font-family: 'Quicksand', sans-serif;
+    font-family: $ACCENT_FONT;
     &:hover, &:focus, &:active {
-      color: darken($WHITE, 33%);
+      color: $ACCENT;
     }
   }
 

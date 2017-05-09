@@ -1,3 +1,8 @@
+$BREAK_SM: 576px;
+$BREAK_MD: 768px;
+$BREAK_LG: 992px;
+$BREAK_XL: 1200px;
+
 $WHITE: #FEFEFE;
 $OFFWHITE: #FAFAFA;
 $LIGHT_GREY: #DADFE1;
@@ -12,3 +17,7 @@ $LIGHT_BLUE: lighten(#21629A, 5%);
 $BACKGROUND: $OFFWHITE;
 $PRIMARY: $BLUE;
 $SECONDARY: $LIGHT_BLUE;
+$ACCENT: #8BA9C3;
+
+$FONT: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$ACCENT_FONT: 'Quicksand', sans-serif;

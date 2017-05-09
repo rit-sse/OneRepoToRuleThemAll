@@ -2,65 +2,97 @@
 
 $BASE_PADDING: 25%;
 
-.hero {
+.flex-container {
   width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.flex-2, .flex-1 {
+  order: 2;
+  width: 100%;
+}
+
+.hero {
   background-color: $SECONDARY;
   border-bottom: $PRIMARY solid 1px;
 
-  .hero-body {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    justify-content: space-around;
-    align-items: center;
+  .hero-img {
+    display: none;
+  }
 
-    width: 100%;
-    margin: 0 auto;
-    max-width: 1200px;
+  .hero-text {
+    color: $WHITE;
+    text-align: left;
+    align-self: center;
+    font-family: $ACCENT_FONT;
+  }
 
-    .hero-img {
-      order: 0;
-      width: 50%;
-      flex: 0 1 auto;
-      display: block;
-      align-self: auto;
-    }
+  .hero-heading {
+  }
 
-    .hero-text {
-      order: 0;
-      width: 40%;
-      flex: 0 1 auto;
-      align-self: center;
-      color: $WHITE;
-      font-size: 12px;
-      text-align: left;
-      font-family: 'Quicksand', sans-serif;
-      p { margin: 0; };
-    }
-
-    @media (min-width: 320px) {
-      .hero-text {
-        font-size: calc(2.727vw + 3.2736px);
-      }
-    }
-
-    @media (min-width: 1200px) {
-      .hero-text {
-        font-size: 36px;
-      }
-    }
+  .hero-sub {
+    margin: 0;
   }
 }
 
 .front-heading {
-  font-family: 'Quicksand', sans-serif;
+  font-family: $ACCENT_FONT;
 }
 
-@media (min-width: 768px) {
-  .left-border {
+.flex-content {
+  margin-left: 0;
+}
+
+.flex-border {
+  order: 1;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $LIGHT_GREY;
+}
+
+@media (min-width: $BREAK_MD) {
+  .flex-container {
+    max-width: $BREAK_MD;
+  }
+
+  .flex-2 {
+    order: 1;
+    width: 55%;
+    padding: 0 15px;
+  }
+
+  .flex-1 {
+    order: 1;
+    width: 40%;
+    padding: 0 15px;
+  }
+
+  .hero {
+    .hero-img {
+      display: block;
+    }
+  }
+
+  .flex-border {
     padding-top: 0;
     border-top: none;
     border-left: 1px solid $LIGHT_GREY;
+    border-bottom: none;
+  }
+
+  .flex-content {
+    padding-left: 20px;
+  }
+}
+
+@media (min-width: $BREAK_XL) {
+  .flex-container {
+    max-width: $BREAK_LG;
   }
 }

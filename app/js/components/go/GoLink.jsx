@@ -7,14 +7,20 @@ const GoLink = ({
   editItem,
   deleteItem,
 }) => (
-  <tr key={shortLink}>
-    <td><a href={`/go/${shortLink}`}>{shortLink}</a></td>
-    <td><a href={longLink} target="_blank" rel="noopener noreferrer">{longLink}</a></td>
-    <td className="btn-group">
-      <button className="btn btn-info" onClick={editItem}>Edit</button>
-      <button className="btn btn-danger" onClick={deleteItem}>Delete</button>
-    </td>
-  </tr>
+  <li key={shortLink} className="list-group-item go-item">
+    <div className="head">
+      <p className="short-link">
+        ShortLink: <a href={`/go/${shortLink}`}>{shortLink}</a>
+      </p>
+      <div className="actions">
+        <button className="btn btn-small btn-info" onClick={editItem}>Edit</button>
+        <button className="btn btn-small btn-danger" onClick={deleteItem}>Delete</button>
+      </div>
+    </div>
+    <p className="long-link">
+      LongLink: <a href={longLink} target="_blank" rel="noopener noreferrer">{longLink}</a>
+    </p>
+  </li>
 );
 
 GoLink.propTypes = {

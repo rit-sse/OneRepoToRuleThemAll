@@ -32,16 +32,7 @@ const Go = () => (
     </div>
     <div className="row">
       <div className="col-12">
-        <table className="table table-bordered table-striped table-go">
-          <thead>
-            <tr>
-              <th>ShortName</th>
-              <th>Link</th>
-              <th>actions</th>
-            </tr>
-          </thead>
-          <GoLinksList />
-        </table>
+        <GoLinksList />
       </div>
     </div>
     <div className="row">
