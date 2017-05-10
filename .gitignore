@@ -10,3 +10,6 @@ dist
 
 # TERN
 .tern-port
+
+# .DS_STORE
+.DS_STORE
