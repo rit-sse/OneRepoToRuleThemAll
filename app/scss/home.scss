@@ -20,10 +20,13 @@ $BASE_PADDING: 25%;
 
 .hero {
   background: $SECONDARY;
-  border-bottom: $PRIMARY solid 1px;
-
+  margin-bottom: 24px;
+  height: 130px;
   .hero-img {
     display: none;
+    width: 50%;
+    background-position: center;
+    background-size: cover;
   }
 
   .hero-text {
@@ -32,6 +35,25 @@ $BASE_PADDING: 25%;
     align-self: center;
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+
+  .hero-content-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    .fancy-hero-container {
+      display: none;
+    }
+    .hero-content {
+      padding: 12px;
+      font-size: 0.7em;
+      color: $WHITE;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background-color: $SECONDARY;
+      box-sizing: border-box;
+    }
   }
 
   .hero-heading {
@@ -72,9 +94,44 @@ $BASE_PADDING: 25%;
   }
 
   .hero {
+    overflow-y: hidden;
+    height: 300px;
     .hero-img {
-      display: block;
-      height: 227px; // define image height for cleaner loading
+      display: inline-block;
+      height: 100%;
+      z-index: -200;
+      border-top: 3px solid $ACCENT;
+      border-bottom: 3px solid $ACCENT;
+    }
+
+    .hero-content-container {
+      height: 200px;
+      width: 500px;
+      display: inline-block;
+      position: relative;
+      width: 0px;
+      // z-index: -100;
+      .hero-content {        
+        display: block;
+        position: absolute;
+        background: none;
+        width: 300px;
+        height: 100%;
+        top: -10px;
+        left: -145px;
+      }
+      .fancy-hero-container {
+        display: block;
+        width: 300px;
+        height: 650px;
+        position: absolute;
+        background-color: $SECONDARY;
+        border-left: 3px solid $ACCENT;
+        border-right: 3px solid $ACCENT;
+        left: -200px;
+        top: -260px;
+        transform: rotate(30deg);
+      }
     }
   }
 
@@ -97,10 +154,6 @@ $BASE_PADDING: 25%;
 
     .hero-sub {
       font-size: 1.25em;
-    }
-
-    .hero-img {
-      height: 296px; // define image height for cleaner loading
     }
   }
 }
