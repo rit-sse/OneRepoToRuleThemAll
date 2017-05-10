@@ -25,6 +25,10 @@ jobs:
           command: |
             docker version
             docker info
+      - run:
+          name: start new docker daemon
+          command: |
+            dockerd -H 127.0.0.1:2376 --experimental -s vfs
       - checkout
       - run:
           name: build edge
