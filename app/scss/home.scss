@@ -74,6 +74,7 @@ $BASE_PADDING: 25%;
   .hero {
     .hero-img {
       display: block;
+      height: 227px; // define image height for cleaner loading
     }
   }
 
@@ -82,6 +83,7 @@ $BASE_PADDING: 25%;
     border-top: none;
     border-bottom: none;
   }
+
 }
 
 @media (min-width: $BREAK_XL) {
@@ -95,6 +97,10 @@ $BASE_PADDING: 25%;
 
     .hero-sub {
       font-size: 1.25em;
+    }
+
+    .hero-img {
+      height: 296px; // define image height for cleaner loading
     }
   }
 }
