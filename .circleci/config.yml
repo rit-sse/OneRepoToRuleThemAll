@@ -23,3 +23,7 @@ jobs:
       - run:
           name: Show Info
           command: docker info
+      - run:
+          name: build edge
+          command: |
+            docker build -f Dockerfile.edge .
