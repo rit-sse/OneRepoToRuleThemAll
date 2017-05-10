@@ -23,6 +23,7 @@ jobs:
       - run:
           name: Show Info
           command: docker info
+      - checkout
       - run:
           name: build edge
           command: |
