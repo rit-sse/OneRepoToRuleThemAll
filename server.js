@@ -10,7 +10,7 @@ const server = new WebpackDevServer(webpack(config), {
   disableHostCheck: true,
   proxy: {
       "/api/**": {
-          target: "https://sse.rit.edu/api/",
+          target: "https://ssedev.se.rit.edu/api/",
           changeOrigin: true,
           pathRewrite: {
               "^/api": ""

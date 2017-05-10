@@ -53,7 +53,7 @@
     "redux-devtools": "^3.3.2",
     "redux-form": "^6.6.3",
     "redux-thunk": "^2.1.0",
-    "sse-api-client": "git+https://github.com/rit-sse/api-client.git#es6",
+    "sse-api-client": "git+https://github.com/rit-sse/api-client.git",
     "torque-react": "^2.0.0"
   },
   "devDependencies": {
