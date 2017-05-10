@@ -12,9 +12,15 @@
       font-size: 1em;
       line-height: 1.1em;
     }
+
+    .event-time, .event-location {
+      font-weight: 400;
+    }
+
     .event-heading {
       color: $PRIMARY;
       font-weight: bold;
+      margin-bottom: 5px;
     }
   }
 }

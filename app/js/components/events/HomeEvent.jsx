@@ -40,8 +40,8 @@ class HomeEvent extends Component {
         <Link to="/events">
           <h4 className="event-heading">{this.props.name}</h4>
         </Link>
-        <p className="event-time">{this.getTime()}</p>
-        <p className="event-location">{this.props.location}</p>
+        <h6 className="event-time">{this.getTime()}</h6>
+        <h6 className="event-location">{this.props.location}</h6>
       </div>
     );
   }
