@@ -8,14 +8,19 @@ const path = require('path');
 module.exports = {
   entry: {
     main: './app/js/app.jsx',
-    vendor: [
+    vendor1: [
       'redux',
+      'moment',
       'redux-form',
       'react-redux',
-      'react-router',
-      'react-router-dom',
+      'reactstrap-tether',
+    ],
+    vendor2: [
       'react',
       'react-dom',
+      'react-router',
+      'react-router-dom',
+      'connected-react-router',
     ],
   },
   output: {
@@ -38,7 +43,7 @@ module.exports = {
         API_ROOT: JSON.stringify(process.env.API_ROOT || '/api/v2/'),
       },
     }),
-    new webpack.optimize.CommonsChunkPlugin({ name: ['vendor', 'manifest'], minChunks: Infinity }),
+    new webpack.optimize.CommonsChunkPlugin({ name: ['vendor1', 'vendor2', 'manifest'], minChunks: Infinity }),
     new webpack.optimize.CommonsChunkPlugin({ async: 'Async', minChunks: 2 }),
     new webpack.optimize.MinChunkSizePlugin({ minChunkSize: 8192 }),
     new HtmlWebpackPlugin({
