@@ -22,7 +22,9 @@ jobs:
             mv /tmp/docker/* /usr/bin
       - run:
           name: Show Info
-          command: docker info
+          command: |
+            docker version
+            docker info
       - checkout
       - run:
           name: build edge
