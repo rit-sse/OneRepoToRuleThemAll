@@ -23,18 +23,22 @@ class SmoothImageDiv extends React.Component {
       }), this.props.delayMs);
     }
     const img = new Image();
-    img.onload = () => this.setState({ loading: false });
+    img.onload = () => {
+      this.setState({ loading: false });
+      this.props.onLoad();
+    };
     img.src = this.props.imageUrl;
   }
 
   render() {
-    const style = Object.assign({}, this.props.style, {
+    const style = {
+      ...this.props.style,
       backgroundImage: `url(${this.props.imageUrl})`,
-    });
+    };
 
     const classes = [this.props.className];
     // add loading class if image is still loading
-    if (this.state.loading || ((this.state.mountTime + this.props.delayMs) > Date.now())) {
+    if (!this.props.forceLoad && (this.state.loading || ((this.state.mountTime + this.props.delayMs) > Date.now()))) {
       classes.push('loading');
     }
     return (
@@ -51,6 +55,8 @@ SmoothImageDiv.propTypes = {
   style: PropTypes.objectOf(PropTypes.string),
   imageUrl: PropTypes.string,
   delayMs: PropTypes.number,
+  forceLoad: PropTypes.bool,
+  onLoad: PropTypes.func,
 };
 
 SmoothImageDiv.defaultProps = {
@@ -58,6 +64,8 @@ SmoothImageDiv.defaultProps = {
   style: {},
   imageUrl: '',
   delayMs: 0,
+  forceLoad: false,
+  onLoad: () => {},
 };
 
 export default SmoothImageDiv;

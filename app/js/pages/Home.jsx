@@ -1,8 +1,6 @@
 import React from 'react';
 import asyncComponent from 'components/general/AsyncComponent';
-import SmoothImageDiv from 'components/general/SmoothImageDiv';
-import LabImg from 'img/betterLab.jpg';
-import RapDevImg from 'img/rapdev.jpg';
+import Hero from 'components/home/Hero';
 import 'scss/home.scss';
 
 // Load the events list async from the Events Chunck
@@ -14,27 +12,7 @@ const HomeEvents = asyncComponent(
 
 const PageHome = () => (
   <div>
-    <div className="hero">
-      <SmoothImageDiv
-        className="hero-img left"
-        imageUrl={LabImg}
-        delayMs={400}
-      />
-      <div className="hero-content-container">
-        <div className="fancy-hero-container" />
-        <div className="hero-content">
-          <h3>Weekly Meetings</h3>
-          <h6>Wed @ 3:00pm</h6>
-          <h6>GOL-1670</h6>
-          <h6>All Are Welcome!</h6>
-        </div>
-      </div>
-      <SmoothImageDiv
-        className="hero-img right"
-        imageUrl={RapDevImg}
-        delayMs={400}
-      />
-    </div>
+    <Hero />
     <div className="flex-container">
       <div className="flex-2 flex-content">
         <h4 className="front-heading">Mentoring <small>10am - 6pm, Mon - Fri</small></h4>
