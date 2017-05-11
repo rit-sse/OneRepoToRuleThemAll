@@ -38,3 +38,10 @@ jobs:
                 docker tag ritsse/onerepo:build ritsse/onerepo:$TAG
                 docker push ritsse/onerepo:$TAG
                 docker push ritsse/onerepo:dev-latest
+      # Start deployment
+      - add_ssh_keys
+      - deploy:
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "devlop" ]; then
+                ssh deployer@sseprod.se.rit.edu docker service ls
+            fi;
