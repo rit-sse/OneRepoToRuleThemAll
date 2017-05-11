@@ -7,6 +7,7 @@ import UserForm from 'containers/general/UserForm';
 
 class AddMembershipModal extends Component {
   static propTypes = {
+    initialize: PropTypes.func.isRequired,
     committees: PropTypes.arrayOf(PropTypes.object).isRequired,
     getCommittees: PropTypes.func.isRequired,
     autofill: PropTypes.func.isRequired,
@@ -18,6 +19,16 @@ class AddMembershipModal extends Component {
 
   componentDidMount() {
     this.props.getCommittees();
+  }
+
+  componentDidUpdate(prevProps) {
+    const {
+      isOpen,
+      initialize,
+    } = this.props;
+    if (isOpen && !prevProps.isOpen) {
+      initialize(null);
+    }
   }
 
   submit = (values) => {

@@ -48,7 +48,6 @@ class QDBModal extends Component {
     }
   }
 
-
   submit = (values) => {
     const {
       quote,
