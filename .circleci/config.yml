@@ -17,7 +17,12 @@ jobs:
             docker version
             docker info
       - checkout
-      - run: git submodule sync && git submodule update --init
+      - run:
+          name: Update Submodules
+          command: |
+            apk update
+            apk add git
+            git submodule sync && git submodule update --init
       - run:
           name: Build the current image
           command: |
