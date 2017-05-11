@@ -19,7 +19,7 @@ $BASE_PADDING: 25%;
 }
 
 .hero {
-  background: $SECONDARY;
+  background: $ACCENT;
   margin-bottom: 24px;
   height: 130px;
   .hero-img {
@@ -27,6 +27,12 @@ $BASE_PADDING: 25%;
     width: 50%;
     background-position: center;
     background-size: cover;
+    background-color: $ACCENT;
+    opacity: 1;
+    transition: opacity 1.2s;
+    &.loading {
+      opacity: 0;
+    }
   }
 
   .hero-text {
@@ -110,6 +116,7 @@ $BASE_PADDING: 25%;
       display: inline-block;
       position: relative;
       width: 0px;
+      z-index: 10;
       // z-index: -100;
       .hero-content {        
         display: block;

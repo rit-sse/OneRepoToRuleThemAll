@@ -1,5 +1,6 @@
 import React from 'react';
 import asyncComponent from 'components/general/AsyncComponent';
+import SmoothImageDiv from 'components/general/SmoothImageDiv';
 import LabImg from 'img/betterLab.jpg';
 import RapDevImg from 'img/rapdev.jpg';
 import 'scss/home.scss';
@@ -14,11 +15,10 @@ const HomeEvents = asyncComponent(
 const PageHome = () => (
   <div>
     <div className="hero">
-      <div
+      <SmoothImageDiv
         className="hero-img left"
-        style={{
-          backgroundImage: `url(${LabImg})`,
-        }}
+        imageUrl={LabImg}
+        delayMs={400}
       />
       <div className="hero-content-container">
         <div className="fancy-hero-container" />
@@ -29,11 +29,10 @@ const PageHome = () => (
           <h6>All Are Welcome!</h6>
         </div>
       </div>
-      <div
+      <SmoothImageDiv
         className="hero-img right"
-        style={{
-          backgroundImage: `url(${RapDevImg})`,
-        }}
+        imageUrl={RapDevImg}
+        delayMs={400}
       />
     </div>
     <div className="flex-container">
