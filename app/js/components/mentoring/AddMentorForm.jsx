@@ -38,18 +38,7 @@ class AddMentorForm extends Component {
   }
 
   static defaultProps = {
-    mentor: {
-      id: 0,
-      startDate: '',
-      endDate: '',
-      user: {
-        firstName: '',
-        lastName: '',
-        dce: '',
-        image: '',
-      },
-      specialties: [],
-    },
+    mentor: null,
   };
 
   componentDidMount() {
