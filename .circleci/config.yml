@@ -25,16 +25,16 @@ jobs:
       - run:
           name: Distribute
           command: |
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
                 TAG=2.0.$CIRCLE_BUILD_NUM
-                docker tag ritsse/onerepo:$TAG ritsse/onerepo:dev-latest
-                docker login -u $DOCKER_USER -p $DOCKER_PASS
+                docker tag ritsse/onerepo:build ritsse/onerepo:latest
+                docker tag ritsse/onerepo:build ritsse/onerepo:$TAG
                 docker push ritsse/onerepo:$TAG
                 docker push ritsse/onerepo:latest
             else
                 TAG=dev-2.0.$CIRCLE_BUILD_NUM
-                docker tag ritsse/onerepo:$TAG ritsse/onerepo:dev-latest
-                docker login -u $DOCKER_USER -p $DOCKER_PASS
+                docker tag ritsse/onerepo:build ritsse/onerepo:dev-latest
+                docker tag ritsse/onerepo:build ritsse/onerepo:$TAG
                 docker push ritsse/onerepo:$TAG
                 docker push ritsse/onerepo:dev-latest
-            fi;
