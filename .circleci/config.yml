@@ -43,6 +43,7 @@ jobs:
   # Start deployment
   deploy:
     machine: true
+    working_directory: /OneRepo
     steps:
       - add_ssh_keys
       - deploy:
