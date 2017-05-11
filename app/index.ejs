@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="<%= htmlWebpackPlugin.options.title %>" />
+  <meta property="og:url" content="<%= htmlWebpackPlugin.options.urlRoot %>" />
+  <meta property="og:image" content="<%= htmlWebpackPlugin.options.urlRoot %><%=require('./img/sse-og.png')%>" />
+  <meta property="og:description" content="The Society of Software Engineers (SSE) is a student organization at RIT composed of software engineers, computer scientists, and other students. We have over fifty active members that participate in mentoring, software projects, intramural sports, and social events. The SSE has strong relationships with companies like Microsoft, Google, Apple, Northrup Grumman, Goodrich, IBM, and Oracle. We work closely with companies in the software industry to provide our members with potential career opportunities.">
   <title><%= htmlWebpackPlugin.options.title %></title>
   <base href="/">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
