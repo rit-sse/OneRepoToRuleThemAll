@@ -32,7 +32,9 @@ jobs:
                 docker tag ritsse/onerepo:build ritsse/onerepo:$TAG
                 docker push ritsse/onerepo:$TAG
                 docker push ritsse/onerepo:latest
-            else
+                exit 0
+            fi
+            if [ "${CIRCLE_BRANCH}" == "devlop" ]; then
                 TAG=dev-2.0.$CIRCLE_BUILD_NUM
                 docker tag ritsse/onerepo:build ritsse/onerepo:dev-latest
                 docker tag ritsse/onerepo:build ritsse/onerepo:$TAG
@@ -43,6 +45,7 @@ jobs:
                      --data build_parameters[BUILD_TAG]=$TAG\
                      --data revision=$CIRCLE_SHA1 \
                      https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/tree/$CIRCLE_BRANCH
+                exit
             fi;
 
   # Start deployment
