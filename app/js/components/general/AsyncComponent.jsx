@@ -21,7 +21,7 @@ export default (getComponent, reducers = [], names = []) => {
           })
           .catch(() => {
             this.setState({
-              error: 'Somthing went wrong!',
+              error: '500: somthing went wrong!',
             });
           });
       }
