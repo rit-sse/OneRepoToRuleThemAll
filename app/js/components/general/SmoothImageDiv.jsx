@@ -2,6 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class SmoothImageDiv extends React.Component {
+
+  static propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.objectOf(PropTypes.string),
+    imageUrl: PropTypes.string,
+    delayMs: PropTypes.number,
+    forceLoad: PropTypes.bool,
+    onLoad: PropTypes.func,
+  };
+
+  static defaultProps = {
+    className: '',
+    style: {},
+    imageUrl: '',
+    delayMs: 0,
+    forceLoad: false,
+    onLoad: () => {},
+  };
+
   constructor(props) {
     super(props);
     this.state = {
@@ -50,22 +69,5 @@ class SmoothImageDiv extends React.Component {
   }
 }
 
-SmoothImageDiv.propTypes = {
-  className: PropTypes.string,
-  style: PropTypes.objectOf(PropTypes.string),
-  imageUrl: PropTypes.string,
-  delayMs: PropTypes.number,
-  forceLoad: PropTypes.bool,
-  onLoad: PropTypes.func,
-};
-
-SmoothImageDiv.defaultProps = {
-  className: '',
-  style: {},
-  imageUrl: '',
-  delayMs: 0,
-  forceLoad: false,
-  onLoad: () => {},
-};
 
 export default SmoothImageDiv;

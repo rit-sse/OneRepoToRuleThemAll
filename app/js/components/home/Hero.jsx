@@ -52,12 +52,4 @@ class Hero extends React.Component {
   }
 }
 
-Hero.PropTypes = {
-
-};
-
-Hero.defaultProps = {
-
-};
-
 export default Hero;
