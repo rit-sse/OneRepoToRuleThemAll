@@ -17,6 +17,7 @@ jobs:
             docker version
             docker info
       - checkout
+      - run: git submodule sync && git submodule update --init
       - run:
           name: Update Submodules
           command: |
