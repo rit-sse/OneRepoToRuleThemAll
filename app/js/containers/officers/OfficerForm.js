@@ -3,10 +3,18 @@ import OfficerForm from 'components/officers/OfficerForm';
 import { hideModal, OFFICER_MODAL } from 'actions/modal';
 import { createOfficer, updateOfficer } from 'actions/officers';
 import { getCommittees } from 'actions/committees';
+import moment from 'moment';
 
 function mapStateToProps({ modal, committees, officers }) {
+  const officerObj = officers[modal.id];
+  const officer = officerObj ? {
+    ...officerObj,
+    startDate: moment(officerObj.startDate).toISOString().split('T')[0],
+    endDate: officerObj.endDate ? moment(officerObj.endDate).toISOString().split('T')[0] : '',
+  } : officerObj;
+
   return {
-    officer: officers[modal.id],
+    officer,
     isOpen: modal.modalType === OFFICER_MODAL,
     committees: committees.map(committee => ({ label: committee.name, value: committee.name })),
   };

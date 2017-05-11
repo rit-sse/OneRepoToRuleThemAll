@@ -53,15 +53,7 @@ class OfficerForm extends Component {
       officer,
     } = this.props;
     if (isOpen && !prevProps.isOpen) {
-      if (officer) {
-        initialize({
-          ...officer,
-          startDate: moment(officer.startDate).toISOString().split('T')[0],
-          endDate: officer.endDate ? moment(officer.endDate).toISOString().split('T')[0] : '',
-        });
-      } else {
-        initialize(null);
-      }
+      initialize(officer);
     }
   }
 
