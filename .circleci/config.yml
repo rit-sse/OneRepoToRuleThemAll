@@ -39,7 +39,6 @@ jobs:
                 docker tag ritsse/onerepo:build ritsse/onerepo:$TAG
                 docker push ritsse/onerepo:$TAG
                 docker push ritsse/onerepo:latest
-                exit 0
             fi
             if [ "${CIRCLE_BRANCH}" == "devlop" ]; then
                 TAG=dev-2.0.$CIRCLE_BUILD_NUM
@@ -48,7 +47,6 @@ jobs:
                 docker tag ritsse/onerepo:build ritsse/onerepo:$TAG
                 docker push ritsse/onerepo:$TAG
                 docker push ritsse/onerepo:dev-latest
-                exit
             fi;
             curl --user ${CIRCLE_API_TOKEN}: \
                 --data build_parameters[CIRCLE_JOB]=$JOB \
