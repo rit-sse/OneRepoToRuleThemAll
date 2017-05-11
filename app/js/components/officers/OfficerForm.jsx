@@ -39,21 +39,7 @@ class OfficerForm extends Component {
   };
 
   static defaultProps = {
-    officer: {
-      id: 0,
-      title: '',
-      email: '',
-      primaryOfficer: false,
-      startDate: '',
-      endDate: '',
-      committeeName: '',
-      user: {
-        fistName: '',
-        lastName: '',
-        dce: '',
-        image: '',
-      },
-    },
+    officer: null,
   };
 
   componentDidMount() {
@@ -69,7 +55,7 @@ class OfficerForm extends Component {
     if (isOpen && !prevProps.isOpen) {
       initialize(officer);
     }
-  }fie
+  }
 
   submit = (values) => {
     const {

@@ -17,7 +17,7 @@ class QDBModal extends Component {
     tags: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.string,
       value: PropTypes.string,
-    })),
+    })).isRequired,
     quote: PropTypes.shape({
       id: PropTypes.number,
       body: PropTypes.string,
@@ -30,13 +30,7 @@ class QDBModal extends Component {
   };
 
   static defaultProps = {
-    quote: {
-      id: 0,
-      body: '',
-      description: '',
-      tags: [],
-    },
-    tags: [],
+    quote: null,
   };
 
   componentDidMount() {
@@ -53,7 +47,6 @@ class QDBModal extends Component {
       initialize(quote);
     }
   }
-
 
   submit = (values) => {
     const {
@@ -94,7 +87,7 @@ class QDBModal extends Component {
               <div className="form-group row">
                 <label className="col-sm-2 col-form-label" htmlFor="body">Body</label>
                 <div className="col-sm-10">
-                  <Field className="form-control" id="body" name="body" component="input" type="text" />
+                  <Field className="form-control" id="body" name="body" component="textarea" type="text" />
                 </div>
               </div>
               <div className="form-group row">

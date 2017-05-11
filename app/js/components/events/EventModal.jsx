@@ -4,7 +4,6 @@ import { Field, Form, reduxForm } from 'redux-form';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Button from 'components/general/Button';
 import moment from 'moment';
-import { adjustTimezone } from 'utils/dates';
 
 class EventModal extends Component {
   static propTypes = {
@@ -28,16 +27,7 @@ class EventModal extends Component {
   }
 
   static defaultProps = {
-    event: {
-      id: 0,
-      name: '',
-      committeeName: '',
-      startDate: '',
-      endDate: '',
-      description: '',
-      location: '',
-      image: '',
-    },
+    event: null,
   }
 
   componentDidUpdate(prevProps) {
@@ -47,11 +37,7 @@ class EventModal extends Component {
       event,
     } = this.props;
     if (isOpen && !prevProps.isOpen) {
-      initialize({
-        ...event,
-        startDate: event && event.startDate ? adjustTimezone(event.startDate).toISOString().split('.')[0] : '',
-        endDate: event && event.endDate ? adjustTimezone(event.endDate).toISOString().split('.')[0] : '',
-      });
+      initialize(event);
     }
   }
 

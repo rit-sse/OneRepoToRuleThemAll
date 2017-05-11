@@ -47,6 +47,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Society of Software Engineers',
       template: './app/index.ejs',
+      urlRoot: process.env.URL_ROOT || 'localhost:5000',
     }),
   ],
   module: {

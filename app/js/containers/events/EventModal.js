@@ -2,10 +2,18 @@ import { connect } from 'react-redux';
 import EventModal from 'components/events/EventModal';
 import { hideModal, EVENT_MODAL } from 'actions/modal';
 import { createEvent, updateEvent } from 'actions/events';
+import { adjustTimezone } from 'utils/dates';
 
 function mapStateToProps(store) {
+  const eventObj = store.events.all.find(e => e.id === store.modal.id);
+  const event = eventObj ? {
+    ...eventObj,
+    startDate: adjustTimezone(eventObj.startDate).toISOString().split('.')[0],
+    endDate: adjustTimezone(eventObj.endDate).toISOString().split('.')[0],
+  } : eventObj;
+
   return {
-    event: store.events.all.find(e => e.id === store.modal.id),
+    event,
     isOpen: store.modal.modalType === EVENT_MODAL,
     committees: store.committees,
   };

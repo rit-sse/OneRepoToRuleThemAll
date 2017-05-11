@@ -1,0 +1,74 @@
+version: 2
+
+jobs:
+  build:
+    docker:
+      - image: docker:17.03.0-ce
+    working_directory: /OneRepo
+    branches:
+      only:
+        - master
+        - devlop
+    steps:
+      - setup_remote_docker
+      - run:
+          name: Show Info
+          command: |
+            docker version
+            docker info
+      - checkout
+      - run:
+          name: Update Submodules
+          command: |
+            apk update
+            apk add git
+            git submodule sync && git submodule update --init
+      - run:
+          name: Build the current image
+          command: |
+            TAG=build
+            docker build -f Dockerfile -t ritsse/onerepo:$TAG .
+      - run:
+          name: Distribute
+          command: |
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                TAG=2.0.$CIRCLE_BUILD_NUM
+                JOB=deploy_prod
+                docker tag ritsse/onerepo:build ritsse/onerepo:latest
+                docker tag ritsse/onerepo:build ritsse/onerepo:$TAG
+                docker push ritsse/onerepo:$TAG
+                docker push ritsse/onerepo:latest
+            fi
+            if [ "${CIRCLE_BRANCH}" == "devlop" ]; then
+                TAG=dev-2.0.$CIRCLE_BUILD_NUM
+                JOB=deploy_staging
+                docker tag ritsse/onerepo:build ritsse/onerepo:dev-latest
+                docker tag ritsse/onerepo:build ritsse/onerepo:$TAG
+                docker push ritsse/onerepo:$TAG
+                docker push ritsse/onerepo:dev-latest
+            fi;
+            curl --user ${CIRCLE_API_TOKEN}: \
+                --data build_parameters[CIRCLE_JOB]=$JOB \
+                --data build_parameters[BUILD_TAG]=$TAG\
+                --data revision=$CIRCLE_SHA1 \
+                https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/tree/$CIRCLE_BRANCH
+
+  # Start deployment
+  deploy_staging:
+    machine: true
+    working_directory: ~/OneRepo
+    steps:
+      - add_ssh_keys
+      - deploy:
+          command: |
+            ssh deployer@sseprod.se.rit.edu docker service update --image=ritsse/onerepo:$BUILD_TAG sse_web --detach=false
+
+  deploy_prod:
+    machine: true
+    working_directory: ~/OneRepo
+    steps:
+      - add_ssh_keys
+      - deploy:
+          command: |
+            ssh deployer@sse.rit.edu docker service update --image=ritsse/onerepo:$BUILD_TAG sse_web --detach=false

@@ -21,10 +21,7 @@ class GoModal extends Component {
   }
 
   static defaultProps = {
-    link: {
-      longLink: '',
-      shortLink: '',
-    },
+    link: null,
   }
 
   componentDidUpdate(prevProps) {
@@ -49,7 +46,7 @@ class GoModal extends Component {
 
     close();
 
-    if (link.shortLink) update(link.shortLink, values);
+    if (link) update(link.shortLink, values);
     if (shouldUpdate) update(values.shortLink, values);
     else create(values);
 
@@ -68,7 +65,7 @@ class GoModal extends Component {
       shouldUpdate,
     } = this.props;
 
-    const updateOrCreate = link.shortLink ? 'Update' : 'Create';
+    const updateOrCreate = link ? 'Update' : 'Create';
 
     return (
       <Modal isOpen={isOpen} toggle={close}>
@@ -78,7 +75,7 @@ class GoModal extends Component {
             <div className="form-group row">
               <label className="col-3 col-form-label" htmlFor="shortLink">Short Link</label>
               <div className="col-9">
-                <Field className="form-control" onBlur={e => checkLink(e.target.value)} disabled={!!link.shortLink} id="shortLink" name="shortLink" component="input" />
+                <Field className="form-control" onBlur={e => checkLink(e.target.value)} disabled={!!link} id="shortLink" name="shortLink" component="input" />
               </div>
             </div>
             <div className="form-group row">
@@ -89,7 +86,7 @@ class GoModal extends Component {
             </div>
           </ModalBody>
           <ModalFooter>
-            <Button className="btn btn-sse" type="submit">{shouldUpdate ? 'Override' : updateOrCreate}</Button>
+            <Button className={`btn ${shouldUpdate ? 'btn-warning' : 'btn-sse'}`} type="submit">{shouldUpdate ? 'Override' : updateOrCreate}</Button>
             <Button className="btn btn-secondary" type="button" onClick={close}>Cancel</Button>
           </ModalFooter>
         </Form>
