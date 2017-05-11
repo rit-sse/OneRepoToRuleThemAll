@@ -39,7 +39,11 @@ jobs:
                 docker push ritsse/onerepo:$TAG
                 docker push ritsse/onerepo:dev-latest
             fi;
-      # Start deployment
+
+  # Start deployment
+  deploy:
+    machine: true
+    steps:
       - add_ssh_keys
       - deploy:
           command: |
