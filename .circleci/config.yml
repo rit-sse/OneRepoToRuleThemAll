@@ -4,7 +4,10 @@ jobs:
   build:
     docker:
       - image: docker:17.03.0-ce
-    working_directory: ~/OneRepo
+    working_directory: /OneRepo
+    branch:
+      - master
+      - devlop
     steps:
       - setup_remote_docker
       - run:
@@ -16,7 +19,21 @@ jobs:
       - run:
           name: Build the current image
           command: |
-            TAG=dev2.0.$CIRCLE_BUILD_NUM
+            TAG=dev-2.0.$CIRCLE_BUILD_NUM
             docker build -f Dockerfile -t ritsse/onerepo:$TAG .
-            docker login -u $DOCKER_USER -p $DOCKER_PASS
-            docker push ritsse/onerepo:$TAG
+      - run:
+          name: Distribute
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+                TAG=2.0.$CIRCLE_BUILD_NUM
+                docker tag ritsse/onerepo:$TAG ritsse/onerepo:dev-latest
+                docker login -u $DOCKER_USER -p $DOCKER_PASS
+                docker push ritsse/onerepo:$TAG
+                docker push ritsse/onerepo:latest
+            else
+                TAG=dev-2.0.$CIRCLE_BUILD_NUM
+                docker tag ritsse/onerepo:$TAG ritsse/onerepo:dev-latest
+                docker login -u $DOCKER_USER -p $DOCKER_PASS
+                docker push ritsse/onerepo:$TAG
+                docker push ritsse/onerepo:dev-latest
+            fi;
