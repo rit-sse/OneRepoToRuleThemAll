@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: docker:17.03.0-ce
     working_directory: /OneRepo
-    branch:
+    branches:
       only:
         - master
         - devlop
