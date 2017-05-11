@@ -16,4 +16,4 @@ jobs:
       - run:
           name: Build the current image
           command: |
-            docker build -f Dockerfile.edge .
+            docker build -f Dockerfile .
