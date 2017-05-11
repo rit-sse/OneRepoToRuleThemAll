@@ -6,8 +6,9 @@ jobs:
       - image: docker:17.03.0-ce
     working_directory: /OneRepo
     branch:
-      - master
-      - devlop
+      only:
+        - master
+        - devlop
     steps:
       - setup_remote_docker
       - run:
