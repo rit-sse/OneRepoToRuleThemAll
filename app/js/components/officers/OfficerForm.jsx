@@ -39,21 +39,7 @@ class OfficerForm extends Component {
   };
 
   static defaultProps = {
-    officer: {
-      id: 0,
-      title: '',
-      email: '',
-      primaryOfficer: false,
-      startDate: '',
-      endDate: '',
-      committeeName: '',
-      user: {
-        fistName: '',
-        lastName: '',
-        dce: '',
-        image: '',
-      },
-    },
+    officer: null,
   };
 
   componentDidMount() {
@@ -67,9 +53,17 @@ class OfficerForm extends Component {
       officer,
     } = this.props;
     if (isOpen && !prevProps.isOpen) {
-      initialize(officer);
+      if (officer) {
+        initialize({
+          ...officer,
+          startDate: moment(officer.startDate).toISOString().split('T')[0],
+          endDate: officer.endDate ? moment(officer.endDate).toISOString().split('T')[0] : '',
+        });
+      } else {
+        initialize(null);
+      }
     }
-  }fie
+  }
 
   submit = (values) => {
     const {

@@ -17,7 +17,7 @@ class QDBModal extends Component {
     tags: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.string,
       value: PropTypes.string,
-    })),
+    })).isRequired,
     quote: PropTypes.shape({
       id: PropTypes.number,
       body: PropTypes.string,
@@ -30,13 +30,7 @@ class QDBModal extends Component {
   };
 
   static defaultProps = {
-    quote: {
-      id: 0,
-      body: '',
-      description: '',
-      tags: [],
-    },
-    tags: [],
+    quote: null,
   };
 
   componentDidMount() {
@@ -70,7 +64,7 @@ class QDBModal extends Component {
 
     close();
 
-    if (quote.id) update(quote.id, newQuote);
+    if (quote) update(quote.id, newQuote);
     else create(newQuote);
   };
 
@@ -83,7 +77,7 @@ class QDBModal extends Component {
       tags,
     } = this.props;
 
-    const updateOrCreate = quote.id ? 'Update' : 'Create';
+    const updateOrCreate = quote ? 'Update' : 'Create';
 
     return (
       <Modal isOpen={isOpen} toggle={close}>

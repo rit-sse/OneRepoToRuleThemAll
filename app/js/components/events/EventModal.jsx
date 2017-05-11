@@ -28,16 +28,7 @@ class EventModal extends Component {
   }
 
   static defaultProps = {
-    event: {
-      id: 0,
-      name: '',
-      committeeName: '',
-      startDate: '',
-      endDate: '',
-      description: '',
-      location: '',
-      image: '',
-    },
+    event: null,
   }
 
   componentDidUpdate(prevProps) {
@@ -47,11 +38,15 @@ class EventModal extends Component {
       event,
     } = this.props;
     if (isOpen && !prevProps.isOpen) {
-      initialize({
-        ...event,
-        startDate: event && event.startDate ? adjustTimezone(event.startDate).toISOString().split('.')[0] : '',
-        endDate: event && event.endDate ? adjustTimezone(event.endDate).toISOString().split('.')[0] : '',
-      });
+      if (event) {
+        initialize({
+          ...event,
+          startDate: adjustTimezone(event.startDate).toISOString().split('.')[0],
+          endDate: adjustTimezone(event.endDate).toISOString().split('.')[0],
+        });
+      } else {
+        initialize(null);
+      }
     }
   }
 
