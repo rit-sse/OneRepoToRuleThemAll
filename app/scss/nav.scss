@@ -2,7 +2,7 @@
 
 .navbar-sse {
   background-color: $PRIMARY;
-  height: 79px;
+  min-height: 79px;
 
   .nav-item .nav-link {
     padding: 0 12px;
