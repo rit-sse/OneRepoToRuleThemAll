@@ -10,11 +10,9 @@ class Hero extends React.Component {
       img1Loaded: false,
       img2Loaded: false,
     };
-
-    this.handleImageLoad = this.handleImageLoad.bind(this);
   }
 
-  handleImageLoad(key) {
+  handleImageLoad = (key) => {
     this.setState({
       [key]: true,
     });
