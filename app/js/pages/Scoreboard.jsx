@@ -33,7 +33,7 @@ const Scoreboard = ({ location }) => (
     </div>
     <div className="row">
       <div className="col-12">
-        <Status type={[MEMBERS]} message spinner />
+        <Status type={[MEMBERS]} message />
       </div>
     </div>
     <div className="row">
@@ -46,6 +46,11 @@ const Scoreboard = ({ location }) => (
         <Route path="/scoreboard" exact component={MembershipList} />
         <Route path="/scoreboard/approval" component={ApproveMemberships} />
       </Switch>
+    </div>
+    <div className="row">
+      <div className="col-12">
+        <Status type={[MEMBERS]} spinner />
+      </div>
     </div>
     <AddMembershipModal />
     <ViewMembershipsModal />
