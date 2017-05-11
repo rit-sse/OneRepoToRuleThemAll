@@ -50,6 +50,7 @@ module.exports = {
       title: 'Society of Software Engineers',
       filename: '../index.html',
       template: './app/index.ejs',
+      urlRoot: 'https://sse.rit.edu',
     }),
     new InlineChunkWebpackPlugin({
       inlineChunks: ['manifest'],
