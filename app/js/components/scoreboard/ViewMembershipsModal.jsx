@@ -61,7 +61,7 @@ ViewMembershipsModal.propTypes = {
 };
 
 ViewMembershipsModal.defaultProps = {
-  member: {
+  member: { // This is the only case we want real default props
     name: '',
     memberships: [],
   },

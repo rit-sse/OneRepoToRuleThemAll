@@ -25,7 +25,7 @@ const Officers = () => (
     </div>
     <div className="row">
       <div className="col">
-        <Status type={[COMMITTEES, OFFICERS]} message />
+        <Status type={[COMMITTEES, OFFICERS]} message spinner />
       </div>
     </div>
     <div className="row">
