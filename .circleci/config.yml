@@ -38,6 +38,7 @@ jobs:
                 docker tag ritsse/onerepo:build ritsse/onerepo:$TAG
                 docker push ritsse/onerepo:$TAG
                 docker push ritsse/onerepo:dev-latest
+            fi;
       # Start deployment
       - add_ssh_keys
       - deploy:
