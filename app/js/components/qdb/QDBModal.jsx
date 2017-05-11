@@ -70,7 +70,7 @@ class QDBModal extends Component {
 
     close();
 
-    if (quote) update(quote.id, newQuote);
+    if (quote.id) update(quote.id, newQuote);
     else create(newQuote);
   };
 
@@ -83,7 +83,7 @@ class QDBModal extends Component {
       tags,
     } = this.props;
 
-    const updateOrCreate = quote ? 'Update' : 'Create';
+    const updateOrCreate = quote.id ? 'Update' : 'Create';
 
     return (
       <Modal isOpen={isOpen} toggle={close}>
@@ -94,7 +94,7 @@ class QDBModal extends Component {
               <div className="form-group row">
                 <label className="col-sm-2 col-form-label" htmlFor="body">Body</label>
                 <div className="col-sm-10">
-                  <Field className="form-control" id="body" name="body" component="input" type="text" />
+                  <Field className="form-control" id="body" name="body" component="textarea" type="text" />
                 </div>
               </div>
               <div className="form-group row">
