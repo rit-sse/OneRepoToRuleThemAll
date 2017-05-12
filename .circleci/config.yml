@@ -23,7 +23,8 @@ jobs:
           command: |
             apk update
             apk add git
-            git submodule sync && git submodule update --init
+            git submodule init
+            git submodule update --remote
       - run:
           name: Build the current image
           command: |
