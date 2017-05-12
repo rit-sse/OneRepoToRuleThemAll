@@ -69,7 +69,7 @@ class OfficerForm extends Component {
       ...values,
       startDate: moment(values.startDate).utc(),
       endDate: moment(values.endDate).utc(),
-      committeeName: values.committeeName ? values.committeeName.value : '',
+      committeeName: values.committeeName ? values.committeeName.value : null,
     };
     newOfficer.userDce = newOfficer.user.dce;
 
