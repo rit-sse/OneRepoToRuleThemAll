@@ -10,30 +10,28 @@ function format(i) {
 }
 
 
-const Week = (props) => {
-  return (
-    <tr>
-      <td className="gtv-calendar-weekcol">
-        <h3>{format(props.index)}</h3>
-      </td>
-      {props.week.map((day, j) => {
-        const classes = classnames({
-          today: moment().isSame(day.date, 'day'),
-        });
-        return (
-          <td
-            key={`day-${props.index}-${j}`}
-            className={classes}
-          >
-            <ul className="gtv-calendar-eventlist">
-              <Day day={day} weekIndex={props.index} dayIndex={j} />
-            </ul>
-          </td>
-        );
-      })}
-    </tr>
-  );
-};
+const Week = props => (
+  <tr>
+    <td className="gtv-calendar-weekcol">
+      <h3>{format(props.index)}</h3>
+    </td>
+    {props.week.map((day, j) => {
+      const classes = classnames({
+        today: moment().isSame(day.date, 'day'),
+      });
+      return (
+        <td
+          key={`day-${props.index}-${j}`}
+          className={classes}
+        >
+          <ul className="gtv-calendar-eventlist">
+            <Day day={day} weekIndex={props.index} dayIndex={j} />
+          </ul>
+        </td>
+      );
+    })}
+  </tr>
+);
 
 Week.propTypes = {
   week: PropTypes.arrayOf(PropTypes.object).isRequired,

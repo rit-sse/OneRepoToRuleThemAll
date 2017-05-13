@@ -16,27 +16,25 @@ export function getMembers(active = moment().toISOString()) {
     dispatch(loading(GET_MEMBERS));
     Memberships.all({ active }, true)
       .then(a => a.data)
-      .then(memberships => memberships.reduce((members, membership) => {
-        return {
-          ...members,
-          [membership.userDce]: {
-            ...(members[membership.userDce] || {
-              name: `${membership.user.firstName} ${membership.user.lastName}`,
-            }),
-            id: membership.userDce,
-            count: ((members[membership.userDce] || {}).count + 1 || 1),
-            memberships: [
-              ...((members[membership.userDce] || {}).memberships || []),
-              {
-                reason: membership.reason,
-                committeeName: membership.committeeName,
-                startDate: membership.startDate,
-                endDate: membership.endDate,
-              },
-            ],
-          },
-        };
-      }, {}))
+      .then(memberships => memberships.reduce((members, membership) => ({
+        ...members,
+        [membership.userDce]: {
+          ...(members[membership.userDce] || {
+            name: `${membership.user.firstName} ${membership.user.lastName}`,
+          }),
+          id: membership.userDce,
+          count: ((members[membership.userDce] || {}).count + 1 || 1),
+          memberships: [
+            ...((members[membership.userDce] || {}).memberships || []),
+            {
+              reason: membership.reason,
+              committeeName: membership.committeeName,
+              startDate: membership.startDate,
+              endDate: membership.endDate,
+            },
+          ],
+        },
+      }), {}))
       .then(memberships => dispatch(createAction(GET_MEMBERS, memberships)))
       .catch(err => dispatch(createAction(GET_MEMBERS, err)));
   };

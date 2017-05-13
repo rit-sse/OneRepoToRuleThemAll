@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { injectAsyncReducer } from 'store';
 
 // Credit: https://gist.github.com/acdlite/a68433004f9d6b4cbc83b5cc3990c194
-export default (getComponent, reducers = [], names = []) => {
-  return class AsyncComponent extends Component {
+export default (getComponent, reducers = [], names = []) => (
+  class AsyncComponent extends Component {
 
     static component = null; // sets to prototype
     state = { component: AsyncComponent.component, error: false };
@@ -21,7 +21,7 @@ export default (getComponent, reducers = [], names = []) => {
           })
           .catch(() => {
             this.setState({
-              error: '500: somthing went wrong!',
+              error: 'Somthing went wrong!',
             });
           });
       }
@@ -38,5 +38,5 @@ export default (getComponent, reducers = [], names = []) => {
         </div>
       );
     }
-  };
-};
+  }
+);

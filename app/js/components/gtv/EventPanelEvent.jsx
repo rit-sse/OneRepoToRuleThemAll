@@ -7,25 +7,25 @@ class EventPanelsEvent extends Component {
     event: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   };
 
-  isOneDay = () => {
-    return moment(this.props.event.startDate).isSame(moment(this.props.event.endDate), 'day');
-  }
+  isOneDay = () => (
+    moment(this.props.event.startDate).isSame(moment(this.props.event.endDate), 'day')
+  )
 
-  fullStartDay = () => {
-    return moment(this.props.event.startDate).format('dddd, MMMM D');
-  }
+  fullStartDay = () => (
+    moment(this.props.event.startDate).format('dddd, MMMM D')
+  )
 
-  timeRange = () => {
-    return `${moment(this.props.event.startDate).format('h:mm a')} to ${moment(this.props.event.endDate).format('h:mm a')}`;
-  }
+  timeRange = () => (
+    `${moment(this.props.event.startDate).format('h:mm a')} to ${moment(this.props.event.endDate).format('h:mm a')}`
+  )
 
-  startDay = () => {
-    return `${moment(this.props.event.startDate).format('MMMM D')}, ${moment(this.props.event.startDate).format('h:mm a')}`;
-  }
+  startDay = () => (
+    `${moment(this.props.event.startDate).format('MMMM D')}, ${moment(this.props.event.startDate).format('h:mm a')}`
+  )
 
-  endDay = () => {
-    return `${moment(this.props.event.endDate).format('MMMM D')}, ${moment(this.props.event.endDate).format('h:mm a')}`;
-  }
+  endDay = () => (
+    `${moment(this.props.event.endDate).format('MMMM D')}, ${moment(this.props.event.endDate).format('h:mm a')}`
+  )
 
   render() {
     if (this.isOneDay()) {

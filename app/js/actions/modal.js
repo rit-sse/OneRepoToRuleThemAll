@@ -10,15 +10,13 @@ export const VIEW_MEMBERSHIP_MODAL = 'VIEW_MEMBERSHIP_MODAL';
 export const OFFICER_MODAL = 'OFFICER_MODAL';
 
 function showModal(modalType) {
-  return (id = null) => {
-    return {
-      type: SHOW_MODAL,
-      payload: {
-        id,
-        modalType,
-      },
-    };
-  };
+  return (id = null) => ({
+    type: SHOW_MODAL,
+    payload: {
+      id,
+      modalType,
+    },
+  });
 }
 
 export const showGoModal = showModal(GO_MODAL);

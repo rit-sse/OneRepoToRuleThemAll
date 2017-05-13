@@ -1,19 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Day = (props) => {
-  return (
-    <span>
-      {props.day.events.map((event, k) => {
-        return (
-          <li key={`event-${props.weekIndex}-${props.dayIndex}-${k}`}>
-            { event.name }
-          </li>
-        );
-      })}
-    </span>
-  );
-};
+const Day = props => (
+  <span>
+    {props.day.events.map((event, k) => (
+      <li key={`event-${props.weekIndex}-${props.dayIndex}-${k}`}>
+        { event.name }
+      </li>
+    ))}
+  </span>
+);
 
 Day.propTypes = {
   day: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
