@@ -27,19 +27,19 @@ export function signIn(googleUser) {
 }
 
 export function checkLogin() {
-  return (dispatch, getState, { Auth, Officers }) => {
-    return Auth.checkToken().then((user) => {
-      return Officers.all({ active: new Date() }, true).then(({ data }) => {
+  return (dispatch, getState, { Auth, Officers }) => (
+    Auth.checkToken().then(user => (
+      Officers.all({ active: new Date() }, true).then(({ data }) => {
         const officer = data.find(o => o.userDce === user.dce);
         return {
           user,
           officer,
         };
-      });
-    })
+      })
+    ))
       .then(user => dispatch(createAction(SIGN_IN, user)))
-      .catch(() => dispatch(createAction(SIGN_OUT)));
-  };
+      .catch(() => dispatch(createAction(SIGN_OUT)))
+  );
 }
 
 export function signOut() {

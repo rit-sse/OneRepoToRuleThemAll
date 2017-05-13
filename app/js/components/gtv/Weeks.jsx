@@ -4,17 +4,11 @@ import PropTypes from 'prop-types';
 import Week from './Week';
 
 
-const Weeks = (props) => {
-  return (
-    <tbody>
-      {props.weeks.map((week, i) => {
-        return (
-          <Week week={week} index={i} key={`week-${i}`} />
-        );
-      })}
-    </tbody>
-  );
-};
+const Weeks = props => (
+  <tbody>
+    {props.weeks.map((week, i) => <Week week={week} index={i} key={`week-${i}`} />)}
+  </tbody>
+);
 
 Weeks.propTypes = {
   weeks: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.object)).isRequired,

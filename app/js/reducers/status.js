@@ -37,12 +37,10 @@ export default (state = initState, action) => {
       if (state.loading[action.type]) {
         return {
           ...state,
-          loading: Object.keys(state.loading).filter(a => a !== action.type).reduce((prev, curr) => {
-            return {
-              ...prev,
-              [curr]: state.loading[curr],
-            };
-          }, {}),
+          loading: Object.keys(state.loading).filter(a => a !== action.type).reduce((prev, curr) => ({
+            ...prev,
+            [curr]: state.loading[curr],
+          }), {}),
         };
       }
       return state;

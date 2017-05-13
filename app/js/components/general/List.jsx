@@ -86,9 +86,9 @@ class List extends Component {
           {...item}
           {...itemProps}
           {...itemDispatch}
-          viewItem={viewItem.bind(null, key)}
-          editItem={editItem.bind(null, key)}
-          deleteItem={deleteItem.bind(null, key)}
+          viewItem={() => viewItem(key)}
+          editItem={() => editItem(key)}
+          deleteItem={() => deleteItem(key)}
         />
       );
     });
