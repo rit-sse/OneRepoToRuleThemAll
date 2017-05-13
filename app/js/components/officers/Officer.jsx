@@ -12,7 +12,7 @@ const Officer = ({
 }) => {
   const { firstName, lastName, image, dce } = user || {};
   return (
-    <div className="officer-box col-6 pb-3">
+    <div className="officer-box col-sm-6 col-lg-4 pb-3">
       <div className="media">
         <img className="mr-3" src={gravatar(dce, image)} alt="Officer" height={80} />
         <div className="d-flex align-self-center flex-column media-body">
