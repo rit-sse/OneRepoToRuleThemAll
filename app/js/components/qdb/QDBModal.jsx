@@ -58,7 +58,7 @@ class QDBModal extends Component {
 
     const newQuote = {
       ...values,
-      tags: values.tags.map(tag => tag.value),
+      tags: values.tags ? values.tags.map(tag => tag.value) : undefined,
     };
 
     close();
@@ -87,7 +87,7 @@ class QDBModal extends Component {
               <div className="form-group row">
                 <label className="col-sm-2 col-form-label" htmlFor="body">Body</label>
                 <div className="col-sm-10">
-                  <Field className="form-control" id="body" name="body" component="textarea" type="text" />
+                  <Field className="form-control" id="body" name="body" component="textarea" type="text" required />
                 </div>
               </div>
               <div className="form-group row">
