@@ -36,14 +36,15 @@ const QDB = ({ location }) => (
     <div className="row">
       <div className="col-12">
         <Link to="/qdb" className="title-link">
-          <h1 className="float-md-left">QDB</h1>
+          <h1 className="float-left">QDB</h1>
         </Link>
-        <div className="actions btn-group float-md-right" style={{ marginTop: '5px' }} role="group" aria-label="Basic example">
+        <div className="clearfix hidden-sm-up" />
+        <div className="actions btn-group pb-2 mt-sm-1 float-sm-right" role="group" aria-label="Basic example">
           <CreateButton any action={showQuoteModal} className="btn btn-secondary">
-            Create Quote
+            Create
           </CreateButton>
           <ControlledLinkButton path={location.pathname} className="btn btn-secondary" to="/qdb/approval">
-            Approve Quotes
+            Approve
           </ControlledLinkButton>
           <Login className="btn btn-sse" />
         </div>

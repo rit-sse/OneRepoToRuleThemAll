@@ -39,8 +39,8 @@ class Login extends Component {
 
   render() {
     return this.props.user ? (
-      <Button className={this.props.className} onClick={this.props.signOut}><i className="fa fa-user" /> SignOut</Button>
-    ) : <button className={this.props.className} key="loggedin" ref={(c) => { this.button = c; }}><i className="fa fa-user" /> Login</button>;
+      <Button className={this.props.className} onClick={this.props.signOut}><i className="fa fa-sign-out" /></Button>
+    ) : <button className={this.props.className} key="loggedin" ref={(c) => { this.button = c; }}><i className="fa fa-sign-in" /> Login</button>;
   }
 }
 

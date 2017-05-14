@@ -17,9 +17,10 @@ const Go = () => (
         <Link to="/go" className="title-link">
           <h1 className="pull-left">Go Links</h1>
         </Link>
-        <div className="btn-group pull-right" role="group">
+        <div className="clearfix hidden-sm-up" />
+        <div className="btn-group pb-2 mt-sm-1 float-sm-right" role="group">
           <CreateButton action={showGoModal} className="btn btn-secondary">
-            Add Link
+            Create
           </CreateButton>
           <Login className="btn btn-sse" />
         </div>
