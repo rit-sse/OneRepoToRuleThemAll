@@ -16,11 +16,12 @@ const Event = () => (
     <div className="row">
       <div className="col-12">
         <Link to="/events" className="title-link">
-          <h1 className="pull-left">Events</h1>
+          <h1 className="float-sm-left">Events</h1>
         </Link>
-        <div className="btn-group pull-right" style={{ marginTop: '5px' }} role="group" aria-label="Basic example">
+        <div className="clearfix hidden-sm-up" />
+        <div className="btn-group pb-2 mt-sm-1 float-sm-right" role="group" aria-label="Basic example">
           <CreateButton action={showEventModal} className="btn btn-secondary" >
-            Create Event
+            Create
           </CreateButton>
           <Login className="btn btn-sse" />
         </div>

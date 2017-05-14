@@ -20,8 +20,8 @@ const ViewMembershipsModal = ({
       <table className="table">
         <thead>
           <tr>
-            <th>Date Earned</th>
-            <th>End Date</th>
+            <th className="hidden-sm-down">Date Earned</th>
+            <th className="hidden-sm-down">End Date</th>
             <th>Committee</th>
             <th>Reason</th>
           </tr>
@@ -30,8 +30,8 @@ const ViewMembershipsModal = ({
           {
             memberships.map(({ startDate, endDate, committeeName, reason }, i) => (
               <tr key={i}>
-                <td>{moment(startDate).format('MM/DD/YYYY')}</td>
-                <td>{moment(endDate).format('MM/DD/YYYY')}</td>
+                <td className="hidden-sm-down">{moment(startDate).format('MM/DD/YYYY')}</td>
+                <td className="hidden-sm-down">{moment(endDate).format('MM/DD/YYYY')}</td>
                 <td>{committeeName}</td>
                 <td>{reason}</td>
               </tr>

@@ -14,11 +14,11 @@ const Officers = () => (
     <div className="row">
       <div className="col">
         <h1 className="pull-left">Officers</h1>
-        <div className="btn-group pull-right" style={{ marginTop: '5px' }} role="group" aria-label="Basic example">
+        <div className="clearfix hidden-sm-up" />
+        <div className="btn-group pb-2 mt-sm-1 float-sm-right" role="group" aria-label="Basic example">
           <CreateButton primary action={showOfficerModal} className="btn btn-secondary" >
-            Create Officer
+            Create
           </CreateButton>
-
           <Login className="btn btn-sse" />
         </div>
       </div>
