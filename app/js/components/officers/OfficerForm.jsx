@@ -110,7 +110,7 @@ class OfficerForm extends Component {
                 </div>
               </div>
               <div className="form-group row">
-                <label htmlFor="email" className="col-sm-2 col-form-label">Email</label>
+                <label htmlFor="email" className="col-sm-2 col-form-label">Alias</label>
                 <InputGroup className="col-sm-10">
                   <Field id="email" name="email" component={Input} />
                   <InputGroupAddon>@sse.rit.edu</InputGroupAddon>
