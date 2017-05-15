@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Field, Form, FormSection, reduxForm } from 'redux-form';
-import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, ModalFooter, Input, InputGroup, InputGroupAddon } from 'reactstrap';
 import Button from 'components/general/Button';
 import UserForm from 'containers/general/UserForm';
 import SelectInput from 'components/general/SelectInput';
@@ -111,9 +111,10 @@ class OfficerForm extends Component {
               </div>
               <div className="form-group row">
                 <label htmlFor="email" className="col-sm-2 col-form-label">Email</label>
-                <div className="col-sm-10">
-                  <Field id="email" className="form-control" name="email" component="input" />
-                </div>
+                <InputGroup className="col-sm-10">
+                  <Field id="email" name="email" component={Input} />
+                  <InputGroupAddon>@sse.rit.edu</InputGroupAddon>
+                </InputGroup>
               </div>
               <div className="form-group row">
                 <label htmlFor="committeeName" className="col-sm-2 col-form-label">Committee</label>
