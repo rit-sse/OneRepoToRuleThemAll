@@ -15,7 +15,7 @@ const Static = ({ location }) => {
   const page = getPage(location.pathname.replace(/^\//, ''));
   if (page) {
     return (
-      <div className="container page">
+      <div className="container page static">
         <div dangerouslySetInnerHTML={{ __html: page }} />
       </div>
     );
