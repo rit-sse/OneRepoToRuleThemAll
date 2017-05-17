@@ -6,11 +6,10 @@ and others want to do things, we make it happen.
 Got a project? Want to work on a project? Questions?  
 Contact projects at <projects@sse.rit.edu>, or join the `#sse-projects` slack channel.
 
-##### Contributing to projects is a great way to earn SSE membership!
+Contributing to projects is a great way to earn SSE membership!
 
 Current SSE Projects
 --------------------
-
 ### [Jukebox](https://github.com/rit-sse/Jukebox)
 
 Raspberry Pi music jukebox, with remote controlled song queueing and speakers.
@@ -54,10 +53,6 @@ Meetings: Monday, 11:00am (Check slack for changes!)
 
 Past Projects
 -------------
-
-For past projects, see our Github at https://github.com/rit-sse. The following is
-a selection of our most recent projects.
-
 ### [LED Marquee](https://github.com/rit-sse/led-marquee)
 
 Large, high-powered LED matrix with games and colors
@@ -82,3 +77,4 @@ Multiplayer Starfox-style asteroid dodger.
 
 Virtual Reality three dimensional image painting program.
 
+For past projects, see our Github at https://github.com/rit-sse. The following is a selection of our most recent projects.
