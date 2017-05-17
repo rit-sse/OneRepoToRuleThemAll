@@ -2,7 +2,7 @@ import React from 'react';
 import MemberList from 'containers/scoreboard/MembersList';
 
 const MembershipList = () => (
-  <div className="offset-1 col-10 offset-md-2 col-md-8">
+  <div className="offset-sm-1 col-sm-10 offset-md-2 col-md-8">
     <table className="table table-striped table-bordered">
       <thead>
         <tr>

@@ -14,28 +14,24 @@ class EventPanels extends Component { // eslint-disable-line react/prefer-statel
         <div className="gtv-event-header">
           <h3>Upcoming Events</h3>
         </div>
-        { this.props.events.map((eventSet, i) => {
-          return (
-            <div
-              key={`wrapper${i}`}
-              id={`wrapper${i}`}
-              className="gtv-panel-wrapper"
-            >
-              <div className="gtv-event-panel">
-                { eventSet.map((event, j) => {
-                  return (
-                    <div className="gtv-event" id={`event-${i}-${j}`} key={`event-${event.id}`}>
-                      <div className="gtv-event-title">
-                        { event.name }
-                      </div>
-                      <Event event={event} />
-                    </div>
-                  );
-                }) }
-              </div>
+        {this.props.events.map((eventSet, i) => (
+          <div
+            key={`wrapper${i}`}
+            id={`wrapper${i}`}
+            className="gtv-panel-wrapper"
+          >
+            <div className="gtv-event-panel">
+              {eventSet.map((event, j) => (
+                <div className="gtv-event" id={`event-${i}-${j}`} key={`event-${event.id}`}>
+                  <div className="gtv-event-title">
+                    {event.name}
+                  </div>
+                  <Event event={event} />
+                </div>
+              ))}
             </div>
-          );
-        }) }
+          </div>
+        ))}
       </section>
     );
   }

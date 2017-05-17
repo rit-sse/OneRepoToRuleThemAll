@@ -5,9 +5,7 @@ import { getTags } from 'actions/tags';
 import QDBModal from 'components/qdb/QDBModal';
 
 function getQuote(quotes, id) {
-  const quote = quotes.find((q) => {
-    return q.id === id;
-  });
+  const quote = quotes.find(q => q.id === id);
 
   return quote ? {
     ...quote,

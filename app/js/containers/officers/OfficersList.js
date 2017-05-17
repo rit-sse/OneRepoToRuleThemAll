@@ -12,10 +12,7 @@ function mapStateToProps({ auth, officers }, { primary = false }) {
       showActions: auth.officer && auth.officer.primaryOfficer,
     },
     wrapperProps: {
-      className: 'row mx-auto',
-      style: {
-        width: '80%',
-      },
+      className: 'row',
     },
   };
 }

@@ -5,15 +5,13 @@ export const HOVER = 'HOVER';
 export const UNHOVER = 'UNHOVER';
 
 function hover(hoverType, primaryKey = 'id') {
-  return (id) => {
-    return {
-      type: HOVER,
-      payload: {
-        [primaryKey]: id,
-        hoverType,
-      },
-    };
-  };
+  return id => ({
+    type: HOVER,
+    payload: {
+      [primaryKey]: id,
+      hoverType,
+    },
+  });
 }
 
 export const hoverMentor = hover(MENTORS);

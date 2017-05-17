@@ -1,5 +1,30 @@
 @import 'variables';
 
+@media (max-width: ($BREAK_SM - 1)) {
+  .navbar-sse {
+    .dropdown-toggle {
+      display: none;
+    }
+    .dropdown-menu {
+      border: 0;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      display: block;
+      background-color: transparent;
+      .dropdown-item {
+        color: $WHITE;
+        padding: 0 12px;
+        font-size: 20px;
+        background-color: transparent;
+      }
+      .dropdown-divider {
+        display: none;
+      }
+    }
+  }
+}
+
 .navbar-sse {
   background-color: $PRIMARY;
   min-height: 79px;
@@ -14,12 +39,16 @@
     }
   }
 
+  .dropdown-menu {
+    left: -160px;
+  }
+
   .navbar-toggler.navbar-toggler-right {
     margin-top: 11.5px;
   }
 }
 
-@media (min-width: 767px) {
+@media (min-width: $BREAK_MD) {
   .navbar-sse {
     padding-left: 12%;
     padding-right: 12%;

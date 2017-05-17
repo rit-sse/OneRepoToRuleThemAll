@@ -7,15 +7,14 @@ import { viewMembershipModal } from 'actions/modal';
 function mapStateToProps(store) {
   return {
     item: Member,
-    items: Object.keys(store.members).sort((a, b) => {
-      return store.members[b].count - store.members[a].count;
-    }).map((el, index) => {
-      return {
+    items: Object
+      .keys(store.members)
+      .sort((a, b) => store.members[b].count - store.members[a].count)
+      .map((el, index) => ({
         ...store.members[el],
         dce: el,
         index: index + 1,
-      };
-    }),
+      })),
   };
 }
 
