@@ -17,9 +17,6 @@
 
   &:hover {
     background-color: darken($WHITE, 10%);
-    .heading .actions {
-      display: block;
-    }
   }
 
   .heading {
@@ -27,18 +24,6 @@
     .title {
       float: left;
       font-weight: 600;
-    }
-    .actions {
-      display: none;
-      float: right;
-      .btn-small {
-        border-radius: 0;
-        font-size: 12px;
-        padding: .25rem .5rem;
-      }
-      &.shown {
-        display: block;
-      }
     }
     &:after {
       clear: both;

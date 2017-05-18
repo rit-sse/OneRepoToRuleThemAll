@@ -1,0 +1,29 @@
+@import 'variables';
+
+.actions-container {
+  position: relative;
+
+  .actions {
+    opacity: 0;
+    transition: .5s ease;
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    .btn-small {
+      border-radius: 0;
+      font-size: 12px;
+      padding: .25rem .5rem;
+    }
+    &.shown {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: ($BREAK_SM -1)) {
+    &:hover, &:focus {
+      .actions {
+        opacity: 1;
+      }
+    }
+  }
+}

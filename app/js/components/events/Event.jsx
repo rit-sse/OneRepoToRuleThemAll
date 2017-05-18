@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import SwipeArea from 'components/general/SwipeArea';
+import Actions from 'components/general/Actions';
 
 import 'scss/pane.scss';
 import 'scss/event.scss';
+import 'scss/actions.scss';
 
 class Event extends Component {
   static propTypes = {
@@ -18,17 +20,11 @@ class Event extends Component {
     deleteItem: PropTypes.func.isRequired,
   };
 
-  constructor() {
-    super();
-
-    this.getTime = this.getTime.bind(this);
-  }
-
   state = {
     shown: false,
   };
 
-  getTime() {
+  getTime = () => {
     const date = 'dddd M/DD';
     const time = 'h:mm a';
     const start = moment(this.props.startDate);
@@ -57,16 +53,22 @@ class Event extends Component {
   };
 
   render() {
+    const {
+      loggedIn,
+      editItem,
+      deleteItem,
+    } = this.props;
+
     return (
-      <SwipeArea onLeft={this.showActions} onRight={this.hideActions} className="pane event">
+      <SwipeArea onLeft={this.showActions} onRight={this.hideActions} className="pane event actions-container">
         <div className="heading">
           <h4 className="title">{this.props.name}</h4>
-          { this.props.loggedIn ? (
-            <div className={this.state.shown ? 'actions shown' : 'actions'}>
-              <button className="btn btn-small btn-info" onClick={this.props.editItem}><i className="fa fa-pencil" aria-hidden="true" /> Edit</button>
-              <button className="btn btn-small btn-danger" onClick={this.props.deleteItem}><i className="fa fa-trash-o" aria-hidden="true" /> Delete</button>
-            </div>
-            ) : null }
+          <Actions
+            show={loggedIn}
+            shown={this.state.shown}
+            editItem={editItem}
+            deleteItem={deleteItem}
+          />
         </div>
         <p className="event-time">{this.getTime()}</p>
         <p className="event-location">Location: {this.props.location}</p>
