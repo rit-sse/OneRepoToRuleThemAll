@@ -19,7 +19,7 @@
     }
   }
 
-  @media (max-width: ($BREAK_SM -1)) {
+  @media (min-width: $BREAK_SM) {
     &:hover, &:focus {
       .actions {
         opacity: 1;
@@ -27,3 +27,4 @@
     }
   }
 }
+
