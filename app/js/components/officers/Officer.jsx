@@ -52,7 +52,7 @@ class Officer extends Component {
     const emailAlias = `${email}@sse.rit.edu`;
 
     return (
-      <SwipeArea onLeft={this.showActions} onRight={this.hideActions} className="actions-container col-sm-6 col-lg-4 pb-3">
+      <SwipeArea onLeft={this.showActions} onRight={this.hideActions} className="actions-container col-sm-6 col-lg-3 pb-3">
         <div className="media">
           <img className="mr-3" src={gravatar(dce, image)} alt="Officer" height={80} />
           <div className="d-flex align-self-center flex-column media-body">
