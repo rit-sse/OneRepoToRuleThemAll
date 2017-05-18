@@ -7,10 +7,12 @@ const Officer = ({
   title,
   user,
   editItem,
+  email,
   deleteItem,
   showActions,
 }) => {
   const { firstName, lastName, image, dce } = user || {};
+  const emailAlias = `${email}@sse.rit.edu`;
   return (
     <div className="officer-box col-sm-6 col-lg-4 pb-3">
       <div className="media">
@@ -19,6 +21,11 @@ const Officer = ({
           <h5 className="mb-0">{title}</h5>
           <p className="m-0">
             {firstName} {lastName}
+          </p>
+          <p className="m-0">
+            <a href={`mailto:${emailAlias}`}>
+              {emailAlias}
+            </a>
           </p>
         </div>
         { showActions && (
@@ -38,6 +45,7 @@ const Officer = ({
 
 Officer.propTypes = {
   title: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
   user: PropTypes.shape({
     firstName: PropTypes.string,
     lastname: PropTypes.string,
