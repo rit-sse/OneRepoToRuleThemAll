@@ -6,7 +6,6 @@ import Actions from 'components/general/Actions';
 
 import 'scss/pane.scss';
 import 'scss/event.scss';
-import 'scss/actions.scss';
 
 class Event extends Component {
   static propTypes = {
