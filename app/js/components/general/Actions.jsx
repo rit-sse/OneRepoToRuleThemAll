@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import 'scss/actions.scss';
+
 const Actions = ({
   show,
   shown,

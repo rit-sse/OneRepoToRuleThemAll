@@ -5,7 +5,6 @@ import SwipeArea from 'components/general/SwipeArea';
 import Actions from 'components/general/Actions';
 
 import 'scss/pane.scss';
-import 'scss/actions.scss';
 
 class PendingQuote extends Component {
   static propTypes = {

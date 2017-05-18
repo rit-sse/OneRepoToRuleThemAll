@@ -4,8 +4,6 @@ import { gravatar } from 'utils/images';
 import SwipeArea from 'components/general/SwipeArea';
 import Actions from 'components/general/Actions';
 
-import 'scss/actions.scss';
-
 class Officer extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
