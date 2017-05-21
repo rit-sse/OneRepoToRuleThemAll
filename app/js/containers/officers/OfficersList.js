@@ -9,7 +9,7 @@ function mapStateToProps({ auth, officers }, { primary = false }) {
     item: Officer,
     items: Object.values(officers).filter(({ primaryOfficer }) => primaryOfficer === primary),
     itemProps: {
-      showActions: auth.officer && auth.officer.primaryOfficer,
+      showActions: !!(auth.officer && auth.officer.primaryOfficer),
     },
     wrapperProps: {
       className: 'row',
