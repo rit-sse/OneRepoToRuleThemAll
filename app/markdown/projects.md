@@ -77,4 +77,4 @@ Multiplayer Starfox-style asteroid dodger.
 
 Virtual Reality three dimensional image painting program.
 
-For past projects, see our Github at https://github.com/rit-sse. The following is a selection of our most recent projects.
+To check out all our past and present projects, visit our Github at [https://github.com/rit-sse](https://github.com/rit-sse).
