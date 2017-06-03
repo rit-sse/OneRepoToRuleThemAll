@@ -48,7 +48,6 @@ class SwipeArea extends Component {
     }, false);
 
     this.area.addEventListener('touchmove', (e) => {
-      e.preventDefault();
       const t = e.touches[0];
       swipeDet.eX = t.screenX;
       swipeDet.eY = t.screenY;
