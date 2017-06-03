@@ -14,7 +14,7 @@ const Mentoring = () => (
   <div className="container">
     <div className="row">
       <div className="col">
-        <h1 className="pull-left">Mentoring</h1>
+        <h2 className="pull-left">Mentoring</h2>
         <div className="btn-group pull-right" style={{ marginTop: '5px' }} role="group" aria-label="Login Button">
           <Login className="btn btn-sse" />
         </div>
