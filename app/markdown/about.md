@@ -1,4 +1,5 @@
-### What we're all about
+What we're all about
+--------------------
 
 The Society of Software Engineers (SSE) is a student organization at RIT composed
 of software engineers, computer scientists, and other students. We have over
@@ -9,7 +10,8 @@ closely with companies in the software industry to provide our members with
 potential career opportunities.
 
 
-### What we do
+What we do
+----------
 
 Our lab [(GOL-1670)](https://maps.rit.edu/?zoom=20&lat=43.08384053670899&lng=-77.67983857233527) is open for mentoring on weekdays from 10:00AM to 6:00PM
 and any student, can come and ask questions for any class in the Software
@@ -29,7 +31,8 @@ weekend. Previous Rapid Development projects include a capture the flag computer
 game, an anonymous file transfer system, and an adventure game resembling Pokémon.
 
 
-### Get involved
+Get involved
+------------
 
 Although we may be biased, the members of the SSE are friendly and enjoy
 meeting new people. So by all means please stop by the lab sometime!
