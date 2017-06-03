@@ -15,7 +15,7 @@ const Go = () => (
     <div className="row">
       <div className="col-12">
         <Link to="/go" className="title-link">
-          <h1 className="pull-left">Go Links</h1>
+          <h2 className="pull-left">Go Links</h2>
         </Link>
         <div className="clearfix hidden-sm-up" />
         <div className="btn-group pb-2 mt-sm-1 float-sm-right" role="group">
