@@ -1,8 +1,8 @@
+import { scrollDone } from 'actions/scroll';
 import * as utils from './utils';
 
 export const GO = 'GO';
 export const GET_LINKS = 'GET_LINKS';
-export const GET_LINKS_PAGE = 'GET_LINKS_PAGE';
 export const CREATE_LINK = 'CREATE_LINK';
 export const UPDATE_LINK = 'UPDATE_LINK';
 export const DESTORY_LINK = 'DESTORY_LINK';
@@ -13,22 +13,18 @@ const loading = utils.createLoading(GO);
 
 export function getLinks(getNext) {
   return (dispatch, getState, { Links }) => {
-    if (getNext) {
-      if (getState().status.loading[GET_LINKS] || getState().status.loading[GET_LINKS_PAGE]) return;
-      dispatch(loading(GET_LINKS_PAGE));
-      const page = getState().go.pagination.currentPage + 1;
-      Links.all({
-        sort: 'DESC',
-        page,
-      }).then(data => dispatch(createAction(GET_LINKS_PAGE, data)))
-        .catch(err => dispatch(createAction(GET_LINKS_PAGE, err)));
-    } else {
-      dispatch(loading(GET_LINKS));
-      Links.all({
-        sort: 'DESC',
-      }).then(data => dispatch(createAction(GET_LINKS, data)))
-        .catch(err => dispatch(createAction(GET_LINKS, err)));
-    }
+    if (getState().status.loading[GET_LINKS]) return;
+    dispatch(loading(GET_LINKS));
+    Links.next({ sort: 'DESC' })
+      .then((data) => {
+        if (data.length > 0) {
+          dispatch(createAction(GET_LINKS, { links: data, paged: getNext }));
+        } else {
+          dispatch(scrollDone());
+          dispatch(createAction(GET_LINKS, { links: [], paged: getNext }));
+        }
+      })
+      .catch(err => dispatch(createAction(GET_LINKS, err)));
   };
 }
 
