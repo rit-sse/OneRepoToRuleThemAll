@@ -15,7 +15,6 @@ export function getMembers(active = moment().toISOString()) {
   return (dispatch, getState, { Memberships }) => {
     dispatch(loading(GET_MEMBERS));
     Memberships.all({ active }, true)
-      .then(a => a.data)
       .then(memberships => memberships.reduce((members, membership) => ({
         ...members,
         [membership.userDce]: {
@@ -44,7 +43,7 @@ export function getMemberships(active = moment().toISOString()) {
   return (dispatch, getState, { Memberships }) => {
     dispatch(loading(GET_MEMBERSHIPS));
     Memberships.all({ active, approved: 'null' }, true)
-      .then(({ data }) => dispatch(createAction(GET_MEMBERSHIPS, data)))
+      .then(data => dispatch(createAction(GET_MEMBERSHIPS, data)))
       .catch(err => dispatch(createAction(GET_MEMBERSHIPS, err)));
   };
 }

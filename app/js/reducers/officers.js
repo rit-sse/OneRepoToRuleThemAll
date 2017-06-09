@@ -8,7 +8,7 @@ import {
 export default function officers(state = {}, action) {
   switch (action.type) {
     case GET_OFFICERS:
-      return action.payload.data.reduce((obj, officer) => ({
+      return action.payload.reduce((obj, officer) => ({
         ...obj,
         [officer.id]: officer,
       }), {});
