@@ -4,10 +4,10 @@ import GoLink from 'components/go/GoLink';
 import { showGoModal } from 'actions/modal';
 import { getLinks, destoryLink } from 'actions/go';
 
-function mapStateToProps({ go, auth }) {
+function mapStateToProps({ go, auth, scroll }) {
   return {
     scroll: true,
-    scrollDone: go.pagination.totalPages <= go.pagination.currentPage || !auth.officer,
+    scrollDone: scroll || !auth.officer,
     item: GoLink,
     wrapper: 'ul',
     wrapperProps: { className: 'list-group' },
