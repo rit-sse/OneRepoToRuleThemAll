@@ -35,9 +35,7 @@
     "blueimp-md5": "^2.7.0",
     "classnames": "^2.2.5",
     "connected-react-router": "^4.2.1",
-    "eslint-config-sse": "github:rit-sse/eslint",
     "express": "^4.15.2",
-    "extract-text-webpack-plugin": "^2.1.0",
     "history": "^4.6.1",
     "moment": "^2.18.1",
     "moment-range": "^3.0.3",
@@ -57,8 +55,8 @@
     "redux-devtools": "^3.4.0",
     "redux-form": "^6.7.0",
     "redux-thunk": "^2.2.0",
-    "sse-api-client": "git+https://github.com/rit-sse/api-client.git",
-    "torque-react": "^2.0.0"
+    "sse-api-client": "git+https://github.com/rit-sse/api-client.git#pagination",
+    "torque-react": "2.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -78,6 +76,7 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.10.3",
+    "extract-text-webpack-plugin": "^2.1.0",
     "favicons-webpack-plugin": "0.0.7",
     "file-loader": "^0.9.0",
     "html-loader": "^0.4.5",

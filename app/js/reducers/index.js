@@ -9,6 +9,7 @@ import user from './user';
 import hover from './hover';
 import modal from './modal';
 import status from './status';
+import scroll from './scroll';
 import officers from './officers';
 import committees from './committees';
 import { members, memberships } from './members';
@@ -23,6 +24,7 @@ export default function createReducer(asyncReducers = {}) {
       hover,
       modal,
       status,
+      scroll,
       members,
       officers,
       committees,
