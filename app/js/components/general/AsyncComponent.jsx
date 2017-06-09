@@ -19,7 +19,10 @@ export default (getComponent, reducers = [], names = []) => (
             AsyncComponent.component = component; // perm sets component on prototype
             this.setState({ component });
           })
-          .catch(() => {
+          .catch((e) => {
+            if (process.env.NODE_ENV === 'development') { // log errors in dev
+              console.error(e); // eslint-disable-line
+            }
             this.setState({
               error: 'Somthing went wrong!',
             });
@@ -28,8 +31,8 @@ export default (getComponent, reducers = [], names = []) => (
     }
 
     render() {
-      if (this.state.component) return <this.state.component {...this.props} />;
       if (this.state.error) return <div>{this.state.error}</div>;
+      if (this.state.component) return <this.state.component {...this.props} />;
       return (
         <div className="row">
           <div className="col-12">

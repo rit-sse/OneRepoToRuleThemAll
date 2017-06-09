@@ -10,6 +10,9 @@ export default store => next => (action) => {
       },
     });
   } else if (action.error && action.meta && action.payload && !action.meta.ignore) {
+    if (process.env.NODE_ENV === 'development') { // log errors in dev
+      console.error(action.payload); // eslint-disable-line
+    }
     return next({
       type: ERROR_STATUS,
       error: true,

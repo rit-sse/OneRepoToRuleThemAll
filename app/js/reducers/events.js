@@ -1,29 +1,21 @@
+import { combineReducers } from 'redux';
+import moment from 'moment';
 import {
   GET_EVENTS,
-  GET_EVENT_PAGE,
   GET_THREE_WEEK_EVENTS,
   CREATE_EVENT,
   UPDATE_EVENT,
   DESTROY_EVENT,
   NEXT_EVENT,
 } from 'actions/events';
-import moment from 'moment';
-
-import { combineReducers } from 'redux';
-
-const initPagination = {
-  currentPage: 0,
-  totalPages: 1,
-};
 
 function all(state = [], action) {
   switch (action.type) {
     case GET_EVENTS:
-      return action.payload.data;
-    case GET_EVENT_PAGE:
+      if (!action.payload.paged) return action.payload.events;
       return [
         ...state,
-        ...action.payload.data,
+        ...action.payload.events,
       ];
     case CREATE_EVENT:
       return [
@@ -55,7 +47,7 @@ function image(state = [], action) {
   switch (action.type) {
     case GET_EVENTS: {
       // I want to come up with a better way to do this. I'm too tired right now.
-      const newEvents = action.payload.data.filter(event => event.image);
+      const newEvents = action.payload.events.filter(event => event.image);
       const newIds = newEvents.map(event => event.id).sort();
       const oldIds = state.map(event => event.id).sort();
 
@@ -74,28 +66,8 @@ function image(state = [], action) {
   }
 }
 
-function pagination(state = initPagination, action) {
-  switch (action.type) {
-    case GET_EVENTS:
-      return {
-        ...state,
-        currentPage: action.payload.currentPage,
-        totalPages: Math.ceil(action.payload.total / action.payload.perPage),
-      };
-    case GET_EVENT_PAGE:
-      return {
-        ...state,
-        currentPage: action.payload.currentPage,
-        totalPages: Math.ceil(action.payload.total / action.payload.perPage),
-      };
-    default:
-      return state;
-  }
-}
-
 export default combineReducers({
   all,
-  pagination,
   threeWeek,
   image,
 });
