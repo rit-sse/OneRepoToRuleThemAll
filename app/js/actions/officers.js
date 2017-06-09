@@ -12,9 +12,8 @@ const loading = utils.createLoading(OFFICERS);
 export function getOfficers() {
   return (dispatch, getState, { Officers }) => {
     dispatch(loading(GET_OFFICERS));
-    Officers.all({
-      active: new Date(),
-    }, true).then(data => dispatch(createAction(GET_OFFICERS, data)))
+    Officers.all({ active: new Date() }, true)
+      .then(data => dispatch(createAction(GET_OFFICERS, data)))
       .catch(err => dispatch(createAction(GET_OFFICERS, err)));
   };
 }
