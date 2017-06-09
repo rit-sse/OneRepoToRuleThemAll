@@ -8,7 +8,7 @@ import qs from 'qs';
 function mapStateToProps(store) {
   return {
     scroll: true,
-    scrollDone: store.quotes.pagination.totalPages <= store.quotes.pagination.currentPage,
+    scrollDone: store.scroll,
     item: Quote,
     itemProps: {
       loggedIn: !!store.auth.officer,

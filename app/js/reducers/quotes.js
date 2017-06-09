@@ -1,26 +1,18 @@
+import { combineReducers } from 'redux';
 import {
   GET_QUOTES,
-  GET_QUOTE_PAGE,
   APPROVE_QUOTE,
   UPDATE_QUOTE,
   DESTROY_QUOTE,
 } from 'actions/quotes';
 
-import { combineReducers } from 'redux';
-
-const initPagination = {
-  currentPage: 0,
-  totalPages: 1,
-};
-
 function all(state = [], action) {
   switch (action.type) {
     case GET_QUOTES:
-      return action.payload.data;
-    case GET_QUOTE_PAGE:
+      if (!action.payload.paged) return action.payload.quotes;
       return [
         ...state,
-        ...action.payload.data,
+        ...action.payload.quotes,
       ];
     case APPROVE_QUOTE:
       return state.filter(quote => quote.id !== action.payload);
@@ -36,26 +28,6 @@ function all(state = [], action) {
   }
 }
 
-function pagination(state = initPagination, action) {
-  switch (action.type) {
-    case GET_QUOTES:
-      return {
-        ...state,
-        currentPage: action.payload.currentPage,
-        totalPages: Math.ceil(action.payload.total / action.payload.perPage),
-      };
-    case GET_QUOTE_PAGE:
-      return {
-        ...state,
-        currentPage: action.payload.currentPage,
-        totalPages: Math.ceil(action.payload.total / action.payload.perPage),
-      };
-    default:
-      return state;
-  }
-}
-
 export default combineReducers({
   all,
-  pagination,
 });
