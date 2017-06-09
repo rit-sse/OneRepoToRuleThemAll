@@ -12,7 +12,7 @@ function filterEvents(events, filter) {
 function mapStateToProps(store, props) {
   return {
     scroll: true,
-    scrollDone: store.events.pagination.totalPages <= store.events.pagination.currentPage,
+    scrollDone: store.scroll,
     item: Event,
     itemProps: {
       loggedIn: !!store.auth.officer,
