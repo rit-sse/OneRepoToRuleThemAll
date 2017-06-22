@@ -3,9 +3,12 @@ import OfficerForm from 'components/officers/OfficerForm';
 import { hideModal, OFFICER_MODAL } from 'actions/modal';
 import { createOfficer, updateOfficer } from 'actions/officers';
 import { getCommittees } from 'actions/committees';
+import { formValueSelector } from 'redux-form';
 import moment from 'moment';
 
-function mapStateToProps({ modal, committees, officers }) {
+const selector = formValueSelector('officer');
+
+function mapStateToProps({ modal, committees, officers, ...state }) {
   const officerObj = officers[modal.id];
   const officer = officerObj ? {
     ...officerObj,
@@ -15,6 +18,7 @@ function mapStateToProps({ modal, committees, officers }) {
 
   return {
     officer,
+    primaryOfficerValue: selector(state, 'primaryOfficer'),
     isOpen: modal.modalType === OFFICER_MODAL,
     committees: committees.map(committee => ({ label: committee.name, value: committee.name })),
   };
