@@ -10,10 +10,9 @@ import asyncComponent from 'components/general/AsyncComponent';
 
 import 'scss/app.scss';
 
-// Let webpack pick what chunks these end up in
-const Static = asyncComponent(() => import('pages/Static'));
-const Officers = asyncComponent(() => import('pages/Officers'));
-const Scoreboard = asyncComponent(() => import('pages/Scoreboard'));
+const Static = asyncComponent(() => import(/* webpackChunkName: "Static" */ 'pages/Static'));
+const Officers = asyncComponent(() => import(/* webpackChunkName: "Officers" */ 'pages/Officers'));
+const Scoreboard = asyncComponent(() => import(/* webpackChunkName: "Scoreboard" */ 'pages/Scoreboard'));
 
 // Split out the reducers and tag the reducer chunks to the pages that require that reducer
 // This forces webpack to chunk certain things together (like qdb + qdb reducer)
