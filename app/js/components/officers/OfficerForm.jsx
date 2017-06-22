@@ -70,10 +70,10 @@ class OfficerForm extends Component {
       startDate: moment(values.startDate).utc(),
       endDate: moment(values.endDate).utc(),
       committeeName: do { /* eslint-disable */
-        if (values.committeeName) {
-          values.committeeName.value;
-        } else if (values.primaryOfficer) {
+        if (values.primaryOfficer) {
           'General';
+        } else if (values.committeeName) {
+          values.committeeName.value;
         } else {
           undefined;
         } /* eslint-enable */
