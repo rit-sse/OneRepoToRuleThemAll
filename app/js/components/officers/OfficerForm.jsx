@@ -24,6 +24,7 @@ class OfficerForm extends Component {
         image: PropTypes.string,
       }),
     }),
+    primaryOfficerValue: PropTypes.bool,
     committees: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.string,
       value: PropTypes.string,
@@ -40,6 +41,7 @@ class OfficerForm extends Component {
 
   static defaultProps = {
     officer: null,
+    primaryOfficerValue: false,
   };
 
   componentDidMount() {
@@ -98,6 +100,7 @@ class OfficerForm extends Component {
       handleSubmit,
       committees,
       autofill,
+      primaryOfficerValue,
     } = this.props;
 
     const updateOrCreate = officer ? 'Update' : 'Create';
@@ -127,7 +130,7 @@ class OfficerForm extends Component {
               <div className="form-group row">
                 <label htmlFor="committeeName" className="col-sm-2 col-form-label">Committee</label>
                 <div className="col-sm-10">
-                  <Field id="committeeName" name="committeeName" component={SelectInput} options={committees} />
+                  <Field id="committeeName" disabled={primaryOfficerValue} input={{ value: primaryOfficerValue ? 'General' : undefined }} name="committeeName" component={SelectInput} options={committees} />
                 </div>
               </div>
               <div className="form-check">
