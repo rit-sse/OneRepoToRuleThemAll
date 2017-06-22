@@ -1,5 +1,5 @@
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const InlineChunkWebpackPlugin = require('html-webpack-inline-chunk-plugin');
+const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -8,15 +8,15 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    main: './app/js/app.jsx',
-    vendor1: [
+    Main: './app/js/app.jsx',
+    Vendor1: [
       'redux',
       'moment',
       'redux-form',
       'react-redux',
       'reactstrap-tether',
     ],
-    vendor2: [
+    Vendor2: [
       'react',
       'react-dom',
       'react-router',
@@ -38,6 +38,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.NamedChunksPlugin(),
     new FaviconsWebpackPlugin(path.resolve('./app/img/icon.png')),
     new webpack.DefinePlugin({
       'process.env': {
@@ -45,19 +46,23 @@ module.exports = {
         API_ROOT: JSON.stringify(process.env.API_ROOT || '/api/v2/'),
       },
     }),
-    new webpack.optimize.CommonsChunkPlugin({ name: ['vendor1', 'vendor2', 'manifest'], minChunks: Infinity }),
-    new webpack.optimize.CommonsChunkPlugin({ async: 'Async-4', minChunks: 4 }),
-    new webpack.optimize.CommonsChunkPlugin({ async: 'Async-3', minChunks: 3 }),
-    new webpack.optimize.CommonsChunkPlugin({ async: 'Async-2', minChunks: 2 }),
+    // new webpack.optimize.ModuleConcatenationPlugin(),
+    new webpack.optimize.CommonsChunkPlugin({ name: ['Vendor1', 'Vendor2'], minChunks: Infinity }),
+    new webpack.optimize.CommonsChunkPlugin({ async: 'Async4', minChunks: 4 }),
+    new webpack.optimize.CommonsChunkPlugin({ async: 'Async3', minChunks: 3 }),
+    new webpack.optimize.CommonsChunkPlugin({ async: 'Async2', minChunks: 2 }),
     new webpack.optimize.MinChunkSizePlugin({ minChunkSize: 8192 }),
+    new ChunkManifestPlugin({
+      filename: 'manifest.json',
+      manifestVariable: 'webpackManifest',
+      inlineManifest: true,
+    }),
     new HtmlWebpackPlugin({
+      chunksSortMode: 'dependency',
       title: 'Society of Software Engineers',
       filename: '../index.html',
       template: './app/index.ejs',
       urlRoot: 'https://sse.rit.edu',
-    }),
-    new InlineChunkWebpackPlugin({
-      inlineChunks: ['manifest'],
     }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.optimize.UglifyJsPlugin({
