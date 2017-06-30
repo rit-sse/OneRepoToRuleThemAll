@@ -5,6 +5,7 @@ import Login from 'containers/general/Login';
 import Status from 'containers/general/Status';
 import OfficersList from 'containers/officers/OfficersList';
 import OfficerForm from 'containers/officers/OfficerForm';
+import DeleteOfficerModal from 'containers/officers/DeleteOfficerModal';
 import CreateButton from 'containers/general/CreateButton';
 import { showOfficerModal } from 'actions/modal';
 import 'scss/page.scss';
@@ -49,6 +50,7 @@ const Officers = () => (
       </div>
     </div>
     <OfficerForm />
+    <DeleteOfficerModal />
   </div>
 );
 
