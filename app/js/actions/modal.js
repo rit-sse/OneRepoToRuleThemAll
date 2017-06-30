@@ -8,6 +8,7 @@ export const MENTOR_MODAL = 'MENTOR_MODAL';
 export const ADD_MEMBERSHIP_MODAL = 'ADD_MEMBERSHIP_MODAL';
 export const VIEW_MEMBERSHIP_MODAL = 'VIEW_MEMBERSHIP_MODAL';
 export const OFFICER_MODAL = 'OFFICER_MODAL';
+export const DELETE_OFFICER_MODAL = 'DELETE_OFFICER_MODAL';
 
 function showModal(modalType) {
   return (id = null) => ({
@@ -26,6 +27,7 @@ export const showQuoteModal = showModal(QUOTE_MODAL);
 export const showOfficerModal = showModal(OFFICER_MODAL);
 export const addMembershipModal = showModal(ADD_MEMBERSHIP_MODAL);
 export const viewMembershipModal = showModal(VIEW_MEMBERSHIP_MODAL);
+export const deleteOfficerModal = showModal(DELETE_OFFICER_MODAL);
 
 export function hideModal() {
   return {
