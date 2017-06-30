@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import List from 'components/general/List';
-import { getOfficers, destroyOfficer } from 'actions/officers';
-import { showOfficerModal } from 'actions/modal';
+import { getOfficers } from 'actions/officers';
+import { showOfficerModal, deleteOfficerModal } from 'actions/modal';
 import Officer from 'components/officers/Officer';
 
 function mapStateToProps({ auth, officers }, { primary = false }) {
@@ -20,7 +20,7 @@ function mapStateToProps({ auth, officers }, { primary = false }) {
 function mapDispatchToProps(dispatch) {
   return {
     getItems: () => dispatch(getOfficers()),
-    deleteItem: id => dispatch(destroyOfficer(id)),
+    deleteItem: id => dispatch(deleteOfficerModal(id)),
     editItem: id => dispatch(showOfficerModal(id)),
   };
 }

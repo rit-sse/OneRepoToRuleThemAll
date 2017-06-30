@@ -19,7 +19,7 @@ export default function officers(state = {}, action) {
         [action.payload.id]: action.payload,
       };
     case DESTROY_OFFICER: {
-      const { [action.payload.id]: omit, ...rest } = state; // eslint-disable-line no-unused-vars
+      const { [action.payload]: omit, ...rest } = state; // eslint-disable-line no-unused-vars
       return rest;
     }
     default:
