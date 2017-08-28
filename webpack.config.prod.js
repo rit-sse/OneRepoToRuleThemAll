@@ -1,5 +1,4 @@
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -52,11 +51,6 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({ name: 'Main', async: 'Async3', minChunks: 3 }),
     new webpack.optimize.CommonsChunkPlugin({ name: 'Main', async: 'Async2', minChunks: 2 }),
     new webpack.optimize.MinChunkSizePlugin({ minChunkSize: 8192 }),
-    new ChunkManifestPlugin({
-      filename: 'manifest.json',
-      manifestVariable: 'webpackManifest',
-      inlineManifest: true,
-    }),
     new HtmlWebpackPlugin({
       chunksSortMode: 'dependency',
       title: 'Society of Software Engineers',
