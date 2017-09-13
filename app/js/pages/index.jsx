@@ -43,15 +43,16 @@ const QDB = asyncComponent(
   ['tags', 'quotes'],
 );
 
-const Mentoring = asyncComponent(
-  () => import(/* webpackChunkName: "Mentoring" */ 'pages/Mentoring'),
-  [
-    () => import(/* webpackChunkName: "Mentoring" */ 'reducers/shifts'),
-    () => import(/* webpackChunkName: "Mentoring" */ 'reducers/mentors'),
-    () => import(/* webpackChunkName: "Mentoring" */ 'reducers/specialties'),
-  ],
-  ['shifts', 'mentors', 'specialties'],
-);
+// Uncomment if we ever fix mentoring
+// const Mentoring = asyncComponent(
+// () => import(/* webpackChunkName: "Mentoring" */ 'pages/Mentoring'),
+// [
+//   () => import(/* webpackChunkName: "Mentoring" */ 'reducers/shifts'),
+//   () => import(/* webpackChunkName: "Mentoring" */ 'reducers/mentors'),
+//   () => import(/* webpackChunkName: "Mentoring" */ 'reducers/specialties'),
+// ],
+// ['shifts', 'mentors', 'specialties'],
+// );
 
 const Root = () => (
   <Provider store={store}>
@@ -65,7 +66,7 @@ const Root = () => (
             <Route path="/qdb" component={QDB} />
             <Route path="/events" component={Events} />
             <Route path="/scoreboard" component={Scoreboard} />
-            <Route path="/mentoring" component={Mentoring} />
+            {/* <Route path="/mentoring" component={Mentoring} /> */}
             <Route path="/officers" component={Officers} />
             <Route component={Static} />
           </Switch>
