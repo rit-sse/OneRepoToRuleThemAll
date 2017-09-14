@@ -11,7 +11,9 @@ class HomeEvents extends Component {
   };
 
   componentDidMount() {
-    this.props.getEvents();
+    if (this.props.events.length === 0) {
+      this.props.getEvents();
+    }
   }
 
   render() {

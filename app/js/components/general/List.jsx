@@ -35,7 +35,9 @@ class List extends Component {
   }
 
   componentDidMount() {
-    this.props.getItems();
+    if (this.props.items.length === 0) {
+      this.props.getItems();
+    }
     if (this.props.scroll && !this.props.scrollDone) {
       window.addEventListener('scroll', this.checkScroll);
       this.checkHeight();
