@@ -47,6 +47,7 @@ jobs:
                 docker push ritsse/onerepo:$TAG
                 docker push ritsse/onerepo:dev-latest
             fi;
+            JOB=deploy
             curl --user ${CIRCLE_API_TOKEN}: \
                 --data build_parameters[CIRCLE_JOB]=$JOB \
                 --data build_parameters[BUILD_TAG]=$TAG\
@@ -54,7 +55,7 @@ jobs:
                 https://circleci.com/api/v1.1/project/github/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/tree/$CIRCLE_BRANCH
 
   # Start deployment
-  deploy_staging:
+  deploy:
     machine: true
     working_directory: ~/OneRepo
     steps:
