@@ -35,7 +35,6 @@ jobs:
             docker login -u $DOCKER_USER -p $DOCKER_PASS
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
                 TAG=2.0.$CIRCLE_BUILD_NUM
-                JOB=deploy_prod
                 docker tag ritsse/onerepo:build ritsse/onerepo:latest
                 docker tag ritsse/onerepo:build ritsse/onerepo:$TAG
                 docker push ritsse/onerepo:$TAG
@@ -43,7 +42,6 @@ jobs:
             fi
             if [ "${CIRCLE_BRANCH}" == "devlop" ]; then
                 TAG=dev-2.0.$CIRCLE_BUILD_NUM
-                JOB=deploy_staging
                 docker tag ritsse/onerepo:build ritsse/onerepo:dev-latest
                 docker tag ritsse/onerepo:build ritsse/onerepo:$TAG
                 docker push ritsse/onerepo:$TAG
@@ -63,13 +61,4 @@ jobs:
       - add_ssh_keys
       - deploy:
           command: |
-            ssh deployer@sseprod.se.rit.edu docker service update --image=ritsse/onerepo:$BUILD_TAG sse_web --detach=false
-
-  deploy_prod:
-    machine: true
-    working_directory: ~/OneRepo
-    steps:
-      - add_ssh_keys
-      - deploy:
-          command: |
-            ssh deployer@sse.rit.edu docker service update --image=ritsse/onerepo:$BUILD_TAG sse_web --detach=false
+            ssh deployer@eggs.se.rit.edu docker service update --image=ritsse/onerepo:$BUILD_TAG sse_web --detach=false
