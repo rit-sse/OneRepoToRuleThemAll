@@ -5,7 +5,7 @@ import { createEvent, updateEvent } from 'actions/events';
 import { adjustTimezone } from 'utils/dates';
 
 // Added so that there is no default value so that redux form dosen't mess up
-const blackCommittee = {
+const blankCommittee = {
   name: '',
 };
 
@@ -20,7 +20,7 @@ function mapStateToProps(store) {
   return {
     event,
     isOpen: store.modal.modalType === EVENT_MODAL,
-    committees: [blackCommittee, ...store.committees],
+    committees: [blankCommittee, ...store.committees],
   };
 }
 
