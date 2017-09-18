@@ -5,6 +5,7 @@ class List extends Component {
   static propTypes = {
     item: PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
     items: PropTypes.arrayOf(PropTypes.object).isRequired,
+    defaultItems: PropTypes.arrayOf(PropTypes.object),
     itemProps: PropTypes.object, // eslint-disable-line
     itemDispatch: PropTypes.object, // eslint-disable-line
     getItems: PropTypes.func,
@@ -20,6 +21,7 @@ class List extends Component {
   }
 
   static defaultProps = {
+    defaultItems: [],
     scroll: false,
     scrollDone: true,
     itemProps: {},
@@ -71,6 +73,7 @@ class List extends Component {
   renderItems = () => {
     const {
       items,
+      defaultItems,
       keyPriority,
       itemProps,
       itemDispatch,
@@ -80,7 +83,7 @@ class List extends Component {
       item: Item,
     } = this.props;
 
-    return items.map((item) => {
+    return [...defaultItems, ...items].map((item) => {
       const key = item[keyPriority.filter(i => !!item[i])[0]];
       return (
         <Item
