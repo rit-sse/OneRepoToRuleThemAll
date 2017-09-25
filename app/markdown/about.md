@@ -22,7 +22,7 @@ students - it's a smash hit! We also go out camping and barbecuing, we watch mov
 together, we go on trips around Rochester, and many other exciting activities.
 In addition, the SSE has many intramural sports teams that play throughout the academic year.
 
-The [projects committee](/static/projects) is a recent addition to the society, but it is by no
+The [projects committee](/projects) is a recent addition to the society, but it is by no
 means the smallest. In the projects committee, SSE members come together and work on
 software engineering projects for fun and research. Our current and past projects include a singing tesla coil, a web-controllable slideshow for our TV displays, and a large multitouch wall. In addition, the first weekend of winter and spring quarters,
 many SSE members come together for Rapid Development Weekend where a medium-sized
