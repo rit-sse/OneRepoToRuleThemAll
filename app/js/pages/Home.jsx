@@ -18,7 +18,7 @@ const PageHome = () => (
         <h4 className="front-heading">Mentoring <small>10am - 6pm, Mon - Fri</small></h4>
         <p>
           The SSE has a mentor on duty every day that can help with SE, CS and other technical classes.
-          There is also a physics tutor who holds open mentoring hours in our lab.
+          There are also physics tutors who hold open mentoring hours in our lab.
         </p>
         <h4 className="front-heading">Getting involved</h4>
         <p>
