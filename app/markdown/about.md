@@ -15,7 +15,7 @@ What we do
 
 Our lab [(GOL-1670)](https://maps.rit.edu/?zoom=20&lat=43.08384053670899&lng=-77.67983857233527) is open for mentoring on weekdays from 10:00AM to 6:00PM
 and any student, can come and ask questions for any class in the Software
-Engineering curriculum. The [Mentoring Committee](/mentoring) offers 1-on-1 tutoring and
+Engineering curriculum. The Mentoring Committee offers 1-on-1 tutoring and
 holds practice exams for popular computer science and software engineering classes.  The SSE also hosts many fun [events](/events) throughout the year. Our biggest event is
 the SSE Winter Ball where we decorate the GCCIS atrium and open up the event to all RIT
 students - it's a smash hit! We also go out camping and barbecuing, we watch movies
