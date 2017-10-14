@@ -1,7 +1,7 @@
 Social Media Links:
 -------------------
 
-[Slack](rit-sse.slack.com)
+[Slack](https://rit-sse.slack.com)
 
 [Facebook](https://www.facebook.com/sse-members/)
 
