@@ -9,7 +9,7 @@
 > One Ring to bring them all and in the darkness bind them
 > In the Land of Mordor where the Shadows lie.
 
-![The One Ring](http://gph.is/LA7w1c)
+![The One Ring](https://user-images.githubusercontent.com/13719429/32019514-7b35a020-b99b-11e7-95a2-99e880c80b8b.gif)
 
 ## Getting Started
 
