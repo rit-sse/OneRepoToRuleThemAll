@@ -38,32 +38,10 @@ If you've already cloned this repo without submodules, you can run `git submodul
 * Linting: `npm run lint`
 * Check bundles: `npm run debug`
 
-This repo is setup to proxy our development API by default. This means if you're only making visual changes, this is likely the only repo you'll need to install.
-
-However, if you're doing one of these things:
-- Making visual changes to authenticated pages (eg. event creation, go link creation, approving scoreboard memberships)
-- Making data model / database changes
-
-You'll need to install and setup the [node-api](https://github.com/rit-sse/node-api). Check out the docs on that repo on how to get it setup.
-
-Then you'll edit the `server.js` file in this repo to target where your API installation is running:
-
-```
-proxy: {
-  "/api/**": {
-    target: "localhost:3000/api/",
-    changeOrigin: true,
-    pathRewrite: {
-      "^/api": ""
-    }
-  }
-}
-```
+By default this app expects to the node-api to be running at /api/v2/ this will only be true in production or if you are proxying it with nginx.
+To change what the app is pointing at use `API_ROOT=https://ssedev.se.rit.edu/api/v2/ npm start` setting API_ROOT to what ever the node-api is running at.
+Using that option makes it so you don't have to run the node-api locally. If you are running it locally then change API_ROOT to reflect that.
 
 ## Deployment
 
-_TODO_
-
-### Dockering
-
-_TODO_
+The dev branch has CI set up to deploy to ssedev.se.rit.edu and master will deploy to sse.rit.edu
