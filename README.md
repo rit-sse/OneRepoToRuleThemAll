@@ -38,10 +38,24 @@ If you've already cloned this repo without submodules, you can run `git submodul
 * Linting: `npm run lint`
 * Check bundles: `npm run debug`
 
-By default this app expects to the node-api to be running at /api/v2/ this will only be true in production or if you are proxying it with nginx.
-To change what the app is pointing at use `API_ROOT=https://ssedev.se.rit.edu/api/v2/ npm start` setting API_ROOT to what ever the node-api is running at.
-Using that option makes it so you don't have to run the node-api locally. If you are running it locally then change API_ROOT to reflect that.
+By default, this repo expects the [node-api](https://github.com/rit-sse/node-api) to be running at `/api/v2`, which is only the case in production or if you're proxying the API with nginx.
+
+For development, you'll want to change where this app points to the API.
+
+If you're only making visual changes, you can skip installing the node-api and use our development API: `API_ROOT=https://ssedev.se.rit.edu/api/v2/ npm start`
+
+However, if you're making changes to authenticated pages (eg. event creation, go link creation, approving scoreboard memberships) or making data model / database changes, you'll have to install and setup the node-api. Then you'll set your `API_ROOT` where your local installation is running (eg. `API_ROOT=localhost:3000/api/v2/ npm start`).
 
 ## Deployment
 
-The dev branch has CI set up to deploy to ssedev.se.rit.edu and master will deploy to sse.rit.edu
+We have CircleCI and Docker Hub setup so `devlop` will deploy to `ssedev.se.rit.edu` and `master` will deploy to `sse.rit.edu`.
+
+Check out [sse-eos](https://github.com/rit-sse/sse-eos) for Docker deployment instructions.
+
+## Contributing
+
+Like to help out? Awesome!
+
+First, check out the [open issues](https://github.com/rit-sse/OneRepoToRuleThemAll/issues) for something to work on and comment on the issue saying you're working on it. Then fork this repo, branch off of `devlop` when making your changes, and submit a pull-request targeting `devlop`.
+
+If you have any questions or need some help, join our [Slack](rit-sse.slack.com) and post in the `#sse-technology` channel.
