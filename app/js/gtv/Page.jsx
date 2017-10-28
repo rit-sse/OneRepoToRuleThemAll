@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { TorqueSlides, TorqueSlide } from 'torque-react';
-import ColorView from 'components/gtv/ColorView';
-import EventPanels from 'containers/gtv/EventPanels';
-import EventHighlight from 'containers/gtv/EventHighlight';
-import ThreeWeek from 'containers/gtv/ThreeWeek';
-import { getEvents, getThreeWeekEvents } from 'actions/events';
+import { getEvents } from 'events/actions';
+import ColorView from 'gtv/components/ColorView';
+import EventPanels from 'gtv/containers/EventPanels';
+import EventHighlight from 'gtv/containers/EventHighlight';
+import ThreeWeek from 'gtv/containers/ThreeWeek';
+import { getThreeWeekEvents } from 'gtv/actions';
 
 import 'scss/gtv.scss';
 

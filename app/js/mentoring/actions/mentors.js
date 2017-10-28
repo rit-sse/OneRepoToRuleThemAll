@@ -1,5 +1,5 @@
 import moment from 'moment';
-import * as utils from './utils';
+import * as utils from 'utils/actions';
 
 export const MENTORS = 'MENTORS';
 export const GET_MENTORS = 'GET_MENTORS';

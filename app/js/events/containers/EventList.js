@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import List from 'general/components/List';
 import Event from 'events/components/Event';
-import { showEventModal } from 'general/actions/modal';
+import { showEventModal } from 'general/actions';
 import { getEvents, destoryEvent } from 'events/actions';
 
 function filterEvents(events, filter) {
   if (filter.committee) return events.all.filter(event => event.committeeName === filter.committee.replace(/%20/g, ' '));
-  return events.all;
+  return events;
 }
 
 function mapStateToProps(store, props) {

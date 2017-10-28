@@ -1,9 +1,9 @@
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Field, Form, reduxForm } from 'redux-form';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Button from 'components/general/Button';
-import { Field, Form, reduxForm } from 'redux-form';
-import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import SelectInput from 'components/general/SelectInput';
+import SelectInput from 'general/components/SelectInput';
+import Button from 'general/components/Button';
 
 class QDBModal extends Component {
   static propTypes = {

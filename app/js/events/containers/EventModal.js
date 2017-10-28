@@ -10,7 +10,7 @@ const blankCommittee = {
 };
 
 function mapStateToProps(store) {
-  const eventObj = store.events.all.find(e => e.id === store.modal.id);
+  const eventObj = store.events.find(e => e.id === store.modal.id);
   const event = eventObj ? {
     ...eventObj,
     startDate: adjustTimezone(eventObj.startDate).toISOString().split('.')[0],

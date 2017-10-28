@@ -1,9 +1,4 @@
-import {
-  GET_USER,
-} from 'actions/user';
-import {
-  HIDE_MODAL,
-} from 'actions/modal';
+import { GET_USER, HIDE_MODAL } from 'general/actions';
 
 export default function user(state = {}, action) {
   switch (action.type) {

@@ -1,8 +1,8 @@
 import { injectAsyncReducer } from 'store';
 
-import events from './reducers';
 import Page from './Page';
+import go from './reducers';
 
-injectAsyncReducer('events', events);
+injectAsyncReducer('go', go);
 
 export default Page;

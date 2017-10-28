@@ -1,4 +1,4 @@
-import * as utils from './utils';
+import * as utils from 'utils/actions';
 
 export const COMMITTEES = 'COMMITTEES';
 export const GET_COMMITTEES = 'GET_COMMITTEES';

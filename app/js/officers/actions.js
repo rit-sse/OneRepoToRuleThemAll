@@ -1,4 +1,4 @@
-import * as utils from './utils';
+import * as utils from 'utils/actions';
 
 export const OFFICERS = 'OFFICERS';
 export const GET_OFFICERS = 'GET_OFFICERS';

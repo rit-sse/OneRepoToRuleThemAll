@@ -1,4 +1,4 @@
-import { OPEN_NAV, CLOSE_NAV } from 'actions/nav';
+import { OPEN_NAV, CLOSE_NAV } from 'general/actions';
 import { LOCATION_CHANGE } from 'connected-react-router';
 
 export default function nav(state = false, action) {

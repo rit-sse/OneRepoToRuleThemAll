@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import List from 'components/general/List';
-import GoLink from 'components/go/GoLink';
-import { showGoModal } from 'actions/modal';
-import { getLinks, destoryLink } from 'actions/go';
+import { showGoModal } from 'general/actions';
+import List from 'general/components/List';
+import { getLinks, destoryLink } from 'go/actions';
+import GoLink from 'go/components/GoLink';
 
 function mapStateToProps({ go, auth, scroll }) {
   return {

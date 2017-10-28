@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import Calendar from 'components/general/Calendar';
-import { getShifts } from 'actions/shifts';
+import Calendar from 'general/components/Calendar';
+import { getShifts } from 'mentoring/actions';
 
 function mapStateToProps({ shifts }) {
   return {

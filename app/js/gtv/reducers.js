@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
-import { NEXT_EVENT, GET_THREE_WEEK_EVENTS } from 'actions/events';
+import { NEXT_EVENT, GET_THREE_WEEK_EVENTS } from 'gtv/actions';
+import { GET_EVENTS } from 'events/actions';
 
 function threeWeek(state = [], action) {
   switch (action.type) {
     case GET_THREE_WEEK_EVENTS:
-      return action.payload.data;
+      return action.payload;
     default:
       return state;
   }

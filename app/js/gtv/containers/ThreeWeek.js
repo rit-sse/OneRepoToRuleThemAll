@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import moment from 'moment';
-
-import ThreeWeek from 'components/gtv/ThreeWeek';
+import ThreeWeek from 'gtv/components/ThreeWeek';
 
 function formatEvents(events) {
   const formattedEvents = [[], [], []];
@@ -26,7 +25,7 @@ function formatEvents(events) {
 
 function mapStateToProps(store) {
   return {
-    events: formatEvents(store.events.threeWeek),
+    events: formatEvents(store.gtv.threeWeek),
   };
 }
 
