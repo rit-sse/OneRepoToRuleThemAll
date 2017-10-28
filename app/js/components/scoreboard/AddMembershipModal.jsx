@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Field, Form, FormSection, reduxForm } from 'redux-form';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import moment from 'moment';
 import Button from 'components/general/Button';
 import UserForm from 'containers/general/UserForm';
 
@@ -27,7 +28,7 @@ class AddMembershipModal extends Component {
       initialize,
     } = this.props;
     if (isOpen && !prevProps.isOpen) {
-      initialize(null);
+      initialize(prevProps.initialValues);
     }
   }
 
@@ -72,19 +73,19 @@ class AddMembershipModal extends Component {
               <div className="form-group row">
                 <label className="col-sm-2 col-form-label" htmlFor="startDate">Start Date</label>
                 <div className="col-sm-10">
-                  <Field type="datetime-local" className="form-control" id="startDate" name="startDate" component="input" />
+                  <Field type="date" className="form-control" id="startDate" name="startDate" component="input" required />
                 </div>
               </div>
               <div className="form-group row">
                 <label className="col-sm-2 col-form-label" htmlFor="endDate">End Date</label>
                 <div className="col-sm-10">
-                  <Field type="datetime-local" className="form-control" id="endDate" name="endDate" component="input" />
+                  <Field type="date" className="form-control" id="endDate" name="endDate" component="input" required />
                 </div>
               </div>
               <div className="form-group row">
                 <label className="col-sm-2 col-form-label" htmlFor="reason">Reason</label>
                 <div className="col-sm-10">
-                  <Field className="form-control" id="reason" name="reason" component="textarea" rows="2" />
+                  <Field className="form-control" id="reason" name="reason" component="textarea" rows="2" required />
                 </div>
               </div>
               <div className="form-group row">
@@ -114,4 +115,9 @@ class AddMembershipModal extends Component {
 
 export default reduxForm({
   form: 'memberships',
+  initialValues: {
+    committeeName: 'Historians', // Historians usually enter the most memberships (b/c photo submissions)
+    startDate: moment().format('YYYY-MM-DD'),
+  },
+  enableReinitialize: true,
 })(AddMembershipModal);
