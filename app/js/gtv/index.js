@@ -1,8 +1,8 @@
 import { injectAsyncReducer } from 'store';
 
-import events from './reducers';
 import Page from './Page';
+import gtv from './reducers';
 
-injectAsyncReducer('events', events);
+injectAsyncReducer('gtv', gtv);
 
 export default Page;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import Button from 'components/general/Button';
+import Button from 'general/components/Button';
 
 const DeleteOfficerModal = ({
   id,

@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import { HIDE_MODAL } from 'actions/modal';
+import { HIDE_MODAL } from 'general/actions';
 import {
   GET_LINKS,
   CREATE_LINK,
   UPDATE_LINK,
   DESTORY_LINK,
   CHECK_LINK,
-} from 'actions/go';
+} from 'go/actions';
 
 function all(state = [], action) {
   switch (action.type) {

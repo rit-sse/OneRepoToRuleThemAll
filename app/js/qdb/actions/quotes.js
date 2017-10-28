@@ -1,5 +1,5 @@
-import { scrollDone } from 'actions/scroll';
-import * as utils from './utils';
+import { scrollDone } from 'general/actions';
+import * as utils from 'utils/actions';
 
 export const QUOTES = 'QUOTES';
 export const GET_QUOTES = 'GET_QUOTES';

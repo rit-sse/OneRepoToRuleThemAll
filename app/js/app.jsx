@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Root from 'pages';
+import Root from './index';
 
 window.onload = () => {
   gapi.load('auth2', () => {
@@ -9,8 +9,8 @@ window.onload = () => {
 };
 
 if (module.hot) {
-  module.hot.accept('./pages', () => {
-    const NewRoot = require('./pages').default; // eslint-disable-line global-require
+  module.hot.accept('./index', () => {
+    const NewRoot = require('./index').default; // eslint-disable-line global-require
     ReactDOM.render(<NewRoot />, document.getElementById('react'));
   });
 }

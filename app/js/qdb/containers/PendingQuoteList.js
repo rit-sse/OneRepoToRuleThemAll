@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import List from 'components/general/List';
-import PendingQuote from 'components/qdb/PendingQuote';
-import { approveQuote, getQuotes, destoryQuote } from 'actions/quotes';
-import { showQuoteModal } from 'actions/modal';
+import { showQuoteModal } from 'general/actions';
+import List from 'general/components/List';
+import { approveQuote, getQuotes, destoryQuote } from 'qdb/actions';
+import PendingQuote from 'qdb/components/PendingQuote';
 import qs from 'qs';
 
 function mapStateToProps(store) {

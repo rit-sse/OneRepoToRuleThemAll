@@ -1,4 +1,4 @@
-import * as utils from './utils';
+import * as utils from 'utils/actions';
 
 export const SHIFTS = 'SHIFTS';
 export const GET_SHIFTS = 'GET_SHIFTS';

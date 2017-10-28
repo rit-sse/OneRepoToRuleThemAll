@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
-import { hideModal, ADD_MEMBERSHIP_MODAL } from 'actions/modal';
-import AddMembershipModal from 'components/scoreboard/AddMembershipModal';
-import { getCommittees } from 'actions/committees';
-import { addMembership } from 'actions/members';
+import { hideModal, ADD_MEMBERSHIP_MODAL, getCommittees } from 'general/actions';
+import AddMembershipModal from 'scoreboard/components/AddMembershipModal';
+import { addMembership } from 'scoreboard/actions';
 
 function mapStateToProps(store) {
   return {

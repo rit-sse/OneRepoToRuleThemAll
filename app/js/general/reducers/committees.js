@@ -1,6 +1,4 @@
-import {
-  GET_COMMITTEES,
-} from 'actions/committees';
+import { GET_COMMITTEES } from 'general/actions';
 
 export default function committees(state = [], action) {
   switch (action.type) {

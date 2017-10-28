@@ -4,7 +4,7 @@ import {
   UPDATE_MENTOR,
   DESTROY_MENTOR,
   GET_MENTOR_ON_DUTY,
-} from 'actions/mentors';
+} from 'mentoring/actions';
 import { combineReducers } from 'redux';
 
 function byId(state = {}, action) {

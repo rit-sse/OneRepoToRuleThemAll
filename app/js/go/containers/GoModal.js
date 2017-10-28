@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { hideModal, GO_MODAL } from 'actions/modal';
-import { createLink, updateLink, checkLink } from 'actions/go';
-import GoModal from 'components/go/GoModal';
+import { hideModal, GO_MODAL } from 'general/actions';
+import { createLink, updateLink, checkLink } from 'go/actions';
+import GoModal from 'go/components/GoModal';
 
 function mapStateToProps(store) {
   return {

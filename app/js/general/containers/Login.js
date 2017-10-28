@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { signIn, signOut, checkLogin } from 'actions/auth';
+import { signIn, signOut, checkLogin } from 'general/actions';
 import Login from 'general/components/Login';
 
 function mapStateToProps(store) {

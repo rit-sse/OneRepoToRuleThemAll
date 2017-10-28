@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Link, Switch } from 'react-router-dom';
-import { MEMBERS } from 'actions/members';
-import Login from 'containers/general/Login';
-import Status from 'containers/general/Status';
-import MembershipList from 'pages/MembershipList';
-import ControlledLinkButton from 'containers/general/ControlledLinkButton';
-import CreateButton from 'containers/general/CreateButton';
-import { addMembershipModal } from 'actions/modal';
-import AddMembershipModal from 'containers/scoreboard/AddMembershipModal';
-import ViewMembershipsModal from 'containers/scoreboard/ViewMembershipModal';
-import ApproveMemberships from 'components/scoreboard/ApproveMemberships';
+import ControlledLinkButton from 'general/containers/ControlledLinkButton';
+import CreateButton from 'general/containers/CreateButton';
+import { addMembershipModal } from 'general/actions';
+import Status from 'general/containers/Status';
+import Login from 'general/containers/Login';
+import ViewMembershipsModal from 'scoreboard/containers/ViewMembershipModal';
+import ApproveMemberships from 'scoreboard/components/ApproveMemberships';
+import AddMembershipModal from 'scoreboard/containers/AddMembershipModal';
+import MembershipList from 'scoreboard/components/MembershipList';
+import { MEMBERS } from 'scoreboard/actions';
+
 import 'scss/page.scss';
 
 const Scoreboard = ({ location }) => (
