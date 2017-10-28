@@ -40,7 +40,7 @@ class UserForm extends Component {
         <div className="form-group row">
           <label htmlFor="dce" className="col-sm-2 col-form-label">DCE</label>
           <div className="col-sm-10">
-            <Field className="form-control" id="dce" name="dce" component="input" onBlur={this.getUser} />
+            <Field className="form-control" id="dce" name="dce" component="input" onBlur={this.getUser} required />
           </div>
         </div>
         <div className="form-group row">
