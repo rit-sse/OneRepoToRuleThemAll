@@ -1,4 +1,4 @@
-import * as utils from './utils';
+import * as utils from 'utils/actions';
 
 export const TAGS = 'TAGS';
 export const GET_TAGS = 'GET_TAGS';

@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
-import { hideModal, QUOTE_MODAL } from 'actions/modal';
-import { createQuote, updateQuote } from 'actions/quotes';
-import { getTags } from 'actions/tags';
-import QDBModal from 'components/qdb/QDBModal';
+import { hideModal, QUOTE_MODAL } from 'general/actions';
+import { createQuote, updateQuote, getTags } from 'qdb/actions';
+import QDBModal from 'qdb/components/QDBModal';
 
 function getQuote(quotes, id) {
   const quote = quotes.find(q => q.id === id);

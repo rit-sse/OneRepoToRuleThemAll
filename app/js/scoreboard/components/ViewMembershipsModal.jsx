@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Modal, ModalHeader, ModalFooter } from 'reactstrap';
 import moment from 'moment';
-import Button from 'components/general/Button';
+import Button from 'general/components/Button';
 
 const ViewMembershipsModal = ({
   close,

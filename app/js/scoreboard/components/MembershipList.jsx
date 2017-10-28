@@ -1,5 +1,5 @@
 import React from 'react';
-import MemberList from 'containers/scoreboard/MembersList';
+import MemberList from 'scoreboard/containers/MembersList';
 
 const MembershipList = () => (
   <div className="offset-sm-1 col-sm-10 offset-md-2 col-md-8">

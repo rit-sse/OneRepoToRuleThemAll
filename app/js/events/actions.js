@@ -1,7 +1,7 @@
 import Moment from 'moment';
-import { scrollDone } from 'actions/scroll';
+import { scrollDone } from 'general/actions';
 import { extendMoment } from 'moment-range/dist/moment-range';
-import { createAction, createLoading } from 'utils/actions.js';
+import * as utils from 'utils/actions';
 
 export const EVENTS = 'EVENTS';
 export const GET_EVENTS = 'GET_EVENTS';
@@ -9,8 +9,8 @@ export const CREATE_EVENT = 'CREATE_EVENT';
 export const UPDATE_EVENT = 'UPDATE_EVENT';
 export const DESTROY_EVENT = 'DESTROY_EVENT';
 
-const createAction = createAction(EVENTS);
-const loading = createLoading(EVENTS);
+const createAction = utils.createAction(EVENTS);
+const loading = utils.createLoading(EVENTS);
 const moment = extendMoment(Moment);
 
 export function getEvents(getNext) {

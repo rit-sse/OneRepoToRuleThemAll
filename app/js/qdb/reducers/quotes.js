@@ -4,7 +4,7 @@ import {
   APPROVE_QUOTE,
   UPDATE_QUOTE,
   DESTROY_QUOTE,
-} from 'actions/quotes';
+} from 'qdb/actions';
 
 function all(state = [], action) {
   switch (action.type) {

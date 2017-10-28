@@ -1,18 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch, Link } from 'react-router-dom';
-import Login from 'containers/general/Login';
-import Status from 'containers/general/Status';
-import QuoteList from 'containers/qdb/QuoteList';
-import PendingQuoteList from 'containers/qdb/PendingQuoteList';
-import CreateButton from 'containers/general/CreateButton';
-import { showQuoteModal } from 'actions/modal';
-import ControlledLinkButton from 'containers/general/ControlledLinkButton';
-import QDBModal from 'containers/qdb/QDBModal';
-import { QUOTES } from 'actions/quotes';
+import ControlledLinkButton from 'general/containers/ControlledLinkButton';
+import CreateButton from 'general/containers/CreateButton';
+import { showQuoteModal } from 'general/actions';
+import Status from 'general/containers/Status';
+import Login from 'general/containers/Login';
+import PendingQuoteList from 'qdb/containers/PendingQuoteList';
+import QuoteList from 'qdb/containers/QuoteList';
+import QDBModal from 'qdb/containers/QDBModal';
+import { QUOTES } from 'qdb/actions';
+
 import 'scss/buttons.scss';
 import 'scss/page.scss';
 import 'scss/qdb.scss';
+
 import qs from 'qs';
 
 const currentFilter = (location) => {

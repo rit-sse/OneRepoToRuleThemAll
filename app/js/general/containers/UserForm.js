@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getUser } from 'actions/user';
+import { getUser } from 'general/actions';
 import UserForm from 'general/components/UserForm';
 
 function mapStateToProps(state) {

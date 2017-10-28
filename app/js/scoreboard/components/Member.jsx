@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { gravatar } from 'utils/images';
+
 import 'scss/member.scss';
 
 const Member = ({

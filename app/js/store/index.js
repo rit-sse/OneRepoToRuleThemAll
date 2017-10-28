@@ -1,4 +1,4 @@
-import createReducer from 'reducers';
+import createReducer from 'reducer';
 
 const store = do {
   if (process.env.NODE_ENV === 'production') require('./prod').default; // eslint-disable-line

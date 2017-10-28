@@ -1,12 +1,13 @@
 import React from 'react';
-import GoLinksList from 'containers/go/GoLinksList';
-import Status from 'containers/general/Status';
-import { GO } from 'actions/go';
 import { Link } from 'react-router-dom';
-import Login from 'containers/general/Login';
-import CreateButton from 'containers/general/CreateButton';
-import GoModal from 'containers/go/GoModal';
-import { showGoModal } from 'actions/modal';
+import CreateButton from 'general/containers/CreateButton';
+import Status from 'general/containers/Status';
+import { showGoModal } from 'general/actions';
+import Login from 'general/containers/Login';
+import GoLinksList from 'go/containers/GoLinksList';
+import GoModal from 'go/containers/GoModal';
+import { GO } from 'go/actions';
+
 import 'scss/page.scss';
 import 'scss/go.scss';
 

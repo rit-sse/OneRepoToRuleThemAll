@@ -1,5 +1,4 @@
-import { MENTORS } from './mentors';
-import { SPECIALTIES } from './specialties';
+import { MENTORS, SPECIALTIES } from 'mentoring/actions';
 
 export const HOVER = 'HOVER';
 export const UNHOVER = 'UNHOVER';

@@ -1,10 +1,9 @@
-import { connect } from 'react-redux';
-import OfficerForm from 'components/officers/OfficerForm';
-import { hideModal, OFFICER_MODAL } from 'actions/modal';
-import { createOfficer, updateOfficer } from 'actions/officers';
-import { getCommittees } from 'actions/committees';
-import { formValueSelector } from 'redux-form';
 import moment from 'moment';
+import { connect } from 'react-redux';
+import { formValueSelector } from 'redux-form';
+import { hideModal, OFFICER_MODAL, getCommittees } from 'general/actions';
+import { createOfficer, updateOfficer } from 'officers/actions';
+import OfficerForm from 'officers/components/OfficerForm';
 
 const selector = formValueSelector('officer');
 

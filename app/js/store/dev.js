@@ -4,7 +4,7 @@ import { persistState } from 'redux-devtools'; // eslint-disable-line import/no-
 import thunk from 'redux-thunk';
 import API from 'api';
 import { routerMiddleware } from 'connected-react-router';
-import createReducer from '../reducers';
+import createReducer from '../reducer';
 import status from './status';
 import qdb from './qdb';
 
@@ -28,8 +28,8 @@ const store = createStore(
 );
 
 if (module.hot) {
-  module.hot.accept('../reducers', () => {
-    const nextReducer = require('../reducers').default; // eslint-disable-line global-require
+  module.hot.accept('../reducer', () => {
+    const nextReducer = require('../reducer').default; // eslint-disable-line global-require
 
     store.replaceReducer(nextReducer);
   });
