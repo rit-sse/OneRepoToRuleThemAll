@@ -1,4 +1,4 @@
-import { GET_TAGS } from 'actions/tags';
+import { GET_TAGS } from 'qdb/actions';
 
 export default function tags(state = [], action) {
   switch (action.type) {

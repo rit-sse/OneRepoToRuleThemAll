@@ -1,5 +1,5 @@
 import React from 'react';
-import Memberships from 'containers/scoreboard/ApproveMemberships';
+import Memberships from 'scoreboard/containers/ApproveMemberships';
 
 const ApproveMemberships = () => (
   <table className="table">

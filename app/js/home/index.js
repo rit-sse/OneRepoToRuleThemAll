@@ -1,6 +1,6 @@
-import Page from './Page.jsx';
 import { injectAsyncReducer } from 'store';
 import events from 'events/reducers';
+import Page from './Page';
 
 injectAsyncReducer('events', events);
 

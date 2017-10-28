@@ -1,13 +1,13 @@
 import Moment from 'moment';
 import { extendMoment } from 'moment-range/dist/moment-range';
-import { createAction, createLoading } from 'utils/actions.js';
+import * as utils from 'utils/actions';
 
 export const GTV = 'GTV';
 export const NEXT_EVENT = 'NEXT_EVENT';
 export const GET_THREE_WEEK_EVENTS = 'GET_THREE_WEEK_EVENTS';
 
-const createAction = createAction(GTV);
-const loading = createLoading(GTV);
+const createAction = utils.createAction(GTV);
+const loading = utils.createLoading(GTV);
 
 const moment = extendMoment(Moment);
 

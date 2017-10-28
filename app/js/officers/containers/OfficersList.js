@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import List from 'components/general/List';
-import { getOfficers } from 'actions/officers';
-import { showOfficerModal, deleteOfficerModal } from 'actions/modal';
-import Officer from 'components/officers/Officer';
+import { showOfficerModal, deleteOfficerModal } from 'general/actions';
+import List from 'general/components/List';
+import { getOfficers } from 'officers/actions';
+import Officer from 'officers/components/Officer';
 
 function mapStateToProps({ auth, officers }, { primary = false }) {
   return {

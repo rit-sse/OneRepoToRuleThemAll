@@ -3,7 +3,7 @@ import {
   GET_MEMBERSHIPS,
   APPROVE_MEMBERSHIP,
   DENY_MEMBERSHIP,
-} from 'actions/members';
+} from 'scoreboard/actions';
 
 export function memberships(state = [], action) {
   switch (action.type) {

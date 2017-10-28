@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import List from 'components/general/List';
-import { getMentors, destroyMentor } from 'actions/mentors';
-import { showMentorModal } from 'actions/modal';
-import MentorListItem from 'components/mentoring/MentorListItem';
+import { showMentorModal } from 'general/actions';
+import List from 'general/components/List';
+import MentorListItem from 'mentoring/components/MentorListItem';
+import { getMentors, destroyMentor } from 'mentoring/actions';
 
 function mentorAuth({ officer }) {
   return !!officer && (officer.title === 'Mentoring Head' || officer.primaryOfficer);

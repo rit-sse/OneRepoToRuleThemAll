@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import List from 'components/general/List';
-import { getSpecialties } from 'actions/specialties';
-import Specialty from 'containers/mentoring/Specialty';
+import List from 'general/components/List';
+import Specialty from 'mentoring/containers/Specialty';
+import { getSpecialties } from 'mentoring/actions';
 
 function mapStateToProps(state) {
   return {

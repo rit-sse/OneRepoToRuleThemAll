@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import ViewMembershipsModal from 'components/scoreboard/ViewMembershipsModal';
-import { hideModal, VIEW_MEMBERSHIP_MODAL } from 'actions/modal';
+import { hideModal, VIEW_MEMBERSHIP_MODAL } from 'general/actions';
+import ViewMembershipsModal from 'scoreboard/components/ViewMembershipsModal';
 
 function mapStateToProps(store) {
   return {

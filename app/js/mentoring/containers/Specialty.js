@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
-import Specialty from 'components/mentoring/Specialty';
-import { MENTORS } from 'actions/mentors';
-import { SPECIALTIES } from 'actions/specialties';
-import { hoverSpecialty, unhover } from 'actions/hover';
+import Specialty from 'mentoring/components/Specialty';
+import { MENTORS, SPECIALTIES } from 'mentoring/actions';
+import { hoverSpecialty, unhover } from 'general/actions';
 
 function mapStateToProps(state, ownProps) {
   const { hover, mentors } = state;

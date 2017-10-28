@@ -1,14 +1,12 @@
 import React from 'react';
-import Status from 'containers/general/Status';
-import Login from 'containers/general/Login';
-import MentorList from 'containers/mentoring/MentorList';
-import SpecialtyList from 'containers/mentoring/SpecialtyList';
-import MentorModal from 'containers/mentoring/AddMentorForm';
-import MentoringSchedule from 'containers/mentoring/MentoringSchedule';
+import Status from 'general/containers/Status';
+import Login from 'general/containers/Login';
+import MentorList from 'mentoring/containers/MentorList';
+import SpecialtyList from 'mentoring/containers/SpecialtyList';
+import MentorModal from 'mentoring/containers/AddMentorForm';
+import MentoringSchedule from 'mentoring/containers/MentoringSchedule';
 
-import { MENTORS } from 'actions/mentors';
-import { SHIFTS } from 'actions/shifts';
-import { SPECIALTIES } from 'actions/specialties';
+import { MENTORS, SHIFTS, SPECIALTIES } from 'mentoring/actions';
 
 const Mentoring = () => (
   <div className="container">

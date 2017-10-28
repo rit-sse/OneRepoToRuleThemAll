@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
-import Mentor from 'components/mentoring/Mentor';
-import { MENTORS } from 'actions/mentors';
-import { SPECIALTIES } from 'actions/specialties';
-import { hoverMentor, unhover } from 'actions/hover';
+import { hoverMentor, unhover } from 'general/actions';
+import { MENTORS, SPECIALTIES } from 'mentoring/actions';
+import Mentor from 'mentoring/components/Mentor';
 
 function mapStateToProps(state, ownProps) {
   const { hover } = state;

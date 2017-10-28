@@ -1,6 +1,4 @@
-import {
-  GET_SHIFTS,
-} from 'actions/shifts';
+import { GET_SHIFTS } from 'mentoring/actions';
 
 export default function shifts(state = [], { type, payload }) {
   switch (type) {

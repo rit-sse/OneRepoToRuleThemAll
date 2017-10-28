@@ -1,13 +1,13 @@
 import React from 'react';
-import { OFFICERS } from 'actions/officers';
-import { COMMITTEES } from 'actions/committees';
-import Login from 'containers/general/Login';
-import Status from 'containers/general/Status';
-import OfficersList from 'containers/officers/OfficersList';
-import OfficerForm from 'containers/officers/OfficerForm';
-import DeleteOfficerModal from 'containers/officers/DeleteOfficerModal';
-import CreateButton from 'containers/general/CreateButton';
-import { showOfficerModal } from 'actions/modal';
+import { COMMITTEES, showOfficerModal } from 'general/actions';
+import CreateButton from 'general/containers/CreateButton';
+import Status from 'general/containers/Status';
+import Login from 'general/containers/Login';
+import DeleteOfficerModal from 'officers/containers/DeleteOfficerModal';
+import OfficersList from 'officers/containers/OfficersList';
+import OfficerForm from 'officers/containers/OfficerForm';
+import { OFFICERS } from 'officers/actions';
+
 import 'scss/page.scss';
 
 const Officers = () => (

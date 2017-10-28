@@ -3,7 +3,7 @@ import {
   CREATE_OFFICER,
   UPDATE_OFFICER,
   DESTROY_OFFICER,
-} from 'actions/officers';
+} from 'officers/actions';
 
 export default function officers(state = {}, action) {
   switch (action.type) {

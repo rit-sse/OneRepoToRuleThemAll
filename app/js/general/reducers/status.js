@@ -1,4 +1,4 @@
-import { LOADING_STATUS, ERROR_STATUS, CLOSE_STATUS, INFO_STATUS } from 'actions/status';
+import { LOADING_STATUS, ERROR_STATUS, CLOSE_STATUS, INFO_STATUS } from 'general/actions';
 import { LOCATION_CHANGE } from 'connected-react-router';
 
 const initState = {

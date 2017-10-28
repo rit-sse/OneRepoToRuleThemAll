@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 
-import EventHighlight from 'components/gtv/EventHighlight';
-import { nextEvent } from 'actions/events';
+import EventHighlight from 'gtv/components/EventHighlight';
+import { nextEvent } from 'gtv/actions';
 
 function mapStateToProps(store) {
   return {
-    event: store.events.image[0],
+    event: store.gtv.image[0],
   };
 }
 

@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
-import AddMentorForm from 'components/mentoring/AddMentorForm';
-import { hideModal, MENTOR_MODAL } from 'actions/modal';
-import { createMentor, updateMentor } from 'actions/mentors';
-import { getSpecialties } from 'actions/specialties';
 import moment from 'moment';
+import { hideModal, MENTOR_MODAL } from 'general/actions';
+import { createMentor, updateMentor, getSpecialties } from 'mentoring/actions';
+import AddMentorForm from 'mentoring/components/AddMentorForm';
 
 function mapStateToProps(state) {
   const mentorObj = state.mentors.byId[state.modal.id];

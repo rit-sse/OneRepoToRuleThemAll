@@ -4,7 +4,7 @@ import HomeEvents from 'events/components/HomeEvents';
 
 function mapStateToProps(store) {
   return {
-    events: store.events.all.slice(0, 3),
+    events: store.events.slice(0, 3),
   };
 }
 

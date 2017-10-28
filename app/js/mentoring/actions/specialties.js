@@ -1,4 +1,4 @@
-import * as utils from './utils';
+import * as utils from 'utils/actions';
 
 export const SPECIALTIES = 'SPECIALTIES';
 export const GET_SPECIALTIES = 'GET_SPECIALTIES';

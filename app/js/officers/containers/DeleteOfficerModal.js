@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { destroyOfficer } from 'actions/officers';
-import { hideModal, DELETE_OFFICER_MODAL } from 'actions/modal';
-import DeleteOfficerModal from 'components/officers/DeleteOfficerModal';
+import { hideModal, DELETE_OFFICER_MODAL } from 'general/actions';
+import DeleteOfficerModal from 'officers/components/DeleteOfficerModal';
+import { destroyOfficer } from 'officers/actions';
 
 function mapStateToProps({ modal }) {
   return {

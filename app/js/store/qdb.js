@@ -1,5 +1,5 @@
 import { LOCATION_CHANGE } from 'connected-react-router';
-import { getQuotes } from 'actions/quotes';
+import { getQuotes } from 'qdb/actions';
 import qs from 'qs';
 
 export default store => next => (action) => {

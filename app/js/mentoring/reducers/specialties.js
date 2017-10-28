@@ -1,6 +1,4 @@
-import {
-  GET_SPECIALTIES,
-} from 'actions/specialties';
+import { GET_SPECIALTIES } from 'mentoring/actions';
 
 export default function specialties(state = [], action) {
   switch (action.type) {
