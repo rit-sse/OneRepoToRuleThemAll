@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Button from 'general/components/Button';
+import Button from 'common/components/Button';
 
 function mapStateToProps({ auth }, { any, primary }) {
   if (any) {

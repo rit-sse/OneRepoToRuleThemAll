@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Field, Form, FormSection, reduxForm } from 'redux-form';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import moment from 'moment';
-import UserForm from 'general/containers/UserForm';
-import Button from 'general/components/Button';
+import UserForm from 'common/containers/UserForm';
+import Button from 'common/components/Button';
 
 class AddMembershipModal extends Component {
   static propTypes = {

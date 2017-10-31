@@ -1,8 +1,8 @@
 import React from 'react';
-import { COMMITTEES, showOfficerModal } from 'general/actions';
-import CreateButton from 'general/containers/CreateButton';
-import Status from 'general/containers/Status';
-import Login from 'general/containers/Login';
+import { COMMITTEES, showOfficerModal } from 'common/actions';
+import CreateButton from 'common/containers/CreateButton';
+import Status from 'common/containers/Status';
+import Login from 'common/containers/Login';
 import DeleteOfficerModal from 'officers/containers/DeleteOfficerModal';
 import OfficersList from 'officers/containers/OfficersList';
 import OfficerForm from 'officers/containers/OfficerForm';

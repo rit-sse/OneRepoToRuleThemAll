@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { showOfficerModal, deleteOfficerModal } from 'general/actions';
-import List from 'general/components/List';
+import { showOfficerModal, deleteOfficerModal } from 'common/actions';
+import List from 'common/components/List';
 import { getOfficers } from 'officers/actions';
 import Officer from 'officers/components/Officer';
 

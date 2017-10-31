@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SSENav from 'general/containers/SSENav';
+import SSENav from 'common/containers/SSENav';
 
 import 'scss/footer.scss';
 

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import EventModal from 'events/components/EventModal';
-import { hideModal, EVENT_MODAL } from 'general/actions';
+import { hideModal, EVENT_MODAL } from 'common/actions';
 import { createEvent, updateEvent } from 'events/actions';
 import { adjustTimezone } from 'utils/dates';
 

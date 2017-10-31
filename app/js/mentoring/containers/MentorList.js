@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { showMentorModal } from 'general/actions';
-import List from 'general/components/List';
+import { showMentorModal } from 'common/actions';
+import List from 'common/components/List';
 import MentorListItem from 'mentoring/components/MentorListItem';
 import { getMentors, destroyMentor } from 'mentoring/actions';
 

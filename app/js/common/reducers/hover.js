@@ -1,4 +1,4 @@
-import { HOVER, UNHOVER } from 'general/actions';
+import { HOVER, UNHOVER } from 'common/actions';
 
 export default function hover(state = {}, action) {
   switch (action.type) {

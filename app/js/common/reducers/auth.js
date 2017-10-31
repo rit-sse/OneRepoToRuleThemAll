@@ -1,4 +1,4 @@
-import { SIGN_IN, SIGN_OUT } from 'general/actions';
+import { SIGN_IN, SIGN_OUT } from 'common/actions';
 
 const initState = {
   user: null,

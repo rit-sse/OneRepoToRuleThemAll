@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { hideModal, ADD_MEMBERSHIP_MODAL, getCommittees } from 'general/actions';
+import { hideModal, ADD_MEMBERSHIP_MODAL, getCommittees } from 'common/actions';
 import AddMembershipModal from 'scoreboard/components/AddMembershipModal';
 import { addMembership } from 'scoreboard/actions';
 

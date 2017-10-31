@@ -1,5 +1,5 @@
 import React from 'react';
-import asyncComponent from 'general/components/AsyncComponent';
+import asyncComponent from 'common/components/AsyncComponent';
 import Hero from 'home/components/Hero';
 
 import 'scss/home.scss';
