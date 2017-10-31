@@ -1,7 +1,7 @@
 import moment from 'moment';
 import { connect } from 'react-redux';
 import { formValueSelector } from 'redux-form';
-import { hideModal, OFFICER_MODAL, getCommittees } from 'general/actions';
+import { hideModal, OFFICER_MODAL, getCommittees } from 'common/actions';
 import { createOfficer, updateOfficer } from 'officers/actions';
 import OfficerForm from 'officers/components/OfficerForm';
 

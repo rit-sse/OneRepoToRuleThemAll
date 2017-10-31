@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Field, Form, reduxForm } from 'redux-form';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import Button from 'general/components/Button';
+import Button from 'common/components/Button';
 
 class GoModal extends Component {
   static propTypes = {

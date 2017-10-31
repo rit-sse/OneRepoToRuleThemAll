@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CreateButton from 'general/containers/CreateButton';
-import Status from 'general/containers/Status';
-import { showGoModal } from 'general/actions';
-import Login from 'general/containers/Login';
+import CreateButton from 'common/containers/CreateButton';
+import Status from 'common/containers/Status';
+import { showGoModal } from 'common/actions';
+import Login from 'common/containers/Login';
 import GoLinksList from 'go/containers/GoLinksList';
 import GoModal from 'go/containers/GoModal';
 import { GO } from 'go/actions';

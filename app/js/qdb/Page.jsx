@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch, Link } from 'react-router-dom';
-import ControlledLinkButton from 'general/containers/ControlledLinkButton';
-import CreateButton from 'general/containers/CreateButton';
-import { showQuoteModal } from 'general/actions';
-import Status from 'general/containers/Status';
-import Login from 'general/containers/Login';
+import ControlledLinkButton from 'common/containers/ControlledLinkButton';
+import CreateButton from 'common/containers/CreateButton';
+import { showQuoteModal } from 'common/actions';
+import Status from 'common/containers/Status';
+import Login from 'common/containers/Login';
 import PendingQuoteList from 'qdb/containers/PendingQuoteList';
 import QuoteList from 'qdb/containers/QuoteList';
 import QDBModal from 'qdb/containers/QDBModal';

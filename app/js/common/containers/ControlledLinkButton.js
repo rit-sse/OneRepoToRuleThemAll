@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ButtonLink from 'general/components/ButtonLink';
+import ButtonLink from 'common/components/ButtonLink';
 
 function mapStateToProps(store, props) {
   return {

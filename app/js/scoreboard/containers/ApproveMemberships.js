@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import List from 'general/components/List';
+import List from 'common/components/List';
 import Membership from 'scoreboard/components/Membership';
 import { getMemberships, approveMembership, denyMembership } from 'scoreboard/actions';
 

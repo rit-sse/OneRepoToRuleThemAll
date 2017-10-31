@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { gravatar } from 'utils/images';
-import SwipeArea from 'general/components/SwipeArea';
-import Actions from 'general/components/Actions';
+import SwipeArea from 'common/components/SwipeArea';
+import Actions from 'common/components/Actions';
 
 class Officer extends Component {
   static propTypes = {
