@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Field, Form, FormSection, reduxForm } from 'redux-form';
 import { Modal, ModalHeader, ModalBody, ModalFooter, InputGroup, InputGroupAddon } from 'reactstrap';
-import Button from 'general/components/Button';
-import UserForm from 'general/containers/UserForm';
-import SelectInput from 'general/components/SelectInput';
+import Button from 'common/components/Button';
+import UserForm from 'common/containers/UserForm';
+import SelectInput from 'common/components/SelectInput';
 import moment from 'moment';
 
 class OfficerForm extends Component {

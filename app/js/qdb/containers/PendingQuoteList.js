@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { showQuoteModal } from 'general/actions';
-import List from 'general/components/List';
+import { showQuoteModal } from 'common/actions';
+import List from 'common/components/List';
 import { approveQuote, getQuotes, destoryQuote } from 'qdb/actions';
 import PendingQuote from 'qdb/components/PendingQuote';
 import qs from 'qs';

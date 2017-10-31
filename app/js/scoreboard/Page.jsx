@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Link, Switch } from 'react-router-dom';
-import ControlledLinkButton from 'general/containers/ControlledLinkButton';
-import CreateButton from 'general/containers/CreateButton';
-import { addMembershipModal } from 'general/actions';
-import Status from 'general/containers/Status';
-import Login from 'general/containers/Login';
+import ControlledLinkButton from 'common/containers/ControlledLinkButton';
+import CreateButton from 'common/containers/CreateButton';
+import { addMembershipModal } from 'common/actions';
+import Status from 'common/containers/Status';
+import Login from 'common/containers/Login';
 import ViewMembershipsModal from 'scoreboard/containers/ViewMembershipModal';
 import ApproveMemberships from 'scoreboard/components/ApproveMemberships';
 import AddMembershipModal from 'scoreboard/containers/AddMembershipModal';

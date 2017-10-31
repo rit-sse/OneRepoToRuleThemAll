@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { hideModal, QUOTE_MODAL } from 'general/actions';
+import { hideModal, QUOTE_MODAL } from 'common/actions';
 import { createQuote, updateQuote, getTags } from 'qdb/actions';
 import QDBModal from 'qdb/components/QDBModal';
 

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import List from 'general/components/List';
+import List from 'common/components/List';
 import Event from 'events/components/Event';
-import { showEventModal } from 'general/actions';
+import { showEventModal } from 'common/actions';
 import { getEvents, destoryEvent } from 'events/actions';
 
 function filterEvents(events, filter) {

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { hideModal, GO_MODAL } from 'general/actions';
+import { hideModal, GO_MODAL } from 'common/actions';
 import { createLink, updateLink, checkLink } from 'go/actions';
 import GoModal from 'go/components/GoModal';
 

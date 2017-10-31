@@ -1,5 +1,5 @@
 import Moment from 'moment';
-import { scrollDone } from 'general/actions';
+import { scrollDone } from 'common/actions';
 import { extendMoment } from 'moment-range/dist/moment-range';
 import * as utils from 'utils/actions';
 

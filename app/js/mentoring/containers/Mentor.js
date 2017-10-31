@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { hoverMentor, unhover } from 'general/actions';
+import { hoverMentor, unhover } from 'common/actions';
 import { MENTORS, SPECIALTIES } from 'mentoring/actions';
 import Mentor from 'mentoring/components/Mentor';
 

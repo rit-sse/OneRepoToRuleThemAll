@@ -2,10 +2,10 @@ import React from 'react';
 import store from 'store';
 import history from 'history';
 import { Provider } from 'react-redux';
-import Layout from 'general/components/Layout';
+import Layout from 'common/components/Layout';
 import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter } from 'connected-react-router';
-import asyncComponent from 'general/components/AsyncComponent';
+import asyncComponent from 'common/components/AsyncComponent';
 
 import 'scss/app.scss';
 

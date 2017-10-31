@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
-import CreateButton from 'general/containers/CreateButton';
-import { showEventModal, COMMITTEES } from 'general/actions';
-import Status from 'general/containers/Status';
-import Login from 'general/containers/Login';
+import CreateButton from 'common/containers/CreateButton';
+import { showEventModal, COMMITTEES } from 'common/actions';
+import Status from 'common/containers/Status';
+import Login from 'common/containers/Login';
 import CommitteesList from 'events/containers/CommitteesList';
 import EventModal from 'events/containers/EventModal';
 import EventList from 'events/containers/EventList';

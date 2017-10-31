@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import List from 'general/components/List';
+import List from 'common/components/List';
 import Specialty from 'mentoring/containers/Specialty';
 import { getSpecialties } from 'mentoring/actions';
 

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { viewMembershipModal } from 'general/actions';
-import List from 'general/components/List';
+import { viewMembershipModal } from 'common/actions';
+import List from 'common/components/List';
 import Member from 'scoreboard/components/Member';
 import { getMembers } from 'scoreboard/actions';
 

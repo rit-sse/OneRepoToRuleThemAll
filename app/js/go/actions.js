@@ -1,4 +1,4 @@
-import { scrollDone } from 'general/actions';
+import { scrollDone } from 'common/actions';
 import * as utils from 'utils/actions';
 
 export const GO = 'GO';

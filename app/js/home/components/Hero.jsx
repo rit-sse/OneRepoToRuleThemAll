@@ -1,5 +1,5 @@
 import React from 'react';
-import SmoothImageDiv from 'general/components/SmoothImageDiv';
+import SmoothImageDiv from 'common/components/SmoothImageDiv';
 import LabImg from 'img/betterLab.jpg';
 import RapDevImg from 'img/rapdev.jpg';
 
