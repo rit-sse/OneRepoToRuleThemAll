@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { getMemberships, approveMembership, denyMembership } from 'general/actions';
 import List from 'general/components/List';
 import Membership from 'scoreboard/components/Membership';
+import { getMemberships, approveMembership, denyMembership } from 'scoreboard/actions';
 
 function mapStateToProps(store) {
   return {
