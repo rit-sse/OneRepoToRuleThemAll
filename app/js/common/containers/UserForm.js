@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { getUser } from 'general/actions';
-import UserForm from 'general/components/UserForm';
+import { getUser } from 'common/actions';
+import UserForm from 'common/components/UserForm';
 
 function mapStateToProps(state) {
   return {

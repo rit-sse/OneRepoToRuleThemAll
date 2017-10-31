@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import moment from 'moment';
-import { hideModal, MENTOR_MODAL } from 'general/actions';
+import { hideModal, MENTOR_MODAL } from 'common/actions';
 import { createMentor, updateMentor, getSpecialties } from 'mentoring/actions';
 import AddMentorForm from 'mentoring/components/AddMentorForm';
 

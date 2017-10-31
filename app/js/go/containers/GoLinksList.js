@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { showGoModal } from 'general/actions';
-import List from 'general/components/List';
+import { showGoModal } from 'common/actions';
+import List from 'common/components/List';
 import { getLinks, destoryLink } from 'go/actions';
 import GoLink from 'go/components/GoLink';
 

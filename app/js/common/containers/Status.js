@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { closeStatus } from 'general/actions';
-import Status from 'general/components/Status';
+import { closeStatus } from 'common/actions';
+import Status from 'common/components/Status';
 
 function mapStateToProps(store, props) {
   return {

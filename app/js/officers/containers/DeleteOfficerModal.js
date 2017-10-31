@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { hideModal, DELETE_OFFICER_MODAL } from 'general/actions';
+import { hideModal, DELETE_OFFICER_MODAL } from 'common/actions';
 import DeleteOfficerModal from 'officers/components/DeleteOfficerModal';
 import { destroyOfficer } from 'officers/actions';
 

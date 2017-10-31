@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { HIDE_MODAL } from 'general/actions';
+import { HIDE_MODAL } from 'common/actions';
 import {
   GET_LINKS,
   CREATE_LINK,

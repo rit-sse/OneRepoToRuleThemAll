@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import SwipeArea from 'general/components/SwipeArea';
-import Actions from 'general/components/Actions';
+import SwipeArea from 'common/components/SwipeArea';
+import Actions from 'common/components/Actions';
 import Tags from 'qdb/components/Tags';
 
 import 'scss/pane.scss';
