@@ -82,7 +82,14 @@ class EventModal extends Component {
             <div className="form-group row">
               <label htmlFor="name" className="col-3 col-form-label">Event Name</label>
               <div className="col-9">
-                <Field className="form-control" id="name" name="name" component="input" />
+                <Field
+                  id="name"
+                  name="name"
+                  className="form-control"
+                  component="input"
+                  maxLength="25"
+                  required
+                />
               </div>
             </div>
             <div className="form-group row">
@@ -94,6 +101,7 @@ class EventModal extends Component {
                   type="datetime-local"
                   className="form-control"
                   component="input"
+                  required
                 />
               </div>
             </div>
@@ -106,6 +114,7 @@ class EventModal extends Component {
                   type="datetime-local"
                   className="form-control"
                   component="input"
+                  required
                 />
               </div>
             </div>
@@ -130,6 +139,7 @@ class EventModal extends Component {
                   className="form-control"
                   placeholder="location"
                   component="input"
+                  required
                 />
               </div>
             </div>
@@ -142,6 +152,7 @@ class EventModal extends Component {
                   className="form-control"
                   placeholder="Image URL"
                   component="input"
+                  type="url"
                 />
               </div>
             </div>
@@ -153,6 +164,7 @@ class EventModal extends Component {
                   name="committeeName"
                   className="form-control"
                   component="select"
+                  required
                 >
                   {options}
                 </Field>
