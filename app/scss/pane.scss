@@ -6,7 +6,6 @@
   padding: 10px;
   padding-left: 15px;
   transition: background-color .25s ease-out;
-  cursor: pointer;
   margin-bottom: 15px;
 
   &:after {
@@ -21,10 +20,12 @@
 
   .heading {
     margin-bottom: 10px;
+
     .title {
       float: left;
       font-weight: 600;
     }
+
     &:after {
       clear: both;
       content: ' ';
