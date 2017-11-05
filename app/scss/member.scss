@@ -1,9 +1,15 @@
 @import 'variables';
 
 .member {
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+
   .gravatar {
     height: 30px;
   }
+
   .name {
     display: inline-block;
     margin-left: 10px;
