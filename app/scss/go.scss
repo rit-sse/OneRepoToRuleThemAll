@@ -3,24 +3,19 @@
 .go-item {
   .head {
     width: 100%;
+
     .short-link {
       float: left;
       margin: 0;
     }
-    .actions {
-      float: right;
-      .btn-small {
-        border-radius: 0;
-        font-size: 12px;
-        padding: .25rem .5rem;
-      }
-    }
+
     &:after {
       clear: both;
       content: ' ';
       display: block;
     }
   }
+
   .long-link {
     float: left;
     margin: 0;
