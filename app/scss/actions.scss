@@ -27,15 +27,16 @@
       opacity: 1;
     }
 
-    @media (min-width: $BREAK_SM) {
-      &:hover, &:focus {
-        opacity: 1;
-      }
-    }
-
     @media (max-width: $BREAK_SM) {
       opacity: 1;
     }
   }
-}
 
+  @media (min-width: $BREAK_SM) {
+    &:hover, &:focus {
+      .actions {
+        opacity: 1;
+      }
+    }
+  }
+}
