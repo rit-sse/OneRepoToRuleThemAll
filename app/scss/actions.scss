@@ -16,3 +16,26 @@
   position: relative;
 }
 
+.actions-container-fade {
+  @extend .actions-container;
+
+  .actions {
+    opacity: 0;
+    transition: .5s ease;
+
+    &.shown {
+      opacity: 1;
+    }
+
+    @media (min-width: $BREAK_SM) {
+      &:hover, &:focus {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: $BREAK_SM) {
+      opacity: 1;
+    }
+  }
+}
+
