@@ -40,7 +40,6 @@ const QDB = ({ location }) => (
         <Link to="/qdb" className="title-link">
           <h2 className="float-left">QDB</h2>
         </Link>
-        <div className="clearfix hidden-sm-up" />
         <div className="actions btn-group pb-2 mt-sm-1 float-sm-right" role="group" aria-label="Basic example">
           <CreateButton any action={showQuoteModal} className="btn btn-secondary">
             Create
