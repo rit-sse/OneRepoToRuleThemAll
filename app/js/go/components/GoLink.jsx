@@ -1,7 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import 'scss/actions.scss';
+const Actions = styled.div`
+  /* Position the Action Buttons on the right side of the container */
+  position: absolute;
+  right: 0;
+  top: 0;
+`;
+
+const ActionButton = styled.button`
+  display: block; /* Stack the buttons on top of each other */
+  margin: 4px; /* Based on the height of the container, this spacing looks alright */
+  width: 75px; /* So that the buttons have the same width */
+`;
+
+const Link = styled.p``;
+
+const LongLink = Link.extend`
+  margin-bottom: 0; /* Remove default margin */
+  word-break: break-all;
+`;
 
 const GoLink = ({
   shortLink,
@@ -9,19 +28,13 @@ const GoLink = ({
   editItem,
   deleteItem,
 }) => (
-  <li key={shortLink} className="list-group-item go-item">
-    <div className="head">
-      <p className="short-link">
-        ShortLink: <a href={`/go/${shortLink}`}>{shortLink}</a>
-      </p>
-      <div className="actions">
-        <button className="btn btn-small btn-info" onClick={editItem}>Edit</button>
-        <button className="btn btn-small btn-danger" onClick={deleteItem}>Delete</button>
-      </div>
-    </div>
-    <p className="long-link">
-      LongLink: <a href={longLink} target="_blank" rel="noopener noreferrer">{longLink}</a>
-    </p>
+  <li key={shortLink} className="list-group-item">
+    <Link>Short Link: <a href={`/go/${shortLink}`}>{shortLink}</a></Link>
+    <LongLink>Long Link: <a href={longLink} target="_blank" rel="noopener noreferrer">{longLink}</a></LongLink>
+    <Actions>
+      <ActionButton className="btn btn-small btn-primary" onClick={editItem}>Edit</ActionButton>
+      <ActionButton className="btn btn-small btn-danger" onClick={deleteItem}>Delete</ActionButton>
+    </Actions>
   </li>
 );
 
