@@ -6,7 +6,7 @@ export const GET_LINKS = 'GET_LINKS';
 export const CREATE_LINK = 'CREATE_LINK';
 export const UPDATE_LINK = 'UPDATE_LINK';
 export const DESTORY_LINK = 'DESTORY_LINK';
-export const CHECK_LINK = 'TOGGLE_LINK_MODAL';
+export const CHECK_LINK = 'CHECK_LINK';
 
 const createAction = utils.createAction(GO);
 const loading = utils.createLoading(GO);
