@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { NavDropdown, DropdownToggle, DropdownMenu, DropdownItem, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
 import 'scss/nav.scss';
 import Logo from 'img/sse-logo.png';
@@ -29,11 +29,11 @@ class SSENav extends Component {
     } = this.props;
 
     return (
-      <Navbar color="faded" className="navbar-sse" light toggleable>
-        <NavbarToggler right onClick={toggle} />
+      <Navbar color="faded" className="navbar-sse" light expand="sm">
         <NavbarBrand tag={Link} to="/">
           <img src={Logo} alt="SSE Logo" />
         </NavbarBrand>
+        <NavbarToggler onClick={toggle} />
         <Collapse isOpen={opened} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
@@ -47,7 +47,7 @@ class SSENav extends Component {
             <NavItem>
               <NavLink tag={Link} to="/projects">Projects</NavLink>
             </NavItem>
-            <NavDropdown isOpen={this.state.opened} toggle={this.toggle}>
+            <Dropdown nav isOpen={this.state.opened} toggle={this.toggle}>
               <DropdownToggle nav caret>
                 About
               </DropdownToggle>
@@ -58,7 +58,7 @@ class SSENav extends Component {
                 <DropdownItem tag={Link} to="/governing-docs/constitution">SSE Constitution</DropdownItem>
                 <DropdownItem tag={Link} to="/governing-docs/primary-officers-policy">SSE Primary Officers&apos; Policy</DropdownItem>
               </DropdownMenu>
-            </NavDropdown>
+            </Dropdown>
           </Nav>
         </Collapse>
       </Navbar>
