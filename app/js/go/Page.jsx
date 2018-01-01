@@ -9,7 +9,6 @@ import GoModal from 'go/containers/GoModal';
 import { GO } from 'go/actions';
 
 import 'scss/page.scss';
-import 'scss/go.scss';
 
 const Go = () => (
   <div className="page container">
