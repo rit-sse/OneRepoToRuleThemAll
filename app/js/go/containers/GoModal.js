@@ -6,7 +6,7 @@ import GoModal from 'go/components/GoModal';
 function mapStateToProps(store) {
   return {
     link: store.go.all.find(link => link.shortLink === store.modal.id),
-    shouldUpdate: store.go.update,
+    shouldOverride: store.go.shouldOverride,
     isOpen: store.modal.modalType === GO_MODAL,
   };
 }
