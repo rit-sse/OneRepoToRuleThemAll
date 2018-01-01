@@ -33,7 +33,7 @@ function all(state = [], action) {
   }
 }
 
-function update(state = false, action) {
+function shouldOverride(state = false, action) {
   switch (action.type) {
     case CHECK_LINK:
       return action.payload;
@@ -46,5 +46,5 @@ function update(state = false, action) {
 
 export default combineReducers({
   all,
-  update,
+  shouldOverride,
 });
