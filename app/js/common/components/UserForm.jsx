@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Field } from 'redux-form';
+import { Formik } from 'formik';
+import yup from 'yup';
+import { FormFeedback } from 'reactstrap';
 
 class UserForm extends Component {
   static propTypes = {
@@ -11,57 +13,136 @@ class UserForm extends Component {
       dce: PropTypes.string,
       image: PropTypes.string,
     }),
-    autofill: PropTypes.func.isRequired,
-    name: PropTypes.string,
+    onSubmit: PropTypes.func.isRequired,
   };
 
   static defaultProps = {
-    name: 'user',
     user: {},
   };
 
-  componentDidUpdate(prevProps) {
+  render() {
     const {
-      name,
       user,
-      autofill,
+      onSubmit,
     } = this.props;
 
-    if (user && user.dce !== prevProps.user.dce) {
-      autofill(name, user);
-    }
-  }
-
-  getUser = (event, newValue) => this.props.getUser(newValue);
-
-  render() {
     return (
-      <fieldset className="form-group">
-        <div className="form-group row">
-          <label htmlFor="dce" className="col-sm-2 col-form-label">DCE</label>
-          <div className="col-sm-10">
-            <Field className="form-control" id="dce" name="dce" component="input" onBlur={this.getUser} required />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="firstName" className="col-sm-2 col-form-label">First Name</label>
-          <div className="col-sm-10">
-            <Field className="form-control" id="firstName" name="firstName" component="input" />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="lastName" className="col-sm-2 col-form-label">Last Name</label>
-          <div className="col-sm-10">
-            <Field className="form-control" id="lastName" name="lastName" component="input" />
-          </div>
-        </div>
-        <div className="form-group row">
-          <label htmlFor="image" className="col-sm-2 col-form-label">Image</label>
-          <div className="col-sm-10">
-            <Field className="form-control" id="image" name="image" component="input" />
-          </div>
-        </div>
-      </fieldset>
+      <Formik
+        initialValues={{
+          dce: user.dce || '',
+          firstName: user.firstName || '',
+          lastName: user.lastName || '',
+          image: user.image || '',
+        }}
+        validationSchema={() => yup.object()
+          .shape({
+            dce: yup.string()
+              .matches(/^[a-z]{2,3}\d{4}$/, {
+                message: 'A DCE is 2-3 letters followed by 4 numbers',
+                excludeEmptyString: true,
+              }),
+            firstName: yup.string(),
+            lastName: yup.string(),
+            image: yup.string().url('Must be a valid URL'),
+          })
+        }
+        onSubmit={(
+          values
+        ) => {
+          onSubmit({
+            ...values,
+            // On these optional fields, the API expects 'null' instead of empty string ('')
+            firstName: values.firstName || null,
+            lastName: values.lastName || null,
+            image: values.image || null,
+          });
+        }}
+        enableReinitialize // This allows for firstName and lastName to be autofilled
+        render={({
+          values,
+          errors,
+          touched,
+          handleChange,
+          handleBlur,
+        }) => (
+          <fieldset className="form-group">
+            <div className="form-group row">
+              <label htmlFor="dce" className="col-3 col-form-label">DCE</label>
+              <div className="col-9">
+                <input
+                  type="text"
+                  name="dce"
+                  id="dce"
+                  className="form-control"
+                  onChange={handleChange}
+                  onBlur={(e) => {
+                    if (!errors.dce) {
+                      this.props.getUser(values.dce);
+                    }
+                    handleBlur(e);
+                  }}
+                  value={values.dce}
+                  required
+                />
+                {touched.dce
+                  && errors.dce
+                  && <FormFeedback style={{ display: 'block' }}>{errors.dce}</FormFeedback>}
+              </div>
+            </div>
+            <div className="form-group row">
+              <label htmlFor="firstName" className="col-3 col-form-label">First Name</label>
+              <div className="col-9">
+                <input
+                  type="text"
+                  name="firstName"
+                  id="firstName"
+                  className="form-control"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.firstName}
+                />
+                {touched.firstName
+                  && errors.firstName
+                  && <FormFeedback style={{ display: 'block' }}>{errors.firstName}</FormFeedback>}
+              </div>
+            </div>
+            <div className="form-group row">
+              <label htmlFor="lastName" className="col-3 col-form-label">Last Name</label>
+              <div className="col-9">
+                <input
+                  type="text"
+                  name="lastName"
+                  id="lastName"
+                  className="form-control"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.lastName}
+                />
+                {touched.lastName
+                  && errors.lastName
+                  && <FormFeedback style={{ display: 'block' }}>{errors.lastName}</FormFeedback>}
+              </div>
+            </div>
+            <div className="form-group row">
+              <label htmlFor="image" className="col-3 col-form-label">Image</label>
+              <div className="col-9">
+                <input
+                  type="text"
+                  name="image"
+                  id="image"
+                  className="form-control"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.image}
+                />
+                {touched.image
+                  && errors.image
+                  && <FormFeedback style={{ display: 'block' }}>{errors.image}</FormFeedback>}
+              </div>
+            </div>
+          </fieldset>
+        )}
+      />
     );
   }
 }
