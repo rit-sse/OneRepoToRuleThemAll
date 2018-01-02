@@ -58,4 +58,4 @@ Like to help out? Awesome!
 
 First, check out the [open issues](https://github.com/rit-sse/OneRepoToRuleThemAll/issues) for something to work on and comment on the issue saying you're working on it. Then fork this repo, branch off of `devlop` when making your changes, and submit a pull-request targeting `devlop`.
 
-If you have any questions or need some help, join our [Slack](rit-sse.slack.com) and post in the `#sse-technology` channel.
+If you have any questions or need some help, join our [Slack](https://rit-sse.slack.com) and post in the `#sse-technology` channel.
