@@ -8,7 +8,6 @@ import { ConnectedRouter } from 'connected-react-router';
 import asyncComponent from 'common/components/AsyncComponent';
 
 import 'scss/app.scss';
-import 'react-datetime/css/react-datetime.css';
 
 import Home from 'home'; // not async
 
