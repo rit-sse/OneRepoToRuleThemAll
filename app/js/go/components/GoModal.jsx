@@ -57,6 +57,8 @@ class GoModal extends Component {
           onSubmit={(
             values
           ) => {
+            close();
+
             if (link.shortLink) {
               // We're updating a Go link
               update(link.shortLink, values);
@@ -67,8 +69,6 @@ class GoModal extends Component {
               // We're creating a new Go link
               create(values);
             }
-
-            close();
           }}
           render={({
             values,
