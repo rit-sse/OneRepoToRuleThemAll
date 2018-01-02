@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Datetime from 'react-datetime';
 
+import 'react-datetime/css/react-datetime.css';
+
 // See: https://github.com/jaredpalmer/formik#why-use-setfieldvalue-instead-of-handlechange
 class FormikDatetime extends Component {
   static propTypes = {
