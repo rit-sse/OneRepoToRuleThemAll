@@ -22,4 +22,17 @@ yup.addMethod(yup.date, 'isAfter', function isAfter(ref, msg) { // Can't use arr
   });
 });
 
+yup.addMethod(yup.date, 'isFuture', function isFuture(msg) {
+  return this.test({
+    name: 'isFuture',
+    exclusive: true, // Validation errors don't stack
+    // NOTE: Intentional use of single quotes - yup will handle the string interpolation
+    // 'path' - yup provides this; key associated w/ yup schema
+    message: msg || '${path} must be in the future', // eslint-disable-line no-template-curly-in-string
+    test(value) {
+      return moment(value).isAfter(moment());
+    },
+  });
+});
+
 export default yup;
