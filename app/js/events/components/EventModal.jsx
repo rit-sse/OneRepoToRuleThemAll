@@ -50,8 +50,8 @@ class EventModal extends Component {
         <Formik
           initialValues={{
             name: event.name || '',
-            startDate: moment(event.startDate) || moment(),
-            endDate: moment(event.endDate) || moment(),
+            startDate: event.startDate ? moment(event.startDate) : '',
+            endDate: event.endDate ? moment(event.endDate) : '',
             description: event.description || '',
             location: event.location || '',
             image: event.image || '',
