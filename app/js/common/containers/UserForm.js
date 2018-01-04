@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import { getUser } from 'common/actions';
 import UserForm from 'common/components/UserForm';
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
   return {
-    user: state.user,
+    user: ownProps.user || state.user,
   };
 }
 
