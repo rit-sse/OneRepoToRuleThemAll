@@ -18,7 +18,7 @@ const Officers = () => (
         <div className="btn-group pb-2 mt-sm-1 float-sm-right" role="group" aria-label="Basic example">
           <CreateButton primary action={showOfficerModal} className="btn btn-secondary" >
             Create
-          </CreateButton>
+          </CreateButton> {/* TODO: primary casues React to throw an error */}
           <Login className="btn btn-sse" />
         </div>
       </div>
