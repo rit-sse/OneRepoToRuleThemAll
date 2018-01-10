@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Modal, ModalHeader, ModalBody, ModalFooter, InputGroup, FormFeedback } from 'reactstrap';
+import { Modal, ModalHeader, InputGroup, FormFeedback } from 'reactstrap';
 import moment from 'moment';
-import { Formik } from 'formik';
 
 import yup from 'utils/yup';
 import Button from 'common/components/Button';
@@ -62,7 +61,8 @@ class OfficerForm extends Component {
     return (
       <Modal isOpen={isOpen} toggle={close}>
         <ModalHeader toggle={close}>{updateOrCreate} Officer</ModalHeader>
-        <Formik
+        <UserForm
+          user={officer.user}
           initialValues={{
             title: officer.title || '',
             email: officer.email || '',
@@ -73,7 +73,7 @@ class OfficerForm extends Component {
             startDate: officer.startDate ? moment(officer.startDate).format(dayFormat) : '',
             endDate: officer.endDate ? moment(officer.endDate).format(dayFormat) : '',
           }}
-          validationSchema={() => yup.object()
+          validationSchema={yup.object()
             .shape({
               title: yup.string().required('Required'),
               email: yup.string().required('Required'),
@@ -95,24 +95,29 @@ class OfficerForm extends Component {
                 // value to '' for formik to use it as a controlled component, the 'isAfter'
                 // validation will be active, effectively requiring a value. We need to figure
                 // out how to have yup validate a field only if the field isn't empty (something other than '').
-            })
-          }
+            })}
           onSubmit={(
             values
           ) => {
-            // TODO: 'values' on has the values defined in 'initialValues'.
-            // We need to figure out a way to get the values from 'UserForm'.
             const newOfficer = {
-              ...values,
+              title: values.title,
+              committeeName: values.committeeName.value, // Parse out the 'select' value
+              email: values.email,
+              primaryOfficer: values.primaryOfficer,
               startDate: moment(values.startDate).toISOString(),
               endDate: values.endDate ? moment(values.endDate).toISOString() : null,
-              committeeName: values.committeeName.value, // Parse out the 'select' value
+              user: {
+                firstName: values.firstName,
+                lastName: values.lastName,
+                dce: values.dce,
+                image: values.image,
+              },
+              userDce: values.dce, // Helps in setting up the relation between User and Officer
             };
-            // newOfficer.userDce = newOfficer.user.dce; // TODO: Uncomment when get 'user' value from 'UserForm'
 
             close();
 
-            if (officer) {
+            if (officer.id) {
               update(officer.id, newOfficer);
             } else {
               create(newOfficer);
@@ -124,152 +129,141 @@ class OfficerForm extends Component {
             touched,
             handleChange,
             handleBlur,
-            handleSubmit,
             setFieldValue,
             setFieldTouched,
-            isSubmitting,
           }) => (
-            <form onSubmit={handleSubmit}>
-              <ModalBody>
-                <UserForm onSubmit={handleSubmit} user={officer.user} />
-                <fieldset className="form-group">
-                  <div className="form-group row">
-                    <label htmlFor="title" className="col-3 col-form-label">Title</label>
-                    <div className="col-9">
-                      <input
-                        type="text"
-                        name="title"
-                        id="title"
-                        className="form-control"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.title}
-                        required
-                      />
-                      {touched.title
-                        && errors.title
-                        && <FormFeedback style={{ display: 'block' }}>{errors.title}</FormFeedback>}
-                    </div>
+            <fieldset className="form-group">
+              <div className="form-group row">
+                <label htmlFor="title" className="col-3 col-form-label">Title</label>
+                <div className="col-9">
+                  <input
+                    type="text"
+                    name="title"
+                    id="title"
+                    className="form-control"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.title}
+                    required
+                  />
+                  {touched.title
+                    && errors.title
+                    && <FormFeedback style={{ display: 'block' }}>{errors.title}</FormFeedback>}
+                </div>
+              </div>
+              <div className="form-group row">
+                <label htmlFor="email" className="col-3 col-form-label">Email Alias</label>
+                <InputGroup className="col-9">
+                  <input
+                    type="text"
+                    name="email"
+                    id="email"
+                    className="form-control"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.email}
+                    required
+                  />
+                  <div className="input-group-append">
+                    <span className="input-group-text">@sse.rit.edu</span>
                   </div>
-                  <div className="form-group row">
-                    <label htmlFor="email" className="col-3 col-form-label">Email Alias</label>
-                    <InputGroup className="col-9">
-                      <input
-                        type="text"
-                        name="email"
-                        id="email"
-                        className="form-control"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.email}
-                        required
-                      />
-                      <div className="input-group-append">
-                        <span className="input-group-text">@sse.rit.edu</span>
-                      </div>
-                      {touched.email
-                        && errors.email
-                        && <FormFeedback style={{ display: 'block' }}>{errors.email}</FormFeedback>}
-                    </InputGroup>
-                  </div>
-                  <div className="form-group row">
-                    <label htmlFor="committeeName" className="col-3 col-form-label">Committee</label>
-                    <div className="col-9">
-                      <FormikSelectInput
-                        name="committeeName"
-                        id="committeeName"
-                        field="committeeName"
-                        input={{
-                          onChange: setFieldValue,
-                          onBlur: setFieldTouched,
-                          value: values.committeeName,
-                        }}
-                        options={committees}
-                        disabled={values.primaryOfficer}
-                      />
-                      {touched.committeeName
-                        && errors.committeeName
-                        && <FormFeedback style={{ display: 'block' }}>{errors.committeeName}</FormFeedback>}
-                    </div>
-                  </div>
-                  <div className="form-group">
-                    <div className="form-check">
-                      <label htmlFor="primaryOfficer" className="form-check-label">
-                        <input
-                          type="checkbox"
-                          name="primaryOfficer"
-                          id="primaryOfficer"
-                          className="form-check-input"
-                          onChange={(e) => {
-                            if (e.target.checked) {
-                              // Set to the 'General' committee
-                              setFieldValue('committeeName', primaryOfficerCommitteeSelectOption);
-                            } else {
-                              // Reset the select input
-                              setFieldValue('committeeName', null);
-                            }
-                            handleChange(e);
-                          }}
-                          onBlur={handleBlur}
-                          checked={values.primaryOfficer}
-                        />
-                        Primary Officer
-                      </label>
-                      {touched.primaryOfficer
-                        && errors.primaryOfficer
-                        && <FormFeedback style={{ display: 'block' }}>{errors.primaryOfficer}</FormFeedback>}
-                    </div>
-                  </div>
-                  <div className="form-group row">
-                    <label htmlFor="startDate" className="col-3 col-form-label">Start Date</label>
-                    <div className="col-9">
-                      {/* TODO: Update to use a cross-browser date picker */}
-                      <input
-                        type="date"
-                        name="startDate"
-                        id="startDate"
-                        className="form-control"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.startDate}
-                      />
-                      {touched.startDate
-                        && errors.startDate
-                        && <FormFeedback style={{ display: 'block' }}>{errors.startDate}</FormFeedback>}
-                    </div>
-                  </div>
-                  <div className="form-group row">
-                    <label htmlFor="endDate" className="col-3 col-form-label">End Date</label>
-                    <div className="col-9">
-                      {/* TODO: Update to use a cross-browser date picker */}
-                      <input
-                        type="date"
-                        name="endDate"
-                        id="endDate"
-                        className="form-control"
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                        value={values.endDate}
-                      />
-                      {touched.endDate
-                        && errors.endDate
-                        && <FormFeedback style={{ display: 'block' }}>{errors.endDate}</FormFeedback>}
-                    </div>
-                  </div>
-                </fieldset>
-              </ModalBody>
-              <ModalFooter>
-                <Button
-                  type="submit"
-                  className="btn btn-sse"
-                  disabled={isSubmitting}
-                >
-                  {updateOrCreate}
-                </Button>
-                <Button className="btn btn-secondary" type="button" onClick={close}>Cancel</Button>
-              </ModalFooter>
-            </form>
+                  {touched.email
+                    && errors.email
+                    && <FormFeedback style={{ display: 'block' }}>{errors.email}</FormFeedback>}
+                </InputGroup>
+              </div>
+              <div className="form-group row">
+                <label htmlFor="committeeName" className="col-3 col-form-label">Committee</label>
+                <div className="col-9">
+                  <FormikSelectInput
+                    name="committeeName"
+                    id="committeeName"
+                    field="committeeName"
+                    input={{
+                      onChange: setFieldValue,
+                      onBlur: setFieldTouched,
+                      value: values.committeeName,
+                    }}
+                    options={committees}
+                    disabled={values.primaryOfficer}
+                  />
+                  {touched.committeeName
+                    && errors.committeeName
+                    && <FormFeedback style={{ display: 'block' }}>{errors.committeeName}</FormFeedback>}
+                </div>
+              </div>
+              <div className="form-group">
+                <div className="form-check">
+                  <label htmlFor="primaryOfficer" className="form-check-label">
+                    <input
+                      type="checkbox"
+                      name="primaryOfficer"
+                      id="primaryOfficer"
+                      className="form-check-input"
+                      onChange={(e) => {
+                        if (e.target.checked) {
+                          // Set to the 'General' committee
+                          setFieldValue('committeeName', primaryOfficerCommitteeSelectOption);
+                        } else {
+                          // Reset the select input
+                          setFieldValue('committeeName', null);
+                        }
+                        handleChange(e);
+                      }}
+                      onBlur={handleBlur}
+                      checked={values.primaryOfficer}
+                    />
+                    Primary Officer
+                  </label>
+                  {touched.primaryOfficer
+                    && errors.primaryOfficer
+                    && <FormFeedback style={{ display: 'block' }}>{errors.primaryOfficer}</FormFeedback>}
+                </div>
+              </div>
+              <div className="form-group row">
+                <label htmlFor="startDate" className="col-3 col-form-label">Start Date</label>
+                <div className="col-9">
+                  {/* TODO: Update to use a cross-browser date picker */}
+                  <input
+                    type="date"
+                    name="startDate"
+                    id="startDate"
+                    className="form-control"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.startDate}
+                  />
+                  {touched.startDate
+                    && errors.startDate
+                    && <FormFeedback style={{ display: 'block' }}>{errors.startDate}</FormFeedback>}
+                </div>
+              </div>
+              <div className="form-group row">
+                <label htmlFor="endDate" className="col-3 col-form-label">End Date</label>
+                <div className="col-9">
+                  {/* TODO: Update to use a cross-browser date picker */}
+                  <input
+                    type="date"
+                    name="endDate"
+                    id="endDate"
+                    className="form-control"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.endDate}
+                  />
+                  {touched.endDate
+                    && errors.endDate
+                    && <FormFeedback style={{ display: 'block' }}>{errors.endDate}</FormFeedback>}
+                </div>
+              </div>
+            </fieldset>
           )}
+          renderFooter={({
+            isSubmitting,
+          }) => ([ // TODO: Update to Fragment syntax in React 16
+            <Button key="submit" type="submit" className="btn btn-sse" disabled={isSubmitting}>{updateOrCreate}</Button>,
+            <Button key="close" className="btn btn-secondary" type="button" onClick={close}>Cancel</Button>,
+          ])}
         />
       </Modal>
     );
