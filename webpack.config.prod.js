@@ -11,9 +11,9 @@ module.exports = {
     Vendor1: [
       'redux',
       'moment',
-      'redux-form',
       'react-redux',
-      'reactstrap-tether',
+      'react-popper',
+      'formik',
     ],
     Vendor2: [
       'react',
