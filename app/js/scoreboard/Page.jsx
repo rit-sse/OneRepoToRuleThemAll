@@ -21,7 +21,7 @@ const Scoreboard = ({ location }) => (
         <Link to="/scoreboard" className="title-link">
           <h2 className="float-left">Scoreboard</h2>
         </Link>
-        <div className="btn-group pb-2 mt-sm-1 float-sm-right" role="group" aria-label="Basic example">
+        <div className="btn-group pb-2 mt-sm-1 float-right" role="group" aria-label="Basic example">
           <CreateButton action={addMembershipModal} className="btn btn-secondary">
             Create
           </CreateButton>
