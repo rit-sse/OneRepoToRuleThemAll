@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Field, Form, FormSection, reduxForm } from 'redux-form';
-import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Modal, ModalHeader, FormFeedback } from 'reactstrap';
 import moment from 'moment';
+
+import yup from 'utils/yup';
 import UserForm from 'common/containers/UserForm';
 import Button from 'common/components/Button';
 
 class AddMembershipModal extends Component {
   static propTypes = {
-    initialize: PropTypes.func.isRequired,
     committees: PropTypes.arrayOf(PropTypes.object).isRequired,
     getCommittees: PropTypes.func.isRequired,
-    autofill: PropTypes.func.isRequired,
-    handleSubmit: PropTypes.func.isRequired,
     isOpen: PropTypes.bool.isRequired,
     close: PropTypes.func.isRequired,
     create: PropTypes.func.isRequired,
@@ -22,102 +20,155 @@ class AddMembershipModal extends Component {
     this.props.getCommittees();
   }
 
-  componentDidUpdate(prevProps) {
+  render() {
     const {
+      committees,
       isOpen,
-      initialize,
-    } = this.props;
-    if (isOpen && !prevProps.isOpen) {
-      initialize(prevProps.initialValues);
-    }
-  }
-
-  submit = (values) => {
-    const {
       close,
       create,
     } = this.props;
 
-    const { user, ...membership } = values;
-
-    const newMembership = {
-      ...membership,
-      userDce: user.dce,
-    };
-
-    close();
-
-    create(user, newMembership);
-  }
-
-  render() {
-    const {
-      autofill,
-      handleSubmit,
-      committees,
-      isOpen,
-      close,
-    } = this.props;
-
-    const options = committees.map(committee => <option key={committee.name} value={committee.name}>{committee.name}</option>);
+    const committeeNames = committees.map(committee => committee.name);
+    const dayFormat = 'YYYY-MM-DD';
 
     return (
-      <Modal isOpen={isOpen} toggle={close} style={{ maxWidth: '750px' }}>
-        <Form onSubmit={handleSubmit(this.submit)}>
-          <ModalHeader toggle={close}>Add Memberships</ModalHeader>
-          <ModalBody>
-            <FormSection name="user">
-              <UserForm autofill={autofill} />
-            </FormSection>
+      <Modal isOpen={isOpen} toggle={close}>
+        <ModalHeader toggle={close}>Add Memberships</ModalHeader>
+        <UserForm
+          initialValues={{
+            startDate: moment().format(dayFormat),
+            endDate: '',
+            reason: '',
+            committeeName: 'Historians', // Historians usually enter the most memberships (b/c photo submissions)
+          }}
+          validationSchema={yup.object()
+            .shape({
+              startDate: yup.date()
+                .required('Required'),
+              endDate: yup.date()
+                .required('Required')
+                .isFuture('End Date must be in the future')
+                .isAfter(yup.ref('startDate'), 'End Date must come after Start Date'),
+              reason: yup.string().required('Required'),
+              committeeName: yup.string().required('Required').oneOf(committeeNames),
+            })}
+          onSubmit={(
+            values
+          ) => {
+            const user = {
+              firstName: values.firstName,
+              lastName: values.lastName,
+              dce: values.dce,
+              image: values.image,
+            };
+
+            const newMembership = {
+              startDate: moment(values.startDate).toISOString(),
+              endDate: moment(values.endDate).toISOString(),
+              reason: values.reason,
+              committeeName: values.committeeName,
+              userDce: values.dce, // Helps in setting up the relation between User and Membership
+            };
+
+            close();
+
+            create(user, newMembership);
+          }}
+          render={({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+          }) => (
             <fieldset className="form-group">
               <div className="form-group row">
-                <label className="col-sm-2 col-form-label" htmlFor="startDate">Start Date</label>
-                <div className="col-sm-10">
-                  <Field type="date" className="form-control" id="startDate" name="startDate" component="input" required />
-                </div>
-              </div>
-              <div className="form-group row">
-                <label className="col-sm-2 col-form-label" htmlFor="endDate">End Date</label>
-                <div className="col-sm-10">
-                  <Field type="date" className="form-control" id="endDate" name="endDate" component="input" required />
-                </div>
-              </div>
-              <div className="form-group row">
-                <label className="col-sm-2 col-form-label" htmlFor="reason">Reason</label>
-                <div className="col-sm-10">
-                  <Field className="form-control" id="reason" name="reason" component="textarea" rows="2" required />
-                </div>
-              </div>
-              <div className="form-group row">
-                <label htmlFor="committeeName" className="col-2 col-form-label">Comittee</label>
-                <div className="col-10">
-                  <Field
-                    id="committeeName"
-                    name="committeeName"
+                <label htmlFor="startDate" className="col-3 col-form-label">Start Date</label>
+                <div className="col-9">
+                  {/* TODO: Update to use a cross-browser date picker */}
+                  <input
+                    type="date"
+                    name="startDate"
+                    id="startDate"
                     className="form-control"
-                    component="select"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.startDate}
+                    required
+                  />
+                  {touched.startDate
+                    && errors.startDate
+                    && <FormFeedback style={{ display: 'block' }}>{errors.startDate}</FormFeedback>}
+                </div>
+              </div>
+              <div className="form-group row">
+                <label htmlFor="endDate" className="col-3 col-form-label">End Date</label>
+                <div className="col-9">
+                  {/* TODO: Update to use a cross-browser date picker */}
+                  <input
+                    type="date"
+                    name="endDate"
+                    id="endDate"
+                    className="form-control"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.endDate}
+                    required
+                  />
+                  {touched.endDate
+                    && errors.endDate
+                    && <FormFeedback style={{ display: 'block' }}>{errors.endDate}</FormFeedback>}
+                </div>
+              </div>
+              <div className="form-group row">
+                <label htmlFor="reason" className="col-3 col-form-label">Reason</label>
+                <div className="col-9">
+                  <textarea
+                    name="reason"
+                    id="reason"
+                    className="form-control"
+                    rows="2"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.reason}
+                    required
+                  />
+                  {touched.reason
+                    && errors.reason
+                    && <FormFeedback style={{ display: 'block' }}>{errors.reason}</FormFeedback>}
+                </div>
+              </div>
+              <div className="form-group row">
+                <label htmlFor="committeeName" className="col-3 col-form-label">Committee</label>
+                <div className="col-9">
+                  <select
+                    name="committeeName"
+                    id="committeeName"
+                    className="form-control"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.committeeName}
+                    required
                   >
-                    {options}
-                  </Field>
+                    {committeeNames.map(name => <option key={name} value={name}>{name}</option>)}
+                  </select>
+                  {touched.committeeName
+                    && errors.committeeName
+                    && <FormFeedback style={{ display: 'block' }}>{errors.committeeName}</FormFeedback>}
                 </div>
               </div>
             </fieldset>
-          </ModalBody>
-          <ModalFooter>
-            <Button className="btn btn-sse" type="submit">Add</Button>
-            <Button className="btn btn-secondary" type="button" onClick={close}>Cancel</Button>
-          </ModalFooter>
-        </Form>
+          )}
+          renderFooter={({
+            isSubmitting,
+          }) => ([ // TODO: Update to Fragment syntax in React 16
+            <Button key="submit" className="btn btn-sse" type="submit" disabled={isSubmitting}>Add</Button>,
+            <Button key="close" className="btn btn-secondary" type="button" onClick={close}>Cancel</Button>,
+          ])}
+        />
       </Modal>
     );
   }
 }
 
-export default reduxForm({
-  form: 'memberships',
-  initialValues: {
-    committeeName: 'Historians', // Historians usually enter the most memberships (b/c photo submissions)
-    startDate: moment().format('YYYY-MM-DD'),
-  },
-  enableReinitialize: true,
-})(AddMembershipModal);
+export default AddMembershipModal;
