@@ -18,8 +18,8 @@ const Membership = ({
     <td>{reason}</td>
     <td>{committeeName}</td>
     <td className="btn-group">
-      <button onClick={() => deleteItem(id)} className="btn btn-secondary">Deny</button>
-      <button onClick={() => editItem(id)} className="btn btn-sse">Approve</button>
+      <button onClick={() => deleteItem(id)} className="btn btn-danger" style={{ width: '85px' }}>Deny</button>
+      <button onClick={() => editItem(id)} className="btn btn-sse" style={{ width: '85px' }}>Approve</button>
     </td>
   </tr>
 );
