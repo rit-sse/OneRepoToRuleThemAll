@@ -13,7 +13,7 @@ const Actions = ({
   show ? (
     <div className={shown ? 'actions shown' : 'actions'}>
       {children}
-      <button className="btn btn-small btn-info" onClick={editItem}>
+      <button className="btn btn-small btn-primary" onClick={editItem}>
         <i className="fa fa-pencil" aria-hidden="true" />
       </button>
       <button className="btn btn-small btn-danger" onClick={deleteItem}>
