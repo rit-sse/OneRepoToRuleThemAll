@@ -15,7 +15,7 @@ const Status = props => (
           <strong>{props.error}</strong>
         </div>;
       } else if (props.message && props.info) {
-        <div className="alert alert-info">
+        <div className="alert alert-primary">
           <button type="button" className="close" aria-label="Close" onClick={props.close}>
             <span aria-hidden="true">&times;</span>
           </button>
