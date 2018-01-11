@@ -1,8 +1,10 @@
-import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { Field, Form, reduxForm } from 'redux-form';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import SelectInput from 'common/components/SelectInput';
+import { Modal, ModalHeader, ModalBody, ModalFooter, FormFeedback } from 'reactstrap';
+import { Formik } from 'formik';
+import yup from 'yup';
+
+import FormikSelectInput from 'common/components/FormikSelectInput';
 import Button from 'common/components/Button';
 
 class QDBModal extends Component {
@@ -10,9 +12,7 @@ class QDBModal extends Component {
     create: PropTypes.func.isRequired,
     update: PropTypes.func.isRequired,
     isOpen: PropTypes.bool.isRequired,
-    initialize: PropTypes.func.isRequired,
     loadTags: PropTypes.func.isRequired,
-    handleSubmit: PropTypes.func.isRequired,
     close: PropTypes.func.isRequired,
     tags: PropTypes.arrayOf(PropTypes.shape({
       label: PropTypes.string,
@@ -30,91 +30,141 @@ class QDBModal extends Component {
   };
 
   static defaultProps = {
-    quote: null,
+    quote: {},
   };
 
   componentDidMount() {
     this.props.loadTags();
   }
 
-  componentDidUpdate(prevProps) {
-    const {
-      isOpen,
-      initialize,
-      quote,
-    } = this.props;
-    if (isOpen && !prevProps.isOpen) {
-      initialize(quote);
-    }
-  }
-
-  submit = (values) => {
-    const {
-      quote,
-      create,
-      update,
-      close,
-    } = this.props;
-
-    const newQuote = {
-      ...values,
-      tags: values.tags ? values.tags.map(tag => tag.value) : undefined,
-    };
-
-    close();
-
-    if (quote) update(quote.id, newQuote);
-    else create(newQuote);
-  };
-
   render() {
     const {
       isOpen,
-      handleSubmit,
       close,
       quote,
       tags,
+      create,
+      update,
     } = this.props;
 
-    const updateOrCreate = quote ? 'Update' : 'Create';
+    const updateOrCreate = quote.id ? 'Update' : 'Create';
 
     return (
       <Modal isOpen={isOpen} toggle={close}>
-        <Form onSubmit={handleSubmit(this.submit)}>
-          <ModalHeader toggle={close}>{updateOrCreate} Quote</ModalHeader>
-          <ModalBody>
-            <fieldset className="form-group">
-              <div className="form-group row">
-                <label className="col-sm-2 col-form-label" htmlFor="body">Body</label>
-                <div className="col-sm-10">
-                  <Field className="form-control" id="body" name="body" component="textarea" type="text" required />
-                </div>
-              </div>
-              <div className="form-group row">
-                <label className="col-sm-2 col-form-label" htmlFor="description">Description</label>
-                <div className="col-sm-10">
-                  <Field className="form-control" id="description" name="description" component="textarea" type="text" />
-                </div>
-              </div>
-              <div className="form-group row">
-                <label className="col-sm-2 col-form-label" htmlFor="tags">Tags</label>
-                <div className="col-sm-10">
-                  <Field id="tags" name="tags" multi options={tags} component={SelectInput} />
-                </div>
-              </div>
-            </fieldset>
-          </ModalBody>
-          <ModalFooter>
-            <Button className="btn btn-sse" type="submit">{updateOrCreate}</Button>
-            <Button className="btn btn-secondary" type="button" onClick={close}>Cancel</Button>
-          </ModalFooter>
-        </Form>
+        <ModalHeader toggle={close}>{updateOrCreate} Quote</ModalHeader>
+        <Formik
+          initialValues={{
+            body: quote.body || '',
+            description: quote.description || '',
+            tags: quote.tags || [], // react-select uses '[]' to represent when the value is cleared on a multi select
+          }}
+          validationSchema={() => yup.object()
+            .shape({
+              body: yup.string().required('Required'),
+              description: yup.string(),
+              tags: yup.array()
+                .of(yup.object()
+                  .shape({
+                    label: yup.mixed(),
+                    value: yup.mixed(),
+                  })),
+            })}
+          onSubmit={(
+            values
+          ) => {
+            const newQuote = {
+              ...values,
+              tags: values.tags.map(tag => tag.value),
+            };
+
+            close();
+
+            if (quote.id) {
+              update(quote.id, newQuote);
+            } else {
+              create(newQuote);
+            }
+          }}
+          render={({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            setFieldValue,
+            setFieldTouched,
+            isSubmitting,
+          }) => (
+            <form onSubmit={handleSubmit}>
+              <ModalBody>
+                <fieldset className="form-group">
+                  <div className="form-group row">
+                    <label htmlFor="body" className="col-3 col-form-label">Body</label>
+                    <div className="col-9">
+                      <textarea
+                        name="body"
+                        id="body"
+                        className="form-control"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.body}
+                        required
+                      />
+                      {touched.body
+                        && errors.body
+                        && <FormFeedback style={{ display: 'block' }}>{errors.body}</FormFeedback>}
+                    </div>
+                  </div>
+                  <div className="form-group row">
+                    <label htmlFor="description" className="col-3 col-form-label">Description</label>
+                    <div className="col-9">
+                      <textarea
+                        name="description"
+                        id="description"
+                        className="form-control"
+                        rows="5"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.description}
+                      />
+                      {touched.description
+                        && errors.description
+                        && <FormFeedback style={{ display: 'block' }}>{errors.description}</FormFeedback>}
+                    </div>
+                  </div>
+                  <div className="form-group row">
+                    <label htmlFor="tags" className="col-3 col-form-label">Tags</label>
+                    <div className="col-9">
+                      <FormikSelectInput
+                        name="tags"
+                        id="tags"
+                        field="tags"
+                        input={{
+                          onChange: setFieldValue,
+                          onBlur: setFieldTouched,
+                          value: values.tags,
+                        }}
+                        options={tags}
+                        multi
+                      />
+                      {touched.tags
+                        && errors.tags
+                        && <FormFeedback style={{ display: 'block' }}>{errors.tags}</FormFeedback>}
+                    </div>
+                  </div>
+                </fieldset>
+              </ModalBody>
+              <ModalFooter>
+                <Button type="submit" className="btn btn-sse" disabled={isSubmitting}>{updateOrCreate}</Button>
+                <Button className="btn btn-secondary" type="button" onClick={close}>Cancel</Button>
+              </ModalFooter>
+            </form>
+          )}
+        />
       </Modal>
     );
   }
 }
 
-export default reduxForm({
-  form: 'quote',
-})(QDBModal);
-
+export default QDBModal;
