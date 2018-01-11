@@ -43,7 +43,7 @@ const QDB = ({ location }) => (
         <div className="actions btn-group pb-2 mt-sm-1 float-sm-right" role="group" aria-label="Basic example">
           <CreateButton any action={showQuoteModal} className="btn btn-secondary">
             Create
-          </CreateButton>
+          </CreateButton> {/* TODO: any casues React to throw an error */}
           <ControlledLinkButton path={location.pathname} className="btn btn-secondary" to="/qdb/approval">
             Approve
           </ControlledLinkButton>
