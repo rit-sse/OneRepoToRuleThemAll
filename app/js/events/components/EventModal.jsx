@@ -171,6 +171,9 @@ class EventModal extends Component {
                       id="description"
                       className="form-control"
                       rows="5"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.description}
                     />
                     {touched.description
                       && errors.description
@@ -218,7 +221,6 @@ class EventModal extends Component {
                   <label htmlFor="committeeName" className="col-3 col-form-label">Committee</label>
                   <div className="col-9">
                     <select
-                      type="text"
                       name="committeeName"
                       id="committeeName"
                       className="form-control"
