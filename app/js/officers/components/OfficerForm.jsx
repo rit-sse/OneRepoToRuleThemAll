@@ -232,6 +232,7 @@ class OfficerForm extends Component {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.startDate}
+                    required
                   />
                   {touched.startDate
                     && errors.startDate
