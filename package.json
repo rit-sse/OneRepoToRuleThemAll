@@ -1,6 +1,7 @@
 {
   "name": "OneRepoToRuleThemAll",
   "version": "1.0.0",
+  "private": true,
   "description": "The SSE's new and improved frontend",
   "main": "server.js",
   "scripts": {
@@ -22,6 +23,10 @@
     {
       "name": "Dylan Vuz",
       "email": "vuzdylan@gmail.com"
+    },
+    {
+      "name": "Bill Dybas",
+      "email": "wmdybas@gmail.com"
     }
   ],
   "repository": {
@@ -35,7 +40,6 @@
     "blueimp-md5": "^2.7.0",
     "classnames": "^2.2.5",
     "connected-react-router": "^4.2.1",
-    "express": "^4.15.2",
     "formik": "^0.10.5",
     "history": "^4.6.1",
     "moment": "^2.18.1",
@@ -55,7 +59,6 @@
     "reactstrap": "^5.0.0-alpha.4",
     "redux": "^3.6.0",
     "redux-devtools": "^3.4.0",
-    "redux-form": "^6.7.0",
     "redux-thunk": "^2.2.0",
     "sse-api-client": "git+https://github.com/rit-sse/api-client.git",
     "styled-components": "^2.4.0",
