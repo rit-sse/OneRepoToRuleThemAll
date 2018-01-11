@@ -12,3 +12,15 @@ button {
     background-color: $PRIMARY;
   }
 }
+
+.btn-secondary {
+  background-color: $WHITE;
+  border-color: #ccc;
+  color: #292b2c;
+
+  &:hover, &:active {
+    background-color: #e6e6e6 !important;
+    border-color: #adadad !important;
+    color: #292b2c !important;
+  }
+}
