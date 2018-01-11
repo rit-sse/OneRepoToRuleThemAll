@@ -15,7 +15,7 @@ const Officers = () => (
     <div className="row">
       <div className="col">
         <h2 className="pull-left">Officers</h2>
-        <div className="btn-group pb-2 mt-sm-1 float-sm-right" role="group" aria-label="Basic example">
+        <div className="btn-group pb-2 mt-sm-1 float-right" role="group" aria-label="Basic example">
           <CreateButton primary action={showOfficerModal} className="btn btn-secondary" >
             Create
           </CreateButton> {/* TODO: primary casues React to throw an error */}
