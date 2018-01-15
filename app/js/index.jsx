@@ -20,9 +20,6 @@ const Events = asyncComponent(() => import(/* webpackChunkName: "Events" */ 'js/
 const Go = asyncComponent(() => import(/* webpackChunkName: "Go" */ 'js/go'));
 const QDB = asyncComponent(() => import(/* webpackChunkName: "QDB" */ 'js/qdb'));
 
-// Uncomment if we ever fix mentoring
-// const Mentoring = asyncComponent(() => import(/* webpackChunkName: "Mentoring" */ 'pages/Mentoring'));
-
 const Root = () => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
@@ -36,7 +33,6 @@ const Root = () => (
             <Route path="/officers" component={Officers} />
             <Route path="/scoreboard" component={Scoreboard} />
             <Route path="/events" component={Events} />
-            {/* <Route path="/mentoring" component={Mentoring} /> */}
             <Route component={Static} />
           </Switch>
         </Layout>
