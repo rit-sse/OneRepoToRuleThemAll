@@ -9,11 +9,12 @@ module.exports = {
   entry: {
     Main: './app/js/app.jsx',
     Vendor1: [
+      'yup',
       'redux',
       'moment',
+      'formik',
       'react-redux',
       'react-popper',
-      'formik',
     ],
     Vendor2: [
       'react',
