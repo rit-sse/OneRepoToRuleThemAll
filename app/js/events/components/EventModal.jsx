@@ -46,7 +46,7 @@ class EventModal extends Component {
 
     return (
       <Modal isOpen={isOpen} toggle={close}>
-        <ModalHeader toggle={close}>{updateOrCreate}</ModalHeader>
+        <ModalHeader toggle={close}>{updateOrCreate} Event</ModalHeader>
         <Formik
           initialValues={{
             name: event.name || '',
