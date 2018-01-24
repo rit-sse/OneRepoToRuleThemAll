@@ -33,7 +33,7 @@ class Hero extends React.Component {
           <div className="fancy-hero-container" />
           <div className="hero-content">
             <h3>Weekly Meetings</h3>
-            <h6>Thurs @ 4:00pm</h6>
+            <h6>Wed @ 4:30pm</h6>
             <h6>GOL-1670</h6>
             <h6>All Are Welcome!</h6>
           </div>
