@@ -14,6 +14,7 @@ class AddMembershipModal extends Component {
     isOpen: PropTypes.bool.isRequired,
     close: PropTypes.func.isRequired,
     create: PropTypes.func.isRequired,
+    initialCommitteeName: PropTypes.string.isRequired,
   };
 
   componentDidMount() {
@@ -26,6 +27,7 @@ class AddMembershipModal extends Component {
       isOpen,
       close,
       create,
+      initialCommitteeName,
     } = this.props;
 
     const committeeNames = committees.map(committee => committee.name);
@@ -39,7 +41,7 @@ class AddMembershipModal extends Component {
             startDate: moment().format(dayFormat),
             endDate: '',
             reason: '',
-            committeeName: 'Historians', // Historians usually enter the most memberships (b/c photo submissions)
+            committeeName: initialCommitteeName.committeeName || '',
           }}
           validationSchema={yup.object()
             .shape({
