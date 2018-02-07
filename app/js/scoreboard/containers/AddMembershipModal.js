@@ -7,6 +7,7 @@ function mapStateToProps(store) {
   return {
     isOpen: store.modal.modalType === ADD_MEMBERSHIP_MODAL,
     committees: store.committees,
+    initialCommitteeName: store.auth.officer || '',
   };
 }
 
