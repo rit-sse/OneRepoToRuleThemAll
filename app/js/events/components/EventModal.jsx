@@ -70,8 +70,8 @@ class EventModal extends Component {
                 .isFuture('End Date must be in the future')
                 .isAfter(yup.ref('startDate'), 'End Date must come after Start Date'),
               description: yup.string(),
-              location: yup.string().required('Required'),
-              image: yup.string().url('Must be a valid URL'),
+              location: yup.string().required('Required').max(255, 'Max 255 characters'),
+              image: yup.string().url('Must be a valid URL').max(255, 'Max 255 characters'),
               committeeName: yup.string().required('Required').oneOf(committeeNames),
             })
           }
@@ -193,6 +193,7 @@ class EventModal extends Component {
                       value={values.location}
                       placeholder="GOL-1670"
                       required
+                      maxLength={255}
                     />
                     {touched.location
                       && errors.location
@@ -211,6 +212,7 @@ class EventModal extends Component {
                       onBlur={handleBlur}
                       value={values.image}
                       placeholder="https://example.com/image.png"
+                      maxLength={255}
                     />
                     {touched.image
                       && errors.image
