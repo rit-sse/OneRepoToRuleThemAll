@@ -49,7 +49,7 @@ class UserForm extends Component {
           const schema = yup.object()
             .shape({
               dce: yup.string().required('Required')
-                .matches(/^[a-z]{2,3}\d{4}$/, {
+                .matches(/^[a-zA-Z]{2,3}\d{4}$/, {
                   message: 'A DCE is 2-3 letters followed by 4 numbers',
                   excludeEmptyString: true,
                 }),
@@ -75,7 +75,7 @@ class UserForm extends Component {
         ) => {
           // Proxy the values because we don't know how any additional fields will need to be handled
           onSubmit({
-            ...values,
+            dce: values.dce.toLowerCase(),
             // On these optional fields, the API expects 'null' instead of empty string ('')
             firstName: values.firstName || null,
             lastName: values.lastName || null,
