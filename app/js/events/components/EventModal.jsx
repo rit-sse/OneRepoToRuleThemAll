@@ -136,7 +136,14 @@ class EventModal extends Component {
                       }}
                       field="startDate"
                       onChange={setFieldValue}
-                      onBlur={setFieldTouched}
+                      onBlur={(field, bool) => {
+                        // If the 'startDate' field has been filled out and the 'endDate' field
+                        // is still empty, default 'endDate' to 1 hour after 'startDate'
+                        if (values.endDate === '' && values.startDate !== '') {
+                          setFieldValue('endDate', moment(values.startDate).add(1, 'hours'));
+                        }
+                        setFieldTouched(field, bool);
+                      }}
                       value={values.startDate}
                     />
                     {touched.startDate
