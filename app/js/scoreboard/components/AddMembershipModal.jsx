@@ -41,7 +41,7 @@ class AddMembershipModal extends Component {
             startDate: moment().format(dayFormat),
             endDate: '',
             reason: '',
-            committeeName: initialCommitteeName.committeeName || '',
+            committeeName: initialCommitteeName,
           }}
           validationSchema={yup.object()
             .shape({
