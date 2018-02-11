@@ -63,7 +63,7 @@ jobs:
       - add_ssh_keys
       - deploy:
           command: |
-            ssh deployer@eggs.se.rit.edu docker service update --image=ritsse/onerepo:$BUILD_TAG sse_dev_web --detach=false
+            ssh deployer@eggs.se.rit.edu docker service update --image=ritsse/onerepo:$BUILD_TAG sse_dev_dev_web --detach=false
 
   deploy:
     machine: true
