@@ -5,11 +5,11 @@
   "description": "The SSE's new and improved frontend",
   "main": "server.js",
   "scripts": {
-    "start": "NODE_ENV=development BABEL_ENV=development node ./server.js",
-    "build": "NODE_ENV=production BABEL_ENV=production ./node_modules/.bin/webpack --config webpack.config.prod.js",
-    "debug": "DEBUG=true npm run build -- --display-optimization-bailout",
-    "lint": "eslint --ext .js --ext .jsx app",
-    "validate": "npm ls"
+    "start": "cross-env NODE_ENV=development BABEL_ENV=development node ./server.js",
+    "build": "cross-env NODE_ENV=production BABEL_ENV=production ./node_modules/.bin/webpack --config webpack.config.prod.js",
+    "debug": "cross-env DEBUG=true npm run build -- --display-optimization-bailout",
+    "lint": "cross-env eslint --ext .js --ext .jsx app",
+    "validate": "cross-env npm ls"
   },
   "pre-push": [
     "validate",
@@ -74,6 +74,7 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "cross-env": "^5.1.3",
     "css-loader": "^0.26.4",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
