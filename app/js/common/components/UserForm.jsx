@@ -75,6 +75,7 @@ class UserForm extends Component {
         ) => {
           // Proxy the values because we don't know how any additional fields will need to be handled
           onSubmit({
+            ...values,
             dce: values.dce.toLowerCase(),
             // On these optional fields, the API expects 'null' instead of empty string ('')
             firstName: values.firstName || null,
