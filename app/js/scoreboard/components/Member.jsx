@@ -43,14 +43,14 @@ const Member = ({
   viewItem,
 }) => (
   <Row onClick={viewItem} className="member" index={index}>
-    <td>{index}</td>
+    <td style={{ width: '15%' }}>{index}</td>
     <td>
       <img src={gravatar(dce)} alt="Member" className="gravatar" />
       <div className="name">
         {name}
       </div>
     </td>
-    <td>{count}</td>
+    <td style={{ width: '15%' }}>{count}</td>
   </Row>
 );
 
