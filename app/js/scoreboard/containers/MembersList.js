@@ -6,7 +6,7 @@ import { getMembers } from 'scoreboard/actions';
 import { getOfficers } from 'officers/actions';
 
 function mapStateToProps(store, { displaying }) {
-  // Make a list of all the officers' dce's (eg. [abc124, xyz9876])
+  // Make a list of all the officers' dce's (eg. [abc1234, xyz9876])
   const officerDces = Object.values(store.officers).map(officer => officer.userDce);
   return {
     item: Member,
