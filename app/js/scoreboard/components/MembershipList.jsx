@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import MemberList from 'scoreboard/containers/MembersList';
 
-export default class MembershipList extends Component {
+class MembershipList extends Component {
   constructor(props) {
     super(props);
 
@@ -54,3 +54,5 @@ export default class MembershipList extends Component {
     );
   }
 }
+
+export default MembershipList;
