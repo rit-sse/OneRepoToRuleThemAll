@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import MemberList from 'scoreboard/containers/MembersList';
 
+import MemberList from 'scoreboard/containers/MembersList';
 
 export default class MembershipList extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      displayedType: 'MEMBERS',
+      displaying: 'MEMBERS',
     };
   }
 
   render() {
-    const displaying = this.state.displayedType;
+    const {
+      displaying,
+    } = this.state;
+
     return (
       <div className="offset-sm-1 col-sm-10 offset-md-2 col-md-8">
         <ul className="nav nav-tabs">
@@ -20,7 +23,8 @@ export default class MembershipList extends Component {
             <span
               style={{ cursor: 'pointer' }}
               className={`nav-link ${displaying === 'MEMBERS' ? 'active' : ''}`}
-              onClick={() => this.setState({ displayedType: 'MEMBERS' })}
+              onClick={() => this.setState({ displaying: 'MEMBERS' })}
+              role="tab"
             >
                 Members
             </span>
@@ -29,7 +33,8 @@ export default class MembershipList extends Component {
             <span
               style={{ cursor: 'pointer' }}
               className={`nav-link ${displaying === 'OFFICERS' ? 'active' : ''}`}
-              onClick={() => this.setState({ displayedType: 'OFFICERS' })}
+              onClick={() => this.setState({ displaying: 'OFFICERS' })}
+              role="tab"
             >
               Officers
             </span>
@@ -39,11 +44,11 @@ export default class MembershipList extends Component {
           <thead>
             <tr>
               <th>#</th>
-              <th>Member</th>
+              <th>{displaying === 'MEMBERS' ? 'Member' : 'Officer'}</th>
               <th>Score</th>
             </tr>
           </thead>
-          <MemberList wrapper="tbody" displayedType={displaying} />
+          <MemberList wrapper="tbody" displaying={displaying} />
         </table>
       </div>
     );
