@@ -109,7 +109,7 @@ class UserForm extends Component {
                       onChange={handleChange}
                       onBlur={(e) => {
                         if (!errors.dce) {
-                          this.props.getUser(values.dce);
+                          this.props.getUser(values.dce.toLowerCase());
                           // TODO: If there was user.dce and it's different than values.dce, force update the firstName and lastName values
                         }
                         handleBlur(e);
