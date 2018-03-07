@@ -15,7 +15,31 @@ Current SSE Projects
 
 Slack: `#proj-alumni`
 
-Meetings: Tuesday, 11:00am (Check Slack for changes!)
+Meetings: Saturday, 1:00pm (Check Slack for changes!)
+
+### [ARKit](https://github.com/TuckerBMorgan/ProjARKit)
+
+Slack: `#proj-arkit`
+
+Meetings: Sunday, 5:00pm (Check Slack for changes!)
+
+### Caveman
+
+Slack: `#proj-caveman`
+
+Meetings: Monday, 3:30pm (Check Slack for changes!)
+
+### Project PI
+
+Slack: `#proj-pi`
+
+Meetings: Wednesday, After general meeting (Check Slack for changes!)
+
+### Project Stereo
+
+Slack: `#proj-stereo`
+
+Meetings: Thursday, 3:30pm (Check Slack for changes!)
 
 Past Projects
 -------------
