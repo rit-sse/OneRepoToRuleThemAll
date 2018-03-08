@@ -6,7 +6,9 @@ function mapStateToProps(store, props) {
   return {
     info: store.status.info || '',
     error: store.status.error || '',
-    loading: !!props.type.find(type => Object.values(store.status.loading).includes(type)),
+    // Show the loading spinner if there's a loading state in the store or there isn't an error
+    loading: !!props.type.find(type => Object.values(store.status.loading).includes(type))
+      && !store.status.error,
   };
 }
 
