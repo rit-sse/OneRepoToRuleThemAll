@@ -14,7 +14,7 @@ import Home from 'home'; // not async
 const Static = asyncComponent(() => import(/* webpackChunkName: "Static" */ 'js/static'));
 const Officers = asyncComponent(() => import(/* webpackChunkName: "Officers" */ 'js/officers'));
 const Scoreboard = asyncComponent(() => import(/* webpackChunkName: "Scoreboard" */ 'js/scoreboard'));
-
+const Members = asyncComponent(() => import(/* webpackChunkName: "Members" */ 'js/members'));
 const GTV = asyncComponent(() => import(/* webpackChunkName: "Events" */ 'js/gtv'));
 const Events = asyncComponent(() => import(/* webpackChunkName: "Events" */ 'js/events'));
 const Go = asyncComponent(() => import(/* webpackChunkName: "Go" */ 'js/go'));
@@ -31,6 +31,7 @@ const Root = () => (
             <Route path="/go" component={Go} />
             <Route path="/qdb" component={QDB} />
             <Route path="/officers" component={Officers} />
+            <Route path="/members" component={Members} />
             <Route path="/scoreboard" component={Scoreboard} />
             <Route path="/events" component={Events} />
             <Route component={Static} />
