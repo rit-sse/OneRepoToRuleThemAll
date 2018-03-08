@@ -18,6 +18,7 @@ class List extends Component {
     wrapperProps: PropTypes.object, // eslint-disable-line
     keyPriority: PropTypes.arrayOf(PropTypes.string),
     children: PropTypes.node,
+    forceGetItems: PropTypes.bool.isRequired,
   }
 
   static defaultProps = {
@@ -34,10 +35,11 @@ class List extends Component {
     wrapperProps: {},
     keyPriority: ['id', 'name'],
     children: null,
+    forceGetItems: false,
   }
 
   componentDidMount() {
-    if (this.props.items.length === 0) {
+    if (this.props.items.length === 0 || this.props.forceGetItems) {
       this.props.getItems();
     }
     if (this.props.scroll && !this.props.scrollDone) {
