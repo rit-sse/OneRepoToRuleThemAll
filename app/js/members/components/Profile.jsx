@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
+import styled from 'styled-components';
 
 import { gravatar } from 'utils/images';
+
+const Callout = styled.span`
+  position: absolute;
+  right: 15%;
+  top: 17.5%;
+`;
 
 class Profile extends Component {
   static propTypes = {
@@ -17,10 +24,14 @@ class Profile extends Component {
       }),
     }).isRequired,
     getUser: PropTypes.func.isRequired,
+    signedInUser: PropTypes.shape({
+      dce: PropTypes.string,
+    }).isRequired,
   }
 
   static defaultProps = {
     user: {},
+    signedInUser: {},
   }
 
   componentDidMount() {
@@ -32,6 +43,7 @@ class Profile extends Component {
     const {
       dce,
       user,
+      signedInUser,
     } = this.props;
 
     return (
@@ -41,6 +53,7 @@ class Profile extends Component {
             {user.createdAt ? (
               <div className="card-body">
                 <img src={gravatar(dce)} alt="Member" className="gravatar mb-2" />
+                {signedInUser.dce === dce ? <Callout>It{"'"}s you!</Callout> : null}
                 <h4>{user.firstName} {user.lastName}</h4>
                 <p>{dce}@rit.edu</p>
                 {user.officer ? <p>{user.officer.title}</p> : null}
