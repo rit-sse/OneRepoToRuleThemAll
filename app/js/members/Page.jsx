@@ -1,6 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Switch, Route, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Status from 'common/containers/Status';
+import LoginRequired from 'common/components/LoginRequired';
 import Login from 'common/containers/Login';
 import UsersTable from 'members/components/UsersTable';
 import Profile from 'members/containers/Profile';
@@ -8,7 +11,7 @@ import { USERS } from 'members/actions';
 
 import 'scss/page.scss';
 
-const Members = () => (
+const Members = props => (
   <div className="container page">
     <div className="row">
       <div className="col">
@@ -26,8 +29,8 @@ const Members = () => (
       </div>
     </div>
     <Switch>
-      <Route path="/members" exact component={UsersTable} />
-      <Route path="/members/:dce" component={Profile} />
+      <Route path="/members" exact component={props.isSignedIn ? UsersTable : LoginRequired} />
+      <Route path="/members/:dce" component={props.isSignedIn ? Profile : LoginRequired} />
     </Switch>
     <div className="row">
       <div className="col-12">
@@ -37,4 +40,16 @@ const Members = () => (
   </div>
 );
 
-export default Members;
+Members.propTypes = {
+  isSignedIn: PropTypes.bool.isRequired,
+};
+
+Members.defaultValues = {
+  isSignedIn: false,
+};
+
+const mapStateToProps = ({ auth }) => ({
+  isSignedIn: !!auth.user,
+});
+
+export default connect(mapStateToProps, null)(Members);

@@ -8,6 +8,7 @@ function mapStateToProps(store, ownProps) {
   return {
     dce,
     user: store.users[dce],
+    signedInUser: store.auth.user || undefined,
   };
 }
 
