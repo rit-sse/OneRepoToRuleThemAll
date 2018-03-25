@@ -11,9 +11,9 @@ Contributing to projects is a great way to earn SSE membership!
 Current SSE Projects
 --------------------
 
-### [Alumni Directory](https://github.com/rit-sse/sse-member)
+### [Alumni Directory](https://github.com/rit-sse/sse-alumni)
 
-Keeping track of the cool things our alumni doing and where they've gone after RIT.
+Keeping track of the cool things our alumni are doing and where they've gone after RIT.
 
 Slack: `#proj-alumni`
 
@@ -21,7 +21,7 @@ Meetings: Saturday, 1:00pm (Check Slack for changes!)
 
 ### [ARKit](https://github.com/TuckerBMorgan/ProjARKit)
 
-The primary project being showcased at imagine RIT 2018. Using 2 iPads to create an Augmented Reality (AR) chess game.
+Using 2 iPads to create an Augmented Reality (AR) chess game. The primary project being showcased at Imagine RIT 2018. 
 
 Slack: `#proj-arkit`
 
