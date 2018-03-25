@@ -13,11 +13,15 @@ Current SSE Projects
 
 ### [Alumni Directory](https://github.com/rit-sse/sse-member)
 
+Keeping track of the cool things our alumni doing and where they've gone after RIT.
+
 Slack: `#proj-alumni`
 
 Meetings: Saturday, 1:00pm (Check Slack for changes!)
 
 ### [ARKit](https://github.com/TuckerBMorgan/ProjARKit)
+
+The primary project being showcased at imagine RIT 2018. Using 2 iPads to create an Augmented Reality (AR) chess game.
 
 Slack: `#proj-arkit`
 
@@ -25,17 +29,31 @@ Meetings: Sunday, 5:00pm (Check Slack for changes!)
 
 ### Caveman
 
+Creating a computer out of rocks and string.
+
 Slack: `#proj-caveman`
 
 Meetings: Monday, 3:30pm (Check Slack for changes!)
 
+### Project Darby
+
+Show a basic level of how reinforcement learning works with boxes and beads by training AI with Black Jack.
+
+Slack: `#proj-darby`
+
+Meetings: Saturdays, 10:30am (Check Slack for changes!)
+
 ### Project PI
+
+Using distributed Raspberry PI cluters to teach machine learning algorithms how to play Connect 4.
 
 Slack: `#proj-pi`
 
 Meetings: Wednesday, After general meeting (Check Slack for changes!)
 
 ### Project Stereo
+
+Creating a tool that allows different displays to have their own audio outputs.
 
 Slack: `#proj-stereo`
 
