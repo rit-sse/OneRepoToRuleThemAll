@@ -54,7 +54,7 @@
     "react-select": "^1.2.0",
     "reactstrap": "^5.0.0",
     "redux": "^3.7.2",
-    "redux-devtools": "^3.4.0",
+    "redux-devtools": "^3.4.1",
     "redux-thunk": "^2.2.0",
     "sse-api-client": "git+https://github.com/rit-sse/api-client.git",
     "styled-components": "^2.4.0",
