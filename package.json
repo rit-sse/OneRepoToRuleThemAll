@@ -57,7 +57,7 @@
     "redux-devtools": "^3.4.1",
     "redux-thunk": "^2.2.0",
     "sse-api-client": "git+https://github.com/rit-sse/api-client.git",
-    "styled-components": "^2.4.0",
+    "styled-components": "^3.2.3",
     "torque-react": "2.0.0",
     "yup": "^0.23.0"
   },
