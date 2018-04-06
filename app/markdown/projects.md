@@ -37,19 +37,11 @@ Meetings: Monday, 3:30pm (Check Slack for changes!)
 
 ### Project Darby
 
-Show a basic level of how reinforcement learning works with boxes and beads by training AI with Black Jack.
+Show a basic level of how reinforcement learning works with boxes and beads by training AI with Black Jack and a networked cluster of Raspberry PI's.
 
 Slack: `#proj-darby`
 
 Meetings: Saturdays, 10:30am (Check Slack for changes!)
-
-### Project PI
-
-Using distributed Raspberry PI cluters to teach machine learning algorithms how to play Connect 4.
-
-Slack: `#proj-pi`
-
-Meetings: Wednesday, After general meeting (Check Slack for changes!)
 
 ### Project Stereo
 
