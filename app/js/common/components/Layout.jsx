@@ -4,7 +4,7 @@ import SSENav from 'common/containers/SSENav';
 
 import 'scss/footer.scss';
 
-//get the current year so we can output the copyright notice
+// get the current year so we can output the copyright notice
 const copyrightDate = new Date().getFullYear();
 
 const Layout = props => (
