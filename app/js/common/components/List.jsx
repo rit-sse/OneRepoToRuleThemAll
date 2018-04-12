@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { sortPredicate } from '../../utils/sortOfficers';
 
 class List extends Component {
   static propTypes = {
@@ -85,7 +86,9 @@ class List extends Component {
       item: Item,
     } = this.props;
 
-    return [...defaultItems, ...items].map((item) => {
+    const allItems = [...defaultItems, ...items].sort(sortPredicate);
+
+    return allItems.map((item) => {
       const key = item[keyPriority.filter(i => !!item[i])[0]];
       return (
         <Item
