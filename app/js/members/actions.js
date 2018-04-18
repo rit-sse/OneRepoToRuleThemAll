@@ -11,18 +11,22 @@ const createAction = utils.createAction(USERS);
 const loading = utils.createLoading(USERS);
 
 export function getUser(dce) {
-  return (dispatch, getState, { Users, Officers }) => {
+  return (dispatch, getState, { Memberships, Users, Officers }) => {
     dispatch(loading(FETCH_USER));
     Promise.all([
       Officers.all({ user: dce, active: moment().toISOString() }),
       Users.one(dce),
+      Memberships.all({ userDce: dce, orderBy: 'createdAt', direction: 'ASC', limit: 1 }),
     ])
     .then((data) => {
       const officer = data[0][0]; // Get the first item if it exists
       const user = data[1];
+      const firstMembership = data[2][0]; // Get the first item if it exists
+
       return {
         ...user,
         officer,
+        firstMembership,
       };
     })
     .then(data => dispatch(createAction(FETCH_USER, data)))
