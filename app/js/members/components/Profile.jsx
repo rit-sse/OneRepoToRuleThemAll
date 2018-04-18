@@ -22,6 +22,9 @@ class Profile extends Component {
       officer: PropTypes.shape({
         title: PropTypes.string,
       }),
+      firstMembership: PropTypes.shape({
+        createdAt: PropTypes.string,
+      }),
     }).isRequired,
     getUser: PropTypes.func.isRequired,
     signedInUser: PropTypes.shape({
@@ -57,7 +60,7 @@ class Profile extends Component {
                 <h4>{user.firstName} {user.lastName}</h4>
                 <p>{dce}@rit.edu</p>
                 {user.officer ? <p>{user.officer.title}</p> : null}
-                <p>Member Since<br /><span className="font-weight-bold">{moment(user.createdAt).format('MMMM D, YYYY')}</span></p>
+                {user.firstMembership.createdAt ? <p>Member Since<br /><span className="font-weight-bold">{moment(user.firstMembership.createdAt).format('MMMM D, YYYY')}</span></p> : null}
               </div>
             ) : (
               <div className="card-body">
