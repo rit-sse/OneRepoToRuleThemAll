@@ -2,6 +2,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 
@@ -60,19 +61,17 @@ module.exports = {
       urlRoot: 'https://sse.rit.edu',
     }),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        screw_ie8: true,
-        warnings: false,
-      },
-      mangle: {
-        screw_ie8: true,
-      },
-      output: {
-        comments: false,
-        screw_ie8: true,
-      },
+    new UglifyJSPlugin({
+      parallel: true,
       sourceMap: false,
+      uglifyOptions: {
+        compress: {
+          warnings: false,
+        },
+        output: {
+          comments: false,
+        },
+      },
     }),
     new ExtractTextPlugin({
       filename: '[name].[chunkhash].css',
