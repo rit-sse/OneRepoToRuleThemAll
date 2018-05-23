@@ -60,7 +60,7 @@ class Profile extends Component {
                 <h4>{user.firstName} {user.lastName}</h4>
                 <p>{dce}@rit.edu</p>
                 {user.officer ? <p>{user.officer.title}</p> : null}
-                {user.firstMembership.createdAt ? <p>Member Since<br /><span className="font-weight-bold">{moment(user.firstMembership.createdAt).format('MMMM D, YYYY')}</span></p> : null}
+                {user.firstMembership && user.firstMembership.createdAt ? <p>Member Since<br /><span className="font-weight-bold">{moment(user.firstMembership.createdAt).format('MMMM D, YYYY')}</span></p> : null}
               </div>
             ) : (
               <div className="card-body">
