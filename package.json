@@ -11,10 +11,6 @@
     "lint": "cross-env eslint --ext .js --ext .jsx app",
     "validate": "cross-env npm ls"
   },
-  "pre-push": [
-    "validate",
-    "lint"
-  ],
   "contributors": [
     {
       "name": "Kristen Mills",
