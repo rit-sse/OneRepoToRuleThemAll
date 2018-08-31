@@ -28,7 +28,7 @@ jobs:
           name: Build the current image
           command: |
             TAG=build
-            docker build -f Dockerfile -t ritsse/onerepo:$TAG .
+            docker build --no-cache -f Dockerfile -t ritsse/onerepo:$TAG .
       - run:
           name: Distribute
           command: |

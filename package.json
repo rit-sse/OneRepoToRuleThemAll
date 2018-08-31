@@ -11,10 +11,6 @@
     "lint": "cross-env eslint --ext .js --ext .jsx app",
     "validate": "cross-env npm ls"
   },
-  "pre-push": [
-    "validate",
-    "lint"
-  ],
   "contributors": [
     {
       "name": "Kristen Mills",
@@ -87,7 +83,6 @@
     "html-webpack-plugin": "^2.28.0",
     "markdown-loader": "^2.0.2",
     "node-sass": "^4.8.3",
-    "pre-push": "^0.1.1",
     "raw-loader": "^0.5.1",
     "resolve-url-loader": "^1.6.1",
     "sass-loader": "^6.0.6",
