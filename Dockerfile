@@ -14,6 +14,7 @@ WORKDIR /app
 # Build the app
 COPY ./ /app
 COPY ./package.json /app/package.json
+RUN rm -rf node_modules
 RUN npm install --warn
 RUN npm run build
 
@@ -22,6 +23,4 @@ RUN chmod 755 -R /app/dist
 
 # Run nginx
 EXPOSE 80 443
-RUN rm -rf node_modules
-RUN npm install
 CMD ["nginx", "-g", "daemon off;"]
