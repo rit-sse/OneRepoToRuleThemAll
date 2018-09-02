@@ -1,0 +1,17 @@
+version: "3.1"
+
+services:
+    onerepo:
+        image: onerepo
+        ports:
+            - "5000:80"
+    nodeapi:
+        build: ../node-api
+        ports:
+            - "3000:3000"
+        environment:
+            - DB_HOST_OVERRIDE=postgres
+        depends_on:
+            - postgres
+    postgres:
+        image: postgres
