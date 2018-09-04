@@ -52,7 +52,7 @@ export function addMembership(user, membership) {
   return (dispatch, getState, { Users, Memberships }) => {
     dispatch(loading(ADD_MEMBERSHIP));
     return Users.update(user.dce, user)
-      .then(Memberships.create(membership))
+      .then(() => Memberships.create(membership))
       .then(member => dispatch(createAction(ADD_MEMBERSHIP, member, `Membership added for ${user.dce}`)))
       .catch(err => dispatch(createAction(ADD_MEMBERSHIP, err)));
   };
