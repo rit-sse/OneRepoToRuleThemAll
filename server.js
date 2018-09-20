@@ -10,7 +10,7 @@ const server = new WebpackDevServer(webpack(config), {
   disableHostCheck: true,
 });
 
-server.listen(process.env.PORT || 5000, 'localhost', function (err) {
+server.listen(process.env.PORT || 5000, '0.0.0.0', function (err) {
   if (err) {
     console.log(err);
   }
