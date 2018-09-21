@@ -52,19 +52,25 @@ Connect with SSE on the Web:
 -------------------
 
 ## [Slack](https://rit-sse.slack.com)
+Best way to stay in touch with the SSE. Used for announcements and general discussions.
 
 ## [GitHub](https://github.com/rit-sse)
+Used to store repositories and projects created by the SSE.
 
-## [Facebook](https://www.facebook.com/groups/ritsse/)
+## [Facebook Group](https://www.facebook.com/groups/ritsse/)
+Closed Facebook Group for valid RIT students. Best way to stay informed with social media updates.
+
+## [Facebook Page](https://www.facebook.com/ssebot/)
+Public-facing Facebook page representing the SSE.
 
 ## [Instagram](https://www.instagram.com/rit_sse/)
+Follow us on Instagram to see what we have been up to!
 
 ## [Twitter](https://twitter.com/rit_sse)
-
-## [Google+ Page](https://plus.google.com/103834948361002742056)
-
-## [Google+ Community](https://plus.google.com/communities/112362643597040911884)
+Follow us on Twitter!
 
 ## [Talks on Facebook](https://www.facebook.com/ssebot)
+Primary source of streaming our Tech Talks.
 
 ## [Talks on YouTube](https://www.youtube.com/user/SSETechtalks)
+Additional channel for streaming tech talks.
