@@ -58,10 +58,10 @@ Best way to stay in touch with the SSE. Used for announcements and general discu
 Used to store repositories and projects created by the SSE.
 
 ## [Facebook Group](https://www.facebook.com/groups/ritsse/)
-Closed Facebook Group for valid RIT students. Best way to stay informed with social media updates.
+Closed Facebook Group for valid RIT students. Best way to stay informed with social media updates. 
 
 ## [Facebook Page](https://www.facebook.com/ssebot/)
-Public-facing Facebook page representing the SSE.
+Public-facing Facebook page representing the SSE. Watch our talks or reach out to us with networking opportunities here!
 
 ## [Instagram](https://www.instagram.com/rit_sse/)
 Follow us on Instagram to see what we have been up to!
