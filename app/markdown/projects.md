@@ -11,7 +11,7 @@ Contributing to projects is a great way to earn SSE membership!
 Current SSE Projects
 --------------------
 
-### Tour Waving Robot
+### [Tour Waving Robot](https://github.com/rit-sse/robo-waver) 
 
 Creating a robot to wave at all the tours that pass our lab space.
 
@@ -20,7 +20,7 @@ Slack: `#proj-waving-robot`
 Meetings: Check slack!
 
 
-### Auto Notetaker
+### [Auto Notetaker](https://github.com/rit-sse/AutoNotation)
 
 Establishing a system to create notes from audio recordings.
 
@@ -36,7 +36,7 @@ Slack: `#proj-vrioware`
 
 Meetings: Check slack!
 
-### SSE Accounting
+### [SSE Accounting](https://github.com/rit-sse/sse-accounting)
 
 Creating a better way of tracking our organizations spending and bank account.
 
