@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { TorqueSlides, TorqueSlide } from 'torque-react';
+import TorqueSlides, { TorqueSlide } from 'torque-react';
 import { getEvents } from 'events/actions';
 import ColorView from 'gtv/components/ColorView';
 import EventPanels from 'gtv/containers/EventPanels';
