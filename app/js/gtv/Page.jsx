@@ -50,15 +50,12 @@ class GTV extends Component {
   render() {
     return (
       <div className="gtv" >
-        <TorqueSlides duration={30} keyboardInteractive >
+        <TorqueSlides duration={30} keyboardInteractive={true} >
           <TorqueSlide>
             <EventPanels />
           </TorqueSlide>
           <TorqueSlide duration={5}>
             <ColorView color="white" />
-          </TorqueSlide>
-          <TorqueSlide duration={15}>
-            <EventHighlight />
           </TorqueSlide>
           <TorqueSlide>
             <ThreeWeek />
