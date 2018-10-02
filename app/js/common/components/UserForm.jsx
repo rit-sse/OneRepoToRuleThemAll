@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Formik } from 'formik';
-import yup from 'yup';
+import * as yup from 'yup';
 import { ModalBody, ModalFooter, FormFeedback } from 'reactstrap';
 
 class UserForm extends Component {

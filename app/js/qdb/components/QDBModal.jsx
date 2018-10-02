@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Modal, ModalHeader, ModalBody, ModalFooter, FormFeedback } from 'reactstrap';
 import { Formik } from 'formik';
-import yup from 'yup';
+import * as yup from 'yup';
 
 import FormikSelectInput from 'common/components/FormikSelectInput';
 import Button from 'common/components/Button';
