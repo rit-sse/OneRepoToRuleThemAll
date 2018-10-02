@@ -1,5 +1,5 @@
 import moment from 'moment';
-import yup from 'yup';
+import * as yup from 'yup';
 
 // Validates another date field is after this date field
 // eg.
