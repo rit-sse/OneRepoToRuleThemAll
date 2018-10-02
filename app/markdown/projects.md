@@ -19,7 +19,6 @@ Slack: `#proj-waving-robot`
 
 Meetings: Check slack!
 
-
 ### [Auto Notetaker](https://github.com/rit-sse/AutoNotation)
 
 Establishing a system to create notes from audio recordings.
