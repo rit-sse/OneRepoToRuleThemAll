@@ -1,4 +1,4 @@
-FROM node
+FROM node:10
 
 # Install and config nginx
 RUN apt-get update && apt-get install -y nginx
@@ -17,15 +17,15 @@ COPY ./package.json /app/package.json
 
 # API_ROOT `--build-arg=api_root=http://localhost:3000/api/v2`
 ARG api_root
-ENV API_ROOT=$api_root
+ENV API_ROOT $api_root
 
-RUN rm -rf node_modules
-RUN npm install --warn
-RUN npm run build
+RUN rm -rf node_modules \
+    && npm install --warn \
+    && npm run build
 
 # Set perms for dist dir
 RUN chmod 755 -R /app/dist
 
 # Run nginx
 EXPOSE 80 443
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off"]
