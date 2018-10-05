@@ -1,6 +1,7 @@
 /* eslint-disable react/no-danger */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import 'scss/page.scss';
 
 function getPage(page) {
@@ -29,12 +30,11 @@ const Static = ({ location }) => {
               4<span />4
             </h1>
           </div>
-          <h2>Oops! Page Not Be Found</h2>
+          <h2>Oops! Page Not Found</h2>
           <p>
-            Sorry but the page you are looking for does not exist, have been
-            removed. name changed or is temporarily unavailable
+            Sorry! The page you were trying to reach does not exist or no longer exists.
           </p>
-          <a href="/">Back to homepage</a>
+          <Link to="/">Back to homepage</Link>
         </div>
       </div>
     </div>
