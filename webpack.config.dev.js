@@ -1,6 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
+const {execSync} = require('child_process');
+
+const __gitSHA__ = execSync('git rev-parse --short HEAD').toString();
 
 module.exports = {
   entry: {
@@ -41,6 +44,7 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify('development'),
         API_ROOT: JSON.stringify(process.env.API_ROOT || '/api/v2/'),
+        '__gitSHA__': JSON.stringify(__gitSHA__),
       },
     }),
     new HtmlWebpackPlugin({
