@@ -11,48 +11,61 @@ Contributing to projects is a great way to earn SSE membership!
 Current SSE Projects
 --------------------
 
+### [Tour Waving Robot](https://github.com/rit-sse/robo-waver) 
+
+Creating a robot to wave at all the tours that pass our lab space.
+
+Slack: `#proj-waving-robot`
+
+Meetings: Check slack!
+
+### [Auto Notetaker](https://github.com/rit-sse/AutoNotation)
+
+Establishing a system to create notes from audio recordings.
+
+Slack: `#proj-auto-notetaker`
+
+Meetings: Tuesdays from 2 to 3 pm
+
+### VRioWare
+
+Building upon the ideas of WarioWare, VRioWare will use microgames in a quick sucession in a VR view. 
+
+Slack: `#proj-vrioware`
+
+Meetings: Check slack!
+
+### [SSE Accounting](https://github.com/rit-sse/sse-accounting)
+
+Creating a better way of tracking our organizations spending and bank account.
+
+Slack: `#proj-sse-accounting`
+
+Meetings: Check slack!
+
+Past Projects
+-------------
+
 ### [Alumni Directory](https://github.com/rit-sse/sse-alumni)
 
 Keeping track of the cool things our alumni are doing and where they've gone after RIT.
-
-Slack: `#proj-alumni`
-
-Meetings: Saturday, 1:00pm (Check Slack for changes!)
 
 ### [ARKit](https://github.com/TuckerBMorgan/ProjARKit)
 
 Using 2 iPads to create an Augmented Reality (AR) chess game. The primary project being showcased at Imagine RIT 2018. 
 
-Slack: `#proj-arkit`
-
-Meetings: Sunday, 5:00pm (Check Slack for changes!)
-
 ### Caveman
 
 Creating a computer out of rocks and string.
-
-Slack: `#proj-caveman`
-
-Meetings: Monday, 3:30pm (Check Slack for changes!)
 
 ### Project Darby
 
 Show a basic level of how reinforcement learning works with boxes and beads by training AI with Black Jack and a networked cluster of Raspberry PI's.
 
-Slack: `#proj-darby`
-
-Meetings: Saturdays, 10:30am (Check Slack for changes!)
-
 ### Project Stereo
 
 Creating a tool that allows different displays to have their own audio outputs.
 
-Slack: `#proj-stereo`
-
-Meetings: Thursday, 3:30pm (Check Slack for changes!)
-
-Past Projects
--------------
 ### [Jukebox](https://github.com/rit-sse/Jukebox)
 
 Raspberry Pi music jukebox, with remote controlled song queueing and speakers.
