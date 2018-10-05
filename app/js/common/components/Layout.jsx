@@ -11,7 +11,7 @@ const Layout = props => (
   <div>
     <SSENav />
     {props.children}
-    <footer className="sse-footer">All content is Copyright © {copyrightDate} Society of Software Engineers.</footer>
+    <footer className="sse-footer">All content is Copyright © {copyrightDate} Society of Software Engineers. SHA: {process.env.__gitSHA__}</footer>
   </div>
 );
 
