@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
-const {execSync} = require('child_process');
+const { execSync } = require('child_process');
 
 const __gitSHA__ = execSync('git rev-parse --short HEAD').toString();
 
