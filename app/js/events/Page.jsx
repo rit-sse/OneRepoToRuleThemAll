@@ -25,11 +25,11 @@ const Event = () => (
           </CreateButton>
           <Login className="btn btn-sse" />
         </div>
-        <Link to="/api/v2/events.ics" className="float-right" style={{marginTop: "4px", marginRight: "4px"}}>
+        <a href="/api/v2/events.ics" rel="noopener" className="float-right" style={{marginTop: "4px", marginRight: "4px"}}>
             <Button className="btn btn-sse">
                 <i className="fa fa-calendar" aria-hidden="true" alt="Import Calendar" title="Import Calendar" />
             </Button>
-        </Link>
+        </a>
       </div>
     </div>
     <div className="row">
