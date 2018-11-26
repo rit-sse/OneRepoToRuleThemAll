@@ -48,6 +48,13 @@ Some of the most common ways of getting involved include doing some of the follo
 If you are interested in learning more about the Society or have any
 questions, feel free to [contact one of our officers](/officers)!
 
+Interested in Donating?
+------------
+Interested in making an individual or matching donation to the SSE?
+Check out the <a href="https://securelb.imodules.com/s/1624/index-giving.aspx?sid=1624&gid=1&pgid=705&cid=1466&appealcode=CMP19" target="_blank">RIT Donation Portal</a>
+and select "Designations -> Other -> Society of Software Engineers".
+The Society of Software Engineers greatly appreciates your donations! Thank You!
+
 Connect with SSE on the Web:
 -------------------
 
@@ -58,7 +65,7 @@ Best way to stay in touch with the SSE. Used for announcements and general discu
 Used to store repositories and projects created by the SSE.
 
 ## [Facebook Group](https://www.facebook.com/groups/ritsse/)
-Closed Facebook Group for valid RIT students. Best way to stay informed with social media updates. 
+Closed Facebook Group for valid RIT students. Best way to stay informed with social media updates.
 
 ## [Facebook Page](https://www.facebook.com/ssebot/)
 Public-facing Facebook page representing the SSE. Watch our talks or reach out to us with networking opportunities here!
