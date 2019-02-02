@@ -7,32 +7,23 @@ import { gravatar } from 'utils/images';
 
 import 'scss/member.scss';
 
-const Row = styled.tr`
-  background: ${(props) => {
+const Medal = styled.i`
+  color: ${props => {
     switch (props.index) {
       case 1:
-        return 'linear-gradient(to bottom right, #ffe84d -50%, gold, #ffe84d 150%)';
+        return 'gold;';
       case 2:
-        return 'linear-gradient(to bottom right, white -50%, #d8d6d1, white 200%)';
+        return '#d8d6d1;'
       case 3:
-        return 'linear-gradient(to bottom right, #e0964d -150%, #cc8062, #e0964d 150%)';
+        return '#cc8062;';
       default:
-        return '';
+        return 'rgba(0, 0, 0, 0);';
     }
-  }};
+  }}
+  margin: 4px; 
+`;
 
-  td {
-    border: ${(props) => {
-      switch (props.index) {
-        case 1:
-        case 2:
-        case 3:
-          return 'none';
-        default:
-          return '';
-      }
-    }};
-  }
+const Row = styled.tr`
 `;
 
 const Member = ({
@@ -45,6 +36,9 @@ const Member = ({
   <Row onClick={viewItem} className="member" index={index}>
     <td style={{ width: '15%' }}>{index}</td>
     <td>
+      <Medal index={index}>
+        <i className="fas fa-medal"></i>
+      </Medal>
       <img src={gravatar(dce)} alt="Member" className="gravatar" />
       <div className="name">
         {name}
