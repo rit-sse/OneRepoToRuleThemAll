@@ -11,6 +11,8 @@ class GoModal extends Component {
     link: PropTypes.shape({
       longLink: PropTypes.string,
       shortLink: PropTypes.string,
+      publicGO: PropTypes.boolean,
+      goDescription: PropTypes.string,
     }),
     isOpen: PropTypes.bool.isRequired,
     close: PropTypes.func.isRequired,
@@ -47,11 +49,14 @@ class GoModal extends Component {
           initialValues={{
             shortLink: link.shortLink || '',
             longLink: link.longLink || '',
+            publicGO: link.publicGO || 'false',
+            goDescription: link.goDescription || '',
           }}
           validationSchema={() => yup.object()
             .shape({
               shortLink: yup.string().required('Required'),
               longLink: yup.string().required('Required').url('Must be a valid URL'),
+              goDescription: yup.string().required('Required'),
             })
           }
           onSubmit={(
@@ -122,6 +127,37 @@ class GoModal extends Component {
                     {touched.longLink
                       && errors.longLink
                       && <FormFeedback style={{ display: 'block' }}>{errors.longLink}</FormFeedback>}
+                  </div>
+                </div>
+                <div className="form-group row">
+                  <label className="col-3 col-form label" htmlFor="GoDescription">Description</label>
+                  <div className="col-9">
+                    <input
+                      type="text"
+                      name="goDescription"
+                      id="goDescription"
+                      className="form-control"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.goDescription}
+                    />
+                  </div>
+                </div>
+                <div className="form-group row">
+                  <label className="col-3 col-form label" htmlFor="makePublic">Public Link</label>
+                  <div className="col-9">
+                    <select
+                      name="publicGO"
+                      id="publicGO"
+                      className="form-control"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.publicGO}
+                      required
+                    >
+                      <option key='private' value='false'>No (Private)</option>
+                      <option key='public' value='true'>Yes (Public)</option>
+                    </select>
                   </div>
                 </div>
               </ModalBody>

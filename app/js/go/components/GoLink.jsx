@@ -43,6 +43,8 @@ const LongLink = Link.extend`
 const GoLink = ({
   shortLink,
   longLink,
+  goDescription,
+  publicGO,
   editItem,
   deleteItem,
 }) => (
@@ -50,6 +52,8 @@ const GoLink = ({
     <Links>
       <Link>Short Link: <a href={`/go/${shortLink}`}>{shortLink}</a></Link>
       <LongLink>Long Link: <a href={longLink} target="_blank" rel="noopener noreferrer">{longLink}</a></LongLink>
+      <p style={{marginTop:'1rem'}}>Description: {goDescription}</p>
+      <p>Public? {publicGO}</p>
     </Links>
     <Actions>
       <ActionButton className="btn btn-small btn-primary" onClick={editItem}>Edit</ActionButton>
@@ -61,6 +65,8 @@ const GoLink = ({
 GoLink.propTypes = {
   shortLink: PropTypes.string.isRequired,
   longLink: PropTypes.string.isRequired,
+  goDescription: PropTypes.string.isRequired,
+  publicGO: PropTypes.string.isRequired,
   deleteItem: PropTypes.func.isRequired,
   editItem: PropTypes.func.isRequired,
 };
