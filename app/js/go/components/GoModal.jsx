@@ -11,7 +11,7 @@ class GoModal extends Component {
     link: PropTypes.shape({
       longLink: PropTypes.string,
       shortLink: PropTypes.string,
-      publicGO: PropTypes.boolean,
+      publicGO: PropTypes.string,
       goDescription: PropTypes.string,
     }),
     isOpen: PropTypes.bool.isRequired,
@@ -57,6 +57,7 @@ class GoModal extends Component {
               shortLink: yup.string().required('Required'),
               longLink: yup.string().required('Required').url('Must be a valid URL'),
               goDescription: yup.string().required('Required'),
+              publicGO: yup.string().required('Required'),
             })
           }
           onSubmit={(
