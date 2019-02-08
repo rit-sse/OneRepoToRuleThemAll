@@ -47,18 +47,28 @@ const GoLink = ({
   publicGO,
   editItem,
   deleteItem,
+  officer,
 }) => (
   <li key={shortLink} className="list-group-item">
+    {officer==='true'?
+    <div>
+      <Links>
+        <Link>Short Link: <a href={`/go/${shortLink}`}>{shortLink}</a></Link>
+        <LongLink>Long Link: <a href={longLink} target="_blank" rel="noopener noreferrer">{longLink}</a></LongLink>
+        <p style={{marginTop:'1rem'}}>Description: {goDescription}</p>
+        <p>Public: {publicGO}</p>
+      </Links>
+      <Actions>
+        <ActionButton className="btn btn-small btn-primary" onClick={editItem}>Edit</ActionButton>
+        <ActionButton className="btn btn-small btn-danger" onClick={deleteItem}>Delete</ActionButton>
+      </Actions>
+    </div>
+    :
     <Links>
       <Link>Short Link: <a href={`/go/${shortLink}`}>{shortLink}</a></Link>
-      <LongLink>Long Link: <a href={longLink} target="_blank" rel="noopener noreferrer">{longLink}</a></LongLink>
       <p style={{marginTop:'1rem'}}>Description: {goDescription}</p>
-      <p>Public? {publicGO}</p>
     </Links>
-    <Actions>
-      <ActionButton className="btn btn-small btn-primary" onClick={editItem}>Edit</ActionButton>
-      <ActionButton className="btn btn-small btn-danger" onClick={deleteItem}>Delete</ActionButton>
-    </Actions>
+    }
   </li>
 );
 
@@ -69,6 +79,7 @@ GoLink.propTypes = {
   publicGO: PropTypes.string.isRequired,
   deleteItem: PropTypes.func.isRequired,
   editItem: PropTypes.func.isRequired,
+  officer: PropTypes.string.isRequired,
 };
 
 export default GoLink;
