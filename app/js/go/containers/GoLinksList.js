@@ -16,9 +16,9 @@ function mapStateToProps({ go, auth, scroll }) {
   };
 }
 
-function mapDispatchToProps(dispatch, { auth }) {
+function mapDispatchToProps(dispatch) {
   return {
-    getItems: getNext => dispatch(getLinks(getNext, auth)),
+    getItems: getNext => dispatch(getLinks(getNext)),
     deleteItem: id => dispatch(destoryLink(id)),
     editItem: id => dispatch(showGoModal(id)),
   };
