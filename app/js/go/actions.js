@@ -21,9 +21,6 @@ export function getLinks(getNext, auth) {
     Links.next({ sort: 'DESC' })
       .then((data) => {
         const dataPublic = cloneDeep(data);
-        console.log("Data " + data);
-        console.log("dataPublic" + dataPublic);
-        console.log(data === dataPublic);
         if (data.length > 0) {
           dispatch(createAction(GET_LINKS, { links: data, paged: getNext }));
           dispatch(createAction(GET_PUBLIC_LINKS, { links: dataPublic, paged: getNext }));
