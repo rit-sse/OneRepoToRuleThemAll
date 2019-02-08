@@ -12,7 +12,6 @@ import {
 function all(state = [], action) {
   switch (action.type) {
     case GET_LINKS:
-      console.log(action.payload)
       action.payload.links.forEach((listItem) => {
         listItem.officer = 'true'
       })
@@ -44,7 +43,6 @@ function all(state = [], action) {
 function allPublic(state = [], action) {
   switch (action.type) {
     case GET_PUBLIC_LINKS:
-      console.log(action.payload)
       action.payload.links.forEach((listItem) => {
         listItem.officer = 'false'
       })
