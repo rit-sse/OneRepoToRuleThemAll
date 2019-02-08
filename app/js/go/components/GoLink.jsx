@@ -49,9 +49,9 @@ const GoLink = ({
   deleteItem,
   officer,
 }) => (
-  <li key={shortLink} className="list-group-item">
+  <div>
     {officer==='true'?
-    <div>
+    <li key={shortLink} className="list-group-item">
       <Links>
         <Link>Short Link: <a href={`/go/${shortLink}`}>{shortLink}</a></Link>
         <LongLink>Long Link: <a href={longLink} target="_blank" rel="noopener noreferrer">{longLink}</a></LongLink>
@@ -62,14 +62,22 @@ const GoLink = ({
         <ActionButton className="btn btn-small btn-primary" onClick={editItem}>Edit</ActionButton>
         <ActionButton className="btn btn-small btn-danger" onClick={deleteItem}>Delete</ActionButton>
       </Actions>
-    </div>
+    </li>
     :
-    <Links>
-      <Link>Short Link: <a href={`/go/${shortLink}`}>{shortLink}</a></Link>
-      <p style={{marginTop:'1rem'}}>Description: {goDescription}</p>
-    </Links>
+    <div>
+      {publicGO==='true'?
+      <li key={shortLink} className="list-group-item">
+        <Links>
+          <Link>Short Link: <a href={`/go/${shortLink}`}>{shortLink}</a></Link>
+          <p style={{marginTop:'1rem'}}>Description: {goDescription}</p>
+        </Links>
+      </li>
+      :
+      null
+      }
+    </div>
     }
-  </li>
+  </div>
 );
 
 GoLink.propTypes = {
