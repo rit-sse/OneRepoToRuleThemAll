@@ -22,12 +22,15 @@ function all(state = [], action) {
         ...action.payload.links,
       ];
     case CREATE_LINK:
+      action.payload.officer = 'true'
       return [
         action.payload,
         ...state,
       ];
     case UPDATE_LINK:
       return state.map((link) => {
+        link.officer = 'true'
+        action.payload.officer = 'true'
         if (link.shortLink === action.payload.shortLink) return action.payload;
         return link;
       });
