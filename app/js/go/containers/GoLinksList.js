@@ -11,14 +11,14 @@ function mapStateToProps({ go, auth, scroll }) {
     item: GoLink,
     wrapper: 'ul',
     wrapperProps: { className: 'list-group' },
-    items: auth.officer ? go.all : [],
+    items: auth.officer ? go.all : go.allPublic,
     keyPriority: ['shortLink'],
   };
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch, { auth }) {
   return {
-    getItems: getNext => dispatch(getLinks(getNext)),
+    getItems: getNext => dispatch(getLinks(getNext, auth)),
     deleteItem: id => dispatch(destoryLink(id)),
     editItem: id => dispatch(showGoModal(id)),
   };

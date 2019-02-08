@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import { HIDE_MODAL } from 'common/actions';
 import {
   GET_LINKS,
+  GET_PUBLIC_LINKS,
   CREATE_LINK,
   UPDATE_LINK,
   DESTORY_LINK,
@@ -11,6 +12,10 @@ import {
 function all(state = [], action) {
   switch (action.type) {
     case GET_LINKS:
+      console.log(action.payload)
+      action.payload.links.forEach((listItem) => {
+        listItem.officer = 'true'
+      })
       if (!action.payload.paged) return action.payload.links;
       return [
         ...state,
@@ -33,6 +38,23 @@ function all(state = [], action) {
   }
 }
 
+function allPublic(state = [], action) {
+  switch (action.type) {
+    case GET_PUBLIC_LINKS:
+      console.log(action.payload)
+      action.payload.links.forEach((listItem) => {
+        listItem.officer = 'false'
+      })
+      if (!action.payload.paged) return action.payload.links;
+      return [
+        ...state,
+        ...action.payload.links,
+      ];
+    default:
+      return state;
+  }
+}
+
 function shouldOverride(state = false, action) {
   switch (action.type) {
     case CHECK_LINK:
@@ -47,4 +69,5 @@ function shouldOverride(state = false, action) {
 export default combineReducers({
   all,
   shouldOverride,
+  allPublic,
 });
