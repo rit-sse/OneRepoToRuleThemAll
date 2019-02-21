@@ -14,10 +14,10 @@ const Actions = ({
     <div className={shown ? 'actions shown' : 'actions'}>
       {children}
       <button className="btn btn-small btn-primary" onClick={editItem}>
-        <i className="fa fa-pencil" aria-hidden="true" />
+        <i className="fas fa-pencil" aria-hidden="true" />
       </button>
       <button className="btn btn-small btn-danger" onClick={deleteItem}>
-        <i className="fa fa-trash-o" aria-hidden="true" />
+        <i className="fas fa-trash-o" aria-hidden="true" />
       </button>
     </div>
   ) : null

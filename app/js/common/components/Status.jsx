@@ -22,7 +22,7 @@ const Status = props => (
           <strong>{props.info}</strong>
         </div>;
       } else if (props.spinner && props.loading) {
-        <i className="fa fa-spinner fa-3x fa-spin" style={{ margin: '0 auto', display: 'block', width: '45px' }} />;
+        <i className="fas fa-spinner fa-3x fa-spin" style={{ margin: '0 auto', display: 'block', width: '45px' }} />;
       }
     }}
   </div>

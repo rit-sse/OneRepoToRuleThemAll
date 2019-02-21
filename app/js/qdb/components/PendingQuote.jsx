@@ -70,7 +70,7 @@ class PendingQuote extends Component {
             deleteItem={deleteItem}
           >
             <button className="btn btn-small btn-success" onClick={() => approveQuote(id)}>
-              <i className="fa fa-rocket" aria-hidden="true" />
+              <i className="fas fa-rocket" aria-hidden="true" />
             </button>
           </Actions>
         </div>
