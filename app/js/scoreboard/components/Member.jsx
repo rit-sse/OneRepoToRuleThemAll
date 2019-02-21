@@ -13,7 +13,7 @@ const Medal = styled.i`
       case 1:
         return 'gold;';
       case 2:
-        return '#d8d6d1;'
+        return 'silver';
       case 3:
         return '#cc8062;';
       default:
