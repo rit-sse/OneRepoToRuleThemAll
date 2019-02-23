@@ -11,8 +11,8 @@ class GoModal extends Component {
     link: PropTypes.shape({
       longLink: PropTypes.string,
       shortLink: PropTypes.string,
-      publicGO: PropTypes.string,
-      goDescription: PropTypes.string,
+      public: PropTypes.bool,
+      description: PropTypes.string,
     }),
     isOpen: PropTypes.bool.isRequired,
     close: PropTypes.func.isRequired,
@@ -49,31 +49,32 @@ class GoModal extends Component {
           initialValues={{
             shortLink: link.shortLink || '',
             longLink: link.longLink || '',
-            publicGO: link.publicGO || 'false',
-            goDescription: link.goDescription || '',
+            public: link.public === 'true',
+            description: link.description || '',
           }}
           validationSchema={() => yup.object()
             .shape({
               shortLink: yup.string().required('Required'),
               longLink: yup.string().required('Required').url('Must be a valid URL'),
-              goDescription: yup.string().required('Required'),
-              publicGO: yup.string().required('Required'),
+              description: yup.string(),
+              public: yup.string().required('Required'),
             })
           }
           onSubmit={(
             values
           ) => {
+            const actualValues = { ...values, public: values.public === 'true' };
             close();
 
             if (link.shortLink) {
               // We're updating a Go link
-              update(link.shortLink, values);
+              update(link.shortLink, actualValues);
             } else if (shouldOverride) {
               // We're creating a new Go link w/ the same short link as an existing Go link
-              update(values.shortLink, values);
+              update(values.shortLink, actualValues);
             } else {
               // We're creating a new Go link
-              create(values);
+              create(actualValues);
             }
           }}
           render={({
@@ -131,34 +132,40 @@ class GoModal extends Component {
                   </div>
                 </div>
                 <div className="form-group row">
-                  <label className="col-3 col-form label" htmlFor="GoDescription">Description</label>
+                  <label className="col-3 col-form label" htmlFor="description">Description</label>
                   <div className="col-9">
                     <input
                       type="text"
-                      name="goDescription"
-                      id="goDescription"
+                      name="description"
+                      id="description"
                       className="form-control"
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      value={values.goDescription}
+                      value={values.description}
                     />
+                    {touched.description
+                      && errors.description
+                      && <FormFeedback style={{ display: 'block' }}>{errors.description}</FormFeedback>}
                   </div>
                 </div>
                 <div className="form-group row">
-                  <label className="col-3 col-form label" htmlFor="makePublic">Public Link</label>
+                  <label className="col-3 col-form label" htmlFor="public">Public Link</label>
                   <div className="col-9">
                     <select
-                      name="publicGO"
-                      id="publicGO"
+                      name="public"
+                      id="public"
                       className="form-control"
                       onChange={handleChange}
                       onBlur={handleBlur}
-                      value={values.publicGO}
+                      value={values.public}
                       required
                     >
-                      <option key='private' value='false'>No (Private)</option>
-                      <option key='public' value='true'>Yes (Public)</option>
+                      <option value="false">No (Private)</option>
+                      <option value="true">Yes (Public)</option>
                     </select>
+                    {touched.public
+                      && errors.public
+                      && <FormFeedback style={{ display: 'block' }}>{errors.public}</FormFeedback>}
                   </div>
                 </div>
               </ModalBody>

@@ -44,21 +44,13 @@ const GoLink = ({
   shortLink,
   longLink,
   description,
-  public: isPublic,
-  editItem,
-  deleteItem,
 }) => (
   <li key={shortLink} className="list-group-item">
     <Links>
       <Link>Short Link: <a href={`/go/${shortLink}`}>{shortLink}</a></Link>
       <LongLink>Long Link: <a href={longLink} target="_blank" rel="noopener noreferrer">{longLink}</a></LongLink>
       {description && (<p>Description: {description}</p>)}
-      <p>Public: { isPublic ? 'Yes' : 'No' }</p>
     </Links>
-    <Actions>
-      <ActionButton className="btn btn-small btn-primary" onClick={editItem}>Edit</ActionButton>
-      <ActionButton className="btn btn-small btn-danger" onClick={deleteItem}>Delete</ActionButton>
-    </Actions>
   </li>
 );
 
@@ -66,9 +58,6 @@ GoLink.propTypes = {
   shortLink: PropTypes.string.isRequired,
   longLink: PropTypes.string.isRequired,
   description: PropTypes.string,
-  public: PropTypes.bool.isRequired,
-  deleteItem: PropTypes.func.isRequired,
-  editItem: PropTypes.func.isRequired,
 };
 
 GoLink.defaultProps = {
