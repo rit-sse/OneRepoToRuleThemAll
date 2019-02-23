@@ -1,6 +1,5 @@
 import { scrollDone } from 'common/actions';
 import * as utils from 'utils/actions';
-import cloneDeep from 'lodash/cloneDeep';
 
 export const GO = 'GO';
 export const GET_LINKS = 'GET_LINKS';
@@ -13,21 +12,17 @@ export const CHECK_LINK = 'CHECK_LINK';
 const createAction = utils.createAction(GO);
 const loading = utils.createLoading(GO);
 
-export function getLinks(getNext, auth) {
-  console.log(auth);
+export function getLinks(getNext) {
   return (dispatch, getState, { Links }) => {
     if (getState().status.loading[GET_LINKS]) return;
     dispatch(loading(GET_LINKS));
     Links.next({ sort: 'DESC' })
       .then((data) => {
-        const dataPublic = cloneDeep(data);
         if (data.length > 0) {
           dispatch(createAction(GET_LINKS, { links: data, paged: getNext }));
-          dispatch(createAction(GET_PUBLIC_LINKS, { links: dataPublic, paged: getNext }));
         } else {
           dispatch(scrollDone());
           dispatch(createAction(GET_LINKS, { links: [], paged: getNext }));
-          dispatch(createAction(GET_PUBLIC_LINKS, { links: [], paged: getNext }));
         }
       })
       .catch(err => dispatch(createAction(GET_LINKS, err)));
