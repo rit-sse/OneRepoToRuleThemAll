@@ -27,7 +27,7 @@ const Event = () => (
         </div>
         <a href="/api/v2/events.ics" rel="noopener" className="float-right" style={{marginTop: "4px", marginRight: "4px"}}>
             <Button className="btn btn-sse">
-                <i className="fa fa-calendar" aria-hidden="true" alt="Import Calendar" title="Import Calendar" />
+                <i className="fas fa-calendar-alt" aria-hidden="true" alt="Import Calendar" title="Import Calendar" />
             </Button>
         </a>
       </div>
