@@ -48,8 +48,7 @@ const GoLink = ({
   <li key={shortLink} className="list-group-item">
     <Links>
       <Link>Short Link: <a href={`/go/${shortLink}`}>{shortLink}</a></Link>
-      <LongLink>Long Link: <a href={longLink} target="_blank" rel="noopener noreferrer">{longLink}</a></LongLink>
-      {description && (<p>Description: {description}</p>)}
+      {description && (<p style={{ marginTop: '1rem' }}>Description: {description}</p>)}
     </Links>
   </li>
 );
