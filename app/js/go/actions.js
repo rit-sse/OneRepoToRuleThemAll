@@ -3,7 +3,6 @@ import * as utils from 'utils/actions';
 
 export const GO = 'GO';
 export const GET_LINKS = 'GET_LINKS';
-export const GET_PUBLIC_LINKS = 'GET_PUBLIC_LINKS';
 export const CREATE_LINK = 'CREATE_LINK';
 export const UPDATE_LINK = 'UPDATE_LINK';
 export const DESTORY_LINK = 'DESTORY_LINK';
