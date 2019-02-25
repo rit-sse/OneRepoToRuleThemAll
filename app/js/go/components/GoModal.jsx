@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Modal, ModalHeader, ModalBody, ModalFooter, FormFeedback } from 'reactstrap';
 import { Formik } from 'formik';
+import FormikSwitch from 'common/components/FormikSwitch';
 import * as yup from 'yup';
 
 import Button from 'common/components/Button';
@@ -49,7 +50,7 @@ class GoModal extends Component {
           initialValues={{
             shortLink: link.shortLink || '',
             longLink: link.longLink || '',
-            public: link.public === 'true',
+            public: link.public || false,
             description: link.description || '',
           }}
           validationSchema={() => yup.object()
@@ -57,13 +58,14 @@ class GoModal extends Component {
               shortLink: yup.string().required('Required'),
               longLink: yup.string().required('Required').url('Must be a valid URL'),
               description: yup.string(),
-              public: yup.string().required('Required'),
+              public: yup.boolean().required('Required'),
             })
           }
           onSubmit={(
             values
           ) => {
-            const actualValues = { ...values, public: values.public === 'true' };
+            console.log(values);
+            const actualValues = { ...values, public: values.public };
             close();
 
             if (link.shortLink) {
@@ -151,18 +153,14 @@ class GoModal extends Component {
                 <div className="form-group row">
                   <label className="col-3 col-form label" htmlFor="public">Public Link</label>
                   <div className="col-9">
-                    <select
+                    <FormikSwitch
                       name="public"
                       id="public"
-                      className="form-control"
                       onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.public}
+                      defaultChecked={values.public}
+                      label="checked"
                       required
-                    >
-                      <option value="false">No (Private)</option>
-                      <option value="true">Yes (Public)</option>
-                    </select>
+                    />
                     {touched.public
                       && errors.public
                       && <FormFeedback style={{ display: 'block' }}>{errors.public}</FormFeedback>}
