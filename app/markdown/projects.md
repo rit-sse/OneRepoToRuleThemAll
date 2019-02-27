@@ -11,7 +11,7 @@ Contributing to projects is a great way to earn SSE membership!
 Current SSE Projects
 --------------------
 
-### Project BCI
+### [Project BCI](https://github.com/rit-sse/proj-BCI)
 
 Creating a brain-computer interface using a commercial EEG sensor.
 
