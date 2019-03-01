@@ -11,6 +11,14 @@ Contributing to projects is a great way to earn SSE membership!
 Current SSE Projects
 --------------------
 
+### [Project BCI](https://github.com/rit-sse/proj-BCI)
+
+Creating a brain-computer interface using a commercial EEG sensor.
+
+Slack: `#proj-bci`
+
+Meetings: Tuesdays at 3pm
+
 ### [Tour Waving Robot](https://github.com/rit-sse/robo-waver) 
 
 Creating a robot to wave at all the tours that pass our lab space.
