@@ -64,7 +64,6 @@ class GoModal extends Component {
           onSubmit={(
             values
           ) => {
-            console.log(values);
             const actualValues = { ...values, public: values.public };
             close();
 
