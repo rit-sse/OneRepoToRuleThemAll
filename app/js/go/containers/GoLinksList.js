@@ -13,7 +13,7 @@ function mapStateToProps({ go, auth, scroll }) {
     wrapper: 'ul',
     wrapperProps: { className: 'list-group' },
     items: go.all.filter((link) => {
-      if (auth.officer !== null) {
+      if (auth.officer) {
         return true;
       }
       return link.public;
