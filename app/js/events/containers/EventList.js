@@ -5,7 +5,7 @@ import { showEventModal } from 'common/actions';
 import { getEvents, destoryEvent } from 'events/actions';
 
 function filterEvents(events, filter) {
-  if (filter.committee) return events.all.filter(event => event.committeeName === filter.committee.replace(/%20/g, ' '));
+  if (filter.committee && events.all) return events.all.filter(event => event.committeeName === filter.committee.replace(/%20/g, ' '));
   return events;
 }
 
