@@ -13,3 +13,6 @@ dist
 
 # .DS_STORE
 .DS_STORE
+
+# Intellij
+.idea
