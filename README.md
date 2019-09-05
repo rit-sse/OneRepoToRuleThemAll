@@ -28,9 +28,11 @@ If you've already cloned this repo without submodules, you can run `git submodul
 
 3. `npm install`
 
-4. `npm start`
+4. Set your API environment variable to `API_ROOT=http://localhost:3000/api/v2/` or `API_ROOT=https://ssedev.se.rit.edu/api/v2/` (dev)
 
-5. Open `localhost:5000` in your favorite web browser.
+5. `npm start`
+
+6. Open `localhost:5000` in your favorite web browser.
 
 ### Development
 
@@ -44,7 +46,7 @@ For development, you'll want to change where this app points to the API.
 
 If you're only making visual changes, you can skip installing the node-api and use our development API: `API_ROOT=https://ssedev.se.rit.edu/api/v2/ npm start`
 
-However, if you're making changes to authenticated pages (eg. event creation, go link creation, approving scoreboard memberships) or making data model / database changes, you'll have to install and setup the node-api. Then you'll set your `API_ROOT` where your local installation is running (eg. `API_ROOT=localhost:3000/api/v2/ npm start`).
+However, if you're making changes to authenticated pages (eg. event creation, go link creation, approving scoreboard memberships) or making data model / database changes, you'll have to install and setup the node-api. Then you'll set your `API_ROOT` where your local installation is running (eg. `API_ROOT=http://localhost:3000/api/v2/ npm start`).
 
 If you need to update the [governing-docs](https://github.com/rit-sse/governing-docs), you will need to update it as a git submodule from the top level of the this repo. To update the governing-docs submodule, make sure you have the submodule checked out by running
 `git submodule update --init --recursive` at the top level of this repo
