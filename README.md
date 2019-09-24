@@ -19,10 +19,8 @@ You'll need to have [Node.js](https://nodejs.org/en/download/) installed. Node c
 
 ### Installation
 
-1. Clone this repository w/ submodules:
-`git clone --recursive https://github.com/rit-sse/OneRepoToRuleThemAll.git`
-
-If you've already cloned this repo without submodules, you can run `git submodule update --init --recursive` in this project to get them.
+1. Clone this repository:
+`git clone https://github.com/rit-sse/OneRepoToRuleThemAll.git`
 
 2. `cd OneRepoToRuleThemAll`
 
@@ -47,10 +45,6 @@ For development, you'll want to change where this app points to the API.
 If you're only making visual changes, you can skip installing the node-api and use our development API: `API_ROOT=https://ssedev.se.rit.edu/api/v2/ npm start`
 
 However, if you're making changes to authenticated pages (eg. event creation, go link creation, approving scoreboard memberships) or making data model / database changes, you'll have to install and setup the node-api. Then you'll set your `API_ROOT` where your local installation is running (eg. `API_ROOT=http://localhost:3000/api/v2/ npm start`).
-
-If you need to update the [governing-docs](https://github.com/rit-sse/governing-docs), you will need to update it as a git submodule from the top level of the this repo. To update the governing-docs submodule, make sure you have the submodule checked out by running
-`git submodule update --init --recursive` at the top level of this repo
-then `cd` into the governing-docs folder and run `git pull origin master`. More information can be found at this [pull request](https://github.com/rit-sse/OneRepoToRuleThemAll/pull/240).
 
 ## Deployment
 
