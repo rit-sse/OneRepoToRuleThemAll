@@ -99,7 +99,7 @@ class UserForm extends Component {
             <ModalBody>
               <fieldset className="form-group">
                 <div className="form-group row">
-                  <label htmlFor="dce" className="col-3 col-form-label">DCE</label>
+                  <label htmlFor="dce" className="col-3 col-form-label">RIT Username</label>
                   <div className="col-9">
                     <input
                       type="text"
