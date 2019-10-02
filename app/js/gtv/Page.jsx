@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import TorqueSlides, { TorqueSlide } from 'torque-react';
 import { getEvents } from 'events/actions';
-import ColorView from 'gtv/components/ColorView';
 import EventPanels from 'gtv/containers/EventPanels';
 import EventHighlight from 'gtv/containers/EventHighlight';
 import ThreeWeek from 'gtv/containers/ThreeWeek';
@@ -54,14 +53,8 @@ class GTV extends Component {
           <TorqueSlide>
             <EventPanels />
           </TorqueSlide>
-          <TorqueSlide duration={5}>
-            <ColorView color="white" />
-          </TorqueSlide>
           <TorqueSlide>
             <ThreeWeek />
-          </TorqueSlide>
-          <TorqueSlide duration={5}>
-            <ColorView color="black" />
           </TorqueSlide>
         </TorqueSlides>
       </div>
