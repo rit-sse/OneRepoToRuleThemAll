@@ -272,7 +272,6 @@ class OfficerForm extends Component {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.linkedinUrl}
-                    required
                   />
                   {touched.linkedinUrl
                     && errors.linkedinUrl
