@@ -85,8 +85,8 @@ class AddMembershipModal extends Component {
           }) => (
             <fieldset className="form-group">
               <div className="form-group row">
-                <label htmlFor="startDate" className="col-3 col-form-label">Start Date</label>
-                <div className="col-9">
+                <label htmlFor="startDate" className="col-4 col-form-label">Start Date</label>
+                <div className="col-8">
                   {/* TODO: Update to use a cross-browser date picker */}
                   <input
                     type="date"
@@ -104,8 +104,8 @@ class AddMembershipModal extends Component {
                 </div>
               </div>
               <div className="form-group row">
-                <label htmlFor="endDate" className="col-3 col-form-label">End Date</label>
-                <div className="col-9">
+                <label htmlFor="endDate" className="col-4 col-form-label">End Date</label>
+                <div className="col-8">
                   {/* TODO: Update to use a cross-browser date picker */}
                   <input
                     type="date"
@@ -123,8 +123,8 @@ class AddMembershipModal extends Component {
                 </div>
               </div>
               <div className="form-group row">
-                <label htmlFor="reason" className="col-3 col-form-label">Reason</label>
-                <div className="col-9">
+                <label htmlFor="reason" className="col-4 col-form-label">Reason</label>
+                <div className="col-8">
                   <textarea
                     name="reason"
                     id="reason"
@@ -141,8 +141,8 @@ class AddMembershipModal extends Component {
                 </div>
               </div>
               <div className="form-group row">
-                <label htmlFor="committeeName" className="col-3 col-form-label">Committee</label>
-                <div className="col-9">
+                <label htmlFor="committeeName" className="col-4 col-form-label">Committee</label>
+                <div className="col-8">
                   <select
                     name="committeeName"
                     id="committeeName"

@@ -134,8 +134,8 @@ class OfficerForm extends Component {
           }) => (
             <fieldset className="form-group">
               <div className="form-group row">
-                <label htmlFor="title" className="col-3 col-form-label">Title</label>
-                <div className="col-9">
+                <label htmlFor="title" className="col-4 col-form-label">Title</label>
+                <div className="col-8">
                   <input
                     type="text"
                     name="title"
@@ -152,8 +152,8 @@ class OfficerForm extends Component {
                 </div>
               </div>
               <div className="form-group row">
-                <label htmlFor="email" className="col-3 col-form-label">Email Alias</label>
-                <InputGroup className="col-9">
+                <label htmlFor="email" className="col-4 col-form-label">Email Alias</label>
+                <InputGroup className="col-8">
                   <input
                     type="text"
                     name="email"
@@ -173,8 +173,8 @@ class OfficerForm extends Component {
                 </InputGroup>
               </div>
               <div className="form-group row">
-                <label htmlFor="committeeName" className="col-3 col-form-label">Committee</label>
-                <div className="col-9">
+                <label htmlFor="committeeName" className="col-4 col-form-label">Committee</label>
+                <div className="col-8">
                   <FormikSelectInput
                     name="committeeName"
                     id="committeeName"
@@ -221,8 +221,8 @@ class OfficerForm extends Component {
                 </div>
               </div>
               <div className="form-group row">
-                <label htmlFor="startDate" className="col-3 col-form-label">Start Date</label>
-                <div className="col-9">
+                <label htmlFor="startDate" className="col-4 col-form-label">Start Date</label>
+                <div className="col-8">
                   {/* TODO: Update to use a cross-browser date picker */}
                   <input
                     type="date"
@@ -240,8 +240,8 @@ class OfficerForm extends Component {
                 </div>
               </div>
               <div className="form-group row">
-                <label htmlFor="endDate" className="col-3 col-form-label">End Date</label>
-                <div className="col-9">
+                <label htmlFor="endDate" className="col-4 col-form-label">End Date</label>
+                <div className="col-8">
                   {/* TODO: Update to use a cross-browser date picker */}
                   <input
                     type="date"

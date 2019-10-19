@@ -99,8 +99,8 @@ class UserForm extends Component {
             <ModalBody>
               <fieldset className="form-group">
                 <div className="form-group row">
-                  <label htmlFor="dce" className="col-3 col-form-label">RIT Username</label>
-                  <div className="col-9">
+                  <label htmlFor="dce" className="col-4 col-form-label">RIT Username</label>
+                  <div className="col-8">
                     <input
                       type="text"
                       name="dce"
@@ -123,8 +123,8 @@ class UserForm extends Component {
                   </div>
                 </div>
                 <div className="form-group row">
-                  <label htmlFor="firstName" className="col-3 col-form-label">First Name</label>
-                  <div className="col-9">
+                  <label htmlFor="firstName" className="col-4 col-form-label">First Name</label>
+                  <div className="col-8">
                     <input
                       type="text"
                       name="firstName"
@@ -140,8 +140,8 @@ class UserForm extends Component {
                   </div>
                 </div>
                 <div className="form-group row">
-                  <label htmlFor="lastName" className="col-3 col-form-label">Last Name</label>
-                  <div className="col-9">
+                  <label htmlFor="lastName" className="col-4 col-form-label">Last Name</label>
+                  <div className="col-8">
                     <input
                       type="text"
                       name="lastName"
@@ -157,8 +157,8 @@ class UserForm extends Component {
                   </div>
                 </div>
                 <div className="form-group row">
-                  <label htmlFor="image" className="col-3 col-form-label">Image</label>
-                  <div className="col-9">
+                  <label htmlFor="image" className="col-4 col-form-label">Image</label>
+                  <div className="col-8">
                     <input
                       type="text"
                       name="image"
