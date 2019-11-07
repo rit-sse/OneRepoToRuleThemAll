@@ -11,48 +11,96 @@ Contributing to projects is a great way to earn SSE membership!
 Current SSE Projects
 --------------------
 
-### [Project BCI](https://github.com/rit-sse/proj-BCI)
+### Tour Waving Robot
+
+Have you ever gone on an RIT Campus Tour? If you have, you may remember a lab of students waving as you walked by. That was us! Waving is exhausting, so we are making a robot to wave to tours for us!
+
+Slack: `#proj-waving-robot`
+
+Meetings: Mondays at 2pm
+
+### Project BCI
 
 Creating a brain-computer interface using a commercial EEG sensor.
 
 Slack: `#proj-bci`
 
-Meetings: Tuesdays at 3pm
+Meetings: See Slack for Details
+
+### RIT Go
+
+RIT Go is an application allowing RIT staff and student leaders to pin locations on campus, along with data, to mark events, meetups, clubs, and classes. This project harnesses the power of Microsoft Azure.
+
+Slack: `#proj-rit-go`
+
+Meetings: Thursdays at 3:30pm
+
+### HoloCube
+
+Project HoloCube uses a Microsoft Hololens Mixed-Reality headset to show a user steps to solve a real rubiks cube!
+
+Slack: `#proj-holocube`
+
+Meetings: Fridays 12pm - 1pm
+
+### Job App Tracker
+
+Applying to jobs is hard and confusing. In today's market, we have to apply to dozens and dozens of jobs (or more!). Job App Tracker is trying to solve the problem of keeping track of all the applications you submit.
+
+Slack: `#proj-job-app-tracker`
+
+Meetings: Thursdays at 12pm
+
+### gueSSE who
+
+gueSSE who is the classic "Guess Who?" game but with SSE members!
+
+Slack: `#proj-guesse-who`
+
+Meetings: Fridays 3pm - 4pm
+
+### Project Interviewy
+
+Today's interview procedures are designed to help narrow down applicants for companies, however they do not accurately represent the job or us as Software Engineers. This project aims to explore new ways companies can use interview applicants more accurately.
+
+Slack: `#proj-interviewy`
+
+Meetings: TBD
+
+### Project Course Planner - 2.0
+
+We are resurecting the popular Plan Your Courses project and for an SSE first, collaboring with the Computer Science House by integrating Course Planner with their famous [Schedule Maker](https://schedule.csh.rit.edu)
+
+Slack: `#proj-course-planner`
+
+Meetings: TBD - See Slack for Details
+
+
+
+
+
+Past Projects
+-------------
+
+### [Project BCI](https://github.com/rit-sse/proj-BCI)
+
+Creating a brain-computer interface using a commercial EEG sensor.
 
 ### [Tour Waving Robot](https://github.com/rit-sse/robo-waver) 
 
 Creating a robot to wave at all the tours that pass our lab space.
 
-Slack: `#proj-waving-robot`
-
-Meetings: Check slack!
-
 ### [Auto Notetaker](https://github.com/rit-sse/AutoNotation)
 
 Establishing a system to create notes from audio recordings.
-
-Slack: `#proj-auto-notetaker`
-
-Meetings: Tuesdays from 2 to 3 pm
 
 ### VRioWare
 
 Building upon the ideas of WarioWare, VRioWare will use microgames in a quick sucession in a VR view. 
 
-Slack: `#proj-vrioware`
-
-Meetings: Check slack!
-
 ### [SSE Accounting](https://github.com/rit-sse/sse-accounting)
 
 Creating a better way of tracking our organizations spending and bank account.
-
-Slack: `#proj-sse-accounting`
-
-Meetings: Check slack!
-
-Past Projects
--------------
 
 ### [Alumni Directory](https://github.com/rit-sse/sse-alumni)
 
