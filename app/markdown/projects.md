@@ -69,7 +69,7 @@ Meetings: TBD
 
 ### Project Course Planner - 2.0
 
-We are resurecting the popular Plan Your Courses project and for an SSE first, collaboring with the Computer Science House by integrating Course Planner with their famous [Schedule Maker](https://schedule.csh.rit.edu)
+We are resurrecting the popular Plan Your Courses project and for an SSE first, collaborating with the Computer Science House by integrating Course Planner with their famous [Schedule Maker](https://schedule.csh.rit.edu)
 
 Slack: `#proj-course-planner`
 
