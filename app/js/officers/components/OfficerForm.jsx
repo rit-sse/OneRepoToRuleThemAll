@@ -18,6 +18,7 @@ class OfficerForm extends Component {
       primaryOfficer: PropTypes.bool,
       startDate: PropTypes.string,
       endDate: PropTypes.string,
+      linkedinUrl: PropTypes.string,
       user: PropTypes.shape({
         firstName: PropTypes.string,
         lastName: PropTypes.string,
@@ -72,6 +73,7 @@ class OfficerForm extends Component {
             primaryOfficer: !!officer.primaryOfficer,
             startDate: officer.startDate ? moment(officer.startDate).format(dayFormat) : '',
             endDate: officer.endDate ? moment(officer.endDate).format(dayFormat) : '',
+            linkedinUrl: officer.linkedinUrl || null,
           }}
           validationSchema={yup.object()
             .shape({
@@ -95,6 +97,7 @@ class OfficerForm extends Component {
                 // value to '' for formik to use it as a controlled component, the 'isAfter'
                 // validation will be active, effectively requiring a value. We need to figure
                 // out how to have yup validate a field only if the field isn't empty (something other than '').
+              linkedinUrl: yup.string().url('Must be a URL.').nullable(),
             })}
           onSubmit={(
             values
@@ -106,6 +109,7 @@ class OfficerForm extends Component {
               primaryOfficer: values.primaryOfficer,
               startDate: moment(values.startDate).toISOString(),
               endDate: values.endDate ? moment(values.endDate).toISOString() : null,
+              linkedinUrl: values.linkedinUrl,
               user: {
                 firstName: values.firstName,
                 lastName: values.lastName,
@@ -134,8 +138,8 @@ class OfficerForm extends Component {
           }) => (
             <fieldset className="form-group">
               <div className="form-group row">
-                <label htmlFor="title" className="col-3 col-form-label">Title</label>
-                <div className="col-9">
+                <label htmlFor="title" className="col-4 col-form-label">Title</label>
+                <div className="col-8">
                   <input
                     type="text"
                     name="title"
@@ -152,8 +156,8 @@ class OfficerForm extends Component {
                 </div>
               </div>
               <div className="form-group row">
-                <label htmlFor="email" className="col-3 col-form-label">Email Alias</label>
-                <InputGroup className="col-9">
+                <label htmlFor="email" className="col-4 col-form-label">Email Alias</label>
+                <InputGroup className="col-8">
                   <input
                     type="text"
                     name="email"
@@ -173,8 +177,8 @@ class OfficerForm extends Component {
                 </InputGroup>
               </div>
               <div className="form-group row">
-                <label htmlFor="committeeName" className="col-3 col-form-label">Committee</label>
-                <div className="col-9">
+                <label htmlFor="committeeName" className="col-4 col-form-label">Committee</label>
+                <div className="col-8">
                   <FormikSelectInput
                     name="committeeName"
                     id="committeeName"
@@ -221,8 +225,8 @@ class OfficerForm extends Component {
                 </div>
               </div>
               <div className="form-group row">
-                <label htmlFor="startDate" className="col-3 col-form-label">Start Date</label>
-                <div className="col-9">
+                <label htmlFor="startDate" className="col-4 col-form-label">Start Date</label>
+                <div className="col-8">
                   {/* TODO: Update to use a cross-browser date picker */}
                   <input
                     type="date"
@@ -240,8 +244,8 @@ class OfficerForm extends Component {
                 </div>
               </div>
               <div className="form-group row">
-                <label htmlFor="endDate" className="col-3 col-form-label">End Date</label>
-                <div className="col-9">
+                <label htmlFor="endDate" className="col-4 col-form-label">End Date</label>
+                <div className="col-8">
                   {/* TODO: Update to use a cross-browser date picker */}
                   <input
                     type="date"
@@ -255,6 +259,23 @@ class OfficerForm extends Component {
                   {touched.endDate
                     && errors.endDate
                     && <FormFeedback style={{ display: 'block' }}>{errors.endDate}</FormFeedback>}
+                </div>
+              </div>
+              <div className="form-group row">
+                <label htmlFor="linkedinUrl" className="col-4 col-form-label">LinkedIn URL</label>
+                <div className="col-8">
+                  <input
+                    type="text"
+                    name="linkedinUrl"
+                    id="linkedinUrl"
+                    className="form-control"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.linkedinUrl}
+                  />
+                  {touched.linkedinUrl
+                    && errors.linkedinUrl
+                    && <FormFeedback style={{ display: 'block' }}>{errors.linkedinUrl}</FormFeedback>}
                 </div>
               </div>
             </fieldset>
