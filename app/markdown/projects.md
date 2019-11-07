@@ -96,7 +96,7 @@ Establishing a system to create notes from audio recordings.
 
 ### VRioWare
 
-Building upon the ideas of WarioWare, VRioWare will use microgames in a quick sucession in a VR view. 
+Building upon the ideas of WarioWare, VRioWare will use microgames in a quick succession in a VR view. 
 
 ### [SSE Accounting](https://github.com/rit-sse/sse-accounting)
 
