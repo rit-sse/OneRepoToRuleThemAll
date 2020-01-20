@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Actions from 'common/components/Actions';
 import SwipeArea from 'common/components/SwipeArea';
 import moment from 'moment';
+import ReactMarkdown from 'react-markdown';
 
 import 'scss/pane.scss';
 import 'scss/event.scss';
@@ -71,7 +72,7 @@ class Event extends Component {
         </div>
         <p className="event-time">{this.getTime()}</p>
         <p className="event-location">Location: {this.props.location}</p>
-        <p className="event-text">{this.props.description}</p>
+        <ReactMarkdown className="event-text" source={this.props.description} />
       </SwipeArea>
     );
   }
