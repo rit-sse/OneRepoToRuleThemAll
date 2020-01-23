@@ -32,11 +32,11 @@ class AddMembershipModal extends Component {
 
     const committeeNames = committees.map(committee => committee.name);
     const dayFormat = 'YYYY-MM-DD';
-    // First day to withdraw classes: Sept 4th or January 22st
+    // Memberships carry over to the first withdrawal date of the following semester
     // Amend these dates as necessary
-    const janDate = moment({ months: 0, day: 22 }).add({ years: 1 });
-    const septDate = moment({ months: 8, day: 4 });
-    const endDate = moment().month() < 8 ? septDate : janDate;
+    const springWithdrawalDate = moment({ months: 0, day: 22 }).add({ years: 1 });
+    const fallWithdrawalDate = moment({ months: 8, day: 4 });
+    const endDate = moment().month() < fallWithdrawalDate.month() ? fallWithdrawalDate : springWithdrawalDate;
 
     return (
       <Modal isOpen={isOpen} toggle={close}>
