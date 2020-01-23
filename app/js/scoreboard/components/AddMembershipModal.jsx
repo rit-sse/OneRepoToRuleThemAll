@@ -32,6 +32,11 @@ class AddMembershipModal extends Component {
 
     const committeeNames = committees.map(committee => committee.name);
     const dayFormat = 'YYYY-MM-DD';
+    // First day to withdraw classes: Sept 4th or January 21st
+    // Amend these dates as necessary
+    const janDate = moment({ months: 0, day: 22 });
+    const septDate = moment({ months: 8, day: 4 });
+    const endDate = moment().isAfter(janDate) ? septDate : janDate;
 
     return (
       <Modal isOpen={isOpen} toggle={close}>
@@ -39,7 +44,7 @@ class AddMembershipModal extends Component {
         <UserForm
           initialValues={{
             startDate: moment().format(dayFormat),
-            endDate: '',
+            endDate: endDate.format(dayFormat),
             reason: '',
             committeeName: initialCommitteeName,
           }}
