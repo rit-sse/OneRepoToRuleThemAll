@@ -17,15 +17,7 @@ Have you ever gone on an RIT Campus Tour? If you have, you may remember a lab of
 
 Slack: `#proj-waving-robot`
 
-Meetings: Mondays at 2pm
-
-### Project BCI
-
-Creating a brain-computer interface using a commercial EEG sensor.
-
-Slack: `#proj-bci`
-
-Meetings: See Slack for Details
+Meetings: TBD
 
 ### RIT Go
 
@@ -33,23 +25,7 @@ RIT Go is an application allowing RIT staff and student leaders to pin locations
 
 Slack: `#proj-rit-go`
 
-Meetings: Thursdays at 3:30pm
-
-### HoloCube
-
-Project HoloCube uses a Microsoft Hololens Mixed-Reality headset to show a user steps to solve a real rubiks cube!
-
-Slack: `#proj-holocube`
-
-Meetings: Fridays 12pm - 1pm
-
-### Job App Tracker
-
-Applying to jobs is hard and confusing. In today's market, we have to apply to dozens and dozens of jobs (or more!). Job App Tracker is trying to solve the problem of keeping track of all the applications you submit.
-
-Slack: `#proj-job-app-tracker`
-
-Meetings: Thursdays at 12pm
+Meetings: TBD
 
 ### gueSSE who
 
@@ -57,7 +33,7 @@ gueSSE who is the classic "Guess Who?" game but with SSE members!
 
 Slack: `#proj-guesse-who`
 
-Meetings: Fridays 3pm - 4pm
+Meetings: Last Friday of the month at 10am
 
 ### Project Interviewy
 
@@ -67,20 +43,28 @@ Slack: `#proj-interviewy`
 
 Meetings: TBD
 
-### Project Course Planner - 2.0
+### Magic Mirror
 
-We are resurrecting the popular Plan Your Courses project and for an SSE first, collaborating with the Computer Science House by integrating Course Planner with their famous [Schedule Maker](https://schedule.csh.rit.edu)
+Magic Mirror is a smart mirror that can display things such as time, weather, news, calendars, and more.
 
-Slack: `#proj-course-planner`
+Slack: `#proj-magic-mirror`
 
-Meetings: TBD - See Slack for Details
-
-
-
+Meetings: Fridays at 2:30pm
 
 
 Past Projects
 -------------
+### HoloCube
+
+Project HoloCube uses a Microsoft Hololens Mixed-Reality headset to show a user steps to solve a real rubiks cube!
+
+### Job App Tracker
+
+Applying to jobs is hard and confusing. In today's market, we have to apply to dozens and dozens of jobs (or more!). Job App Tracker is trying to solve the problem of keeping track of all the applications you submit.
+
+### Project Course Planner - 2.0
+
+We are resurrecting the popular Plan Your Courses project and for an SSE first, collaborating with the Computer Science House by integrating Course Planner with their famous [Schedule Maker](https://schedule.csh.rit.edu)
 
 ### [Project BCI](https://github.com/rit-sse/proj-BCI)
 
