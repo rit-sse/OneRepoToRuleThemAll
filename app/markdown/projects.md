@@ -49,7 +49,7 @@ Magic Mirror is a smart mirror that can display things such as time, weather, ne
 
 Slack: `#proj-magic-mirror`
 
-Meetings: Fridays at 2:30pm
+Meetings: Fridays at 10am
 
 
 Past Projects
