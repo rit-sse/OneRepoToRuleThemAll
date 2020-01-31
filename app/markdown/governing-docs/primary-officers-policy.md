@@ -33,30 +33,28 @@ Primary Officer Responsibilities
 * Maintain who is allowed to make transactions with the SSE procurement card
 * Make bank deposits on a regular basis
 * Oversee all committee positions that make regular transactions
+* Organize the design and sale of merchandise with the Society's branding
 
 ### Secretary
 * Document the Society
 * Track membership
 * Keep the Society's members informed with current events and news
 * Manage the Society's brand throughout RIT
-* Organize the design and sale of merchandise with the Society's branding
 
 Committees
 ----------
 
 The SSE currently has officers in charge of the following committees:
 
-### Mentoring Hours
+### Mentoring
 
 * Continue working with mentors and Lab Ops to keep the lab clean 
 * Work with mentors for a less-direct tutoring method that stresses teaching methods and knowledge over information to a specific application
 * Handle the mentoring schedule
-
-### Review Sessions
-
 * Work with mentors to update and create review session tests
 * Maintain the test cabinet
 * Collaborate with professors to ensure practice tests are in line with the current curriculum
+* Collect statistics for review sessions and mentoring hours
 
 ### Public Relations
 
@@ -99,11 +97,27 @@ The SSE currently has officers in charge of the following committees:
 * Handle project proposals
 * Liaison between individual project heads and the Society
 * Have weekly meetings for larger projects and bi-monthly meetings for smaller projects
+* Coordinate projects and volunteers for Imagine RIT
 
 ### Talks
 
 * Coordinate frequent talk presentations
 * Have all talks recorded and posted to Facebook
+
+### Career Development
+
+* Ongoing mock interviews
+* Resume reviews
+* Highlight alternative paths and career options for people in computing
+* Slides in meetings for conferences, networking events
+* Slides with blurb from a co-op student about their experience
+
+### Marketing
+
+* Post Slack announcements
+* Maintain social media (FB, twitter, instagram)
+* Collect pictures
+* Design and post posters
 
 Membership
 ----------
@@ -117,10 +131,13 @@ Each prospective member must complete one “significant contribution” to the 
 * Participating in an Open House
 * Giving a talk
 * Donating exams
+* Contributing to the website
+* Giving mock interviews
+* Other donations not listed made to the Society as deemed appropriate by the Primary Officers
 
 For activities that occur within a committee, the Committee Head shall
 determine whether the individual's contribution is significant enough to
-warrant membership. Committee Heads shall not recieve membership for 
+warrant membership. Committee Heads shall not receive membership for 
 individual tasks directly related to their appointed job.
 
 Alumni Membership Application
