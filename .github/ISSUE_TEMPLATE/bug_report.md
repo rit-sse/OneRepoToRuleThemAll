@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Create a report to help us improve our website
 title: Bug with [situation]
 labels: Bug
 assignees: ''
@@ -16,6 +16,10 @@ Steps to reproduce the behavior:
 2. Click on '....'
 3. Scroll down to '....'
 4. See error
+
+**Behavior:**
+1. Current Behavior:
+2. Expected Behavior:
 
 **Screenshots**
 If applicable, add screenshots to help explain your problem. Please do this if its a UI issue, especially if there is a console error or more network requests
