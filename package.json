@@ -23,6 +23,10 @@
     {
       "name": "Bill Dybas",
       "email": "wmdybas@gmail.com"
+    },
+    {
+      "name": "Gavriel Rachael-Homann",
+      "email": "gavriel@gavrielrh.com"
     }
   ],
   "repository": {
@@ -42,9 +46,9 @@
     "moment-range": "^3.1.0",
     "prop-types": "^15.5.9",
     "qs": "^6.4.0",
-    "react": "^16.2.0",
+    "react": "^16.9.0",
     "react-datetime": "^2.14.0",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.9.0",
     "react-markdown": "4.3.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.1.1",
