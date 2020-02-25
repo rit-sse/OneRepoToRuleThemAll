@@ -8,7 +8,7 @@ class EventHighlight extends Component {
     nextEvent: PropTypes.func.isRequired,
   };
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.nextEvent();
   }
 

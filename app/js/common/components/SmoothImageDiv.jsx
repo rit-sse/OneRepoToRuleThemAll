@@ -23,20 +23,23 @@ class SmoothImageDiv extends React.Component {
 
   constructor(props) {
     super(props);
+    let mountTime = null;
+    let updated = null;
+
+    if (this.props.delayMs > 0) {
+      mountTime = Date.now();
+      updated = mountTime;
+    }
+
     this.state = {
       loading: true,
-      mountTime: null,
-      updated: null,
+      mountTime,
+      updated,
     };
   }
 
-  componentWillMount() {
+  componentDidMount() {
     if (this.props.delayMs > 0) {
-      const mountTime = Date.now();
-      this.setState({
-        mountTime,
-        updated: mountTime,
-      });
       setTimeout(() => this.setState({
         updated: Date.now(),
       }), this.props.delayMs);
