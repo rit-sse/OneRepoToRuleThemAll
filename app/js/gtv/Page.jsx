@@ -27,13 +27,10 @@ class GTV extends Component {
     getThreeWeekEvents: PropTypes.func.isRequired,
   };
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.getEvents();
     this.props.getThreeWeekEvents();
     this.intervals = [];
-  }
-
-  componentDidMount() {
     this.setInterval(() => this.props.getEvents(), 30000);
     this.setInterval(() => this.props.getThreeWeekEvents(), 30000);
   }
