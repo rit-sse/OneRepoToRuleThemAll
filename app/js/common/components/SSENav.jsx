@@ -47,6 +47,9 @@ class SSENav extends Component {
             <NavItem>
               <NavLink tag={Link} to="/projects">Projects</NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink tag={Link} to="/go">Go Links</NavLink>  
+            </NavItem> 
             <Dropdown nav isOpen={this.state.opened} toggle={this.toggle}>
               <DropdownToggle nav caret>
                 About
