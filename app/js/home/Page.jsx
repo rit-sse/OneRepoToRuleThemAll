@@ -24,7 +24,7 @@ const PageHome = () => (
         </p>
         <h4 className="front-heading">Miss a General Meeting?</h4>
         <p>
-          Did you miss a general meeting but you still want to be up to date on whats happening in 
+          Did you miss a general meeting but still want to be up to date on what's happening in 
           the SSE? Check out <a href="https://sse.rit.edu/go/slides">go/slides</a> to see the most 
           recent meeting slide deck.
         </p>
