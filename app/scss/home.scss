@@ -59,6 +59,10 @@ $BASE_PADDING: 25%;
       display: block;
       background-color: $SECONDARY;
       box-sizing: border-box;
+      a {
+       color: $WHITE;
+       text-decoration: underline; 
+      }
     }
   }
 
