@@ -22,6 +22,12 @@ const PageHome = () => (
           Want to get involved in the SSE? Feel free to stop by our mentoring lab at RIT.
           You can find us in building 70 (Golisano), room 1670. Students of any major are welcome!
         </p>
+        <h4 className="front-heading">Miss a General Meeting?</h4>
+        <p>
+          Did you miss a general meeting but you still want to be up to date on whats happening in 
+          the SSE? Check out <a href="https://sse.rit.edu/go/slides">go/slides</a> to see the most 
+          recent meeting slide deck.
+        </p>
       </div>
       <div className="flex-1 flex-border">
         <h4 className="front-heading">Upcoming Events</h4>
