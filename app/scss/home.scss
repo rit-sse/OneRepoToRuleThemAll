@@ -18,6 +18,15 @@ $BASE_PADDING: 25%;
   width: 100%;
 }
 
+.section-header-svg {
+  height: 48px;
+  margin: 32px 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
 .hero {
   background: $ACCENT;
   margin-bottom: 24px;

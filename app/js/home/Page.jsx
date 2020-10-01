@@ -1,6 +1,8 @@
 import React from 'react';
 import asyncComponent from 'common/components/AsyncComponent';
 import Hero from 'home/components/Hero';
+import MentoringSVG from 'img/Mentoring.svg';
+import ProjectsSVG from 'img/Projects.svg';
 
 import 'scss/home.scss';
 
@@ -12,22 +14,24 @@ const PageHome = () => (
     <Hero />
     <div className="flex-container">
       <div className="flex-2 flex-content">
-        <h4 className="front-heading">Mentoring <small>10am - 6pm, Mon - Fri</small></h4>
+        <img className="section-header-svg" src={MentoringSVG} />
         <p>
-          The SSE has a mentor on duty every day that can help with SE, CS and other technical classes.
-          There are also physics tutors who hold open mentoring hours in our lab. You can checkout <a href="https://sse.rit.edu/go/mentors">a schedule</a> of the times for each mentor.
+          Need help with an SE, CS, or physics assignment? We've got you covered! Our mentors are always happy to help.
         </p>
-        <h4 className="front-heading">Getting involved</h4>
         <p>
-          Want to get involved in the SSE? Feel free to stop by our mentoring lab at RIT.
-          You can find us in building 70 (Golisano), room 1670. Students of any major are welcome!
+          <strong>Monday - Thursday: </strong><span>10 am - 6 pm in the lab (GOL 1670)</span>
         </p>
-        <h4 className="front-heading">Miss a General Meeting?</h4>
         <p>
-          Did you miss a general meeting but still want to be up to date on what's happening in 
-          the SSE? Check out <a href="https://sse.rit.edu/go/slides">go/slides</a> to see the most 
-          recent meeting slide deck.
+          <strong>Friday: </strong>
+          <span>10 am - 6 pm on the <a href="https://sse.rit.edu/go/mentordiscord" target="_blank">mentoring Discord server</a></span>
         </p>
+        <img className="section-header-svg" src={ProjectsSVG} />
+          <p>
+            SSE projects are a great way to improve your skills and achieve something with others.
+          </p>
+          <p>
+            Listed below are our active projects. Want to propose one of your own? Contact <a href="mailto: projects@sse.rit.edu">projects@sse.rit.edu</a> or join the <a href="https://rit-sse.slack.com/archives/C07MFN265" target="_blank">#sse-projects Slack channel</a>.
+          </p>
       </div>
       <div className="flex-1 flex-border">
         <h4 className="front-heading">Upcoming Events</h4>
