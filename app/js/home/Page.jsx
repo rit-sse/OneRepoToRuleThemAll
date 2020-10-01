@@ -1,6 +1,5 @@
 import React from 'react';
 import asyncComponent from 'common/components/AsyncComponent';
-import Hero from 'home/components/Hero';
 import MentoringSVG from 'img/Mentoring.svg';
 import ProjectsSVG from 'img/Projects.svg';
 
@@ -11,7 +10,6 @@ const HomeEvents = asyncComponent(() => import(/* webpackChunkName: "Events" */ 
 
 const PageHome = () => (
   <div>
-    <Hero />
     <div className="flex-container">
       <div className="flex-2 flex-content">
         <img className="section-header-svg" src={MentoringSVG} />
