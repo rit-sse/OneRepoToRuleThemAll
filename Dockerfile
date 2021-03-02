@@ -1,13 +1,4 @@
-FROM node:10
-
-# Install and config nginx
-RUN apt-get update && apt-get install -y nginx
-RUN rm /etc/nginx/sites-enabled/*
-COPY ./nginx/ /etc/nginx/sites-enabled/
-
-# forward request and error logs to docker log collector
-RUN ln -sf /dev/stdout /var/log/nginx/access.log
-RUN ln -sf /dev/stderr /var/log/nginx/error.log
+FROM node:10 as builder
 
 WORKDIR /app
 
@@ -26,6 +17,19 @@ RUN rm -rf node_modules \
 # Set perms for dist dir
 RUN chmod 755 -R /app/dist
 
+FROM alpine:latest
+WORKDIR /app/dist
+# Install and config nginx
+RUN addgroup -g 1000 -S www-data \
+    && adduser -u 1000 -D -S -G www-data www-data
+RUN apk add nginx
+COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+# forward request and error logs to docker log collector
+RUN ln -sf /dev/stdout /var/log/nginx/access.log
+RUN ln -sf /dev/stderr /var/log/nginx/error.log
+
+COPY --from=builder /app/dist /app/dist
+
 # Run nginx
-EXPOSE 80 443
+EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
