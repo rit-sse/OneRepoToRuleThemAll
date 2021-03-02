@@ -2,20 +2,17 @@ FROM node:10 as builder
 
 WORKDIR /app
 
-# Build the app
-COPY ./ /app
+# Install dependencies
 COPY ./package.json /app/package.json
+RUN npm install --warn 
 
 # API_ROOT `--build-arg=api_root=http://localhost:3000/api/v2`
 ARG api_root
 ENV API_ROOT $api_root
 
-RUN rm -rf node_modules \
-    && npm install --warn \
-    && npm run build
-
-# Set perms for dist dir
-RUN chmod 755 -R /app/dist
+# Build the app
+COPY ./ /app
+RUN npm run build
 
 FROM alpine:latest
 WORKDIR /app/dist
