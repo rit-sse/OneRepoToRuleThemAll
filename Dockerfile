@@ -4,7 +4,8 @@ WORKDIR /app
 
 # Install dependencies
 COPY ./package.json /app/package.json
-RUN npm install --warn 
+COPY ./package-lock.json /app/package-lock.json
+RUN npm ci
 
 # API_ROOT `--build-arg=api_root=http://localhost:3000/api/v2`
 ARG api_root
