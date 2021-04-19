@@ -307,10 +307,10 @@ accessible.
 
 ### Election Process
 The election process for Primary Officers utilizes an instant-runoff voting
-system, where each nominee is ranked from 1 (least desired) to N (most
+system, where each nominee is ranked from 1 (most desired) to N (least
 desired), where N is the total number of nominees running for each position. In
 the event that a nominee is not ranked on a ballot, they will be considered to
-be ranked in last place (1) for that voter. 
+be ranked in last place (N) for that voter.
 
 At the end of the voting period, the first choice vote for all voters is
 tallied. The candidate with the lowest number of votes is eliminated from the
