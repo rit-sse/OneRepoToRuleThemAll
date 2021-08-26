@@ -15,11 +15,10 @@ ENV API_ROOT $api_root
 COPY ./ /app
 RUN npm run build
 
-FROM alpine:latest
+FROM alpine:3.14.1
 WORKDIR /app/dist
 # Install and config nginx
-RUN addgroup -g 1000 -S www-data \
-    && adduser -u 1000 -D -S -G www-data www-data
+RUN adduser -u 1000 -D -S -G www-data www-data
 RUN apk add nginx
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 # forward request and error logs to docker log collector

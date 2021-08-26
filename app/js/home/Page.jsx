@@ -12,7 +12,7 @@ const PageHome = () => (
     <Hero />
     <div className="flex-container">
       <div className="flex-2 flex-content">
-        <h4 className="front-heading">Mentoring <small>10am - 6pm, Mon - Thurs</small></h4>
+        <h4 className="front-heading">Mentoring <small>10am - 6pm, Mon - Fri</small></h4>
         <p>
           The SSE has a mentor on duty every day that can help with SE, CS and other technical classes.
           There are also physics tutors who hold open mentoring hours in our lab. You can checkout <a href="https://sse.rit.edu/go/mentors">a schedule</a> of the times for each mentor.
