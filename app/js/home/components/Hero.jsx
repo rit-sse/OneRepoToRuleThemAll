@@ -34,7 +34,7 @@ class Hero extends React.Component {
           <div className="hero-content">
             <h3>Weekly Meetings</h3>
             <h6>Thursday @ 3:30pm</h6>
-            <h6><a href="https://sse.rit.edu/go/generalmeeting">Click here to join the Zoom</a></h6>
+            <h6>GOL-1670</a></h6>
             <h6>All Are Welcome!</h6>
           </div>
         </div>
