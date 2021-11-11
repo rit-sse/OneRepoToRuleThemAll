@@ -142,7 +142,7 @@ placement of the candidate on a probationary period, the length of which shall
 be determined at the discretion of the Primary Officers based on the nature of
 the candidate's behavior. Should a decision in favor of probation be reached,
 the candidate shall be informed of the verdict and their probationary period
-shall begin. Should this not be reached, the candidate shall informed of the
+shall begin. Should this not be reached, the candidate shall be informed of the
 nature of the discussion.
 
 At the end of the probationary period, a second discussion shall be held
@@ -184,7 +184,7 @@ see that necessary parties have easy and constant access to relevant
 information.
 
 ##### Treasurer
-The treasurer is responsible for all financial that happen on behalf of the
+The treasurer is responsible for all financial matters that happen on behalf of the
 SSE. As such, they must grant members the permission to use SSE funds, ensure
 all financial transactions are recorded properly, and see that funds and items
 purchased are used in a responsible way. 
