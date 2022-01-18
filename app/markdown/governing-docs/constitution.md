@@ -142,7 +142,7 @@ placement of the candidate on a probationary period, the length of which shall
 be determined at the discretion of the Primary Officers based on the nature of
 the candidate's behavior. Should a decision in favor of probation be reached,
 the candidate shall be informed of the verdict and their probationary period
-shall begin. Should this not be reached, the candidate shall informed of the
+shall begin. Should this not be reached, the candidate shall be informed of the
 nature of the discussion.
 
 At the end of the probationary period, a second discussion shall be held
@@ -184,7 +184,7 @@ see that necessary parties have easy and constant access to relevant
 information.
 
 ##### Treasurer
-The treasurer is responsible for all financial that happen on behalf of the
+The treasurer is responsible for all financial matters that happen on behalf of the
 SSE. As such, they must grant members the permission to use SSE funds, ensure
 all financial transactions are recorded properly, and see that funds and items
 purchased are used in a responsible way. 
@@ -307,10 +307,10 @@ accessible.
 
 ### Election Process
 The election process for Primary Officers utilizes an instant-runoff voting
-system, where each nominee is ranked from 1 (least desired) to N (most
+system, where each nominee is ranked from 1 (most desired) to N (least
 desired), where N is the total number of nominees running for each position. In
 the event that a nominee is not ranked on a ballot, they will be considered to
-be ranked in last place (1) for that voter. 
+be ranked in last place (N) for that voter.
 
 At the end of the voting period, the first choice vote for all voters is
 tallied. The candidate with the lowest number of votes is eliminated from the
