@@ -199,10 +199,10 @@ see that necessary parties have easy and constant access to relevant
 information.
 
 ##### Treasurer
-The treasurer is responsible for all financial that happen on behalf of the
+The treasurer is responsible for all financial desicions that happen on behalf of the
 SSE. As such, they must grant members the permission to use SSE funds, ensure
-all financial transactions are recorded properly, and see that funds and items
-purchased are used in a responsible way. 
+all financial transactions are recorded properly, oversee merchandise sales and distribution,
+and see that funds and items purchased are used in a responsible way. 
 
 #### Period of Office
 For annual elections, the period of office begins at the end of the spring
@@ -357,7 +357,7 @@ Nominations for Committee Heads may be held for any vacancy. Nominations should
 be held immediately after the Primary Officers' election at the end of each
 academic year. Any member may submit nominations for Committee Heads. All
 candidates must accept a nomination before they are selected for the position.
-In the event of a Commitee Head resignation, the Primary Officers may
+In the event of a Commitee Head resignation or removal, the Primary Officers may
 reopen nominations at any point during the semester to fill the vacancy.
 
 ### Selection
