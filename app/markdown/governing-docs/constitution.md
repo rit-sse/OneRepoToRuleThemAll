@@ -39,7 +39,7 @@ well as any related setting, such as off-campus social events.
 Reporting an Incident of Harrassment or Discrimination
 ------------------------------------------------------
 The SSE encourages prompt reporting of all percieved incidents of discrimination, 
-harassment, or retaliation, regardless of the offfender's identity or position. It is
+harassment, or retaliation, regardless of the offender's identity or position. It is
 the duty of all SSE Officers to report any incidents immediately via the preferred 
 mechanism of the university or the SE department. 
 
