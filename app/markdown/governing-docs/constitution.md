@@ -163,7 +163,7 @@ shall be informed of the verdict and be removed from the membership roster
 immediately. The former member shall also be barred from obtaining membership
 for a minimum of the remainder of the current academic term.
 
-The probationary period may be skipped if and only if the Primary Officers come
+The probationary period may be skipped if the Primary Officers come
 to a unanimous decision to skip probation and proceed directly to the removal
 of the membership. This final clause should only be used in truly extraneous 
 circumstances with a reasonable effort to include the member in the discussion.
