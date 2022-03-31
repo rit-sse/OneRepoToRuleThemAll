@@ -379,7 +379,7 @@ reopen nominations at any point during the semester to fill the vacancy.
 
 ### Selection
 Committee heads are selected for a term by the Primary Officers who will be
-serving during the same term. 
+serving during the same term.
 
 
 Voting Procedures
@@ -452,7 +452,7 @@ take precedence.
 Advisors
 --------
 Department-appointed advisors to the SSE, if they exist, have the right to vote
-in elections for Primary Officers. 
+in elections for Primary Officers.
 
 
 Amendments
@@ -467,7 +467,7 @@ The process of drafting an amendment shall be at the discretion of the author.
 The final text for the amendment must be presented in writing to a club advisor 
 or primary officer no later than one week prior to the vote opening. All proposed 
 amendments to be included in a general election must be made available in public 
-view for a public forum allowing optionally anonymous comments. The forum must be 
+view for a public forum allowing comments. The forum must be 
 moderated by the Primary Officers, ultimately managed by the Secretary. 
 
 It is recommended, but not required, that amendment authors consult a primary officer 
@@ -476,7 +476,7 @@ or advisor prior to proposal.
 ### Voting Procedure
 For all semantic changes, no fewer than two-thirds of the votes must approve the ratification
 amendment, with a minimum of two-thirds of the Society participating in the vote. Modification 
-to the SSE Constitution that does not effect the meaning of the document can be approved by a 
+to the SSE Constitution that does not affect the meaning of the document can be approved by a 
 concensus vote amongst the Primary Officers.
 
 
