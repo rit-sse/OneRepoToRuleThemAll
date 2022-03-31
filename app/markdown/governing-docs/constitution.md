@@ -496,7 +496,7 @@ In a semester in which no primary officer positions require an election, and ame
 
 Appeals
 -------
-Desicions made by the Primary Officers in regards to the Primary Officer Policy or constitutional interpretation
+Decisions made by the Primary Officers in regards to the Primary Officer Policy or constitutional interpretation
 may be contested at any point by an active member of the SSE in good standing. To initiate an appeal, the member must create 
 a report detailing the proposed appeal in a way that is readily accessible to the members of the SSE. To present the appeal, it must 
 first have the approval of either two Primary Officers or one third of the current Committee Heads 
