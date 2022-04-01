@@ -116,7 +116,7 @@ Alumni membership.
    United States.
 2. The candidate must have earned Active membership while at RIT.
 3. The candidate must have applied for alumni membership within six months of
-   leaving the RIT. Alumni membership can also be granted after the six month
+   leaving RIT. Alumni membership can also be granted after the six month
    time period upon approval of the Primary Officers. The Officers' Policy shall
    specify the application process for Alumni membership.
 
@@ -295,7 +295,7 @@ Secretary       | -             | -
 
 “Year level” is counted by the lower of [A] years enrolled at least part-time in a
 higher-education institution post high school graduation, or [B] by credits obtained
-at RIT following the scale published by the RIT's Office of the Registrar.
+at RIT following the scale published by RIT's Office of the Registrar.
 
 “Prior Involvement” refers to the number of complete academic terms during which the
 candidate served as a Primary Officer or Committee Head. In the event a candidate has
