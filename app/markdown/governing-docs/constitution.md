@@ -91,7 +91,7 @@ member:
 
 1. The candidate must be enrolled as a student at RIT in Henrietta, New York,
    United States.
-3. The candidate must make at least one significant contribution to the
+2. The candidate must make at least one significant contribution to the
    betterment or continuation of the Society. The details of a "significant
    contribution" shall be determined by the current Primary Officers' Policy.
 
@@ -114,7 +114,7 @@ Alumni membership.
 
 1. The candidate must not be enrolled as a student at RIT in Henrietta, New York,
    United States.
-3. The candidate must have earned Active membership while at RIT.
+2. The candidate must have earned Active membership while at RIT.
 3. The candidate must have applied for alumni membership within six months of
    leaving the RIT. Alumni membership can also be granted after the six month
    time period upon approval of the Primary Officers. The Officers' Policy shall
@@ -136,7 +136,7 @@ met:
 
 1. The candidate must be enrolled as a student at RIT in Henrietta, New York,
    United States.
-3. The candidate must not ever have had a Temporary, Active, or Alumni
+2. The candidate must not ever have had a Temporary, Active, or Alumni
    membership in the Society.
 
 
