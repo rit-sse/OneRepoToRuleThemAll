@@ -305,7 +305,7 @@ as one term of “Prior Involvement”. No more than one term of “Prior Involv
 through mentorship may be substituted as the requirements for any office.
 
 All Primary Officers must be enrolled as Software Engineering students at RIT in Henrietta,
-New York, United States and not be on co-op.
+New York, United States and not be on co-op during the term in which they would serve.
 
 Candidates for President and Vice President must both plan to remain enrolled
 and on-campus for the entire academic year for which they are to serve.
@@ -359,9 +359,9 @@ temporary members cannot participate in this process.
 Committee Head Selection
 ------------------------
 ### Eligibility
-Any student enrolled at RIT in Henrietta, New York, United States and not on co-op
-may be nominated to be a Committee Head. Members cannot serve in Committee Head and
-Primary Officer positions concurrently.
+Any student enrolled at RIT in Henrietta, New York, United States and not be on co-op
+during the term in which they would serve may be nominated to be a Committee Head.
+Members cannot serve in Committee Head and Primary Officer positions concurrently.
 
 ### Nomination Process
 Nominations for Committee Heads may be held for any vacancy. Nominations should
