@@ -217,14 +217,22 @@ in the year for which the officer serves. Officers who no longer meet the
 candidacy requirements for office must resign.
 
 #### Impeachment
-Primary officers may only be removed by the completion of a petition started by
-an active member of the Society. Should a petition receive two thirds of the
-signatures of all active members, the Primary Officer shall be removed from
-their position immediately. Following the removal of the Primary Officer, a
-vote shall be held to fill the vacant position. In the time between the removal
-of the officer and the appointment of the new officer, all responsibilities of
-the removed Primary Officer shall be completed by the remaining Primary
-Officers.  
+Primary officers may only be impeached by the completion of a petition started by
+an active member of the Society. The petitioner must provide their reasoning
+for impeachment before receiving signatures.
+Should a petition receive two thirds of the signatures of all active members,
+it may be presented to the Primary Officers or to the Office Advisor
+to begin the impeachment process. The Primary Officer in question may not interfere or
+delay this process in any way, not can they operate in their position during this time.
+
+The Officer in question will then have the opportunity to form a defense to 
+the claims, which must be made accessible to all active members. After one week,
+a vote must be held amongst the members to determine if the Officer should be removed.
+If two thirds of all active members vote to impeach, the Primary Officer shall be removed from their position immediately. 
+Following the removal of the Primary Officer, a vote shall be held to fill 
+the vacant position. In the time between the removal of the officer and the 
+appointment of the new officer, all responsibilities of the removed Primary Officer 
+shall be completed by the remaining Primary Officers.
 
 #### Resignation
 Primary Officers may resign at any point during their period of office. Upon
@@ -492,7 +500,7 @@ All amendments added to this constitution shall override and overrule any and al
 The new or continuing Primary Officers must implement changes in the organization in accordance with the amendment by the start of the following semester.
 
 ### Amendment-Only Elections
-In a semester in which no primary officer positions require an election, and amendments have been proposed in a reasonable timeline, an amendment-only election must be run. The process for this is at the discretion of the Primary Officers.
+In a semester in which no primary officer positions require an election, and amendments have been proposed by the tenth week of classes, an amendment-only election must be run. The process for this is at the discretion of the Primary Officers.
 
 Appeals
 -------
