@@ -325,6 +325,9 @@ Candidates for Secretary and Treasurer must both plan to remain enrolled and
 on-campus for at least the most immediate academic term for which they are to
 serve.
 
+In an event where all candidates for President and Vice President are the same,
+only a single vote for President needs to be held, with the individual who recieved
+the second highest amount of votes becomming Vice President.
 
 ### Collection and Acceptance of Nominations
 
