@@ -221,7 +221,7 @@ Primary officers may only be impeached by the completion of a petition started b
 an active member of the Society. The petitioner must provide their reasoning
 for impeachment before receiving signatures.
 Should a petition receive two thirds of the signatures of all active members,
-it may be presented to the Primary Officers or to the Office Advisor
+it may be presented to the Primary Officers or to the Academic Advisor
 to begin the impeachment process. The Primary Officer in question may not interfere or
 delay this process in any way, not can they operate in their position during this time.
 
@@ -510,6 +510,6 @@ Appeals
 Decisions made by the Primary Officers in regards to the Primary Officer Policy or constitutional interpretation
 may be contested at any point by an active member of the SSE in good standing. To initiate an appeal, the member must create 
 a report detailing the proposed appeal in a way that is readily accessible to the members of the SSE. To present the appeal, it must 
-first have the approval of either two Primary Officers or one third of the current Committee Heads 
-as well as the department advisor. A vote shall then be held amongst all officers and the department advisor 
+first have the approval of either two Primary Officers or two thirds of the current Committee Heads 
+as well as the Department Advisor. A vote shall then be held amongst all Officers and the Department Advisor 
 to determine if the appeal shall be implemented. The vote shall be determined by a 2/3rds majority.
