@@ -223,7 +223,7 @@ for impeachment before receiving signatures.
 Should a petition receive two thirds of the signatures of all active members,
 it may be presented to the Primary Officers or to the Academic Advisor
 to begin the impeachment process. The Primary Officer in question may not interfere or
-delay this process in any way, not can they operate in their position during this time.
+delay this process in any way, nor can they operate in their position during this time.
 
 The Officer in question will then have the opportunity to form a defense to 
 the claims, which must be made accessible to all active members. After one week,
@@ -327,7 +327,7 @@ serve.
 
 In an event where all candidates for President and Vice President are the same,
 only a single vote for President needs to be held, with the individual who recieved
-the second highest amount of votes becomming Vice President.
+the second highest amount of votes becoming Vice President.
 
 ### Collection and Acceptance of Nominations
 
@@ -482,7 +482,7 @@ view for a public forum allowing comments. The forum must be
 moderated by the Primary Officers, ultimately managed by the Secretary. 
 
 It is recommended, but not required, that amendment authors consult a primary officer 
-or advisor prior to proposal.
+or Club Advisor prior to proposal.
 
 ### Voting Procedure
 For all semantic changes, no fewer than two-thirds of the votes must approve the ratification
