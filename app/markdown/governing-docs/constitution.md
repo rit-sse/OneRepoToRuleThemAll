@@ -19,19 +19,19 @@ lifestyle or background.
 
 Code of Conduct
 ---------------
-As active members of the Rochester Institute of Technology community, advocates
+As active members of the Rochester Institute of Technology (RIT) community, advocates
 of software engineering, and future workers in the computing industry, the Society's
 members are expected to demonstrate the highest levels of personal and professional conduct.  
 
 At the core of all efforts as Society members, we will:
 * Demonstrate civility, respect, decency and sensitivity towards our fellow
-  members of the Rochester Institute of Technology community.
+  members of the RIT community.
 * Conduct ourselves with the highest standards of moral and ethical behavior.
   Such behavior includes taking responsibility for our own personal choices,
   decisions and academic and professional work.
-* Affirm through the daily demonstration of these ideals that the Rochester Institute
-  of Technology is a university devoted to the pursuit of knowledge and a free
-  exchange of ideas in an open and respectful environment.
+* Affirm through the daily demonstration of these ideals that RIT  is a university
+  devoted to the pursuit of knowledge and a free exchange of ideas in an open and
+  respectful environment.
 
 Conduct prohibited by these policies is unacceptable in both the SSE facilities, as
 well as any related setting, such as off-campus social events.
@@ -53,9 +53,8 @@ The Pillars shall be valued equally, and are listed here in no particular
 order.
 
 ### Mentoring
-The Society shall promote the academic success of members of the Rochester
-Institute of Technology community, with a focus on material related to
-Software Engineering.
+The Society shall promote the academic success of members of the RIT community,
+with a focus on material related to Software Engineering.
 
 ### Networking
 The Society shall maintain relationships with prospective employers, sponsors,
@@ -90,8 +89,8 @@ any benefits.
 A candidate must satisfy all of the following requirements to be an active
 member: 
 
-1. The candidate must be enrolled as a student at the Rochester Institute of
-   Technology in Henrietta, New York, United States.
+1. The candidate must be enrolled as a student at RIT in Henrietta, New York,
+   United States.
 2. The candidate must make at least one significant contribution to the
    betterment or continuation of the Society. The details of a "significant
    contribution" shall be determined by the current Primary Officers' Policy.
@@ -113,14 +112,13 @@ Alumni membership shall last indefinitely after acquisition unless directly
 contested. A candidate must satisfy all of the following requirements to have
 Alumni membership. 
 
-1. The candidate must not be enrolled as a student at the Rochester Institute
-   of Technology in Henrietta, New York, United States.
-2. The candidate must have earned Active membership while at the Rochester Institute
-   of Technology.
+1. The candidate must not be enrolled as a student at RIT in Henrietta, New York,
+   United States.
+2. The candidate must have earned Active membership while at RIT.
 3. The candidate must have applied for alumni membership within six months of
-   leaving the Rochester Institute of Technology. Alumni membership can also be
-   granted after the six month time period upon approval of the Primary Officers.
-   The Officers' Policy shall specify the application process for Alumni membership.
+   leaving RIT. Alumni membership can also be granted after the six month
+   time period upon approval of the Primary Officers. The Officers' Policy shall
+   specify the application process for Alumni membership.
 
 
 ### Temporary Membership
@@ -136,8 +134,8 @@ Temporary membership may be granted for at most one academic term at the
 discretion of the Primary Officers if the following additional requirements are
 met:
 
-1. The candidate must be enrolled as a student at the Rochester Institute of
-   Technology in Henrietta, New York, United States.
+1. The candidate must be enrolled as a student at RIT in Henrietta, New York,
+   United States.
 2. The candidate must not ever have had a Temporary, Active, or Alumni
    membership in the Society.
 
@@ -305,8 +303,7 @@ Secretary       | -             | -
 
 “Year level” is counted by the lower of [A] years enrolled at least part-time in a
 higher-education institution post high school graduation, or [B] by credits obtained
-at the Rochester Institute of Technology following the scale published by the Rochester
-Institute of Technology's Office of the Registrar.
+at RIT following the scale published by RIT's Office of the Registrar.
 
 “Prior Involvement” refers to the number of complete academic terms during which the
 candidate served as a Primary Officer or Committee Head. In the event a candidate has
@@ -315,9 +312,8 @@ during which the candidate served as a Mentor with the society may be substitute
 as one term of “Prior Involvement”. No more than one term of “Prior Involvement” earned
 through mentorship may be substituted as the requirements for any office.
 
-All Primary Officers must be enrolled as Software Engineering students at the
-Rochester Institute of Technology in Henrietta, New York, United States and
-not be on co-op.
+All Primary Officers must be enrolled as Software Engineering students at RIT in Henrietta,
+New York, United States and not be on co-op during the term in which they would serve.
 
 Candidates for President and Vice President must both plan to remain enrolled
 and on-campus for the entire academic year for which they are to serve.
@@ -374,11 +370,9 @@ temporary members cannot participate in this process.
 Committee Head Selection
 ------------------------
 ### Eligibility
-Any student at the Rochester Institute of Technology may be nominated to be a
-Committee Head. All Committee Heads must be enrolled as Software Engineering
-students at the Rochester Institute of Technology in Henrietta, New York,
-United States and not be on co-op. Members cannot serve in Committee Head and
-Primary Officer positions concurrently.
+Any student enrolled at RIT in Henrietta, New York, United States and not be on co-op
+during the term in which they would serve may be nominated to be a Committee Head.
+Members cannot serve in Committee Head and Primary Officer positions concurrently.
 
 ### Nomination Process
 Nominations for Committee Heads may be held for any vacancy. Nominations should
