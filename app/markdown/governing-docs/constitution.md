@@ -19,9 +19,9 @@ lifestyle or background.
 
 Code of Conduct
 ---------------
-As active members of the RIT community, advocates of software engineering, and
-future workers in the computing industry, the Society's members are expected to
-demonstrate the highest levels of personal and professional conduct.  
+As active members of the Rochester Institute of Technology (RIT) community, advocates
+of software engineering, and future workers in the computing industry, the Society's
+members are expected to demonstrate the highest levels of personal and professional conduct.  
 
 At the core of all efforts as Society members, we will:
 * Demonstrate civility, respect, decency and sensitivity towards our fellow
@@ -29,10 +29,19 @@ At the core of all efforts as Society members, we will:
 * Conduct ourselves with the highest standards of moral and ethical behavior.
   Such behavior includes taking responsibility for our own personal choices,
   decisions and academic and professional work.
-* Affirm through the daily demonstration of these ideals that RIT is a
-  university devoted to the pursuit of knowledge and a free exchange of ideas
-  in an open and respectful environment.
+* Affirm through the daily demonstration of these ideals that RIT  is a university
+  devoted to the pursuit of knowledge and a free exchange of ideas in an open and
+  respectful environment.
 
+Conduct prohibited by these policies is unacceptable in both the SSE facilities, as
+well as any related setting, such as off-campus social events.
+
+Reporting an Incident of Harrassment or Discrimination
+------------------------------------------------------
+The SSE encourages prompt reporting of all percieved incidents of discrimination, 
+harassment, or retaliation, regardless of the offender's identity or position. It is
+the duty of all SSE Officers to report any incidents immediately via the preferred 
+mechanism of the university or the SE department. 
 
 Pillars of the Society
 ----------------------
@@ -66,8 +75,8 @@ Membership
 
 #### Rights
 Active members of the Society are permitted to vote in elections, start and
-sign petitions for the removal of officers, and are granted any other rights or
-responsibilities determined by the Primary Officers.
+sign petitions for the removal of officers, propose appeals, and are granted any 
+other rights or responsibilities determined by the Primary Officers.
 
 #### Requirements
 Active membership shall only last for one academic term and must be re-earned
@@ -80,7 +89,8 @@ any benefits.
 A candidate must satisfy all of the following requirements to be an active
 member: 
 
-1. The candidate must be enrolled as a student at RIT or NTID. 
+1. The candidate must be enrolled as a student at RIT in Henrietta, New York,
+   United States.
 2. The candidate must make at least one significant contribution to the
    betterment or continuation of the Society. The details of a "significant
    contribution" shall be determined by the current Primary Officers' Policy.
@@ -102,12 +112,13 @@ Alumni membership shall last indefinitely after acquisition unless directly
 contested. A candidate must satisfy all of the following requirements to have
 Alumni membership. 
 
-1. The candidate must not be enrolled as a student at RIT or NTID.
-2. The candidate must have earned Active membership while at RIT or NTID.
+1. The candidate must not be enrolled as a student at RIT in Henrietta, New York,
+   United States.
+2. The candidate must have earned Active membership while at RIT.
 3. The candidate must have applied for alumni membership within six months of
-   leaving RIT or NTID. Alumni membership can also be granted after the six
-   month time period upon approval of the Primary Officers. The Officers'
-   Policy shall specify the application process for Alumni membership.
+   leaving RIT. Alumni membership can also be granted after the six month
+   time period upon approval of the Primary Officers. The Officers' Policy shall
+   specify the application process for Alumni membership.
 
 
 ### Temporary Membership
@@ -123,7 +134,8 @@ Temporary membership may be granted for at most one academic term at the
 discretion of the Primary Officers if the following additional requirements are
 met:
 
-1. The candidate must be enrolled as a student at RIT or NTID. 
+1. The candidate must be enrolled as a student at RIT in Henrietta, New York,
+   United States.
 2. The candidate must not ever have had a Temporary, Active, or Alumni
    membership in the Society.
 
@@ -142,7 +154,7 @@ placement of the candidate on a probationary period, the length of which shall
 be determined at the discretion of the Primary Officers based on the nature of
 the candidate's behavior. Should a decision in favor of probation be reached,
 the candidate shall be informed of the verdict and their probationary period
-shall begin. Should this not be reached, the candidate shall informed of the
+shall begin. Should this not be reached, the candidate shall be informed of the
 nature of the discussion.
 
 At the end of the probationary period, a second discussion shall be held
@@ -153,6 +165,12 @@ from the candidate. If the officers vote in favor of removal, the candidate
 shall be informed of the verdict and be removed from the membership roster
 immediately. The former member shall also be barred from obtaining membership
 for a minimum of the remainder of the current academic term.
+
+The probationary period may be skipped if the Primary Officers come
+to a unanimous decision to skip probation and proceed directly to the removal
+of the membership. This final clause should only be used in truly extraneous 
+circumstances with a reasonable effort to include the member in the discussion.
+
 
 Governance
 ----------
@@ -184,10 +202,10 @@ see that necessary parties have easy and constant access to relevant
 information.
 
 ##### Treasurer
-The treasurer is responsible for all financial that happen on behalf of the
+The treasurer is responsible for all financial matters that happen on behalf of the
 SSE. As such, they must grant members the permission to use SSE funds, ensure
-all financial transactions are recorded properly, and see that funds and items
-purchased are used in a responsible way. 
+all financial transactions are recorded properly, oversee merchandise sales and distribution,
+and see that funds and items purchased are used in a responsible way. 
 
 #### Period of Office
 For annual elections, the period of office begins at the end of the spring
@@ -197,14 +215,22 @@ in the year for which the officer serves. Officers who no longer meet the
 candidacy requirements for office must resign.
 
 #### Impeachment
-Primary officers may only be removed by the completion of a petition started by
-an active member of the Society. Should a petition receive two thirds of the
-signatures of all active members, the Primary Officer shall be removed from
-their position immediately. Following the removal of the Primary Officer, a
-vote shall be held to fill the vacant position. In the time between the removal
-of the officer and the appointment of the new officer, all responsibilities of
-the removed Primary Officer shall be completed by the remaining Primary
-Officers.  
+Primary officers may only be impeached by the completion of a petition started by
+an active member of the Society. The petitioner must provide their reasoning
+for impeachment before receiving signatures.
+Should a petition receive two thirds of the signatures of all active members,
+it may be presented to the Primary Officers or to the Academic Advisor
+to begin the impeachment process. The Primary Officer in question may not interfere or
+delay this process in any way, nor can they operate in their position during this time.
+
+The Officer in question will then have the opportunity to form a defense to 
+the claims, which must be made accessible to all active members. After one week,
+a vote must be held amongst the members to determine if the Officer should be removed.
+If two thirds of all active members vote to impeach, the Primary Officer shall be removed from their position immediately. 
+Following the removal of the Primary Officer, a vote shall be held to fill 
+the vacant position. In the time between the removal of the officer and the 
+appointment of the new officer, all responsibilities of the removed Primary Officer 
+shall be completed by the remaining Primary Officers.
 
 #### Resignation
 Primary Officers may resign at any point during their period of office. Upon
@@ -222,8 +248,10 @@ have more than one Head at any time.
 
 #### Committee Heads
 Committee Heads are leaders that handle tasks and responsibilities related to a
-specific committee of the Society. The responsibilities and goals of each
-Committee Head are also listed in the Primary Officers' Policy.
+specific committee of the Society. It is the duty of all Committee Heads to 
+promote the values held by the SSE and to represent the organization in an
+appropriate mannor. The responsibilities and goals of each Committee Head 
+are also listed in the Primary Officers' Policy.
 
 Committee Head appointments terminate with the period of office of the primary
 officers who chose them.
@@ -247,8 +275,8 @@ verdict and removed from the position.
 The probationary period may be skipped if and only if the Primary Officers come
 to a unanimous decision to skip probation and proceed directly to the removal
 of the Committee Head. This final clause should only be used in truly
-extraneous circumstances with a reasonable effort to allow the Committee Head
-to be present during the discussion and vote.
+extraneous circumstances with a reasonable effort to include the Committee Head
+in the discussion.
 
 #### Resignation
 Committee Heads may resign at any point during their period of office. Upon
@@ -273,10 +301,19 @@ Vice President  | 3             | 1 academic term
 Treasurer       | -             | 1 academic term
 Secretary       | -             | - 
 
-“Year level” is counted by the lower of [A] years enrolled at least part-time in a higher-education institution post high school graduation, or [B] by RIT credits obtained following the scale published by the RIT Office of the Registrar.  “Prior Involvement” refers to the number of complete academic terms during which the candidate served as a Primary Officer or Committee Head. In the event a candidate has not previously served as a Primary Officer or Committee Head, two complete academic terms during which the candidate served as a Mentor with the society may be substituted to serve as one term of “Prior Involvement”. No more than one term of “Prior Involvement” earned through mentorship may be substituted as the requirements for any office.
+“Year level” is counted by the lower of [A] years enrolled at least part-time in a
+higher-education institution post high school graduation, or [B] by credits obtained
+at RIT following the scale published by RIT's Office of the Registrar.
 
-All Primary Officers must be enrolled as full or part-time Software Engineering
-students attending classes at the RIT campus in Rochester, NY.
+“Prior Involvement” refers to the number of complete academic terms during which the
+candidate served as a Primary Officer or Committee Head. In the event a candidate has
+not previously served as a Primary Officer or Committee Head, two complete academic terms
+during which the candidate served as a Mentor with the society may be substituted to serve
+as one term of “Prior Involvement”. No more than one term of “Prior Involvement” earned
+through mentorship may be substituted as the requirements for any office.
+
+All Primary Officers must be enrolled as Software Engineering students at RIT in Henrietta,
+New York, United States and not be on co-op during the term in which they would serve.
 
 Candidates for President and Vice President must both plan to remain enrolled
 and on-campus for the entire academic year for which they are to serve.
@@ -284,6 +321,9 @@ Candidates for Secretary and Treasurer must both plan to remain enrolled and
 on-campus for at least the most immediate academic term for which they are to
 serve.
 
+In an event where all candidates for President and Vice President are the same,
+only a single vote for President needs to be held, with the individual who recieved
+the second highest amount of votes becoming Vice President.
 
 ### Collection and Acceptance of Nominations
 
@@ -307,10 +347,10 @@ accessible.
 
 ### Election Process
 The election process for Primary Officers utilizes an instant-runoff voting
-system, where each nominee is ranked from 1 (least desired) to N (most
+system, where each nominee is ranked from 1 (most desired) to N (least
 desired), where N is the total number of nominees running for each position. In
 the event that a nominee is not ranked on a ballot, they will be considered to
-be ranked in last place (1) for that voter. 
+be ranked in last place (N) for that voter.
 
 At the end of the voting period, the first choice vote for all voters is
 tallied. The candidate with the lowest number of votes is eliminated from the
@@ -330,16 +370,17 @@ temporary members cannot participate in this process.
 Committee Head Selection
 ------------------------
 ### Eligibility
-Any student at RIT may be nominated to be a Committee Head. Committee heads
-must be a full or part-time student at RIT and must not be on co-op during the
-term in which they will serve. Members cannot serve in Committee Head and
-Primary Officer positions concurrently.
+Any student enrolled at RIT in Henrietta, New York, United States and not be on co-op
+during the term in which they would serve may be nominated to be a Committee Head.
+Members cannot serve in Committee Head and Primary Officer positions concurrently.
 
 ### Nomination Process
 Nominations for Committee Heads may be held for any vacancy. Nominations should
 be held immediately after the Primary Officers' election at the end of each
 academic year. Any member may submit nominations for Committee Heads. All
-candidates must accept a nomination before they are selected for the position. 
+candidates must accept a nomination before they are selected for the position.
+In the event of a Commitee Head resignation or removal, the Primary Officers may
+reopen nominations at any point during the semester to fill the vacancy.
 
 ### Selection
 Committee heads are selected for a term by the Primary Officers who will be
@@ -418,18 +459,31 @@ Advisors
 Department-appointed advisors to the SSE, if they exist, have the right to vote
 in elections for Primary Officers.
 
+
 Amendments
 ----------
-Any Active member of the Society may propose an amendment to this constitution at any point, to be voted on during the next regularly scheduled election.
+Any Active member of the Society may propose an amendment to this constitution at any point, 
+to be voted on during the next applicable election period. If deemed nessecary by the 
+Primary Officers and approved by the department advisor(s), the voting procedure can be held at 
+any point during the semester.
 
 ### Mandatory Public Forum Period
-The process of drafting an amendment shall be at the discretion of the author. The final text for the amendment must be presented in writing to a club advisor or primary officer no later than one week prior to the vote opening. All proposed amendments to be included in a general election must be made available in public view for a public forum allowing optionally anonymous comments. The forum must be moderated by the Primary Officers, ultimately managed by the Secretary. 
+The process of drafting an amendment shall be at the discretion of the author. 
+The final text for the amendment must be presented in writing to a club advisor 
+or primary officer no later than one week prior to the vote opening. All proposed 
+amendments to be included in a general election must be made available in public 
+view for a public forum allowing comments. The forum must be 
+moderated by the Primary Officers, ultimately managed by the Secretary. 
 
-It is recommended, but not required, that amendment authors consult a primary officer or advisor prior to proposal.
+It is recommended, but not required, that amendment authors consult a primary officer 
+or Club Advisor prior to proposal.
 
 ### Voting Procedure
-No fewer than two-thirds of the votes must approve the ratification
-amendment, with a minimum of two-thirds of the Society participating in the vote. 
+For all semantic changes, no fewer than two-thirds of the votes must approve the ratification
+amendment, with a minimum of two-thirds of the Society participating in the vote. Modification 
+to the SSE Constitution that does not affect the meaning of the document can be approved by a 
+concensus vote amongst the Primary Officers.
+
 
 The amendment ballot must include:
  * The final text of the amendment
@@ -443,4 +497,13 @@ All amendments added to this constitution shall override and overrule any and al
 The new or continuing Primary Officers must implement changes in the organization in accordance with the amendment by the start of the following semester.
 
 ### Amendment-Only Elections
-In a semester in which no primary officer positions require an election, and amendments have been proposed by the ninth week of classes, an amendment-only election must be run. The process for this is at the discretion of the Primary Officers.
+In a semester in which no primary officer positions require an election, and amendments have been proposed by the tenth week of classes, an amendment-only election must be run. The process for this is at the discretion of the Primary Officers.
+
+Appeals
+-------
+Decisions made by the Primary Officers in regards to the Primary Officer Policy or constitutional interpretation
+may be contested at any point by an active member of the SSE in good standing. To initiate an appeal, the member must create 
+a report detailing the proposed appeal in a way that is readily accessible to the members of the SSE. To present the appeal, it must 
+first have the approval of either two Primary Officers or one third of the current Committee Heads 
+as well as the Department Advisor. A vote shall then be held amongst all Officers and the Department Advisor 
+to determine if the appeal shall be implemented. The vote shall be determined by a 2/3rds majority.
