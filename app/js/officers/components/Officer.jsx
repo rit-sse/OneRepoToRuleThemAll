@@ -49,7 +49,7 @@ class Officer extends Component {
       showActions,
     } = this.props;
     const { firstName, lastName, image, dce } = user || {};
-    const emailAlias = `${email}@sse.rit.edu`;
+    const emailAlias = `${dce}@rit.edu`;
 
     return (
       <SwipeArea onLeft={this.showActions} onRight={this.hideActions} className="actions-container-fade col-sm-6 col-lg-3 pb-3">
