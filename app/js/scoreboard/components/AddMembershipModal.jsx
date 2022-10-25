@@ -32,6 +32,11 @@ class AddMembershipModal extends Component {
 
     const committeeNames = committees.map(committee => committee.name);
     const dayFormat = 'YYYY-MM-DD';
+    // Memberships carry over to the first withdrawal date of the following semester
+    // Amend these dates as necessary
+    const springWithdrawalDate = moment({ months: 0, day: 22 }).add({ years: 1 });
+    const fallWithdrawalDate = moment({ months: 8, day: 4 });
+    const endDate = moment().month() < fallWithdrawalDate.month() ? fallWithdrawalDate : springWithdrawalDate;
 
     return (
       <Modal isOpen={isOpen} toggle={close}>
@@ -39,7 +44,7 @@ class AddMembershipModal extends Component {
         <UserForm
           initialValues={{
             startDate: moment().format(dayFormat),
-            endDate: '',
+            endDate: endDate.format(dayFormat),
             reason: '',
             committeeName: initialCommitteeName,
           }}
