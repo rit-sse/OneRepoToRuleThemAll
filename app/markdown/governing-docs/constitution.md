@@ -370,7 +370,7 @@ temporary members cannot participate in this process.
 Committee Head Selection
 ------------------------
 ### Eligibility
-Any student enrolled at RIT in Henrietta, New York, United States
+Any student enrolled at RIT and in Henrietta, New York, United States
 during the term in which they would serve may be nominated to be a Committee Head.
 Members cannot serve in Committee Head and Primary Officer positions concurrently.
 
