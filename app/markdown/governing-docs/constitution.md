@@ -241,6 +241,7 @@ vacant position shall be fulfilled by the remaining Primary Officers.
 
 ### Committees
 Committees may be formed to delegate responsibility for tasks within the
+OA
 Society. The internal structure of committees shall be specified in the Primary
 Officer's Policy. Committee Heads shall be appointed by Primary Officers, and
 shall be listed in the Primary Officers' Policy each year. No committee may
