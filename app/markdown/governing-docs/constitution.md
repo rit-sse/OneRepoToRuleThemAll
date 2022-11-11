@@ -253,8 +253,7 @@ promote the values held by the SSE and to represent the organization in an
 appropriate mannor. The responsibilities and goals of each Committee Head 
 are also listed in the Primary Officers' Policy.
 
-Committee Head appointments terminate with the period of office of the primary
-officers who chose them.
+Committee Head appointments terminate at the end of the term they were chosen to serve during.
 
 #### Committee Head Impeachment
 Committee heads may be removed by the Primary Officers for failing to fulfill
@@ -370,7 +369,7 @@ temporary members cannot participate in this process.
 Committee Head Selection
 ------------------------
 ### Eligibility
-Any student enrolled at RIT and in Henrietta, New York, United States
+Any student enrolled at RIT in Henrietta, New York, United States and not be on co-op
 during the term in which they would serve may be nominated to be a Committee Head.
 Members cannot serve in Committee Head and Primary Officer positions concurrently.
 
