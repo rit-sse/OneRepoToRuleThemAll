@@ -218,7 +218,7 @@ candidacy requirements for office must resign.
 Primary officers may only be impeached by the completion of a petition started by
 an active member of the Society. The petitioner must provide their reasoning
 for impeachment before receiving signatures.
-Should a petition receive more than one half of the signatures of all active members,
+Should a petition receive a majority of the signatures of all active members,
 it may be presented to the Primary Officers or to the Academic Advisor
 to begin the impeachment process. The Primary Officer in question may not interfere or
 delay this process in any way, nor can they operate in their position during this time.
