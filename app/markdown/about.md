@@ -40,6 +40,7 @@ We’d love to get to know you!
 
 Some of the most common ways of getting involved include doing some of the following:
 
+* Becoming a mentor
 * Joining a committee
 * Going on Fundraising runs
 * Attending the General Meetings
