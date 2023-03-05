@@ -253,8 +253,7 @@ promote the values held by the SSE and to represent the organization in an
 appropriate mannor. The responsibilities and goals of each Committee Head 
 are also listed in the Primary Officers' Policy.
 
-Committee Head appointments terminate with the period of office of the primary
-officers who chose them.
+Committee Head appointments terminate at the end of the term they were chosen to serve during.
 
 #### Committee Head Impeachment
 Committee heads may be removed by the Primary Officers for failing to fulfill
