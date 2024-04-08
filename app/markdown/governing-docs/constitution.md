@@ -299,7 +299,7 @@ Position        | Year level    | Prior involvement
 President       | 4             | 2 academic terms
 Vice President  | 3             | 1 academic term
 Treasurer       | -             | 1 academic term
-Secretary       | -             | - 
+Secretary       | -             | 1 academic term
 
 “Year level” is counted by the lower of [A] years enrolled at least part-time in a
 higher-education institution post high school graduation, or [B] by credits obtained
@@ -312,8 +312,7 @@ during which the candidate served as a Mentor with the society may be substitute
 as one term of “Prior Involvement”. No more than one term of “Prior Involvement” earned
 through mentorship may be substituted as the requirements for any office.
 
-All Primary Officers must be enrolled as Software Engineering students at RIT in Henrietta,
-New York, United States and not be on co-op during the term in which they would serve.
+All Primary Officers must be enrolled as students in the Golisano College of Computing and Information Sciences (GCCIS) with the exception of the President and Vice President who must be enrolled as Software Engineering majors. All Primary Officers must not be on co-op during the term in which they would serve, and must be on-campus at RIT in Henrietta, New York, United States.
 
 Candidates for President and Vice President must both plan to remain enrolled
 and on-campus for the entire academic year for which they are to serve.
@@ -322,7 +321,7 @@ on-campus for at least the most immediate academic term for which they are to
 serve.
 
 In an event where all candidates for President and Vice President are the same,
-only a single vote for President needs to be held, with the individual who recieved
+only a single vote for President needs to be held, with the individual who receives
 the second highest amount of votes becoming Vice President.
 
 ### Collection and Acceptance of Nominations
